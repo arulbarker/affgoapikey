@@ -1,0 +1,54 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build files
+dist/
+build/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup files
+backup*.txt
+backup*.html
+BACKUP*.TXT
+backupv*.txt
+backupkode*.txt
+kode-backup*.html
+kode.html.backup*
+backupkodemin.txt
+
+# Misc temp files
+*.tct
+wwwwwwwwwww.txt
+wawawwa.tct
+kntl.txt
+deskripsibisa
+rasiobisa
+ttsbisa
+v-tryon-ai
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Logs
+logs/
+*.log
