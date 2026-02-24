@@ -49617,8 +49617,8 @@ CRITICAL: Banner harus PROFESSIONAL, eye-catching, dan optimized untuk ${selecte
                 const imageUrl = `data:image/png;base64,${base64Data}`;
                 const filename = `banner_${selectedType}_${Date.now()}_${index}.png`;
 
-                // Store generated image
-                generatedImages[index - 1] = { url: imageUrl, filename };
+                // Store generated image with prompt
+                generatedImages[index - 1] = { url: imageUrl, filename, prompt };
 
                 // Update card with generated image
                 const card = document.getElementById(`banner-card-${index}`);
@@ -49627,11 +49627,15 @@ CRITICAL: Banner harus PROFESSIONAL, eye-catching, dan optimized untuk ${selecte
                     card.innerHTML = `
                         <img src="${imageUrl}" class="w-full h-full object-cover" alt="Banner ${index}">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 gap-2">
-                            <button data-action="preview" data-index="${index - 1}" class="action-btn bg-white/90 hover:bg-white text-gray-800 px-4 py-2 rounded-full font-semibold shadow-lg transition-all duration-200 hover:scale-105 flex items-center gap-2">
+                            <button data-action="preview" data-index="${index - 1}" class="action-btn bg-white/90 hover:bg-white text-gray-800 px-3 py-2 rounded-full font-semibold shadow-lg transition-all duration-200 hover:scale-105 flex items-center gap-1.5">
                                 <i class="fas fa-eye"></i>
                                 <span class="hidden sm:inline">Preview</span>
                             </button>
-                            <button data-action="download" data-index="${index - 1}" class="action-btn bg-gradient-to-r from-violet-500 to-violet-600 hover:from-violet-600 hover:to-violet-700 text-white px-4 py-2 rounded-full font-semibold shadow-lg transition-all duration-200 hover:scale-105 flex items-center gap-2">
+                            <button data-action="edit" data-index="${index - 1}" class="action-btn bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-2 rounded-full font-semibold shadow-lg transition-all duration-200 hover:scale-105 flex items-center gap-1.5">
+                                <i class="fas fa-edit"></i>
+                                <span class="hidden sm:inline">Edit</span>
+                            </button>
+                            <button data-action="download" data-index="${index - 1}" class="action-btn bg-gradient-to-r from-violet-500 to-violet-600 hover:from-violet-600 hover:to-violet-700 text-white px-3 py-2 rounded-full font-semibold shadow-lg transition-all duration-200 hover:scale-105 flex items-center gap-1.5">
                                 <i class="fas fa-download"></i>
                                 <span class="hidden sm:inline">Download</span>
                             </button>
@@ -49678,6 +49682,8 @@ CRITICAL: Banner harus PROFESSIONAL, eye-catching, dan optimized untuk ${selecte
                 } else {
                     window.open(imageData.url, '_blank');
                 }
+            } else if (action === 'edit') {
+                showBannerEditModal(index, imageData.prompt || '');
             } else if (action === 'download') {
                 actionBtn.disabled = true;
                 const originalHTML = actionBtn.innerHTML;
@@ -49705,6 +49711,113 @@ CRITICAL: Banner harus PROFESSIONAL, eye-catching, dan optimized untuk ${selecte
                 }
             }
         });
+
+        // Banner edit modal + regenerate
+        function showBannerEditModal(cardIndex, currentPrompt) {
+            let modal = document.getElementById('banner-edit-modal');
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'banner-edit-modal';
+                modal.className = 'fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 p-4';
+                modal.innerHTML = `
+                    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col">
+                        <div class="flex justify-between items-center p-5 border-b">
+                            <h3 class="text-xl font-bold text-gray-800"><i class="fas fa-edit mr-2 text-yellow-500"></i>Edit Prompt Banner</h3>
+                            <button id="banner-edit-modal-close" class="text-gray-400 hover:text-gray-600 text-2xl font-bold leading-none">&times;</button>
+                        </div>
+                        <div class="p-5 flex-1 overflow-y-auto">
+                            <p class="text-sm text-gray-500 mb-3" id="banner-edit-card-label"></p>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Prompt AI (edit sesuai kebutuhan):</label>
+                            <textarea id="banner-edit-prompt-textarea" class="w-full h-56 p-3 border-2 border-yellow-200 rounded-xl text-sm focus:border-yellow-500 resize-y" placeholder="Edit prompt di sini..."></textarea>
+                        </div>
+                        <div class="p-5 border-t flex gap-3 justify-end">
+                            <button id="banner-edit-modal-cancel" class="px-5 py-2.5 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-all">Batal</button>
+                            <button id="banner-edit-modal-regen" class="px-5 py-2.5 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-xl font-semibold hover:from-yellow-600 hover:to-orange-600 transition-all flex items-center gap-2">
+                                <i class="fas fa-redo"></i> Generate Ulang Banner
+                            </button>
+                        </div>
+                    </div>`;
+                document.body.appendChild(modal);
+                document.getElementById('banner-edit-modal-close').addEventListener('click', () => modal.classList.add('hidden'));
+                document.getElementById('banner-edit-modal-cancel').addEventListener('click', () => modal.classList.add('hidden'));
+            }
+
+            document.getElementById('banner-edit-card-label').textContent = 'Banner ' + (cardIndex + 1);
+            document.getElementById('banner-edit-prompt-textarea').value = currentPrompt;
+            modal.classList.remove('hidden');
+
+            const oldBtn = document.getElementById('banner-edit-modal-regen');
+            const newBtn = oldBtn.cloneNode(true);
+            oldBtn.parentNode.replaceChild(newBtn, oldBtn);
+            newBtn.addEventListener('click', async () => {
+                const newPrompt = document.getElementById('banner-edit-prompt-textarea').value.trim();
+                if (!newPrompt) return;
+                modal.classList.add('hidden');
+                await regenerateSingleBanner(cardIndex, newPrompt);
+            });
+        }
+
+        async function regenerateSingleBanner(cardIndex, newPrompt) {
+            const cardNumber = cardIndex + 1;
+            const card = document.getElementById('banner-card-' + cardNumber);
+            if (!card) return;
+
+            card.className = 'relative group rounded-xl overflow-hidden bg-gray-100 shadow-lg aspect-[16/9]';
+            card.innerHTML = `
+                <div class="w-full h-full flex items-center justify-center">
+                    <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-violet-600"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2">
+                    <p class="text-white text-xs text-center">Generating ulang...</p>
+                </div>`;
+
+            try {
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent?key=${apiKey}`;
+                const parts = [{ text: newPrompt }];
+                if (backgroundImageData) {
+                    parts.push({ inlineData: { mimeType: backgroundImageData.mimeType, data: backgroundImageData.base64 } });
+                }
+                const payload = {
+                    contents: [{ parts }],
+                    generationConfig: { responseModalities: ['IMAGE'], imageConfig: { aspectRatio: selectedSize } }
+                };
+
+                const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                if (!response.ok) throw new Error('Error ' + response.status);
+
+                const result = await response.json();
+                const base64Data = result?.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+                if (!base64Data) throw new Error('No image data');
+
+                const imageUrl = `data:image/png;base64,${base64Data}`;
+                const filename = `banner_${selectedType}_${Date.now()}_regen.png`;
+                generatedImages[cardIndex] = { url: imageUrl, filename, prompt: newPrompt };
+
+                card.className = 'relative group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 aspect-[16/9]';
+                card.innerHTML = `
+                    <img src="${imageUrl}" class="w-full h-full object-cover" alt="Banner ${cardNumber}">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 gap-2">
+                        <button data-action="preview" data-index="${cardIndex}" class="action-btn bg-white/90 hover:bg-white text-gray-800 px-3 py-2 rounded-full font-semibold shadow-lg transition-all duration-200 hover:scale-105 flex items-center gap-1.5">
+                            <i class="fas fa-eye"></i><span class="hidden sm:inline">Preview</span>
+                        </button>
+                        <button data-action="edit" data-index="${cardIndex}" class="action-btn bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-2 rounded-full font-semibold shadow-lg transition-all duration-200 hover:scale-105 flex items-center gap-1.5">
+                            <i class="fas fa-edit"></i><span class="hidden sm:inline">Edit</span>
+                        </button>
+                        <button data-action="download" data-index="${cardIndex}" class="action-btn bg-gradient-to-r from-violet-500 to-violet-600 hover:from-violet-600 hover:to-violet-700 text-white px-3 py-2 rounded-full font-semibold shadow-lg transition-all duration-200 hover:scale-105 flex items-center gap-1.5">
+                            <i class="fas fa-download"></i><span class="hidden sm:inline">Download</span>
+                        </button>
+                    </div>`;
+
+            } catch (error) {
+                console.error('Regen banner error:', error);
+                card.innerHTML = `
+                    <div class="w-full h-full flex flex-col items-center justify-center bg-red-50 p-4">
+                        <i class="fas fa-exclamation-triangle text-red-500 text-3xl mb-2"></i>
+                        <p class="text-sm text-red-600">Gagal generate ulang</p>
+                        <p class="text-xs text-red-400 mt-1">${error.message}</p>
+                    </div>`;
+            }
+        }
 
         // Download all button
         bannerDownloadAllBtn.addEventListener('click', async (e) => {
@@ -53807,7 +53920,7 @@ The script's tone and content must be tailored to the chosen script type.`;
             const base64Data = result?.candidates?.[0]?.content?.parts?.find(p => p.inlineData)?.inlineData?.data;
             if (!base64Data) throw new Error("No image data from AI for this slide.");
 
-            return base64Data;
+            return { base64Data, prompt: finalPrompt };
         }
 
         function setupCarousel(carouselId) {
@@ -53843,7 +53956,7 @@ The script's tone and content must be tailored to the chosen script type.`;
                 return classes;
             }
 
-            const slidesHTML = images.map((img) => {
+            const slidesHTML = images.map((img, slideIdx) => {
                 const positionClass = getPositionClasses(img.position);
                 const textOverlay = img.text ?
                     `<div class="absolute inset-0 flex p-6 md:p-8 lg:p-10 pointer-events-none ${positionClass}">
@@ -53853,6 +53966,12 @@ The script's tone and content must be tailored to the chosen script type.`;
                 return `<div class="carousel-slide relative bg-black">
                             <img src="${img.src}" alt="${img.title}" class="w-full h-full object-contain">
                             ${textOverlay}
+                            <button class="crsl-edit-slide-btn absolute top-2 right-2 z-20 bg-black/60 hover:bg-pink-600 text-white px-2 py-1 rounded-lg text-xs flex items-center gap-1 transition-all duration-200"
+                                    data-carousel-id="${cardId}"
+                                    data-slide-index="${slideIdx}"
+                                    title="Edit &amp; Generate Ulang Slide Ini">
+                                <i class="fas fa-edit"></i><span>Edit</span>
+                            </button>
                         </div>`;
             }).join('');
 
@@ -53909,8 +54028,8 @@ The script's tone and content must be tailored to the chosen script type.`;
                 for (let i = 0; i < slideCount; i++) {
                     card.querySelector('.text-sm').textContent = `Membuat slide ${i + 1}/${slideCount}...`;
                     const slideText = isTextMode ? textareas[i].value.trim() : '';
-                    const base64Data = await generateSingleCarouselSlide(i + 1, slideText, style, aspectRatio, isTextMode);
-                    const imageUrl = `data:image/png;base64,${base64Data}`;
+                    const slideResult = await generateSingleCarouselSlide(i + 1, slideText, style, aspectRatio, isTextMode);
+                    const imageUrl = `data:image/png;base64,${slideResult.base64Data}`;
 
                     images.push({
                         src: imageUrl,
@@ -53918,13 +54037,16 @@ The script's tone and content must be tailored to the chosen script type.`;
                         text: slideText,
                         position: position,
                         font: font,
-                        fontColor: fontColor
+                        fontColor: fontColor,
+                        prompt: slideResult.prompt
                     });
                 }
 
                 generatedCarousels[cardId] = {
                     productName: productName,
-                    images: images
+                    images: images,
+                    style: style,
+                    aspectRatio: aspectRatio
                 };
 
                 renderCarouselResult(cardId, images, style, aspectRatio);
@@ -54079,6 +54201,119 @@ The script's tone and content must be tailored to the chosen script type.`;
                 }
             }
         });
+
+        // Edit Slide button delegation
+        if (crslResultsGrid) {
+            crslResultsGrid.addEventListener('click', (e) => {
+                const editBtn = e.target.closest('.crsl-edit-slide-btn');
+                if (!editBtn) return;
+                e.stopPropagation();
+                const cid = editBtn.dataset.carouselId;
+                const sidx = parseInt(editBtn.dataset.slideIndex);
+                const cdata = generatedCarousels[cid];
+                if (!cdata) return;
+                showCarouselEditModal(cid, sidx, cdata.images[sidx].prompt || '');
+            });
+        }
+
+        function showCarouselEditModal(carouselId, slideIndex, currentPrompt) {
+            let modal = document.getElementById('crsl-edit-modal');
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'crsl-edit-modal';
+                modal.className = 'fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 p-4';
+                modal.innerHTML = `
+                    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col">
+                        <div class="flex justify-between items-center p-5 border-b">
+                            <h3 class="text-xl font-bold text-gray-800"><i class="fas fa-edit mr-2 text-pink-500"></i>Edit Prompt Slide</h3>
+                            <button id="crsl-edit-modal-close" class="text-gray-400 hover:text-gray-600 text-2xl font-bold leading-none">&times;</button>
+                        </div>
+                        <div class="p-5 flex-1 overflow-y-auto">
+                            <p class="text-sm text-gray-500 mb-3" id="crsl-edit-slide-label"></p>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Prompt AI (edit sesuai kebutuhan):</label>
+                            <textarea id="crsl-edit-prompt-textarea" class="w-full h-56 p-3 border-2 border-pink-200 rounded-xl text-sm focus:border-pink-500 resize-y" placeholder="Edit prompt di sini..."></textarea>
+                        </div>
+                        <div class="p-5 border-t flex gap-3 justify-end">
+                            <button id="crsl-edit-modal-cancel" class="px-5 py-2.5 bg-gray-100 text-gray-700 rounded-xl font-semibold hover:bg-gray-200 transition-all">Batal</button>
+                            <button id="crsl-edit-modal-regen" class="px-5 py-2.5 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-xl font-semibold hover:from-pink-600 hover:to-rose-600 transition-all flex items-center gap-2">
+                                <i class="fas fa-redo"></i> Generate Ulang Slide
+                            </button>
+                        </div>
+                    </div>`;
+                document.body.appendChild(modal);
+                document.getElementById('crsl-edit-modal-close').addEventListener('click', () => modal.classList.add('hidden'));
+                document.getElementById('crsl-edit-modal-cancel').addEventListener('click', () => modal.classList.add('hidden'));
+            }
+
+            const cdata = generatedCarousels[carouselId];
+            document.getElementById('crsl-edit-slide-label').textContent =
+                (cdata?.productName ? cdata.productName + ' \u2014 ' : '') + 'Slide ' + (slideIndex + 1);
+            document.getElementById('crsl-edit-prompt-textarea').value = currentPrompt;
+            modal.classList.remove('hidden');
+
+            const oldBtn = document.getElementById('crsl-edit-modal-regen');
+            const newBtn = oldBtn.cloneNode(true);
+            oldBtn.parentNode.replaceChild(newBtn, oldBtn);
+            newBtn.addEventListener('click', async () => {
+                const newPrompt = document.getElementById('crsl-edit-prompt-textarea').value.trim();
+                if (!newPrompt) return;
+                modal.classList.add('hidden');
+                await regenerateSingleCarouselSlide(carouselId, slideIndex, newPrompt);
+            });
+        }
+
+        async function regenerateSingleCarouselSlide(carouselId, slideIndex, newPrompt) {
+            const cdata = generatedCarousels[carouselId];
+            if (!cdata) return;
+
+            const card = document.getElementById(carouselId);
+            if (!card) return;
+
+            // Show loading on the slide
+            const slides = card.querySelectorAll('.carousel-slide');
+            if (slides[slideIndex]) {
+                slides[slideIndex].innerHTML = `
+                    <div class="w-full h-full flex items-center justify-center bg-gray-900 min-h-[200px]">
+                        <div class="text-center">
+                            <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-pink-500 mx-auto mb-2"></div>
+                            <p class="text-white text-xs">Generating slide ${slideIndex + 1}...</p>
+                        </div>
+                    </div>`;
+            }
+
+            try {
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent?key=${apiKey}`;
+                const payload = {
+                    contents: [{ parts: [
+                        { text: newPrompt },
+                        { inlineData: { mimeType: crslImageData.mimeType, data: crslImageData.base64 } }
+                    ]}],
+                    generationConfig: {
+                        responseModalities: ['IMAGE'],
+                        imageConfig: { aspectRatio: cdata.aspectRatio || '1:1' }
+                    }
+                };
+
+                const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                if (!response.ok) throw new Error('Error ' + response.status);
+
+                const result = await response.json();
+                const base64Data = result?.candidates?.[0]?.content?.parts?.find(p => p.inlineData)?.inlineData?.data;
+                if (!base64Data) throw new Error('No image data');
+
+                const imageUrl = `data:image/png;base64,${base64Data}`;
+                cdata.images[slideIndex].src = imageUrl;
+                cdata.images[slideIndex].prompt = newPrompt;
+
+                renderCarouselResult(carouselId, cdata.images, cdata.style, cdata.aspectRatio);
+
+            } catch (error) {
+                console.error('Regen carousel slide error:', error);
+                renderCarouselResult(carouselId, cdata.images, cdata.style, cdata.aspectRatio);
+                alert('Gagal generate ulang slide: ' + error.message);
+            }
+        }
+
     })();
 
     // ==================== LOGO GENERATOR ====================
