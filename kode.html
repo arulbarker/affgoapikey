@@ -65991,6 +65991,9 @@ This photo will be used as a consistent model reference for various product phot
         }
 
         if (ftgUploadBox) {
+            ftgUploadBox.addEventListener('click', () => {
+                if (ftgUploadInput) ftgUploadInput.click();
+            });
             ftgUploadBox.addEventListener('dragover', (e) => {
                 e.preventDefault();
                 ftgUploadBox.style.borderColor = '#06b6d4';
