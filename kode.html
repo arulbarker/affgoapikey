@@ -20957,15 +20957,18 @@
                                 </div>
                                 <div>
                                     <h3 class="text-base font-semibold mb-3 text-gray-800">4. Pilih Rasio</h3>
-                                    <div id="sti-ratio-options" class="grid grid-cols-3 gap-3">
-                                        <button type="button" data-value="1:1" class="option-btn-sketsa selected gap-2">
+                                    <div id="sti-ratio-options" class="grid grid-cols-4 gap-2">
+                                        <button type="button" data-value="1:1" class="option-btn-sketsa selected gap-1 text-xs">
                                             <i class="fas fa-square"></i><span>1:1</span>
                                         </button>
-                                        <button type="button" data-value="16:9" class="option-btn-sketsa gap-2">
+                                        <button type="button" data-value="16:9" class="option-btn-sketsa gap-1 text-xs">
                                             <i class="fas fa-rectangle-landscape"></i><span>16:9</span>
                                         </button>
-                                        <button type="button" data-value="9:16" class="option-btn-sketsa gap-2">
+                                        <button type="button" data-value="9:16" class="option-btn-sketsa gap-1 text-xs">
                                             <i class="fas fa-rectangle-portrait"></i><span>9:16</span>
+                                        </button>
+                                        <button type="button" data-value="4:5" class="option-btn-sketsa gap-1 text-xs">
+                                            <i class="fas fa-rectangle-portrait"></i><span>4:5</span>
                                         </button>
                                     </div>
                                 </div>
@@ -23449,7 +23452,7 @@
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-red-500 to-red-600 text-white font-bold text-sm shadow-lg">2</div>
                                     <h3 class="text-lg font-bold text-gray-800">Pilih Mode Penghapusan</h3>
                                 </div>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                     <button class="remover-mode-btn active" data-mode="auto">
                                         <div class="relative z-10">
                                             <i class="fas fa-magic text-2xl mb-2"></i>
@@ -23462,6 +23465,13 @@
                                             <i class="fas fa-paint-brush text-2xl mb-2"></i>
                                             <p class="font-bold text-lg">Manual (Brush)</p>
                                             <p class="text-sm mt-1 opacity-80">Pilih area dengan kuas</p>
+                                        </div>
+                                    </button>
+                                    <button class="remover-mode-btn" data-mode="watermark">
+                                        <div class="relative z-10">
+                                            <i class="fas fa-ban text-2xl mb-2"></i>
+                                            <p class="font-bold text-lg">Hapus Watermark</p>
+                                            <p class="text-sm mt-1 opacity-80">Hapus teks, logo & watermark</p>
                                         </div>
                                     </button>
                                 </div>
@@ -23536,6 +23546,40 @@
                                                 <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Watermark atau logo</li>
                                                 <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Kabel, tiang, atau gangguan lainnya</li>
                                             </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Watermark Mode Options -->
+                            <div id="remover-watermark-options" class="hidden">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-red-500 to-red-600 text-white font-bold text-sm shadow-lg">3</div>
+                                    <h3 class="text-lg font-bold text-gray-800">Opsi Penghapusan Watermark</h3>
+                                </div>
+                                <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-6 border-2 border-red-200">
+                                    <div class="flex items-start gap-4">
+                                        <div class="w-12 h-12 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0">
+                                            <i class="fas fa-ban text-white text-xl"></i>
+                                        </div>
+                                        <div class="w-full">
+                                            <h4 class="font-bold text-gray-800 text-lg mb-2">Watermark & Text Removal</h4>
+                                            <p class="text-gray-700 text-sm mb-3">
+                                                AI akan mendeteksi dan menghapus semua jenis watermark dari foto:
+                                            </p>
+                                            <ul class="text-sm text-gray-700 space-y-1 mb-4">
+                                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Teks watermark & copyright notice</li>
+                                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Logo brand & foto studio</li>
+                                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Timestamp & keterangan tanggal</li>
+                                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Overlay teks promosi / iklan</li>
+                                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Username sosial media (@mention)</li>
+                                            </ul>
+                                            <div>
+                                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                                    <i class="fas fa-tag mr-1 text-red-500"></i>Teks Watermark Spesifik (Opsional)
+                                                </label>
+                                                <input type="text" id="remover-watermark-text" class="w-full p-3 border-2 border-red-200 rounded-lg focus:border-red-500 focus:ring-2 focus:ring-red-100 transition-all text-sm" placeholder="Cth: shutterstock, getty images, @username (kosongkan untuk auto-detect semua)">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -45990,7 +46034,8 @@ Respond ONLY with a valid JSON array of ${selectedAdsCount} objects, in sequenti
             '4:3': 'aspect-[4/3]',
             '3:4': 'aspect-[3/4]',
             '2:3': 'aspect-[2/3]',
-            '4:6': 'aspect-[4/6]'
+            '4:6': 'aspect-[4/6]',
+            '4:5': 'aspect-[4/5]'
         };
         return mapping[ratio] || 'aspect-square';
     }
@@ -59880,6 +59925,7 @@ Generate a complete, print-ready poster yang eye-catching, professional, dan ses
         const modeSection = document.getElementById('remover-mode-section');
         const manualTools = document.getElementById('remover-manual-tools');
         const autoOptions = document.getElementById('remover-auto-options');
+        const watermarkOptions = document.getElementById('remover-watermark-options');
         const variationSection = document.getElementById('remover-variation-section');
         const generateSection = document.getElementById('remover-generate-section');
         const generateBtn = document.getElementById('remover-generate-btn');
@@ -60035,12 +60081,22 @@ Generate a complete, print-ready poster yang eye-catching, professional, dan ses
         });
 
         function updateUIBasedOnMode() {
+            const btnSpan = generateBtn ? generateBtn.querySelector('span') : null;
             if (selectedMode === 'manual') {
                 manualTools.classList.remove('hidden');
                 autoOptions.classList.add('hidden');
+                if (watermarkOptions) watermarkOptions.classList.add('hidden');
+                if (btnSpan) btnSpan.textContent = 'Hapus Object Sekarang';
+            } else if (selectedMode === 'watermark') {
+                manualTools.classList.add('hidden');
+                autoOptions.classList.add('hidden');
+                if (watermarkOptions) watermarkOptions.classList.remove('hidden');
+                if (btnSpan) btnSpan.textContent = 'Hapus Watermark Sekarang';
             } else {
                 manualTools.classList.add('hidden');
                 autoOptions.classList.remove('hidden');
+                if (watermarkOptions) watermarkOptions.classList.add('hidden');
+                if (btnSpan) btnSpan.textContent = 'Hapus Object Sekarang';
             }
         }
 
@@ -60201,7 +60257,8 @@ Generate a complete, print-ready poster yang eye-catching, professional, dan ses
                 }
 
                 generateBtn.disabled = true;
-                generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Menghapus Object...';
+                const loadingLabel = selectedMode === 'watermark' ? 'Menghapus Watermark...' : 'Menghapus Object...';
+                generateBtn.innerHTML = `<i class="fas fa-spinner fa-spin mr-2"></i>${loadingLabel}`;
 
                 resultsSection.classList.remove('hidden');
                 resultsGrid.innerHTML = '';
@@ -60227,7 +60284,8 @@ Generate a complete, print-ready poster yang eye-catching, professional, dan ses
                 }
 
                 generateBtn.disabled = false;
-                generateBtn.innerHTML = '<i class="fas fa-magic mr-2"></i>Hapus Object Sekarang';
+                const resetLabel = selectedMode === 'watermark' ? 'Hapus Watermark Sekarang' : 'Hapus Object Sekarang';
+                generateBtn.innerHTML = `<i class="fas fa-magic mr-2"></i><span>${resetLabel}</span>`;
             });
         }
 
@@ -60290,6 +60348,44 @@ CRITICAL INPAINTING RULES:
 VARIATION ${index}: ${index === 1 ? 'Standard inpainting approach' : 'Alternative fill pattern/technique'}
 
 Generate a clean image with ALL marked objects removed and areas filled seamlessly.`;
+                } else if (selectedMode === 'watermark') {
+                    // Watermark mode
+                    const watermarkTextEl = document.getElementById('remover-watermark-text');
+                    const specificWatermark = watermarkTextEl ? watermarkTextEl.value.trim() : '';
+                    const watermarkTarget = specificWatermark
+                        ? `dengan teks/nama watermark: "${specificWatermark}"`
+                        : 'semua jenis watermark yang ada (auto-detect)';
+
+                    prompt = `CRITICAL WATERMARK REMOVAL TASK:
+
+You MUST detect and completely remove ALL watermarks, text overlays, and brand logos from this image.
+
+TARGET: Remove ${watermarkTarget}
+
+MANDATORY DETECTION - Identify and remove:
+\u2713 Text watermarks (e.g. "Shutterstock", "Getty Images", "123RF", "iStock")
+\u2713 Copyright notices and \u00A9 symbols
+\u2713 Brand logos and studio logos overlaid on the image
+\u2713 Timestamps and date overlays
+\u2713 Social media usernames (@mentions) and handles
+\u2713 Promotional text overlays and advertisement labels
+\u2713 Photo credit text and photographer names
+\u2713 Semi-transparent or fully opaque text/logo overlays
+\u2713 Repeated tile watermarks across the image
+
+MANDATORY REMOVAL RULES:
+1. COMPLETELY ERASE every watermark, text overlay, and logo detected
+2. RECONSTRUCT the underlying image content where watermarks were placed
+3. MATCH color, texture, and pattern of surrounding pixels seamlessly
+4. BLEND removed areas - NO visible traces, outlines, or ghost text
+5. PRESERVE ALL other image content (subjects, background, colors) perfectly
+6. Result MUST look like the original clean image with ZERO watermarks
+7. If watermarks are semi-transparent, remove them completely including color tint
+
+VARIATION ${index}: ${index === 1 ? 'Standard watermark removal' : 'Alternative reconstruction technique'}
+
+Generate a completely clean image with all watermarks and text overlays removed.`;
+
                 } else {
                     // Auto mode
                     prompt = `CRITICAL OBJECT REMOVAL TASK - AUTO DETECTION:
@@ -60370,7 +60466,8 @@ Generate a professionally cleaned image with all distractions removed.`;
                     const mimeType = result.candidates[0].content.parts[0].inlineData.mimeType || 'image/png';
                     const imageUrl = `data:${mimeType};base64,${base64Data}`;
 
-                    const filename = `object_removed_${Date.now()}_${index}.png`;
+                    const filePrefix = selectedMode === 'watermark' ? 'watermark_removed' : 'object_removed';
+                    const filename = `${filePrefix}_${Date.now()}_${index}.png`;
                     generatedResults[index - 1] = { url: imageUrl, filename };
 
                     card.innerHTML = `
