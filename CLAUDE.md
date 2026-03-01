@@ -25,10 +25,10 @@ npx html-minifier-terser kode.html --collapse-whitespace --remove-comments --rem
 
 ## Project Overview
 
-Single-file SPA (`kode.html`, ~66,900 lines, ~3.6 MB) running in **Google Gemini AI Studio Canvas**. Contains **80+ AI Tools** for photo/video generation. Everything — HTML, CSS, JavaScript — lives in one file.
+Single-file SPA (`kode.html`, ~69,300 lines, ~3.76 MB) running in **Google Gemini AI Studio Canvas**. Contains **86 AI Tools** for photo/video generation. Everything — HTML, CSS, JavaScript — lives in one file.
 
 - `kode.html` — Development version. **Edit this.**
-- `kode-min.html` — Production version (~2.0 MB). Generated, do not edit.
+- `kode-min.html` — Production version (~2.12 MB). Generated, do not edit.
 
 ---
 
@@ -44,10 +44,10 @@ Multi-category tab system. Each tab has:
 | Zone | Lines |
 |------|-------|
 | CSS styles | 1–8,700 |
-| HTML: Sidebar + all content panels | 8,700–27,000 |
-| HTML: Mobile navigation | 65,800–66,250 |
-| JavaScript: DOMContentLoaded wrapper | 27,057–66,300 |
-| JavaScript: Login system | 66,220+ (separate `<script>` block) |
+| HTML: Sidebar + all content panels | 8,700–28,090 |
+| HTML: Mobile navigation | 68,693–69,170 |
+| JavaScript: DOMContentLoaded wrapper | 28,091–69,150 |
+| JavaScript: Login system | 69,170+ (separate `<script>` block) |
 
 ### JavaScript Module Pattern
 Each feature is an IIFE inside `document.addEventListener('DOMContentLoaded', () => { ... })`:
@@ -81,6 +81,15 @@ const payload = {
     }
 };
 ```
+
+### Global UI Functions (defined once, used across all IIFEs)
+```javascript
+window.showPreviewModal(url)              // full-screen image preview modal
+window.showUniversalModal(title, html)   // generic info/support modal
+window.downloadDataURINew(url, filename) // primary download helper
+window.downloadImage(url, filename)      // fallback download helper
+```
+> **Do NOT use `window.showImagePreviewModal`** — that function does not exist. The correct name is `window.showPreviewModal`.
 
 ---
 
@@ -155,12 +164,70 @@ if (window.downloadDataURINew) await window.downloadDataURINew(url, filename);
 else if (window.downloadImage) await window.downloadImage(url, filename);
 ```
 
+### 8. Mobile-Visible Result Overlays
+Action buttons (Preview/Download) on image cards must be visible on mobile. Use responsive opacity — always visible on mobile, hover-only on desktop:
+```html
+<!-- ✅ CORRECT -->
+<div class="absolute inset-0 ... opacity-100 sm:opacity-0 sm:group-hover:opacity-100 ...">
+
+<!-- ❌ WRONG — buttons invisible on mobile (no hover state) -->
+<div class="absolute inset-0 ... opacity-0 group-hover:opacity-100 ...">
+```
+
+### 9. Custom Theme Input Pattern
+When adding a custom text theme alongside preset buttons:
+```javascript
+// Clear custom input when preset button is clicked
+setupOptionButtons(themeContainer, (value) => {
+    selectedTheme = value;
+    if (customThemeInput) customThemeInput.value = '';
+});
+
+// Deselect all preset buttons when user types custom theme
+customThemeInput.addEventListener('input', () => {
+    if (customThemeInput.value.trim() !== '') {
+        themeContainer.querySelectorAll('.option-btn-feature').forEach(btn => btn.classList.remove('selected'));
+        selectedTheme = 'custom';
+    }
+});
+
+// In prompt builder:
+const themeDesc = (selectedTheme === 'custom' && customThemeInput.value.trim())
+    ? customThemeInput.value.trim()
+    : (themeDescriptions[selectedTheme] || 'default theme');
+```
+
+### 10. Dynamic Aspect Ratio Helper
+When a feature lets the user choose output ratio, use a helper instead of hardcoding:
+```javascript
+let selectedRatio = '9:16';
+
+function getAspectClass() {
+    if (selectedRatio === '9:16') return 'aspect-[9/16]';
+    if (selectedRatio === '3:4') return 'aspect-[3/4]';
+    if (selectedRatio === '1:1') return 'aspect-square';
+    return 'aspect-video'; // default 16:9
+}
+// Use getAspectClass() for placeholder cards AND result cards.
+// Pass selectedRatio directly into imageConfig: { aspectRatio: selectedRatio }
+```
+
+### 11. Consistent Output Across Parallel Frames (camera anchor)
+When generating a sequence of related images in parallel (e.g., timelapse), include a shared "anchor" string derived once per session so all frames share the same camera position in the prompt:
+```javascript
+// Generate ONCE before Promise.allSettled — reuse in every generateSingle call
+const cameraAnchor = `slight left diagonal view, medium distance, eye-level [session:${Math.floor(Math.random()*999999)}]`;
+
+// Pass into each prompt:
+`CRITICAL: use fixed camera — ${cameraAnchor} — same angle for ALL frames`
+```
+
 ---
 
 ## Adding a New Feature Tab (5 required steps)
 
 1. **CSS** (before `</style>`, ~line 8,700): Add `.upload-box-feature`, `.option-btn-feature`, `.option-btn-feature.selected`
-2. **Sidebar button** (inside appropriate category `div`, ~lines 2,990–9,200):
+2. **Sidebar button** (inside appropriate category `div`, ~lines 8,700–28,000):
    ```html
    <button data-tab="feature-name" class="main-tab-btn">
        <i class="fas fa-icon"></i>
@@ -168,15 +235,15 @@ else if (window.downloadImage) await window.downloadImage(url, filename);
        <span class="new-badge">NEW</span>
    </button>
    ```
-3. **Content panel** (before `<!-- Floating Support Button -->`, ~line 23,700):
+3. **Content panel** (before `<!-- Floating Support Button -->`, ~line 24,957):
    ```html
    <div id="content-feature-name" class="main-content-panel hidden">...</div>
    ```
-4. **Mobile nav button** (inside mobile Creative Tools block, ~line 66,000):
+4. **Mobile nav button** (inside `<nav class="mobile-bottom-nav">`, ~line 68,693):
    ```html
    <button data-tab="feature-name" class="mobile-tab-btn">...</button>
    ```
-5. **JavaScript IIFE** (before closing `});` of DOMContentLoaded, ~line 66,280)
+5. **JavaScript IIFE** (before `// ==================== TWIBON ====================`, ~line 53,487)
 
 ---
 
@@ -191,6 +258,7 @@ Each feature uses a unique gradient. Examples:
 - Wedding: Rose `#f43f5e` → Pink `#ec4899`
 - Touring: Orange `#f97316` → Red `#dc2626`
 - Headshot: Indigo `#4f46e5` → Blue `#1e40af`
+- Timelapse Renovasi: Amber `#f59e0b` → Teal `#0d9488`
 
 ---
 
@@ -212,17 +280,23 @@ Each feature uses a unique gradient. Examples:
 
 **Nothing happens on upload click**: Upload box is a `div` with no click handler — add `uploadBox.addEventListener('click', () => uploadInput.click())`.
 
+**Download/Preview buttons not tappable on mobile**: Overlay uses `opacity-0 group-hover:opacity-100` — no hover on mobile so buttons never appear. Fix: use `opacity-100 sm:opacity-0 sm:group-hover:opacity-100` (always visible mobile, hover-only desktop).
+
+**Preview modal doesn't open**: Called `window.showImagePreviewModal` — that function does not exist. Use `window.showPreviewModal(url)`.
+
+**Edit tool "File has not been read yet" error**: Must read the specific section of `kode.html` you are about to edit first — a prior read of a different section is not sufficient.
+
 ---
 
 ## Key Features by Category
 
-**Product Photography (5)**: Mockup Studio, POV Tangan, Foto Produk, Photo Angle Pro, Foto Touring
+**Product Photography (6)**: Mockup Studio, POV Tangan, Foto Produk, Photo Angle Pro, Foto Touring, Walking Pad Lifestyle
 
 **UGC Content (8)**: Foto Produk Affiliate, Affiliate Tema Agama (50 themes / 5 religions), Virtual Try-On, Pose Fashion, Food Selfie, Product Review, Iklan Produk, Professional Headshot
 
-**Family & Lifestyle (10)**: Family Photo, Wedding (50 themes + custom, multi-religion), New Born, Profesi Anak, Foto Tema Ibadah (40 locations / 5 religions), Pas Foto, Photo Booth, Desain Rumah, Sketsa, Carousel
+**Family & Lifestyle (12)**: Family Photo, Wedding (50 themes + custom, multi-religion), New Born, Profesi Anak, Foto Tema Ibadah (40 locations / 5 religions), Pas Foto, Photo Booth, Desain Rumah, Sketsa, Carousel, Birthday Photo (20 themes + custom, all ages baby–senior, group up to 5 people), **Kartu Ucapan Lebaran** (20 themes, optional family photo, custom name & greeting)
 
-**Creative Tools PRO (18)**: Miniature Me, Halu Idol, Sticker, Hair Generator, Expression Changer, Story Update, Photo Angle, Style Matcher, Thumbnail Pro, Cover Photo, Photo Restoration, Logo Generator, Mascot Generator, Face Swap, Background Remover, Photo Extender, Story Board, Twibon, **Fotogenic** (56 effects / 7 categories: Film & Vintage, Cinematic & Moody, Pop & Neon, Natural & Warm, Aesthetic & Soft, Fashion & Editorial, Retro & Classic)
+**Creative Tools PRO (20)**: Miniature Me, Halu Idol, Sticker, Hair Generator, Expression Changer, Story Update, Photo Angle, Style Matcher, Thumbnail Pro, Cover Photo, Photo Restoration, Logo Generator, Mascot Generator, Face Swap, Background Remover, Photo Extender, Story Board (16:9/9:16/1:1), Twibon, Fotogenic (56 effects / 7 categories), **Timelapse Renovasi** (20 renovation themes, 2–6 frames, locked camera angle, all ratios, no upload required)
 
 **Video & Audio (4)**: VEO Generator, Opal Image to Video, Voice Over Pro, Video Analyzer Pro
 
@@ -235,7 +309,17 @@ Each feature uses a unique gradient. Examples:
 - Email-based auth via Google Apps Script + Google Sheets
 - Token stored in `localStorage`: `affiliatego_email`, `affiliatego_token`, `affiliatego_name`
 - Session validated every 10 seconds — login on another device kicks out the first session
-- `SCRIPT_URL` constant near line 66,225 — replace with your Apps Script deployment URL
+- `SCRIPT_URL` constant near line 69,220 — replace with your Apps Script deployment URL
+
+---
+
+## Floating Update Button
+
+A floating button (`#update-info-btn`) shows a changelog modal when clicked. To update it when adding a new feature:
+1. Update `UPDATE_VERSION` constant in the IIFE (currently `'21'`)
+2. Update the version badge and "N AI Tools" count in the `html` string
+3. Add a new item in the "Fitur Baru" section of the modal HTML
+4. The red pulse dot auto-hides after the user clicks (`localStorage` key: `affiliatego_update_seen`)
 
 ---
 
@@ -248,6 +332,6 @@ Each feature uses a unique gradient. Examples:
 
 ---
 
-## File Statistics (v18 — Feb 2026)
-- `kode.html`: ~66,934 lines, ~3.59 MB
-- `kode-min.html`: ~2.02 MB (43.7% compression)
+## File Statistics (v21 — March 2026)
+- `kode.html`: ~69,304 lines, ~3.76 MB
+- `kode-min.html`: ~2.12 MB (43.6% compression)
