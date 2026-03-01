@@ -41027,8 +41027,27 @@ PENTING:
             });
         }
 
-        // Generate single image
-        async function generateSingle(index) {
+        // Step 1: Analyze model photo to get detailed text description (same approach as Foto Produk Affiliate)
+        async function analyzeModelPhoto() {
+            const textApiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview:generateContent?key=' + apiKey;
+            const systemPrompt = 'You are an expert at analyzing people in photos. Describe this person in detail for use in an AI image generation prompt. Include: gender, approximate age range, skin tone (use specific descriptors like "warm medium-brown", "light fair", "deep dark"), hair color and style, eye shape, face shape, distinctive facial features, body build, and height impression. Be specific and detailed. Write ONLY the description in English, no preamble. Example: "Indonesian male, mid-20s, warm medium-brown skin tone, short straight black hair, almond-shaped dark brown eyes, oval face, defined jawline, medium build, approximately 170cm height impression."';
+            const payload = {
+                contents: [{ parts: [{ text: systemPrompt }, { inlineData: { mimeType: modelImageData.mimeType, data: modelImageData.base64 } }] }],
+                generationConfig: { maxOutputTokens: 200 }
+            };
+            try {
+                const res = await fetch(textApiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                if (!res.ok) throw new Error('Analysis API error');
+                const data = await res.json();
+                return data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
+            } catch (e) {
+                console.warn('Model analysis failed, using fallback:', e);
+                return '';
+            }
+        }
+
+        // Step 2: Generate single image using the pre-analyzed model description
+        async function generateSingle(index, modelDescription) {
             const apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent?key=' + apiKey;
             const roomDesc = roomDescriptions[selectedRoom] || selectedRoom;
             const angleDesc = angleDescriptions[selectedAngle] || selectedAngle;
@@ -41037,23 +41056,24 @@ PENTING:
 
             const productCount = productImagesData.length;
             const productRef = productCount > 1
-                ? 'the following ' + productCount + ' product reference photos (photos 2 through ' + (productCount + 1) + '). Use all of them together to understand the complete outfit from multiple angles'
-                : 'the SECOND reference photo';
+                ? 'the ' + productCount + ' outfit/product reference photos provided. Use all of them to understand the complete outfit'
+                : 'the outfit/product reference photo provided';
 
-            const prompt = 'Create a realistic high-quality lifestyle fashion photo of the EXACT person from the FIRST reference photo.\n\n' +
-                'CRITICAL FACE REQUIREMENTS:\n' +
-                '- The face MUST be IDENTICAL to the first reference photo (same facial features, skin tone, facial structure, eye shape, nose, lips, jawline)\n' +
-                '- Same hair color, hair texture, and hairstyle as reference\n' +
-                '- Same body proportions and skin tone as reference\n' +
-                '- Do NOT alter, blend, or replace any facial features\n\n' +
-                'SCENE REQUIREMENTS:\n' +
-                '- The model is wearing the exact outfit shown in ' + productRef + ' (same color, pattern, fabric texture, and style details)\n' +
-                '- Model pose: ' + poseDesc + ' on a modern slim walking pad treadmill\n' +
+            const modelDesc = modelDescription
+                ? 'Model: ' + modelDescription + '\n'
+                : '';
+
+            const prompt = 'Create a realistic high-quality lifestyle fashion photo.\n\n' +
+                modelDesc +
+                'CRITICAL REQUIREMENTS:\n' +
+                '- The person in this photo MUST be the EXACT person from the model reference photo — identical face, identical skin tone, identical hair, identical gender, identical body proportions. Do NOT change any physical features.\n' +
+                '- Wearing the exact outfit from ' + productRef + ' — same colors, same patterns, same fabric texture, same style details\n' +
+                '- Pose: ' + poseDesc + ' on a modern slim walking pad treadmill\n' +
                 '- Setting: ' + roomDesc + '\n' +
                 '- Camera angle: ' + angleDesc + '\n' +
                 '- Lighting: ' + lightDesc + '\n' +
                 '- Full body visible to showcase the complete outfit\n' +
-                '- Professional fashion lifestyle photography, high resolution, no watermarks, no text overlays';
+                '- Professional fashion lifestyle photography, high resolution, photorealistic, no watermarks';
 
             const payload = {
                 contents: [{
@@ -41128,14 +41148,21 @@ PENTING:
                 resultsHeader.classList.remove('hidden');
                 downloadAllBtn.classList.add('hidden');
                 generateBtn.disabled = true;
-                generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Generating...';
+                generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Menganalisa model...';
                 progressBar.style.width = '0%';
                 progressText.textContent = '0 / ' + selectedCount;
+
+                // Step 1: Analyze model photo first (like Foto Produk Affiliate)
+                loadingText.textContent = 'Menganalisa foto model...';
+                const modelDescription = await analyzeModelPhoto();
+
+                generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Generating...';
+                loadingText.textContent = 'Membuat foto...';
 
                 let completed = 0;
 
                 const promises = Array.from({ length: selectedCount }, function(_, i) {
-                    return generateSingle(i + 1)
+                    return generateSingle(i + 1, modelDescription)
                         .then(function() {
                             completed++;
                             var pct = Math.round((completed / selectedCount) * 100);
