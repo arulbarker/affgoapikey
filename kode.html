@@ -41040,16 +41040,20 @@ PENTING:
                 ? 'the following ' + productCount + ' product reference photos (photos 2 through ' + (productCount + 1) + '). Use all of them together to understand the complete outfit from multiple angles'
                 : 'the SECOND reference photo';
 
-            const prompt = 'Generate a realistic high-quality lifestyle fashion photo. ' +
-                'The model person from the FIRST reference photo is wearing the exact outfit and clothing shown in ' + productRef + '. ' +
-                'The model is ' + poseDesc + ' on a modern slim walking pad treadmill. ' +
-                'The setting is: ' + roomDesc + '. ' +
-                'Camera angle: ' + angleDesc + '. ' +
-                'Lighting: ' + lightDesc + '. ' +
-                'Preserve the model face, skin tone, hair, and body exactly as shown in the first reference photo. ' +
-                'The outfit must exactly replicate the clothing from the product reference photo(s) including color, pattern, fabric texture, and all style details. ' +
-                'Full body visible to clearly showcase the complete outfit. ' +
-                'Professional fashion lifestyle photography. High resolution. No watermarks. No text overlays.';
+            const prompt = 'Create a realistic high-quality lifestyle fashion photo of the EXACT person from the FIRST reference photo.\n\n' +
+                'CRITICAL FACE REQUIREMENTS:\n' +
+                '- The face MUST be IDENTICAL to the first reference photo (same facial features, skin tone, facial structure, eye shape, nose, lips, jawline)\n' +
+                '- Same hair color, hair texture, and hairstyle as reference\n' +
+                '- Same body proportions and skin tone as reference\n' +
+                '- Do NOT alter, blend, or replace any facial features\n\n' +
+                'SCENE REQUIREMENTS:\n' +
+                '- The model is wearing the exact outfit shown in ' + productRef + ' (same color, pattern, fabric texture, and style details)\n' +
+                '- Model pose: ' + poseDesc + ' on a modern slim walking pad treadmill\n' +
+                '- Setting: ' + roomDesc + '\n' +
+                '- Camera angle: ' + angleDesc + '\n' +
+                '- Lighting: ' + lightDesc + '\n' +
+                '- Full body visible to showcase the complete outfit\n' +
+                '- Professional fashion lifestyle photography, high resolution, no watermarks, no text overlays';
 
             const payload = {
                 contents: [{
@@ -41059,7 +41063,13 @@ PENTING:
                 generationConfig: {
                     responseModalities: ['IMAGE'],
                     imageConfig: { aspectRatio: selectedRatio }
-                }
+                },
+                safetySettings: [
+                    { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_NONE' },
+                    { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_NONE' },
+                    { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_NONE' },
+                    { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_NONE' }
+                ]
             };
 
             const response = await fetch(apiUrl, {
