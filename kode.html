@@ -40860,9 +40860,9 @@ PENTING:
         };
 
         const poseDescriptions = {
-            'walking-motion': 'naturally walking in motion on the treadmill belt, one foot forward, arms swinging naturally, dynamic movement pose, candid lifestyle feel',
-            'standing-casual': 'standing casually on the stationary treadmill, relaxed pose, weight shifted to one hip, natural and approachable demeanor',
-            'standing-confident': 'standing tall and confidently on the treadmill, strong commanding pose, straight posture, looking directly and powerfully at camera'
+            'walking-motion': 'walking forward toward the camera, facing the camera directly, one foot stepping forward, arms swinging naturally at sides, dynamic lifestyle movement, full body facing front',
+            'standing-casual': 'standing casually on the treadmill, facing directly toward camera, body facing front, relaxed pose with weight shifted slightly to one hip, hands at sides',
+            'standing-confident': 'standing tall and confident, body and face fully facing toward the camera, strong upright posture, arms at sides, looking powerfully and directly into the camera lens'
         };
 
         const lightingDescriptions = {
@@ -41055,25 +41055,30 @@ PENTING:
             const lightDesc = lightingDescriptions[selectedLighting] || selectedLighting;
 
             const productCount = productImagesData.length;
-            const productRef = productCount > 1
-                ? 'the ' + productCount + ' outfit/product reference photos provided. Use all of them to understand the complete outfit'
-                : 'the outfit/product reference photo provided';
+            const outfitRef = productCount > 1
+                ? 'the ' + productCount + ' clothing reference photos (images 2 to ' + (productCount + 1) + '). Study ALL of them to reconstruct the complete outfit'
+                : 'the clothing reference photo (image 2)';
 
-            const modelDesc = modelDescription
-                ? 'Model: ' + modelDescription + '\n'
-                : '';
+            // Identity block — top priority
+            const identityLine = modelDescription
+                ? 'SUBJECT IDENTITY: ' + modelDescription + '. This is the ONLY person allowed in this image.'
+                : 'SUBJECT IDENTITY: Use the exact person shown in image 1 as the subject.';
 
-            const prompt = 'Create a realistic high-quality lifestyle fashion photo.\n\n' +
-                modelDesc +
-                'CRITICAL REQUIREMENTS:\n' +
-                '- The person in this photo MUST be the EXACT person from the model reference photo — identical face, identical skin tone, identical hair, identical gender, identical body proportions. Do NOT change any physical features.\n' +
-                '- Wearing the exact outfit from ' + productRef + ' — same colors, same patterns, same fabric texture, same style details\n' +
-                '- Pose: ' + poseDesc + ' on a modern slim walking pad treadmill\n' +
-                '- Setting: ' + roomDesc + '\n' +
-                '- Camera angle: ' + angleDesc + '\n' +
-                '- Lighting: ' + lightDesc + '\n' +
-                '- Full body visible to showcase the complete outfit\n' +
-                '- Professional fashion lifestyle photography, high resolution, photorealistic, no watermarks';
+            const prompt =
+                identityLine + '\n\n' +
+                '=== NON-NEGOTIABLE FACE & BODY RULES ===\n' +
+                'Image 1 is the model reference. YOU MUST reproduce this EXACT person:\n' +
+                '- FACE: same face shape, same eyes, same nose, same lips, same skin tone — DO NOT alter any facial feature\n' +
+                '- GENDER: keep the EXACT gender shown in image 1 — do not change gender under any circumstances\n' +
+                '- HAIR: same hair color, same hair texture, same hairstyle\n' +
+                '- BODY: same body proportions, same height impression, same skin tone on all exposed skin\n\n' +
+                '=== SCENE ===\n' +
+                'Outfit: recreate EXACTLY the clothing from ' + outfitRef + ' — identical colors, patterns, fabric texture, cut\n' +
+                'Action: the person is ' + poseDesc + ' on a modern slim walking pad treadmill, body facing FORWARD toward the camera\n' +
+                'Setting: ' + roomDesc + '\n' +
+                'Camera: ' + angleDesc + ', shooting from FRONT so the model\'s face is fully visible\n' +
+                'Lighting: ' + lightDesc + '\n' +
+                'Framing: full body shot, whole walking pad visible, professional fashion lifestyle photography, high resolution, photorealistic';
 
             const payload = {
                 contents: [{
