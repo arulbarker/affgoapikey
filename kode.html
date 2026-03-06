@@ -28250,7 +28250,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => { saveBtn.style.background = ''; }, 1500);
         });
 
-        // Test API Key — calls text model to verify connectivity
+        // Test API Key — try listing available models to verify key is valid
         if (testBtn) {
             testBtn.addEventListener('click', async () => {
                 const key = window.GEMINI_USER_API_KEY || input.value.trim();
@@ -28261,18 +28261,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusEl.innerHTML = '<span style="color:#0369a1"><i class="fas fa-spinner fa-spin mr-1"></i>Testing...</span>';
                 testBtn.disabled = true;
                 try {
-                    const testUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${key}`;
-                    const res = await fetch(testUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ contents: [{ parts: [{ text: 'Say OK' }] }] })
-                    });
+                    // Use ListModels to check key validity — works for all valid API keys
+                    const listUrl = `https://generativelanguage.googleapis.com/v1beta/models?key=${key}`;
+                    const res = await fetch(listUrl);
                     const data = await res.json();
-                    if (res.ok && data.candidates) {
-                        statusEl.innerHTML = '<span style="color:#16a34a"><i class="fas fa-check-circle mr-1"></i>API Key valid! Siap digunakan.</span>';
+                    if (res.ok && data.models) {
+                        const modelNames = data.models.map(m => m.name.replace('models/', ''));
+                        const hasImageModel = modelNames.some(n => n.includes('image') || n.includes('imagen'));
+                        const imgNote = hasImageModel ? ' \u2713 Image generation tersedia.' : ' \u26a0 Model image generation tidak tersedia untuk key ini.';
+                        statusEl.innerHTML = `<span style="color:#16a34a"><i class="fas fa-check-circle mr-1"></i>Key valid! ${data.models.length} model tersedia.${imgNote}</span>`;
                     } else {
                         const errMsg = data.error?.message || 'Unknown error';
-                        statusEl.innerHTML = `<span style="color:#dc2626"><i class="fas fa-times-circle mr-1"></i>Error: ${errMsg}</span>`;
+                        const errCode = data.error?.code || res.status;
+                        let hint = '';
+                        if (errCode === 400 || errMsg.includes('API_KEY_INVALID')) hint = ' \u2192 Key tidak valid/salah.';
+                        else if (errCode === 403) hint = ' \u2192 API belum di-enable. Aktifkan di Google Cloud Console.';
+                        statusEl.innerHTML = `<span style="color:#dc2626"><i class="fas fa-times-circle mr-1"></i>Error ${errCode}: ${errMsg}${hint}</span>`;
                     }
                 } catch(e) {
                     statusEl.innerHTML = `<span style="color:#dc2626"><i class="fas fa-times-circle mr-1"></i>Gagal konek: ${e.message}</span>`;
