@@ -28261,7 +28261,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusEl.innerHTML = '<span style="color:#0369a1"><i class="fas fa-spinner fa-spin mr-1"></i>Testing...</span>';
                 testBtn.disabled = true;
                 try {
-                    const testUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview:generateContent?key=${key}`;
+                    const testUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${key}`;
                     const res = await fetch(testUrl, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
