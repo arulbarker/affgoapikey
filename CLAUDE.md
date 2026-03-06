@@ -76,8 +76,9 @@ const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2
 const payload = {
     contents: [{ parts: [{ text: prompt }, { inlineData: { mimeType, data: base64 } }] }],
     generationConfig: {
-        responseModalities: ['IMAGE'],
-        imageConfig: { aspectRatio: '3:4' }  // ratio goes here, NOT in prompt text
+        responseModalities: ['TEXT', 'IMAGE']  // MUST include TEXT — IMAGE-only causes failures
+        // Do NOT use imageConfig — specify aspect ratio in prompt text instead
+        // e.g. "Output image in vertical 9:16 portrait aspect ratio"
     }
 };
 ```
@@ -94,6 +95,42 @@ window.downloadImage(url, filename)      // fallback download helper
 ---
 
 ## Critical Patterns
+
+### 12. Canvas Image API Rate Limit — Parallel + Per-Card Retry (March 2026)
+`gemini-2.5-flash-image-preview` in Canvas allows ~1 image generation per ~35 seconds (RPM limit). Solution: launch all in parallel, each card handles its own retry with a visible countdown.
+
+```javascript
+// Add once per IIFE:
+async function countdown(seconds, labelFn) {
+    for (let s = seconds; s > 0; s--) { labelFn(s); await new Promise(r => setTimeout(r, 1000)); }
+}
+
+// In generateSingleXxx(index, ..., retryCount):
+async function generateSingleXxx(index, ..., retryCount) {
+    const MAX_RETRIES = 6;
+    const card = document.getElementById(`card-${index}`);
+    try {
+        // ... API call ...
+    } catch (error) {
+        if (retryCount < MAX_RETRIES) {
+            const nextRetry = retryCount + 1;
+            await countdown(35, (s) => {
+                if (card) card.innerHTML = `<div class="text-center text-yellow-500 p-4"><i class="fas fa-hourglass-half text-xl mb-1"></i><p class="text-xs mt-1 font-semibold">Foto ${index}</p><p class="text-xs">retry ${nextRetry}/${MAX_RETRIES} \u2014 ${s}d</p></div>`;
+            });
+            if (card) card.innerHTML = '<div class="loader"></div>';
+            return generateSingleXxx(index, ..., nextRetry);
+        }
+        card.innerHTML = `<div class="text-red-500 p-4 text-center">Gagal</div>`;
+    }
+}
+
+// Main handler — launch all in parallel:
+await Promise.allSettled(Array.from({ length: count }, (_, i) => generateSingleXxx(i + 1, ..., 0)));
+```
+> **Applied to**: Membuat Model, Foto Touring, Walking Pad, POV Mirror Selfie.
+> **Mockup Studio & POV Tangan**: use `generateImageWithRetry(payload, retries=6, delay=35000)` pattern instead (batch-based architecture).
+
+---
 
 ### 1. Parallel Generation — INDEXED ASSIGNMENT (never `.push()`)
 ```javascript

@@ -8890,6 +8890,73 @@
         .timelapse-frame-btn:hover { border-color: #f59e0b; background: #fffbeb; }
         .timelapse-frame-btn.timelapse-frame-selected { background: linear-gradient(135deg, #f59e0b 0%, #0d9488 100%) !important; color: white !important; border-color: #f59e0b !important; font-weight: 700 !important; box-shadow: 0 4px 12px rgba(245,158,11,0.35) !important; }
 
+        /* API Key Settings Panel */
+        #apikey-settings-panel {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1.5px solid #bae6fd;
+            border-radius: 0.75rem;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        #apikey-settings-panel .apikey-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #0369a1;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            margin-bottom: 0.5rem;
+        }
+        #apikey-input {
+            width: 100%;
+            padding: 0.45rem 0.6rem;
+            border-radius: 0.5rem;
+            border: 1.5px solid #bae6fd;
+            background: white;
+            font-size: 0.72rem;
+            color: #1e293b;
+            outline: none;
+            transition: border-color 0.2s;
+            font-family: 'Inter', monospace;
+            box-sizing: border-box;
+        }
+        #apikey-input:focus { border-color: #0ea5e9; box-shadow: 0 0 0 3px rgba(14,165,233,0.15); }
+        #apikey-save-btn {
+            width: 100%;
+            margin-top: 0.45rem;
+            padding: 0.4rem 0;
+            border-radius: 0.5rem;
+            border: none;
+            background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+            color: white;
+            font-size: 0.72rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.1s;
+        }
+        #apikey-save-btn:hover { opacity: 0.9; }
+        #apikey-save-btn:active { transform: scale(0.97); }
+        #apikey-status {
+            font-size: 0.65rem;
+            margin-top: 0.35rem;
+            text-align: center;
+            min-height: 1rem;
+        }
+        #apikey-toggle-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #0369a1;
+            font-size: 0.65rem;
+            padding: 0;
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+        }
+
     </style>
 </head>
 <body>
@@ -8936,7 +9003,7 @@
     <div class="app-container">
         <!-- Vertical Sidebar Navigation -->
         <aside class="sidebar">
-            <div class="text-center mb-6 pb-4 border-b-2 border-slate-200">
+            <div class="text-center mb-4 pb-4 border-b-2 border-slate-200">
                 <h1 class="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-violet-500">
                     Affiliate Go Foto Studio
                 </h1>
@@ -8945,6 +9012,30 @@
                     <span class="text-xs bg-gradient-to-r from-sky-500 to-violet-500 text-white px-3 py-1 rounded-full font-semibold shadow-lg">V21</span>
                 </div>
             </div>
+
+            <!-- ===== API KEY SETTINGS PANEL ===== -->
+            <div id="apikey-settings-panel">
+                <div class="apikey-label">
+                    <i class="fas fa-key"></i>
+                    <span>Gemini API Key</span>
+                    <button id="apikey-toggle-btn" title="Show/Hide key">
+                        <i class="fas fa-eye" id="apikey-eye-icon"></i>
+                    </button>
+                </div>
+                <input type="password" id="apikey-input" placeholder="AIza... (opsional, jika tidak pakai Canvas)" autocomplete="off" spellcheck="false">
+                <div style="margin-top:0.4rem;">
+                    <div style="font-size:0.65rem;color:#0369a1;font-weight:600;margin-bottom:0.25rem;"><i class="fas fa-robot mr-1"></i>Model Gambar</div>
+                    <select id="apikey-model-select" style="width:100%;padding:0.35rem 0.5rem;border-radius:0.5rem;border:1.5px solid #bae6fd;background:white;font-size:0.68rem;color:#1e293b;outline:none;cursor:pointer;">
+                        <option value="gemini-2.5-flash-image-preview">gemini-2.5-flash-image-preview (Canvas)</option>
+                        <option value="gemini-2.0-flash-preview-image-generation">gemini-2.0-flash-preview-image-generation (API Key sendiri)</option>
+                    </select>
+                </div>
+                <button id="apikey-save-btn">
+                    <i class="fas fa-save mr-1"></i> Simpan Pengaturan
+                </button>
+                <div id="apikey-status"></div>
+            </div>
+            <!-- ===== END API KEY SETTINGS PANEL ===== -->
 
             <nav class="flex flex-col gap-1">
                 <!-- BERANDA Tab -->
@@ -28087,8 +28178,120 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebas
 import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
 import { getFirestore, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
+// ==================== GLOBAL API KEY MANAGER ====================
+// Each IIFE keeps const apiKey = "" so Canvas can inject its key normally.
+// When running without Canvas (standalone), a fetch interceptor:
+//   1. Injects window.GEMINI_USER_API_KEY into empty ?key= params
+//   2. Swaps the image model to window.GEMINI_IMAGE_MODEL if set
+// Reads values at CALL TIME — no page reload needed after saving.
+window.GEMINI_USER_API_KEY = localStorage.getItem('gemini_user_api_key') || '';
+window.GEMINI_IMAGE_MODEL = localStorage.getItem('gemini_image_model') || '';
+
+(function() {
+    const CANVAS_IMAGE_MODEL = 'gemini-2.5-flash-image-preview';
+    const _origFetch = window.fetch.bind(window);
+    window.fetch = function(url, options) {
+        if (typeof url === 'string' && url.includes('generativelanguage.googleapis.com')) {
+            try {
+                const u = new URL(url);
+                const existingKey = u.searchParams.get('key');
+                const usingUserKey = (!existingKey || existingKey === '') && window.GEMINI_USER_API_KEY;
+                if (usingUserKey) {
+                    u.searchParams.set('key', window.GEMINI_USER_API_KEY);
+                    // Swap model if user chose a different one
+                    const chosenModel = window.GEMINI_IMAGE_MODEL;
+                    if (chosenModel && chosenModel !== CANVAS_IMAGE_MODEL) {
+                        u.pathname = u.pathname.replace(CANVAS_IMAGE_MODEL, chosenModel);
+                    }
+                    url = u.toString();
+                }
+            } catch(e) {}
+        }
+        return _origFetch(url, options);
+    };
+})();
 
 document.addEventListener('DOMContentLoaded', () => {
+    // --- API KEY SETTINGS PANEL ---
+    (function() {
+        const input = document.getElementById('apikey-input');
+        const saveBtn = document.getElementById('apikey-save-btn');
+        const statusEl = document.getElementById('apikey-status');
+        const toggleBtn = document.getElementById('apikey-toggle-btn');
+        const eyeIcon = document.getElementById('apikey-eye-icon');
+        const modelSelect = document.getElementById('apikey-model-select');
+
+        if (!input || !saveBtn) return;
+
+        // Load saved key into input
+        const savedKey = localStorage.getItem('gemini_user_api_key') || '';
+        if (savedKey) {
+            input.value = savedKey;
+            statusEl.innerHTML = '<span style="color:#16a34a"><i class="fas fa-check-circle mr-1"></i>API Key aktif</span>';
+        }
+
+        // Load saved model selection
+        const savedModel = localStorage.getItem('gemini_image_model') || '';
+        if (modelSelect && savedModel) {
+            modelSelect.value = savedModel;
+        }
+
+        // Auto-select model when user types a key (suggest external model)
+        input.addEventListener('input', () => {
+            if (modelSelect && input.value.trim() && modelSelect.value === 'gemini-2.5-flash-image-preview') {
+                modelSelect.value = 'gemini-2.0-flash-preview-image-generation';
+            }
+        });
+
+        // Toggle show/hide password
+        toggleBtn.addEventListener('click', () => {
+            if (input.type === 'password') {
+                input.type = 'text';
+                eyeIcon.className = 'fas fa-eye-slash';
+            } else {
+                input.type = 'password';
+                eyeIcon.className = 'fas fa-eye';
+            }
+        });
+
+        // Save key + model
+        saveBtn.addEventListener('click', () => {
+            const key = input.value.trim();
+            const model = modelSelect ? modelSelect.value : '';
+
+            // Save model selection always
+            if (model) {
+                localStorage.setItem('gemini_image_model', model);
+                window.GEMINI_IMAGE_MODEL = model;
+            }
+
+            if (!key) {
+                // Clear key
+                localStorage.removeItem('gemini_user_api_key');
+                window.GEMINI_USER_API_KEY = '';
+                statusEl.innerHTML = '<span style="color:#6b7280"><i class="fas fa-minus-circle mr-1"></i>API Key dihapus. Model: ' + (model || '-') + '</span>';
+                return;
+            }
+            if (!key.startsWith('AIza')) {
+                statusEl.innerHTML = '<span style="color:#dc2626"><i class="fas fa-exclamation-circle mr-1"></i>Key tidak valid (harus diawali AIza...)</span>';
+                return;
+            }
+            localStorage.setItem('gemini_user_api_key', key);
+            window.GEMINI_USER_API_KEY = key;
+            statusEl.innerHTML = '<span style="color:#16a34a"><i class="fas fa-check-circle mr-1"></i>Tersimpan! Aktif langsung.</span>';
+            // Flash save button
+            saveBtn.style.background = 'linear-gradient(135deg, #16a34a 0%, #059669 100%)';
+            setTimeout(() => {
+                saveBtn.style.background = '';
+            }, 1500);
+        });
+
+        // Also save on Enter key
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') saveBtn.click();
+        });
+    })();
+
     // --- SIDEBAR TOGGLE FUNCTIONALITY ---
     const toggleSidebarBtn = document.getElementById('toggle-sidebar-btn');
     const sidebar = document.querySelector('.sidebar');
