@@ -28193,10 +28193,11 @@ window.GEMINI_USER_API_KEY = localStorage.getItem('gemini_user_api_key') || '';
                 if ((!existingKey || existingKey === '') && window.GEMINI_USER_API_KEY) {
                     u.searchParams.set('key', window.GEMINI_USER_API_KEY);
                     // gemini-2.5-flash-image-preview is Canvas-only.
-                    // For external API keys, swap to the GA version (no -preview suffix).
+                    // For external API keys, use gemini-2.5-flash-image (GA, no -preview).
+                    // This is the confirmed working model from the old standalone version.
                     u.pathname = u.pathname.replace(
                         'gemini-2.5-flash-image-preview',
-                        'gemini-2.0-flash-preview-image-generation'
+                        'gemini-2.5-flash-image'
                     );
                     url = u.toString();
                 }
