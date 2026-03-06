@@ -9022,17 +9022,15 @@
                         <i class="fas fa-eye" id="apikey-eye-icon"></i>
                     </button>
                 </div>
-                <input type="password" id="apikey-input" placeholder="AIza... (opsional, jika tidak pakai Canvas)" autocomplete="off" spellcheck="false">
-                <div style="margin-top:0.4rem;">
-                    <div style="font-size:0.65rem;color:#0369a1;font-weight:600;margin-bottom:0.25rem;"><i class="fas fa-robot mr-1"></i>Model Gambar</div>
-                    <select id="apikey-model-select" style="width:100%;padding:0.35rem 0.5rem;border-radius:0.5rem;border:1.5px solid #bae6fd;background:white;font-size:0.68rem;color:#1e293b;outline:none;cursor:pointer;">
-                        <option value="gemini-2.5-flash-image-preview">gemini-2.5-flash-image-preview (Canvas)</option>
-                        <option value="gemini-2.0-flash-preview-image-generation">gemini-2.0-flash-preview-image-generation (API Key sendiri)</option>
-                    </select>
+                <input type="password" id="apikey-input" placeholder="AIzaSy... (masukkan API key Gemini)" autocomplete="off" spellcheck="false">
+                <div style="display:flex;gap:0.35rem;margin-top:0.4rem;">
+                    <button id="apikey-save-btn" style="flex:1;">
+                        <i class="fas fa-save mr-1"></i> Simpan
+                    </button>
+                    <button id="apikey-test-btn" style="flex:1;background:linear-gradient(135deg,#f59e0b,#d97706);">
+                        <i class="fas fa-vial mr-1"></i> Test
+                    </button>
                 </div>
-                <button id="apikey-save-btn">
-                    <i class="fas fa-save mr-1"></i> Simpan Pengaturan
-                </button>
                 <div id="apikey-status"></div>
             </div>
             <!-- ===== END API KEY SETTINGS PANEL ===== -->
@@ -28180,29 +28178,20 @@ import { getFirestore, setLogLevel } from "https://www.gstatic.com/firebasejs/11
 
 // ==================== GLOBAL API KEY MANAGER ====================
 // Each IIFE keeps const apiKey = "" so Canvas can inject its key normally.
-// When running without Canvas (standalone), a fetch interceptor:
-//   1. Injects window.GEMINI_USER_API_KEY into empty ?key= params
-//   2. Swaps the image model to window.GEMINI_IMAGE_MODEL if set
-// Reads values at CALL TIME — no page reload needed after saving.
+// When running standalone (Vercel), fetch interceptor injects user key at CALL TIME.
+// No page reload needed — window.GEMINI_USER_API_KEY is read on every API call.
 window.GEMINI_USER_API_KEY = localStorage.getItem('gemini_user_api_key') || '';
-window.GEMINI_IMAGE_MODEL = localStorage.getItem('gemini_image_model') || '';
 
 (function() {
-    const CANVAS_IMAGE_MODEL = 'gemini-2.5-flash-image-preview';
     const _origFetch = window.fetch.bind(window);
     window.fetch = function(url, options) {
         if (typeof url === 'string' && url.includes('generativelanguage.googleapis.com')) {
             try {
                 const u = new URL(url);
                 const existingKey = u.searchParams.get('key');
-                const usingUserKey = (!existingKey || existingKey === '') && window.GEMINI_USER_API_KEY;
-                if (usingUserKey) {
+                // Inject user key only when key param is missing or empty
+                if ((!existingKey || existingKey === '') && window.GEMINI_USER_API_KEY) {
                     u.searchParams.set('key', window.GEMINI_USER_API_KEY);
-                    // Swap model if user chose a different one
-                    const chosenModel = window.GEMINI_IMAGE_MODEL;
-                    if (chosenModel && chosenModel !== CANVAS_IMAGE_MODEL) {
-                        u.pathname = u.pathname.replace(CANVAS_IMAGE_MODEL, chosenModel);
-                    }
                     url = u.toString();
                 }
             } catch(e) {}
@@ -28216,10 +28205,10 @@ document.addEventListener('DOMContentLoaded', () => {
     (function() {
         const input = document.getElementById('apikey-input');
         const saveBtn = document.getElementById('apikey-save-btn');
+        const testBtn = document.getElementById('apikey-test-btn');
         const statusEl = document.getElementById('apikey-status');
         const toggleBtn = document.getElementById('apikey-toggle-btn');
         const eyeIcon = document.getElementById('apikey-eye-icon');
-        const modelSelect = document.getElementById('apikey-model-select');
 
         if (!input || !saveBtn) return;
 
@@ -28229,19 +28218,6 @@ document.addEventListener('DOMContentLoaded', () => {
             input.value = savedKey;
             statusEl.innerHTML = '<span style="color:#16a34a"><i class="fas fa-check-circle mr-1"></i>API Key aktif</span>';
         }
-
-        // Load saved model selection
-        const savedModel = localStorage.getItem('gemini_image_model') || '';
-        if (modelSelect && savedModel) {
-            modelSelect.value = savedModel;
-        }
-
-        // Auto-select model when user types a key (suggest external model)
-        input.addEventListener('input', () => {
-            if (modelSelect && input.value.trim() && modelSelect.value === 'gemini-2.5-flash-image-preview') {
-                modelSelect.value = 'gemini-2.0-flash-preview-image-generation';
-            }
-        });
 
         // Toggle show/hide password
         toggleBtn.addEventListener('click', () => {
@@ -28254,22 +28230,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Save key + model
+        // Save key
         saveBtn.addEventListener('click', () => {
             const key = input.value.trim();
-            const model = modelSelect ? modelSelect.value : '';
-
-            // Save model selection always
-            if (model) {
-                localStorage.setItem('gemini_image_model', model);
-                window.GEMINI_IMAGE_MODEL = model;
-            }
-
             if (!key) {
-                // Clear key
                 localStorage.removeItem('gemini_user_api_key');
                 window.GEMINI_USER_API_KEY = '';
-                statusEl.innerHTML = '<span style="color:#6b7280"><i class="fas fa-minus-circle mr-1"></i>API Key dihapus. Model: ' + (model || '-') + '</span>';
+                statusEl.innerHTML = '<span style="color:#6b7280"><i class="fas fa-minus-circle mr-1"></i>API Key dihapus</span>';
                 return;
             }
             if (!key.startsWith('AIza')) {
@@ -28278,15 +28245,44 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             localStorage.setItem('gemini_user_api_key', key);
             window.GEMINI_USER_API_KEY = key;
-            statusEl.innerHTML = '<span style="color:#16a34a"><i class="fas fa-check-circle mr-1"></i>Tersimpan! Aktif langsung.</span>';
-            // Flash save button
-            saveBtn.style.background = 'linear-gradient(135deg, #16a34a 0%, #059669 100%)';
-            setTimeout(() => {
-                saveBtn.style.background = '';
-            }, 1500);
+            statusEl.innerHTML = '<span style="color:#16a34a"><i class="fas fa-check-circle mr-1"></i>Tersimpan &amp; aktif</span>';
+            saveBtn.style.background = 'linear-gradient(135deg,#16a34a,#059669)';
+            setTimeout(() => { saveBtn.style.background = ''; }, 1500);
         });
 
-        // Also save on Enter key
+        // Test API Key — calls text model to verify connectivity
+        if (testBtn) {
+            testBtn.addEventListener('click', async () => {
+                const key = window.GEMINI_USER_API_KEY || input.value.trim();
+                if (!key) {
+                    statusEl.innerHTML = '<span style="color:#dc2626"><i class="fas fa-exclamation-circle mr-1"></i>Masukkan & simpan key dulu</span>';
+                    return;
+                }
+                statusEl.innerHTML = '<span style="color:#0369a1"><i class="fas fa-spinner fa-spin mr-1"></i>Testing...</span>';
+                testBtn.disabled = true;
+                try {
+                    const testUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview:generateContent?key=${key}`;
+                    const res = await fetch(testUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ contents: [{ parts: [{ text: 'Say OK' }] }] })
+                    });
+                    const data = await res.json();
+                    if (res.ok && data.candidates) {
+                        statusEl.innerHTML = '<span style="color:#16a34a"><i class="fas fa-check-circle mr-1"></i>API Key valid! Siap digunakan.</span>';
+                    } else {
+                        const errMsg = data.error?.message || 'Unknown error';
+                        statusEl.innerHTML = `<span style="color:#dc2626"><i class="fas fa-times-circle mr-1"></i>Error: ${errMsg}</span>`;
+                    }
+                } catch(e) {
+                    statusEl.innerHTML = `<span style="color:#dc2626"><i class="fas fa-times-circle mr-1"></i>Gagal konek: ${e.message}</span>`;
+                } finally {
+                    testBtn.disabled = false;
+                }
+            });
+        }
+
+        // Save on Enter key
         input.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') saveBtn.click();
         });
