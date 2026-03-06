@@ -28189,9 +28189,15 @@ window.GEMINI_USER_API_KEY = localStorage.getItem('gemini_user_api_key') || '';
             try {
                 const u = new URL(url);
                 const existingKey = u.searchParams.get('key');
-                // Inject user key only when key param is missing or empty
+                // Only modify when Canvas did NOT inject a key (key param empty)
                 if ((!existingKey || existingKey === '') && window.GEMINI_USER_API_KEY) {
                     u.searchParams.set('key', window.GEMINI_USER_API_KEY);
+                    // gemini-2.5-flash-image-preview is Canvas-only.
+                    // For external API keys, swap to the GA version (no -preview suffix).
+                    u.pathname = u.pathname.replace(
+                        'gemini-2.5-flash-image-preview',
+                        'gemini-2.0-flash-preview-image-generation'
+                    );
                     url = u.toString();
                 }
             } catch(e) {}
