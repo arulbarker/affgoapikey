@@ -69073,6 +69073,12 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
 <!-- Mobile Bottom Navigation -->
 <nav class="mobile-bottom-nav">
     <div class="mobile-tabs-container">
+        <!-- API KEY TAB - paling depan untuk mobile -->
+        <button data-tab="apikey-settings" class="mobile-tab-btn">
+            <i class="fas fa-key"></i>
+            <span>API Key</span>
+        </button>
+
         <!-- BERANDA -->
         <button data-tab="beranda" class="mobile-tab-btn active">
             <i class="fas fa-home"></i>
@@ -69500,11 +69506,6 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
         <button data-tab="video-analyzer" class="mobile-tab-btn">
             <i class="fas fa-chart-line"></i>
             <span>Analyzer</span>
-        </button>
-        <!-- API KEY TAB - mobile only -->
-        <button data-tab="apikey-settings" class="mobile-tab-btn">
-            <i class="fas fa-key"></i>
-            <span>API Key</span>
         </button>
     </div>
 </nav>
