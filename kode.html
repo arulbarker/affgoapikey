@@ -6788,21 +6788,51 @@
 
             /* Mobile header */
             .mobile-header {
-                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
                 position: sticky;
                 top: 0;
                 z-index: 999;
                 background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
-                padding: 1rem;
-                text-align: center;
+                padding: 0.75rem 1rem;
                 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             }
-
+            .mobile-header-center { flex: 1; text-align: center; }
             .mobile-header h1 {
                 color: white;
-                font-size: 1.25rem;
+                font-size: 1.1rem;
                 font-weight: 700;
                 margin: 0;
+            }
+            #mobile-apikey-btn {
+                background: rgba(255,255,255,0.2);
+                border: 1.5px solid rgba(255,255,255,0.4);
+                border-radius: 0.5rem;
+                width: 36px; height: 36px;
+                display: flex; align-items: center; justify-content: center;
+                color: white; font-size: 0.9rem; cursor: pointer;
+                flex-shrink: 0;
+                -webkit-tap-highlight-color: transparent;
+            }
+            #mobile-apikey-btn.key-active { background: rgba(34,197,94,0.4); border-color: rgba(34,197,94,0.7); }
+            /* Mobile API Key Modal */
+            #mobile-apikey-modal {
+                display: none;
+                position: fixed; inset: 0; z-index: 10000;
+                background: rgba(0,0,0,0.5);
+                align-items: flex-start;
+                justify-content: center;
+                padding-top: 4rem;
+            }
+            #mobile-apikey-modal.open { display: flex; }
+            #mobile-apikey-modal-box {
+                background: white;
+                border-radius: 1rem;
+                padding: 1.25rem;
+                width: calc(100% - 2rem);
+                max-width: 400px;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.3);
             }
         }
 
@@ -8996,8 +9026,43 @@
     <div id="main-app">
     <!-- Mobile Header -->
     <div class="mobile-header">
-        <h1><i class="fas fa-magic"></i> Affiliate Go Foto Studio <span class="text-xs bg-gradient-to-r from-sky-500 to-violet-500 text-white px-2 py-1 rounded-full">V21</span></h1>
-        <p class="text-xs text-gray-400 mt-1">by Arul CG</p>
+        <div style="width:36px;flex-shrink:0;"></div>
+        <div class="mobile-header-center">
+            <h1><i class="fas fa-magic"></i> Affiliate Go Foto Studio <span style="font-size:0.65rem;background:rgba(255,255,255,0.25);color:white;padding:0.1rem 0.45rem;border-radius:999px;font-weight:600;">V21</span></h1>
+        </div>
+        <button id="mobile-apikey-btn" title="Gemini API Key">
+            <i class="fas fa-key"></i>
+        </button>
+    </div>
+
+    <!-- Mobile API Key Modal -->
+    <div id="mobile-apikey-modal">
+        <div id="mobile-apikey-modal-box">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+                <div style="font-size:0.85rem;font-weight:700;color:#0369a1;display:flex;align-items:center;gap:0.4rem;">
+                    <i class="fas fa-key"></i> Gemini API Key
+                </div>
+                <button id="mobile-apikey-close" style="background:none;border:none;color:#6b7280;font-size:1.1rem;cursor:pointer;padding:0.2rem;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.4rem;margin-bottom:0.5rem;">
+                <input type="password" id="mobile-apikey-input" placeholder="AIzaSy... (masukkan API key Gemini)"
+                    style="flex:1;padding:0.5rem 0.6rem;border-radius:0.5rem;border:1.5px solid #bae6fd;font-size:0.8rem;outline:none;">
+                <button id="mobile-apikey-toggle" style="background:none;border:1.5px solid #bae6fd;border-radius:0.5rem;width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#0369a1;cursor:pointer;">
+                    <i class="fas fa-eye" id="mobile-eye-icon"></i>
+                </button>
+            </div>
+            <div style="display:flex;gap:0.4rem;margin-bottom:0.5rem;">
+                <button id="mobile-apikey-save" style="flex:1;padding:0.5rem;border-radius:0.5rem;border:none;background:linear-gradient(135deg,#0ea5e9,#6366f1);color:white;font-size:0.8rem;font-weight:600;cursor:pointer;">
+                    <i class="fas fa-save mr-1"></i> Simpan
+                </button>
+                <button id="mobile-apikey-test" style="flex:1;padding:0.5rem;border-radius:0.5rem;border:none;background:linear-gradient(135deg,#f59e0b,#d97706);color:white;font-size:0.8rem;font-weight:600;cursor:pointer;">
+                    <i class="fas fa-vial mr-1"></i> Test
+                </button>
+            </div>
+            <div id="mobile-apikey-status" style="font-size:0.72rem;text-align:center;min-height:1rem;"></div>
+        </div>
     </div>
 
     <div class="app-container">
@@ -28297,6 +28362,102 @@ document.addEventListener('DOMContentLoaded', () => {
         input.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') saveBtn.click();
         });
+    })();
+
+    // --- MOBILE API KEY MODAL ---
+    (function() {
+        const modal = document.getElementById('mobile-apikey-modal');
+        const openBtn = document.getElementById('mobile-apikey-btn');
+        const closeBtn = document.getElementById('mobile-apikey-close');
+        const mInput = document.getElementById('mobile-apikey-input');
+        const mSaveBtn = document.getElementById('mobile-apikey-save');
+        const mTestBtn = document.getElementById('mobile-apikey-test');
+        const mStatus = document.getElementById('mobile-apikey-status');
+        const mToggle = document.getElementById('mobile-apikey-toggle');
+        const mEyeIcon = document.getElementById('mobile-eye-icon');
+
+        if (!modal || !openBtn) return;
+
+        // Sync state from sidebar panel helpers
+        function syncFromStorage() {
+            const key = localStorage.getItem('gemini_user_api_key') || '';
+            if (mInput) mInput.value = key;
+            if (key) {
+                openBtn.classList.add('key-active');
+                mStatus.innerHTML = '<span style="color:#16a34a"><i class="fas fa-check-circle mr-1"></i>API Key aktif</span>';
+            } else {
+                openBtn.classList.remove('key-active');
+            }
+        }
+        syncFromStorage();
+
+        openBtn.addEventListener('click', () => {
+            syncFromStorage();
+            modal.classList.add('open');
+        });
+        closeBtn.addEventListener('click', () => modal.classList.remove('open'));
+        modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
+
+        // Toggle show/hide
+        mToggle.addEventListener('click', () => {
+            if (mInput.type === 'password') { mInput.type = 'text'; mEyeIcon.className = 'fas fa-eye-slash'; }
+            else { mInput.type = 'password'; mEyeIcon.className = 'fas fa-eye'; }
+        });
+
+        // Save
+        mSaveBtn.addEventListener('click', () => {
+            const key = mInput.value.trim();
+            if (!key) {
+                localStorage.removeItem('gemini_user_api_key');
+                window.GEMINI_USER_API_KEY = '';
+                openBtn.classList.remove('key-active');
+                mStatus.innerHTML = '<span style="color:#6b7280">API Key dihapus</span>';
+                // Also sync sidebar
+                const sidebarInput = document.getElementById('apikey-input');
+                const sidebarStatus = document.getElementById('apikey-status');
+                if (sidebarInput) sidebarInput.value = '';
+                if (sidebarStatus) sidebarStatus.innerHTML = '';
+                return;
+            }
+            if (!key.startsWith('AIza')) {
+                mStatus.innerHTML = '<span style="color:#dc2626"><i class="fas fa-exclamation-circle mr-1"></i>Key tidak valid</span>';
+                return;
+            }
+            localStorage.setItem('gemini_user_api_key', key);
+            window.GEMINI_USER_API_KEY = key;
+            openBtn.classList.add('key-active');
+            mStatus.innerHTML = '<span style="color:#16a34a"><i class="fas fa-check-circle mr-1"></i>Tersimpan &amp; aktif!</span>';
+            // Also sync sidebar
+            const sidebarInput = document.getElementById('apikey-input');
+            const sidebarStatus = document.getElementById('apikey-status');
+            if (sidebarInput) sidebarInput.value = key;
+            if (sidebarStatus) sidebarStatus.innerHTML = '<span style="color:#16a34a"><i class="fas fa-check-circle mr-1"></i>Tersimpan &amp; aktif</span>';
+            mSaveBtn.style.background = 'linear-gradient(135deg,#16a34a,#059669)';
+            setTimeout(() => { mSaveBtn.style.background = ''; }, 1500);
+        });
+
+        // Test
+        mTestBtn.addEventListener('click', async () => {
+            const key = window.GEMINI_USER_API_KEY || mInput.value.trim();
+            if (!key) { mStatus.innerHTML = '<span style="color:#dc2626">Masukkan & simpan key dulu</span>'; return; }
+            mStatus.innerHTML = '<span style="color:#0369a1"><i class="fas fa-spinner fa-spin mr-1"></i>Testing...</span>';
+            mTestBtn.disabled = true;
+            try {
+                const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${key}`);
+                const data = await res.json();
+                if (res.ok && data.models) {
+                    const hasImg = data.models.some(m => m.name.includes('image') || m.name.includes('imagen'));
+                    mStatus.innerHTML = `<span style="color:#16a34a"><i class="fas fa-check-circle mr-1"></i>Key valid! ${data.models.length} model. ${hasImg ? '\u2713 Image OK' : '\u26a0 No image model'}</span>`;
+                } else {
+                    const msg = data.error?.message || 'Error';
+                    mStatus.innerHTML = `<span style="color:#dc2626"><i class="fas fa-times-circle mr-1"></i>${msg}</span>`;
+                }
+            } catch(e) {
+                mStatus.innerHTML = `<span style="color:#dc2626">Gagal: ${e.message}</span>`;
+            } finally { mTestBtn.disabled = false; }
+        });
+
+        mInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') mSaveBtn.click(); });
     })();
 
     // --- SIDEBAR TOGGLE FUNCTIONALITY ---
