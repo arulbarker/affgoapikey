@@ -8889,72 +8889,6 @@
         .timelapse-frame-btn:hover { border-color: #f59e0b; background: #fffbeb; }
         .timelapse-frame-btn.timelapse-frame-selected { background: linear-gradient(135deg, #f59e0b 0%, #0d9488 100%) !important; color: white !important; border-color: #f59e0b !important; font-weight: 700 !important; box-shadow: 0 4px 12px rgba(245,158,11,0.35) !important; }
 
-        /* API Key Settings Panel */
-        #apikey-settings-panel {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border: 1.5px solid #bae6fd;
-            border-radius: 0.75rem;
-            padding: 0.75rem;
-            margin-bottom: 1rem;
-        }
-        #apikey-settings-panel .apikey-label {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: #0369a1;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-            margin-bottom: 0.5rem;
-        }
-        #apikey-input {
-            width: 100%;
-            padding: 0.45rem 0.6rem;
-            border-radius: 0.5rem;
-            border: 1.5px solid #bae6fd;
-            background: white;
-            font-size: 0.72rem;
-            color: #1e293b;
-            outline: none;
-            transition: border-color 0.2s;
-            font-family: 'Inter', monospace;
-            box-sizing: border-box;
-        }
-        #apikey-input:focus { border-color: #0ea5e9; box-shadow: 0 0 0 3px rgba(14,165,233,0.15); }
-        #apikey-save-btn {
-            width: 100%;
-            margin-top: 0.45rem;
-            padding: 0.4rem 0;
-            border-radius: 0.5rem;
-            border: none;
-            background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
-            color: white;
-            font-size: 0.72rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: opacity 0.2s, transform 0.1s;
-        }
-        #apikey-save-btn:hover { opacity: 0.9; }
-        #apikey-save-btn:active { transform: scale(0.97); }
-        #apikey-status {
-            font-size: 0.65rem;
-            margin-top: 0.35rem;
-            text-align: center;
-            min-height: 1rem;
-        }
-        #apikey-toggle-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: #0369a1;
-            font-size: 0.65rem;
-            padding: 0;
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-            gap: 0.2rem;
-        }
 
     </style>
 </head>
@@ -9012,29 +8946,13 @@
                 </div>
             </div>
 
-            <!-- ===== API KEY SETTINGS PANEL ===== -->
-            <div id="apikey-settings-panel">
-                <div class="apikey-label">
-                    <i class="fas fa-key"></i>
-                    <span>Gemini API Key</span>
-                    <button id="apikey-toggle-btn" title="Show/Hide key">
-                        <i class="fas fa-eye" id="apikey-eye-icon"></i>
-                    </button>
-                </div>
-                <input type="password" id="apikey-input" placeholder="AIzaSy... (masukkan API key Gemini)" autocomplete="off" spellcheck="false">
-                <div style="display:flex;gap:0.35rem;margin-top:0.4rem;">
-                    <button id="apikey-save-btn" style="flex:1;">
-                        <i class="fas fa-save mr-1"></i> Simpan
-                    </button>
-                    <button id="apikey-test-btn" style="flex:1;background:linear-gradient(135deg,#f59e0b,#d97706);">
-                        <i class="fas fa-vial mr-1"></i> Test
-                    </button>
-                </div>
-                <div id="apikey-status"></div>
-            </div>
-            <!-- ===== END API KEY SETTINGS PANEL ===== -->
-
             <nav class="flex flex-col gap-1">
+                <!-- API KEY Tab -->
+                <button data-tab="apikey-settings" class="main-tab-btn" style="margin-bottom: 0.5rem; background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%); color: white; font-weight: 600; box-shadow: 0 4px 12px rgba(14,165,233,0.3);">
+                    <i class="fas fa-key"></i>
+                    <span class="btn-text">API Key</span>
+                </button>
+
                 <!-- BERANDA Tab -->
                 <button data-tab="beranda" class="main-tab-btn active" style="margin-bottom: 1rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-weight: 600; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);">
                     <i class="fas fa-home"></i>
@@ -28264,98 +28182,7 @@ window.GEMINI_USER_API_KEY = localStorage.getItem('gemini_user_api_key') || '';
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
-    // --- API KEY SETTINGS PANEL ---
-    (function() {
-        const input = document.getElementById('apikey-input');
-        const saveBtn = document.getElementById('apikey-save-btn');
-        const testBtn = document.getElementById('apikey-test-btn');
-        const statusEl = document.getElementById('apikey-status');
-        const toggleBtn = document.getElementById('apikey-toggle-btn');
-        const eyeIcon = document.getElementById('apikey-eye-icon');
-
-        if (!input || !saveBtn) return;
-
-        // Load saved key into input
-        const savedKey = localStorage.getItem('gemini_user_api_key') || '';
-        if (savedKey) {
-            input.value = savedKey;
-            statusEl.innerHTML = '<span style="color:#16a34a"><i class="fas fa-check-circle mr-1"></i>API Key aktif</span>';
-        }
-
-        // Toggle show/hide password
-        toggleBtn.addEventListener('click', () => {
-            if (input.type === 'password') {
-                input.type = 'text';
-                eyeIcon.className = 'fas fa-eye-slash';
-            } else {
-                input.type = 'password';
-                eyeIcon.className = 'fas fa-eye';
-            }
-        });
-
-        // Save key
-        saveBtn.addEventListener('click', () => {
-            const key = input.value.trim();
-            if (!key) {
-                localStorage.removeItem('gemini_user_api_key');
-                window.GEMINI_USER_API_KEY = '';
-                statusEl.innerHTML = '<span style="color:#6b7280"><i class="fas fa-minus-circle mr-1"></i>API Key dihapus</span>';
-                return;
-            }
-            if (!key.startsWith('AIza')) {
-                statusEl.innerHTML = '<span style="color:#dc2626"><i class="fas fa-exclamation-circle mr-1"></i>Key tidak valid (harus diawali AIza...)</span>';
-                return;
-            }
-            localStorage.setItem('gemini_user_api_key', key);
-            window.GEMINI_USER_API_KEY = key;
-            statusEl.innerHTML = '<span style="color:#16a34a"><i class="fas fa-check-circle mr-1"></i>Tersimpan &amp; aktif</span>';
-            saveBtn.style.background = 'linear-gradient(135deg,#16a34a,#059669)';
-            setTimeout(() => { saveBtn.style.background = ''; }, 1500);
-        });
-
-        // Test API Key — try listing available models to verify key is valid
-        if (testBtn) {
-            testBtn.addEventListener('click', async () => {
-                const key = window.GEMINI_USER_API_KEY || input.value.trim();
-                if (!key) {
-                    statusEl.innerHTML = '<span style="color:#dc2626"><i class="fas fa-exclamation-circle mr-1"></i>Masukkan & simpan key dulu</span>';
-                    return;
-                }
-                statusEl.innerHTML = '<span style="color:#0369a1"><i class="fas fa-spinner fa-spin mr-1"></i>Testing...</span>';
-                testBtn.disabled = true;
-                try {
-                    // Use ListModels to check key validity — works for all valid API keys
-                    const listUrl = `https://generativelanguage.googleapis.com/v1beta/models?key=${key}`;
-                    const res = await fetch(listUrl);
-                    const data = await res.json();
-                    if (res.ok && data.models) {
-                        const modelNames = data.models.map(m => m.name.replace('models/', ''));
-                        const hasImageModel = modelNames.some(n => n.includes('image') || n.includes('imagen'));
-                        const imgNote = hasImageModel ? ' \u2713 Image generation tersedia.' : ' \u26a0 Model image generation tidak tersedia untuk key ini.';
-                        statusEl.innerHTML = `<span style="color:#16a34a"><i class="fas fa-check-circle mr-1"></i>Key valid! ${data.models.length} model tersedia.${imgNote}</span>`;
-                    } else {
-                        const errMsg = data.error?.message || 'Unknown error';
-                        const errCode = data.error?.code || res.status;
-                        let hint = '';
-                        if (errCode === 400 || errMsg.includes('API_KEY_INVALID')) hint = ' \u2192 Key tidak valid/salah.';
-                        else if (errCode === 403) hint = ' \u2192 API belum di-enable. Aktifkan di Google Cloud Console.';
-                        statusEl.innerHTML = `<span style="color:#dc2626"><i class="fas fa-times-circle mr-1"></i>Error ${errCode}: ${errMsg}${hint}</span>`;
-                    }
-                } catch(e) {
-                    statusEl.innerHTML = `<span style="color:#dc2626"><i class="fas fa-times-circle mr-1"></i>Gagal konek: ${e.message}</span>`;
-                } finally {
-                    testBtn.disabled = false;
-                }
-            });
-        }
-
-        // Save on Enter key
-        input.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') saveBtn.click();
-        });
-    })();
-
-    // --- MOBILE TAB: API KEY SETTINGS ---
+    // --- API KEY SETTINGS TAB (Desktop + Mobile shared) ---
     (function() {
         const mInput = document.getElementById('mob-tab-apikey-input');
         const mSave  = document.getElementById('mob-tab-apikey-save');
@@ -28393,11 +28220,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             localStorage.setItem('gemini_user_api_key', key);
             window.GEMINI_USER_API_KEY = key;
-            // sync sidebar input
-            const sInput = document.getElementById('apikey-input');
-            const sStatus = document.getElementById('apikey-status');
-            if (sInput) sInput.value = key;
-            if (sStatus) sStatus.innerHTML = '<span style="color:#16a34a"><i class="fas fa-check-circle mr-1"></i>Tersimpan &amp; aktif</span>';
             mStatus.innerHTML = '<span style="color:#16a34a"><i class="fas fa-check-circle mr-1"></i>Tersimpan &amp; aktif!</span>';
             mSave.style.background = 'linear-gradient(135deg,#16a34a,#059669)';
             setTimeout(() => { mSave.style.background = ''; }, 1500);
