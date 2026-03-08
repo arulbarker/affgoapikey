@@ -9847,10 +9847,10 @@
                     <h1 class="text-4xl md:text-5xl font-bold mb-3 drop-shadow-lg">
                         <i class="fas fa-palette mr-3"></i>Mockup Studio
                     </h1>
-                    <p class="text-lg opacity-90">
+                    <p class="text-lg opacity-90" data-i18n="mockup.desc1">
                         Buat 7 mockup profesional dari design Anda dengan berbagai template
                     </p>
-                    <p class="text-sm opacity-75 mt-2">
+                    <p class="text-sm opacity-75 mt-2" data-i18n="mockup.desc2">
                         Upload design → Pilih template mockup atau tema → Dapatkan hasil mockup realistis!
                     </p>
                 </header>
@@ -9864,7 +9864,7 @@
                         <div id="mockup-upload-area" class="upload-area cursor-pointer">
                             <div id="mockup-upload-placeholder" style="display: block;">
                                 <i class="fas fa-images text-6xl text-purple-500 mb-4"></i>
-                                <p class="text-xl font-semibold text-gray-700 mb-2">
+                                <p class="text-xl font-semibold text-gray-700 mb-2" data-i18n="mockup.click-drag">
                                     Klik atau drag design Anda di sini
                                 </p>
                                 <p class="text-sm text-gray-500">
@@ -9885,16 +9885,16 @@
 
                     <!-- Mockup Template Reference Section (Optional) -->
                     <div class="mb-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">
+                        <h3 class="text-xl font-bold mb-3 text-gray-800" data-i18n="mockup.template-ref-title">
                             <i class="fas fa-image mr-2"></i>Template Mockup Referensi (Opsional)
                         </h3>
                         <div id="mockup-template-upload-area" class="upload-area cursor-pointer" style="min-height: 150px;">
                             <div id="mockup-template-placeholder" style="display: block;">
                                 <i class="fas fa-file-image text-4xl text-indigo-500 mb-3"></i>
-                                <p class="text-lg font-semibold text-gray-700 mb-1">
+                                <p class="text-lg font-semibold text-gray-700 mb-1" data-i18n="mockup.template-upload-text">
                                     Upload foto template mockup (Opsional)
                                 </p>
-                                <p class="text-xs text-gray-500">
+                                <p class="text-xs text-gray-500" data-i18n="mockup.template-placed">
                                     Design akan ditempelkan ke template ini
                                 </p>
                             </div>
@@ -9919,7 +9919,7 @@
 
                     <!-- Mockup Theme Input Section (Optional) -->
                     <div class="mb-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">
+                        <h3 class="text-xl font-bold mb-3 text-gray-800" data-i18n="mockup.manual-theme-title">
                             <i class="fas fa-magic mr-2"></i>Tema Mockup Manual (Opsional)
                         </h3>
                         <input
@@ -9927,7 +9927,7 @@
                             id="mockup-theme-input"
                             placeholder="Contoh: gelas, kaos, poster, mug, buku, smartphone, tote bag, dll..."
                             class="w-full p-4 border-2 border-purple-200 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all"
-                        />
+                        / data-i18n-placeholder="mockup.theme-placeholder">
                         <p class="text-xs text-gray-500 mt-2">
                             <i class="fas fa-info-circle mr-1"></i>
                             Tips: Sebutkan jenis mockup yang Anda inginkan. Kosongkan untuk variasi otomatis
@@ -9977,7 +9977,7 @@
                     <div class="card inline-block">
                         <div class="flex flex-col items-center">
                             <div class="pov-loader mb-6"></div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-2">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2" data-i18n="mockup.loading-title">
                                 Sedang Membuat Mockup...
                             </h3>
                             <p class="text-gray-600 mb-4">
@@ -9998,7 +9998,7 @@
                 <div id="mockup-results-section" class="hidden">
                     <div class="card">
                         <div class="flex justify-between items-center mb-6">
-                            <h2 class="text-3xl font-bold text-gray-800">
+                            <h2 class="text-3xl font-bold text-gray-800" data-i18n="mockup.results-title">
                                 <i class="fas fa-check-circle text-green-500 mr-2"></i>
                                 Hasil Mockup (<span id="mockup-result-count">0</span> mockup)
                             </h2>
@@ -10022,7 +10022,7 @@
                         <div class="flex items-start">
                             <i class="fas fa-exclamation-triangle text-red-500 text-3xl mr-4 mt-1"></i>
                             <div>
-                                <h3 class="text-xl font-bold text-red-800 mb-2">Terjadi Kesalahan</h3>
+                                <h3 class="text-xl font-bold text-red-800 mb-2" data-i18n="mockup.error-title">Terjadi Kesalahan</h3>
                                 <p id="mockup-error-message" class="text-red-700"></p>
                                 <button
                                     id="mockup-retry-btn"
@@ -11329,7 +11329,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md bg-gradient-to-br from-teal-500 to-lime-500">4</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Jumlah Variasi</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="touring.count-title">Jumlah Variasi</h3>
                                     </div>
                                     <div id="tryon-count-selection" class="grid grid-cols-3 gap-3">
                                         <button type="button" data-count="2" class="count-btn bg-gray-50 hover:bg-gray-100 text-gray-700 px-3 py-2.5 rounded-lg border-2 border-gray-300 transition-all text-sm font-medium">
@@ -12353,7 +12353,7 @@
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md bg-gradient-to-br from-indigo-600 to-purple-600">
                                             <i class="fas fa-star text-sm"></i>
                                         </div>
-                                        <h3 class="text-lg font-bold text-gray-800">Upload Foto Model <span class="text-sm text-gray-500">(Opsional)</span></h3>
+                                        <h3 class="text-lg font-bold text-gray-800"><span data-i18n="mirror.upload-model-title">Upload Foto Model</span> <span class="text-sm text-gray-500" data-i18n="mirror.model-optional-label">(Opsional)</span></h3>
                                     </div>
                                     <div id="food-selfie-model-upload-area" class="border-2 border-dashed border-purple-300 rounded-lg p-4 text-center hover:border-purple-500 transition-all cursor-pointer bg-purple-50/50 touch-manipulation active:scale-95" style="-webkit-tap-highlight-color: transparent;">
                                         <label for="food-selfie-model-input" class="cursor-pointer flex flex-col items-center justify-center">
@@ -13548,7 +13548,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #a855f7, #ec4899);">4</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Rasio Foto</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="mirror.aspect-title">Rasio Foto</h3>
                                     </div>
                                     <div id="profesi-ratio-options" class="grid grid-cols-2 gap-3">
                                         <button type="button" data-value="9:16" class="option-btn-profesi selected">
@@ -13570,7 +13570,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #a855f7, #ec4899);">5</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Jumlah Foto</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="walking.count-title">Jumlah Foto</h3>
                                     </div>
                                     <div id="profesi-count-selection" class="grid grid-cols-3 gap-3">
                                         <button type="button" data-count="4" class="profesi-count-btn bg-gray-50 hover:bg-gray-100 text-gray-700 px-3 py-2.5 rounded-lg border-2 border-gray-300 transition-all text-sm font-medium">
@@ -20797,7 +20797,7 @@
                                 <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #92400e 0%, #78350f 100%);">
                                     1
                                 </div>
-                                <h3 class="text-lg font-bold text-gray-800">Upload Foto Produk</h3>
+                                <h3 class="text-lg font-bold text-gray-800" data-i18n="mirror.upload-product-title">Upload Foto Produk</h3>
                             </div>
                             <label for="packaging-product-upload" class="upload-box-packaging block cursor-pointer text-center py-6 px-4 border-2 border-dashed rounded-xl transition-all duration-300 hover:scale-[1.02]" style="border-color: #92400e; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);">
                                 <div class="flex flex-col items-center gap-2">
@@ -22713,10 +22713,10 @@
                     <h1 class="text-4xl md:text-5xl font-bold mb-3 drop-shadow-lg">
                         <i class="fas fa-hand-holding mr-3"></i>POV Tangan Generator
                     </h1>
-                    <p class="text-lg opacity-90">
+                    <p class="text-lg opacity-90" data-i18n="pov.desc1">
                         Buat 7 foto POV tangan memegang produk dengan background custom atau aesthetic otomatis
                     </p>
-                    <p class="text-sm opacity-75 mt-2">
+                    <p class="text-sm opacity-75 mt-2" data-i18n="pov.desc2">
                         Upload foto lokasi apapun → Produk Anda akan ditempatkan di lokasi tersebut!
                     </p>
                 </header>
@@ -22724,13 +22724,13 @@
                 <div class="card mb-8">
                     <!-- Upload Section -->
                     <div class="mb-6">
-                        <h2 class="text-2xl font-bold mb-4 text-gray-800">
+                        <h2 class="text-2xl font-bold mb-4 text-gray-800" data-i18n="pov.upload-title">
                             <i class="fas fa-cloud-upload-alt mr-2"></i>Upload Foto Produk
                         </h2>
                         <div id="pov-upload-area" class="upload-area cursor-pointer">
                             <div id="pov-upload-placeholder" style="display: block;">
                                 <i class="fas fa-images text-6xl text-purple-500 mb-4"></i>
-                                <p class="text-xl font-semibold text-gray-700 mb-2">
+                                <p class="text-xl font-semibold text-gray-700 mb-2" data-i18n="pov.click-drag">
                                     Klik atau drag foto produk Anda di sini
                                 </p>
                                 <p class="text-sm text-gray-500">
@@ -22751,16 +22751,16 @@
 
                     <!-- Custom Background Section (NEW) -->
                     <div class="mb-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">
+                        <h3 class="text-xl font-bold mb-3 text-gray-800" data-i18n="pov.bg-title">
                             <i class="fas fa-image mr-2"></i>Background Custom (Opsional)
                         </h3>
                         <div id="pov-bg-upload-area" class="upload-area cursor-pointer" style="min-height: 150px;">
                             <div id="pov-bg-placeholder" style="display: block;">
                                 <i class="fas fa-panorama text-4xl text-indigo-500 mb-3"></i>
-                                <p class="text-lg font-semibold text-gray-700 mb-1">
+                                <p class="text-lg font-semibold text-gray-700 mb-1" data-i18n="pov.bg-upload">
                                     Upload foto lokasi/background (Opsional)
                                 </p>
-                                <p class="text-xs text-gray-500">
+                                <p class="text-xs text-gray-500" data-i18n="pov.bg-placed">
                                     Produk akan ditempatkan di lokasi ini
                                 </p>
                             </div>
@@ -22785,7 +22785,7 @@
 
                     <!-- Background Description Section -->
                     <div class="mb-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">
+                        <h3 class="text-xl font-bold mb-3 text-gray-800" data-i18n="pov.bg-desc-title">
                             <i class="fas fa-image mr-2"></i>Deskripsi Background (Opsional)
                         </h3>
                         <textarea
@@ -22802,7 +22802,7 @@
 
                     <!-- Hand Count Selection -->
                     <div class="mb-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">
+                        <h3 class="text-xl font-bold mb-3 text-gray-800" data-i18n="pov.hand-count-title">
                             <i class="fas fa-hand-paper mr-2"></i>Jumlah Tangan
                         </h3>
                         <div id="pov-hand-count-selection" class="grid grid-cols-2 gap-3">
@@ -22964,7 +22964,7 @@
                         <span class="text-xs font-semibold px-3 py-1 rounded-full mt-1 text-white" style="background: linear-gradient(135deg, #f97316 0%, #dc2626 100%);">🏍️ Adventure Ready</span>
                     </div>
                 </div>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-i18n="touring.desc1">
                     Buat foto touring kamu jadi super keren seperti hasil kamera profesional! Upload foto model, motor, helm, dan aksesoris lainnya.
                 </p>
             </header>
@@ -22979,9 +22979,9 @@
                             <div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #f97316, #dc2626);">1</div>
-                                    <h3 class="text-lg font-bold text-gray-800">Upload Foto (Max 5)</h3>
+                                    <h3 class="text-lg font-bold text-gray-800" data-i18n="touring.upload-title">Upload Foto (Max 5)</h3>
                                 </div>
-                                <p class="text-sm text-gray-600 mb-3">Model, Motor, Helm, Jaket, Aksesoris, dll</p>
+                                <p class="text-sm text-gray-600 mb-3" data-i18n="touring.upload-desc">Model, Motor, Helm, Jaket, Aksesoris, dll</p>
                                 <div id="touring-file-input-area" class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-3"></div>
                                 <button type="button" id="touring-add-photo-btn" class="w-full py-3 px-4 rounded-xl border-2 border-dashed font-semibold text-sm transition-all duration-300 active:scale-95 shadow-md hover:shadow-lg flex items-center justify-center gap-2" style="border-color: #f97316; color: #f97316; background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);">
                                     <i class="fas fa-plus"></i>
@@ -22994,7 +22994,7 @@
                             <div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #f97316, #dc2626);">2</div>
-                                    <h3 class="text-lg font-bold text-gray-800">Background Jalanan</h3>
+                                    <h3 class="text-lg font-bold text-gray-800" data-i18n="touring.bg-title">Background Jalanan</h3>
                                 </div>
 
                                 <div id="touring-road-options" class="grid grid-cols-2 gap-2 max-h-80 overflow-y-auto p-2 border border-gray-200 rounded-lg">
@@ -23061,7 +23061,7 @@
                             <div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #f97316, #dc2626);">3</div>
-                                    <h3 class="text-lg font-bold text-gray-800">Tema Suasana</h3>
+                                    <h3 class="text-lg font-bold text-gray-800" data-i18n="touring.mood-title">Tema Suasana</h3>
                                 </div>
 
                                 <div id="touring-mood-options" class="grid grid-cols-2 gap-2">
@@ -23096,7 +23096,7 @@
                             <div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #f97316, #dc2626);">4</div>
-                                    <h3 class="text-lg font-bold text-gray-800">Angle Foto</h3>
+                                    <h3 class="text-lg font-bold text-gray-800" data-i18n="touring.angle-title">Angle Foto</h3>
                                 </div>
 
                                 <div id="touring-angle-options" class="grid grid-cols-2 gap-2">
@@ -23175,7 +23175,7 @@
                                 <i class="fas fa-wand-magic-sparkles mr-2"></i>
                                 <span>Generate <span id="touring-count-text">6</span> Foto Touring</span>
                             </button>
-                            <p class="text-xs text-center text-gray-500">⏱️ Proses ~30-40 detik per foto</p>
+                            <p class="text-xs text-center text-gray-500" data-i18n="touring.time-note">⏱️ Proses ~30-40 detik per foto</p>
                         </div>
                     </div>
                 </div>
@@ -23245,7 +23245,7 @@
                         <span class="text-xs font-semibold px-3 py-1 rounded-full mt-1 text-white" style="background: linear-gradient(135deg, #06b6d4 0%, #0284c1 100%);">📱 Aesthetic Mirror Vibe</span>
                     </div>
                 </div>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-i18n="mirror.desc1">
                     Ubah produk apapun jadi foto mirror selfie yang aesthetic! Upload produk, pilih style, dan dapatkan hasil seperti mirror selfie yang keren.
                 </p>
             </header>
@@ -23265,8 +23265,8 @@
                                 <label for="mirror-product-input" id="mirror-product-upload-box" class="upload-box-mirror w-full h-40 rounded-xl flex items-center justify-center cursor-pointer relative overflow-hidden border-2 border-dashed border-gray-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                                     <div id="mirror-product-placeholder" class="text-center text-gray-500 p-4">
                                         <i class="fas fa-box-open transition-transform duration-300" style="font-size: 2.5rem; color: #06b6d4;"></i>
-                                        <p class="mt-2 text-sm font-semibold">📦 Klik untuk upload produk</p>
-                                        <p class="mt-1 text-xs text-gray-400">Bisa produk apapun (baju, sepatu, makeup, dll)</p>
+                                        <p class="mt-2 text-sm font-semibold" data-i18n="mirror.click-upload">📦 Klik untuk upload produk</p>
+                                        <p class="mt-1 text-xs text-gray-400" data-i18n="mirror.product-types">Bisa produk apapun (baju, sepatu, makeup, dll)</p>
                                     </div>
                                 </label>
                                 <input type="file" id="mirror-product-input" class="hidden" accept="image/png, image/jpeg, image/webp, .heic, .HEIC">
@@ -23289,8 +23289,8 @@
                                 <label for="mirror-model-input" id="mirror-model-upload-box" class="upload-box-mirror w-full h-40 rounded-xl flex items-center justify-center cursor-pointer relative overflow-hidden border-2 border-dashed border-gray-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                                     <div id="mirror-model-placeholder" class="text-center text-gray-500 p-4">
                                         <i class="fas fa-user transition-transform duration-300" style="font-size: 2.5rem; color: #06b6d4;"></i>
-                                        <p class="mt-2 text-sm font-semibold">👤 Klik untuk upload foto model</p>
-                                        <p class="mt-1 text-xs text-gray-400">Opsional - Untuk hasil selfie lebih personal</p>
+                                        <p class="mt-2 text-sm font-semibold" data-i18n="mirror.click-model">👤 Klik untuk upload foto model</p>
+                                        <p class="mt-1 text-xs text-gray-400" data-i18n="mirror.model-optional">Opsional - Untuk hasil selfie lebih personal</p>
                                     </div>
                                 </label>
                                 <input type="file" id="mirror-model-input" class="hidden" accept="image/png, image/jpeg, image/webp, .heic, .HEIC">
@@ -23308,7 +23308,7 @@
                             <div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #06b6d4, #0284c1);">3</div>
-                                    <h3 class="text-lg font-bold text-gray-800">Jenis Mirror</h3>
+                                    <h3 class="text-lg font-bold text-gray-800" data-i18n="mirror.mirror-type-title">Jenis Mirror</h3>
                                 </div>
                                 <div id="mirror-type-options" class="grid grid-cols-2 gap-3">
                                     <button type="button" data-value="full-body" class="option-btn-mirror selected">
@@ -23336,7 +23336,7 @@
                                 <!-- Custom Mirror Type Input -->
                                 <div id="mirror-custom-type-container" class="mt-3 hidden">
                                     <textarea id="mirror-custom-type-input" rows="2" class="w-full px-3 py-2 border-2 border-cyan-300 rounded-lg focus:border-cyan-500 focus:outline-none transition-all resize-none text-sm" placeholder="Contoh: Standing mirror with LED lights, Wall-mounted round mirror, dll"></textarea>
-                                    <p class="text-xs text-gray-500 mt-1">
+                                    <p class="text-xs text-gray-500 mt-1" data-i18n="mirror.mirror-desc">
                                         <i class="fas fa-info-circle mr-1"></i>Jelaskan jenis mirror yang kamu inginkan
                                     </p>
                                 </div>
@@ -23346,7 +23346,7 @@
                             <div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #06b6d4, #0284c1);">4</div>
-                                    <h3 class="text-lg font-bold text-gray-800">Style Ruangan</h3>
+                                    <h3 class="text-lg font-bold text-gray-800" data-i18n="mirror.room-style-title">Style Ruangan</h3>
                                 </div>
                                 <div id="mirror-room-style-options" class="grid grid-cols-2 gap-3 max-h-64 overflow-y-auto p-2 border border-gray-200 rounded-lg">
                                     <button type="button" data-value="modern-minimalist" class="option-btn-mirror selected">
@@ -23380,7 +23380,7 @@
                                 <!-- Custom Room Style Input -->
                                 <div id="mirror-custom-style-container" class="mt-3 hidden">
                                     <textarea id="mirror-custom-style-input" rows="2" class="w-full px-3 py-2 border-2 border-cyan-300 rounded-lg focus:border-cyan-500 focus:outline-none transition-all resize-none text-sm" placeholder="Contoh: Scandinavian bedroom with plants, Japanese zen bathroom, Industrial coffee shop, dll"></textarea>
-                                    <p class="text-xs text-gray-500 mt-1">
+                                    <p class="text-xs text-gray-500 mt-1" data-i18n="mirror.room-desc">
                                         <i class="fas fa-info-circle mr-1"></i>Jelaskan style ruangan yang kamu inginkan
                                     </p>
                                 </div>
@@ -23390,7 +23390,7 @@
                             <div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #06b6d4, #0284c1);">5</div>
-                                    <h3 class="text-lg font-bold text-gray-800">Model HP</h3>
+                                    <h3 class="text-lg font-bold text-gray-800" data-i18n="mirror.phone-title">Model HP</h3>
                                 </div>
                                 <div id="mirror-phone-options" class="grid grid-cols-2 gap-3">
                                     <button type="button" data-value="iphone" class="option-btn-mirror selected">
@@ -23412,7 +23412,7 @@
                             <div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #06b6d4, #0284c1);">6</div>
-                                    <h3 class="text-lg font-bold text-gray-800">Posisi Tangan</h3>
+                                    <h3 class="text-lg font-bold text-gray-800" data-i18n="mirror.hand-pos-title">Posisi Tangan</h3>
                                 </div>
                                 <div id="mirror-hand-options" class="grid grid-cols-2 gap-3">
                                     <button type="button" data-value="holding-phone" class="option-btn-mirror selected">
@@ -23440,7 +23440,7 @@
                             <div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #06b6d4, #0284c1);">7</div>
-                                    <h3 class="text-lg font-bold text-gray-800">Pencahayaan</h3>
+                                    <h3 class="text-lg font-bold text-gray-800" data-i18n="mirror.lighting-title">Pencahayaan</h3>
                                 </div>
                                 <div id="mirror-lighting-options" class="grid grid-cols-2 gap-3">
                                     <button type="button" data-value="natural-bright" class="option-btn-mirror selected">
@@ -24399,12 +24399,12 @@
                             <span class="text-xs font-semibold px-3 py-1 rounded-full mt-1" style="background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%); color: white;">Affiliate Baju &amp; Fashion</span>
                         </div>
                     </div>
-                    <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed" data-i18n="walking.desc">
                         Buat foto model memakai baju di atas walking pad dengan berbagai tema ruangan aesthetic. Hasilnya bisa langsung di-Image to Video untuk konten TikTok &amp; Reels!
                     </p>
                     <div class="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-xl border-2 shadow-sm" style="border-color: #7c3aed; background: linear-gradient(135deg, #f5f3ff 0%, #fdf2f8 100%);">
                         <i class="fas fa-video" style="color: #7c3aed;"></i>
-                        <span class="text-sm font-medium" style="color: #6d28d9;">Cocok untuk Image to Video — model berjalan di walking pad</span>
+                        <span class="text-sm font-medium" style="color: #6d28d9;" data-i18n="walking.tip">Cocok untuk Image to Video — model berjalan di walking pad</span>
                     </div>
                 </header>
 
@@ -24418,7 +24418,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);">1</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Upload Foto Model <span class="text-sm font-normal text-gray-400">(Wajah Referensi)</span></h3>
+                                        <h3 class="text-lg font-bold text-gray-800"><span data-i18n="walking.upload-model-title">Upload Foto Model</span> <span class="text-sm font-normal text-gray-400" data-i18n="walking.model-ref-label">(Wajah Referensi)</span></h3>
                                     </div>
                                     <div id="walkpad-model-box" class="upload-box-walkpad block cursor-pointer text-center py-6 px-4 border-2 border-dashed rounded-xl transition-all duration-300 hover:scale-[1.02]" style="border-color: #7c3aed; background: linear-gradient(135deg, #f5f3ff 0%, #fdf2f8 100%);">
                                         <div id="walkpad-model-placeholder" class="flex flex-col items-center gap-2">
@@ -24440,7 +24440,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);">2</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Upload Foto Produk/Baju</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="walking.upload-clothes-title">Upload Foto Produk/Baju</h3>
                                     </div>
                                     <div id="walkpad-product-box" class="upload-box-walkpad block cursor-pointer text-center py-6 px-4 border-2 border-dashed rounded-xl transition-all duration-300 hover:scale-[1.02]" style="border-color: #db2777; background: linear-gradient(135deg, #fdf2f8 0%, #f5f3ff 100%);">
                                         <div id="walkpad-product-placeholder" class="flex flex-col items-center gap-2">
@@ -24461,7 +24461,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);">3</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Tema Ruangan <span class="text-xs font-normal text-gray-400">(18 tema)</span></h3>
+                                        <h3 class="text-lg font-bold text-gray-800"><span data-i18n="walking.theme-title">Tema Ruangan</span> <span class="text-xs font-normal text-gray-400" data-i18n="walking.theme-count-label">(18 tema)</span></h3>
                                     </div>
                                     <div id="walkpad-room-options" class="grid grid-cols-2 gap-2 max-h-64 overflow-y-auto p-2 border border-gray-200 rounded-lg" style="-webkit-overflow-scrolling: touch;">
                                         <div class="col-span-2 flex items-center gap-2 py-1">
@@ -24517,7 +24517,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);">5</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Pose Model</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="walking.pose-title">Pose Model</h3>
                                     </div>
                                     <div id="walkpad-pose-options" class="grid grid-cols-3 gap-2">
                                         <button type="button" data-value="walking-motion" class="option-btn-walkpad selected flex-col py-3">
@@ -24536,7 +24536,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);">6</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Pencahayaan</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="walking.lighting-title">Pencahayaan</h3>
                                     </div>
                                     <div id="walkpad-lighting-options" class="grid grid-cols-2 gap-2">
                                         <button type="button" data-value="natural-bright" class="option-btn-walkpad selected"><i class="fas fa-sun mr-1"></i>Natural Bright</button>
@@ -24551,7 +24551,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);">7</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Format Foto</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="walking.format-title">Format Foto</h3>
                                     </div>
                                     <div id="walkpad-ratio-options" class="grid grid-cols-3 gap-2">
                                         <button type="button" data-value="9:16" class="option-btn-walkpad selected flex-col py-3">
@@ -69529,75 +69529,328 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
         });
     </script>
 
-    <!-- ==================== LANGUAGE SYSTEM (Google Translate) ==================== -->
-    <!-- Hidden Google Translate Element -->
-    <div id="google_translate_element" style="display:none"></div>
-
-    <script type="text/javascript">
-    // Google Translate initialization
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'id',
-            includedLanguages: 'en,id',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-            autoDisplay: false
-        }, 'google_translate_element');
-    }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <!-- ==================== LANGUAGE SYSTEM ==================== -->
     <script>
     (function() {
-        // Track current language
+        var T = {
+            en: {
+                nav: { 'apikey-settings':'API Key','beranda':'Home','buat-model':'Create Model','mockup-studio':'Mockup Studio','pov-tangan':'POV Hand','touring':'Product Tour','mirror-selfie':'Mirror Selfie','walking-pad':'Walking Pad','affiliate':'Affiliate Photo','affiliate-islami':'Religious Theme','virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion','food-selfie':'Food Selfie','product-review':'Product Review','skincare-review':'Skincare Review','food-review':'Food Review','product-ads':'Product Ads','professional-headshot':'Pro Headshot','unboxing-scene':'Unboxing Scene','before-after':'Before/After','product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card','size-guide':'Size Guide','video-frames':'Video Frames','vehicle-modifier':'Vehicle Modifier','deskripsi-produk':'SEO Description','ide-konten-tiktok':'TikTok Ideas','script-story-iklan':'Ad Script','rencana-bisnis':'Business Plan','hr-assistant':'HR Assistant','konten-marketing':'Marketing Content','riset-pasar':'Market Research','financial-forecast':'Budget Simulation','family':'Family Photo','new-born':'Newborn Studio','maternity':'Maternity Photo','profesi-anak':'Kids Career Photo','wedding':'Wedding','wedding-design':'Wedding Design','umrah-haji':'Umrah/Hajj Photo','passport-photo':'Passport Photo','graduation-photo':'Graduation Photo','photo-booth':'Photo Booth','birthday-photo':'Birthday Photo','kartu-lebaran':'Eid Greeting Card','desain-rumah':'Home Design','desain-kamar':'Room Design','sketsa-gambar':'Sketch Drawing','bikin-carousel':'Make Carousel','miniature':'Miniature Me','karikatur':'Caricature Generator','photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor','tattoo-editor':'Tattoo Editor','halu':'Idol Fantasy','sticker':'Sticker Creator','hair-generator':'Hair Generator','expression-changer':'Expression Changer','face-swap':'Face Swap','bg-remover':'Change Background','photo-extender':'Photo Extender','story-board':'Story Board','twibon':'Twibon Frame','story-update':'Story Update','image-analyzer':'Image to Prompt','packaging-design':'Packaging Design','photo-angle':'Photo Angle','style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'IG & TikTok Cover','photo-restoration':'Photo Restoration','object-remover':'Object Remover','logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit','content-calendar':'Content Calendar','ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI','caption-generator':'AI Caption Generator','product-comparison':'Product Comparison','mascot-generator':'Mascot Generator','poster-generator':'Poster Generator','banner-generator':'Banner Generator','sketch-catalog':'Sketch to Catalog','fotogenic':'Fotogenic','timelapse-renovasi':'Renovation Timelapse','veo':'Affiliate Go Pro','opal':'Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer' },
+                nav_mobile: { 'apikey-settings':'API Key','beranda':'Home','buat-model':'Model','mockup-studio':'Mockup','pov-tangan':'POV','touring':'Tour','mirror-selfie':'Mirror','walking-pad':'Walking','affiliate':'Product','affiliate-islami':'Religion','virtual-tryon':'Try-On','pose-fashion':'Pose','food-selfie':'Food','product-review':'Review','skincare-review':'Skincare','food-review':'Food Rev','product-ads':'Ads','professional-headshot':'Headshot','unboxing-scene':'Unboxing','before-after':'Before/After','product-mockup':'Mockup','testimonial-generator':'Testimonial','size-guide':'Size','video-frames':'Frames','vehicle-modifier':'Vehicle','deskripsi-produk':'SEO Desc','ide-konten-tiktok':'TikTok','script-story-iklan':'Script','rencana-bisnis':'Business','hr-assistant':'HR','konten-marketing':'Marketing','riset-pasar':'Research','financial-forecast':'Budget','family':'Family','new-born':'Newborn','maternity':'Maternity','profesi-anak':'Kids Career','wedding':'Wedding','wedding-design':'Design','umrah-haji':'Umrah','passport-photo':'Passport','graduation-photo':'Graduation','photo-booth':'Booth','birthday-photo':'Birthday','kartu-lebaran':'Eid Card','desain-rumah':'Home Design','desain-kamar':'Room Design','sketsa-gambar':'Sketch','bikin-carousel':'Carousel','miniature':'Miniature','karikatur':'Caricature','photo-editor':'Editor','ai-beauty':'Beauty','tattoo-editor':'Tattoo','halu':'Idol','sticker':'Sticker','hair-generator':'Hair','expression-changer':'Expression','face-swap':'Face Swap','bg-remover':'Change BG','photo-extender':'Extend','story-board':'Storyboard','twibon':'Twibon','story-update':'Story','image-analyzer':'Analyzer','packaging-design':'Packaging','photo-angle':'Angle','style-matcher':'Style','thumbnail-generator':'Thumbnail','cover-photo-generator':'Cover','photo-restoration':'Restore','object-remover':'Remove','logo-generator':'Logo','brand-kit-generator':'Brand Kit','content-calendar':'Calendar','ab-testing':'A/B Test','roi-calculator':'ROI','caption-generator':'Caption','product-comparison':'Compare','mascot-generator':'Mascot','poster-generator':'Poster','banner-generator':'Banner','sketch-catalog':'Catalog','fotogenic':'Fotogenic','timelapse-renovasi':'Timelapse','veo':'Go Pro','opal':'Img to Video','voice-over':'Voice','video-analyzer':'Analyzer' },
+                categories: { 'photo-studio':'Photo Studio','ugc-content':'UGC Content Affiliate GO','affiliate-ecommerce':'Affiliate & E-Commerce','business-tools':'Business Tools','family-lifestyle':'Family & Lifestyle','creative-tools':'Creative Tools','video-audio':'Video & Audio' },
+                headers: { 'beranda':'Welcome to Affiliate Go Photo Studio','buat-model':'Create Model','mockup-studio':'Mockup Studio','miniature':'Miniature Me','karikatur':'Caricature Generator','photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor','halu':'Idol Fantasy','affiliate':'Affiliate Product Photo','virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion','affiliate-islami':'Religious Affiliate Theme','banner-generator':'Banner Generator','family':'Family Photo','food-selfie':'Food Selfie','product-review':'Product Review','skincare-review':'Skincare Review','food-review':'Food Review','product-ads':'Product Ads','new-born':'Newborn Studio','profesi-anak':'Kids Career Photo','story-update':'Story Update','photo-angle':'Photo Angle','style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'IG & TikTok Cover Photo','photo-restoration':'Photo Restoration','logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit Generator','content-calendar':'Content Calendar Planner','ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI','mascot-generator':'Mascot Generator','maternity':'Maternity Photo','wedding':'Wedding','wedding-design':'Wedding Design','umrah-haji':'Umrah/Hajj Photo','passport-photo':'Passport Photo','graduation-photo':'Graduation Photo','photo-booth':'Photo Booth','expression-changer':'Expression Changer','face-swap':'Face Swap','bg-remover':'Change Background','photo-extender':'Photo Extender','tattoo-editor':'Tattoo Editor','story-board':'Story Board','twibon':'Twibon Frame','professional-headshot':'Professional Headshot','birthday-photo':'Birthday Photo','kartu-lebaran':'Eid Greeting Card','image-analyzer':'Image to Prompt','packaging-design':'Packaging Design','before-after':'Before/After','desain-rumah':'Home Design','desain-kamar':'Room Design','sketsa-gambar':'Sketch Drawing','bikin-carousel':'Make Carousel','veo':'Affiliate Go Pro','opal':'Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer','sticker':'Sticker Creator','hair-generator':'Hair Generator','pov-tangan':'POV Hand Photos','touring':'Professional Touring Photo','mirror-selfie':'POV Mirror Selfie','sketch-catalog':'Sketch to Catalog','poster-generator':'Poster Generator','object-remover':'Object Remover','walking-pad':'Walking Pad Lifestyle','timelapse-renovasi':'Renovation Timelapse','fotogenic':'Fotogenic','apikey-settings':'Gemini API Key','rencana-bisnis':'Business Plan & SWOT','hr-assistant':'HR Assistant','konten-marketing':'Marketing Content','riset-pasar':'Market Research & Ideas','financial-forecast':'Budget Simulation','script-story-iklan':'Ad Story Script','ide-konten-tiktok':'TikTok Content Ideas','deskripsi-produk':'SEO Product Description','caption-generator':'AI Caption Generator','product-comparison':'Product Comparison','unboxing-scene':'Unboxing Scene','product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card','size-guide':'Size Guide','video-frames':'Video Frames','vehicle-modifier':'Vehicle Modifier' },
+                'mockup.desc1':'Create 7 professional mockups from your design with various templates',
+                'mockup.desc2':'Upload design → Choose mockup template or theme → Get realistic mockup results!',
+                'mockup.click-drag':'Click or drag your design here',
+                'mockup.template-ref-title':'Reference Mockup Template (Optional)',
+                'mockup.template-upload-text':'Upload mockup template photo (Optional)',
+                'mockup.template-placed':'Your design will be placed onto this template',
+                'mockup.template-tips':'Tips: Upload template photo (e.g. t-shirt, cup, poster). Design will be applied realistically',
+                'mockup.manual-theme-title':'Manual Mockup Theme (Optional)',
+                'mockup.theme-placeholder':'E.g: glass, t-shirt, poster, mug, book, smartphone, tote bag, etc...',
+                'mockup.theme-tips':'Tips: Specify the type of mockup you want. Leave empty for automatic variations',
+                'mockup.aspect-ratio-title':'Aspect Ratio',
+                'mockup.aspect-ratio-tips':'Choose the aspect ratio for all generated mockups',
+                'mockup.generate-btn':'Generate 7 Mockups',
+                'mockup.loading-title':'Creating Mockups...',
+                'mockup.results-title':'Mockup Results',
+                'mockup.download-all':'Download All',
+                'mockup.error-title':'An Error Occurred',
+                'mockup.retry':'Try Again',
+                'pov.desc1':'Create 7 POV hand-holding product photos with custom or aesthetic backgrounds',
+                'pov.desc2':'Upload any location photo → Your product will be placed at that location!',
+                'pov.upload-title':'Upload Product Photo',
+                'pov.click-drag':'Click or drag your product photo here',
+                'pov.bg-title':'Custom Background (Optional)',
+                'pov.bg-upload':'Upload location/background photo (Optional)',
+                'pov.bg-placed':'Product will be placed at this location',
+                'pov.bg-tips':'Tips: Upload any location photo (workshop, cafe, bedroom, garden, etc.). Product will be merged with POV hand',
+                'pov.bg-desc-title':'Background Description (Optional)',
+                'pov.bg-placeholder':'E.g: Minimalist wooden table with plants, Korean aesthetic cafe with latte, Pink aesthetic background, etc...',
+                'pov.bg-desc-tips':'Tips: Describe the background/setting you want. Leave empty for various automatic aesthetic backgrounds.',
+                'pov.hand-count-title':'Number of Hands',
+                'pov.hand-1':'1 Hand',
+                'pov.hand-2':'2 Hands',
+                'pov.hand-desc':'Choose whether the product will be held with 1 or 2 hands',
+                'pov.aspect-title':'Aspect Ratio',
+                'pov.aspect-desc':'Choose the aspect ratio for all POV photos to be generated',
+                'pov.generate-btn':'Generate 7 POV Hand Photos',
+                'touring.desc1':'Make your touring photos super cool like professional camera results! Upload model, motorcycle, helmet, and accessories photos.',
+                'touring.upload-title':'Upload Photos (Max 5)',
+                'touring.upload-desc':'Model, Motorcycle, Helmet, Jacket, Accessories, etc.',
+                'touring.add-photo':'Add Photo',
+                'touring.bg-title':'Road Background',
+                'touring.custom-bg':'Custom Background (Optional)',
+                'touring.upload-bg':'Upload Your Own Background',
+                'touring.or-use':'Or use the options above',
+                'touring.mood-title':'Mood Theme',
+                'touring.angle-title':'Photo Angle',
+                'touring.count-title':'Number of Variations',
+                'touring.generate-btn':'Generate 6 Touring Photos',
+                'touring.time-note':'⏱️ Process ~30-40 seconds per photo',
+                'touring.empty-title':'Professional Touring Photo',
+                'touring.empty-desc':'Upload model + motorcycle + helmet + accessories photos, choose road background and mood theme for epic touring photos!',
+                'touring.download-all':'Download All',
+                'mirror.desc1':'Transform any product into aesthetic mirror selfie photos!',
+                'mirror.desc2':'Upload product, choose style, and get cool mirror selfie results.',
+                'mirror.upload-product-title':'Upload Product Photo',
+                'mirror.click-upload':'📦 Click to upload product',
+                'mirror.product-types':'Any product (clothes, shoes, makeup, etc.)',
+                'mirror.delete-photo':'Delete Photo',
+                'mirror.upload-model-title':'Upload Model Photo',
+                'mirror.model-optional-label':'(Optional)',
+                'mirror.click-model':'👤 Click to upload model photo',
+                'mirror.model-optional':'Optional - For more personal selfie results',
+                'mirror.delete-model':'Delete Model Photo',
+                'mirror.mirror-type-title':'Mirror Type',
+                'mirror.mirror-placeholder':'E.g: Standing mirror with LED lights, Wall-mounted round mirror, etc.',
+                'mirror.mirror-desc':'Describe the type of mirror you want',
+                'mirror.room-style-title':'Room Style',
+                'mirror.room-placeholder':'E.g: Scandinavian bedroom with plants, Japanese zen bathroom, Industrial coffee shop, etc.',
+                'mirror.room-desc':'Describe the room style you want',
+                'mirror.phone-title':'Phone Model',
+                'mirror.hand-pos-title':'Hand Position',
+                'mirror.hand-hold-phone':'Hold Phone',
+                'mirror.hand-hips':'Hands on Hips',
+                'mirror.hand-hold-product':'Hold Product',
+                'mirror.hand-natural':'Natural/Relaxed',
+                'mirror.hand-both-up':'Both Hands Up',
+                'mirror.lighting-title':'Lighting',
+                'mirror.aspect-title':'Photo Ratio',
+                'walking.desc':'Create model photos wearing clothes on a walking pad with various aesthetic room themes. Results can be directly used for Image to Video for TikTok & Reels content!',
+                'walking.tip':'Perfect for Image to Video — model walking on walking pad',
+                'walking.upload-model-title':'Upload Model Photo',
+                'walking.model-ref-label':'(Face Reference)',
+                'walking.click-model':'Click to upload model photo',
+                'walking.model-desc':'Model face will be used as reference',
+                'walking.delete-model':'Delete Model Photo',
+                'walking.upload-clothes-title':'Upload Product/Clothing Photo',
+                'walking.click-clothes':'Click to upload clothing/product photo',
+                'walking.clothes-desc':'Upload 1–5 clothing photos for more detailed reference',
+                'walking.photos-count':'0/5 photos',
+                'walking.delete-clothes':'Delete Clothing Photo',
+                'walking.theme-title':'Room Theme',
+                'walking.theme-count-label':'(18 themes)',
+                'walking.female-label':'For Women',
+                'walking.male-label':'For Men',
+                'walking.neutral-label':'Neutral',
+                'walking.3-4-right':'3/4 Front Right',
+                'walking.3-4-left':'3/4 Front Left',
+                'walking.pose-title':'Model Pose',
+                'walking.walking':'Walking',
+                'walking.standing-casual':'Standing Casual',
+                'walking.standing-confident':'Standing Confident',
+                'walking.lighting-title':'Lighting',
+                'walking.format-title':'Photo Format',
+                'walking.count-title':'Number of Photos',
+                'walking.generate-btn':'Generate 4 Walking Pad Photos',
+                'walking.loading-1':'Creating walking pad photos...',
+                'walking.loading-2':'Preparing model and room...',
+                'walking.results-title':'4 Walking Pad Photos',
+                'walking.download-all':'Download All',
+                'walking.empty-title':'Ready to Create Walking Pad Photos',
+                'walking.empty-desc':'Upload model & clothing photos, choose room theme and camera angle, then generate model photos on the walking pad!',
+                'walking.18-themes':'18 Room Themes',
+                'walking.6-angles':'6 Camera Angles',
+                'walking.video-ready':'Ready for Image to Video',
+            },
+            id: {
+                nav: { 'apikey-settings':'API Key','beranda':'Beranda','buat-model':'Membuat Model','mockup-studio':'Mockup Studio','pov-tangan':'POV Tangan','touring':'Foto Touring','mirror-selfie':'POV Mirror Selfie','walking-pad':'Walking Pad','affiliate':'Foto Produk Affiliate','affiliate-islami':'Affiliate Agama','virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion','food-selfie':'Food Selfie','product-review':'Product Review','skincare-review':'Skincare Review','food-review':'Food Review','product-ads':'Iklan Produk','professional-headshot':'Professional Headshot','unboxing-scene':'Unboxing Scene','before-after':'Before/After','product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card','size-guide':'Size Guide','video-frames':'Video Frames','vehicle-modifier':'Vehicle Modifier','deskripsi-produk':'Deskripsi Produk SEO','ide-konten-tiktok':'Ide Konten TikTok','script-story-iklan':'Script Story Iklan','rencana-bisnis':'Rencana Bisnis & SWOT','hr-assistant':'HR Assistant','konten-marketing':'Konten Marketing','riset-pasar':'Riset Pasar & Ide','financial-forecast':'Simulasi Anggaran','family':'Foto Keluarga','new-born':'New Born Studio','maternity':'Foto Maternity','profesi-anak':'Foto Profesi Anak','wedding':'Wedding','wedding-design':'Desain Pernikahan','umrah-haji':'Foto Umrah/Haji','passport-photo':'Pas Foto Warna','graduation-photo':'Foto Wisuda','photo-booth':'Photo Booth','birthday-photo':'Foto Ulang Tahun','kartu-lebaran':'Kartu Lebaran','desain-rumah':'Desain Rumah','desain-kamar':'Desain Kamar','sketsa-gambar':'Sketsa Gambar','bikin-carousel':'Bikin Carousel','miniature':'Miniature Me','karikatur':'Karikatur Generator','photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor','tattoo-editor':'Tattoo Editor','halu':'Halu Idol','sticker':'Sticker Tempel','hair-generator':'Hair Generator','expression-changer':'Expression Changer','face-swap':'Face Swap','bg-remover':'Ubah Background','photo-extender':'Perluas Foto','story-board':'Story Board','twibon':'Twibon Frame','story-update':'Story Update','image-analyzer':'Image to Prompt','packaging-design':'Packaging Design','photo-angle':'Photo Angle','style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'Foto Sampul IG & Tiktok','photo-restoration':'Restorasi Foto','object-remover':'Hapus Object','logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit Generator','content-calendar':'Content Calendar Planner','ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI','caption-generator':'AI Caption Generator','product-comparison':'Product Comparison','mascot-generator':'Mascot Generator','poster-generator':'Poster Generator','banner-generator':'Banner Generator','sketch-catalog':'Sketsa ke Katalog','fotogenic':'Fotogenic','timelapse-renovasi':'Timelapse Renovasi','veo':'Affiliate Go Pro','opal':'Opal Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer' },
+                nav_mobile: { 'apikey-settings':'API Key','beranda':'Beranda','buat-model':'Model','mockup-studio':'Mockup','pov-tangan':'POV','touring':'Touring','mirror-selfie':'Mirror','walking-pad':'Walking Pad','affiliate':'Produk','affiliate-islami':'Agama','virtual-tryon':'Try-On','pose-fashion':'Pose','food-selfie':'Food','product-review':'Review','skincare-review':'Skincare','food-review':'Food','product-ads':'Iklan','professional-headshot':'Headshot','unboxing-scene':'Unboxing','before-after':'Sblm/Ssdh','product-mockup':'Mockup','testimonial-generator':'Testimonial','size-guide':'Ukuran','video-frames':'Frame','vehicle-modifier':'Kendaraan','deskripsi-produk':'Deskripsi','ide-konten-tiktok':'TikTok','script-story-iklan':'Script','rencana-bisnis':'Bisnis','hr-assistant':'HR','konten-marketing':'Marketing','riset-pasar':'Riset','financial-forecast':'Anggaran','family':'Keluarga','new-born':'Bayi','maternity':'Maternity','profesi-anak':'Profesi','wedding':'Wedding','wedding-design':'Desain','umrah-haji':'Umrah','passport-photo':'Pas Foto','graduation-photo':'Wisuda','photo-booth':'Photo Booth','birthday-photo':'Birthday','kartu-lebaran':'Kartu Lebaran','desain-rumah':'Rumah','desain-kamar':'Kamar','sketsa-gambar':'Sketsa','bikin-carousel':'Carousel','miniature':'Miniatur','karikatur':'Karikatur','photo-editor':'Editor','ai-beauty':'Beauty','tattoo-editor':'Tattoo','halu':'Halu','sticker':'Sticker','hair-generator':'Rambut','expression-changer':'Ekspresi','face-swap':'Face Swap','bg-remover':'Ubah BG','photo-extender':'Perluas','story-board':'Storyboard','twibon':'Twibon','story-update':'Story','image-analyzer':'Analyzer','packaging-design':'Packaging','photo-angle':'Angle','style-matcher':'Style','thumbnail-generator':'Thumbnail','cover-photo-generator':'Sampul','photo-restoration':'Restorasi','object-remover':'Hapus','logo-generator':'Logo','brand-kit-generator':'Brand Kit','content-calendar':'Kalender','ab-testing':'A/B Test','roi-calculator':'ROI','caption-generator':'Caption','product-comparison':'Bandingkan','mascot-generator':'Maskot','poster-generator':'Poster','banner-generator':'Banner','sketch-catalog':'Katalog','fotogenic':'Fotogenic','timelapse-renovasi':'Timelapse','veo':'Go Pro','opal':'Img ke Video','voice-over':'Voice','video-analyzer':'Analyzer' },
+                categories: { 'photo-studio':'Photo Studio','ugc-content':'UGC Content Affiliate GO','affiliate-ecommerce':'Affiliate & E-Commerce','business-tools':'Alat Bisnis','family-lifestyle':'Family & Lifestyle','creative-tools':'Creative Tools','video-audio':'Video & Audio' },
+                headers: { 'beranda':'Selamat Datang di Affiliate Go Foto Studio','buat-model':'Membuat Model','mockup-studio':'Mockup Studio','miniature':'Miniature Me','karikatur':'Karikatur Generator','photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor','halu':'Halu Idol','affiliate':'Foto Produk Affiliate','virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion','affiliate-islami':'Affiliate Agama','banner-generator':'Banner Generator','family':'Foto Keluarga','food-selfie':'Food Selfie','product-review':'Product Review','skincare-review':'Skincare Review','food-review':'Food Review','product-ads':'Iklan Produk','new-born':'New Born Studio','profesi-anak':'Foto Profesi Anak','story-update':'Story Update','photo-angle':'Photo Angle','style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'Foto sampul IG & Tiktok','photo-restoration':'Restorasi Foto','logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit Generator','content-calendar':'Content Calendar Planner','ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI','mascot-generator':'Mascot Generator','maternity':'Foto Maternity','wedding':'Wedding','wedding-design':'Desain Pernikahan','umrah-haji':'Foto Umrah/Haji','passport-photo':'Pas Foto Warna','graduation-photo':'Foto Wisuda','photo-booth':'Photo Booth','expression-changer':'Expression Changer','face-swap':'Face Swap','bg-remover':'Ubah Background','photo-extender':'Perluas Foto','tattoo-editor':'Tattoo Editor','story-board':'Story Board','twibon':'Twibon Frame','professional-headshot':'Professional Headshot','birthday-photo':'Foto Ulang Tahun','kartu-lebaran':'Kartu Lebaran','image-analyzer':'Image to Prompt','packaging-design':'Packaging Design','before-after':'Before/After','desain-rumah':'Desain Rumah','desain-kamar':'Desain Kamar','sketsa-gambar':'Sketsa Gambar','bikin-carousel':'Bikin Carousel','veo':'Affiliate Go Pro','opal':'Opal Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer','sticker':'Sticker Tempel','hair-generator':'Hair Generator','pov-tangan':'POV Tangan','touring':'Foto Touring Profesional','mirror-selfie':'POV Mirror Selfie','sketch-catalog':'Sketsa ke Katalog','poster-generator':'Poster Generator','object-remover':'Hapus Object','walking-pad':'Walking Pad Lifestyle','timelapse-renovasi':'Timelapse Renovasi','fotogenic':'Fotogenic','apikey-settings':'Gemini API Key','rencana-bisnis':'Rencana Bisnis & SWOT','hr-assistant':'HR Assistant','konten-marketing':'Konten Marketing','riset-pasar':'Riset Pasar & Ide','financial-forecast':'Simulasi Anggaran','script-story-iklan':'Script Story Iklan','ide-konten-tiktok':'Ide Konten TikTok','deskripsi-produk':'Deskripsi Produk SEO','caption-generator':'AI Caption Generator','product-comparison':'Product Comparison','unboxing-scene':'Unboxing Scene','product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card','size-guide':'Size Guide','video-frames':'Video Frames','vehicle-modifier':'Vehicle Modifier' },
+                'mockup.desc1':'Buat 7 mockup profesional dari design Anda dengan berbagai template',
+                'mockup.desc2':'Upload design → Pilih template mockup atau tema → Dapatkan hasil mockup realistis!',
+                'mockup.click-drag':'Klik atau drag design Anda di sini',
+                'mockup.template-ref-title':'Template Mockup Referensi (Opsional)',
+                'mockup.template-upload-text':'Upload foto template mockup (Opsional)',
+                'mockup.template-placed':'Design akan ditempelkan ke template ini',
+                'mockup.template-tips':'Tips: Upload foto template (contoh: foto kaos, gelas, poster, dll). Design akan ditempelkan secara realistis',
+                'mockup.manual-theme-title':'Tema Mockup Manual (Opsional)',
+                'mockup.theme-placeholder':'Contoh: gelas, kaos, poster, mug, buku, smartphone, tote bag, dll...',
+                'mockup.theme-tips':'Tips: Sebutkan jenis mockup yang Anda inginkan. Kosongkan untuk variasi otomatis',
+                'mockup.aspect-ratio-title':'Rasio Aspek',
+                'mockup.aspect-ratio-tips':'Pilih rasio aspek untuk semua mockup yang akan di-generate',
+                'mockup.generate-btn':'Generate 7 Mockup',
+                'mockup.loading-title':'Sedang Membuat Mockup...',
+                'mockup.results-title':'Hasil Mockup',
+                'mockup.download-all':'Download Semua',
+                'mockup.error-title':'Terjadi Kesalahan',
+                'mockup.retry':'Coba Lagi',
+                'pov.desc1':'Buat 7 foto POV tangan memegang produk dengan background custom atau aesthetic otomatis',
+                'pov.desc2':'Upload foto lokasi apapun → Produk Anda akan ditempatkan di lokasi tersebut!',
+                'pov.upload-title':'Upload Foto Produk',
+                'pov.click-drag':'Klik atau drag foto produk Anda di sini',
+                'pov.bg-title':'Background Custom (Opsional)',
+                'pov.bg-upload':'Upload foto lokasi/background (Opsional)',
+                'pov.bg-placed':'Produk akan ditempatkan di lokasi ini',
+                'pov.bg-tips':'Tips: Upload foto lokasi apapun (bengkel, cafe, kamar, taman, dll). Produk akan digabungkan ke lokasi tersebut dengan POV tangan',
+                'pov.bg-desc-title':'Deskripsi Background (Opsional)',
+                'pov.bg-placeholder':'Contoh: Meja kayu minimalis dengan tanaman hijau, Cafe aesthetic Korea dengan latte, Background pink aesthetic dengan pegboard, dll...',
+                'pov.bg-desc-tips':'Tips: Deskripsikan background/setting yang Anda inginkan. Kosongkan untuk mendapatkan berbagai aesthetic background otomatis.',
+                'pov.hand-count-title':'Jumlah Tangan',
+                'pov.hand-1':'1 Tangan',
+                'pov.hand-2':'2 Tangan',
+                'pov.hand-desc':'Pilih apakah produk akan digenggam dengan 1 tangan atau 2 tangan',
+                'pov.aspect-title':'Rasio Aspek',
+                'pov.aspect-desc':'Pilih rasio aspek untuk semua foto POV yang akan di-generate',
+                'pov.generate-btn':'Generate 7 Foto POV Tangan',
+                'touring.desc1':'Buat foto touring kamu jadi super keren seperti hasil kamera profesional! Upload foto model, motor, helm, dan aksesoris lainnya.',
+                'touring.upload-title':'Upload Foto (Max 5)',
+                'touring.upload-desc':'Model, Motor, Helm, Jaket, Aksesoris, dll',
+                'touring.add-photo':'Tambah Foto',
+                'touring.bg-title':'Background Jalanan',
+                'touring.custom-bg':'Custom Background (Opsional)',
+                'touring.upload-bg':'Upload Background Sendiri',
+                'touring.or-use':'Atau gunakan pilihan di atas',
+                'touring.mood-title':'Tema Suasana',
+                'touring.angle-title':'Angle Foto',
+                'touring.count-title':'Jumlah Variasi',
+                'touring.generate-btn':'Generate 6 Foto Touring',
+                'touring.time-note':'⏱️ Proses ~30-40 detik per foto',
+                'touring.empty-title':'Foto Touring Profesional',
+                'touring.empty-desc':'Upload foto model + motor + helm + aksesoris, pilih background jalanan dan tema suasana untuk mendapatkan foto touring yang epic!',
+                'touring.download-all':'Download All',
+                'mirror.desc1':'Ubah produk apapun jadi foto mirror selfie yang aesthetic!',
+                'mirror.desc2':'Upload produk, pilih style, dan dapatkan hasil seperti mirror selfie yang keren.',
+                'mirror.upload-product-title':'Upload Foto Produk',
+                'mirror.click-upload':'📦 Klik untuk upload produk',
+                'mirror.product-types':'Bisa produk apapun (baju, sepatu, makeup, dll)',
+                'mirror.delete-photo':'Hapus Foto',
+                'mirror.upload-model-title':'Upload Foto Model',
+                'mirror.model-optional-label':'(Opsional)',
+                'mirror.click-model':'👤 Klik untuk upload foto model',
+                'mirror.model-optional':'Opsional - Untuk hasil selfie lebih personal',
+                'mirror.delete-model':'Hapus Foto Model',
+                'mirror.mirror-type-title':'Jenis Mirror',
+                'mirror.mirror-placeholder':'Contoh: Standing mirror with LED lights, Wall-mounted round mirror, dll',
+                'mirror.mirror-desc':'Jelaskan jenis mirror yang kamu inginkan',
+                'mirror.room-style-title':'Style Ruangan',
+                'mirror.room-placeholder':'Contoh: Scandinavian bedroom with plants, Japanese zen bathroom, Industrial coffee shop, dll',
+                'mirror.room-desc':'Jelaskan style ruangan yang kamu inginkan',
+                'mirror.phone-title':'Model HP',
+                'mirror.hand-pos-title':'Posisi Tangan',
+                'mirror.hand-hold-phone':'Pegang HP',
+                'mirror.hand-hips':'Tangan di Pinggang',
+                'mirror.hand-hold-product':'Pegang Produk',
+                'mirror.hand-natural':'Natural/Santai',
+                'mirror.hand-both-up':'Kedua Tangan Naik',
+                'mirror.lighting-title':'Pencahayaan',
+                'mirror.aspect-title':'Rasio Foto',
+                'walking.desc':'Buat foto model memakai baju di atas walking pad dengan berbagai tema ruangan aesthetic. Hasilnya bisa langsung di-Image to Video untuk konten TikTok & Reels!',
+                'walking.tip':'Cocok untuk Image to Video — model berjalan di walking pad',
+                'walking.upload-model-title':'Upload Foto Model',
+                'walking.model-ref-label':'(Wajah Referensi)',
+                'walking.click-model':'Klik untuk upload foto model',
+                'walking.model-desc':'Wajah model akan digunakan sebagai referensi',
+                'walking.delete-model':'Hapus Foto Model',
+                'walking.upload-clothes-title':'Upload Foto Produk/Baju',
+                'walking.click-clothes':'Klik untuk upload foto baju/produk',
+                'walking.clothes-desc':'Bisa upload 1–5 foto baju untuk referensi lebih detail',
+                'walking.photos-count':'0/5 foto',
+                'walking.delete-clothes':'Hapus Foto Baju',
+                'walking.theme-title':'Tema Ruangan',
+                'walking.theme-count-label':'(18 tema)',
+                'walking.female-label':'Untuk Perempuan',
+                'walking.male-label':'Untuk Laki-laki',
+                'walking.neutral-label':'Netral',
+                'walking.3-4-right':'3/4 Depan Kanan',
+                'walking.3-4-left':'3/4 Depan Kiri',
+                'walking.pose-title':'Pose Model',
+                'walking.walking':'Berjalan',
+                'walking.standing-casual':'Berdiri Santai',
+                'walking.standing-confident':'Berdiri Percaya Diri',
+                'walking.lighting-title':'Pencahayaan',
+                'walking.format-title':'Format Foto',
+                'walking.count-title':'Jumlah Foto',
+                'walking.generate-btn':'Generate 4 Foto Walking Pad',
+                'walking.loading-1':'Membuat foto walking pad...',
+                'walking.loading-2':'Menyiapkan model dan ruangan...',
+                'walking.results-title':'4 Foto Walking Pad',
+                'walking.download-all':'Download Semua',
+                'walking.empty-title':'Siap Membuat Foto Walking Pad',
+                'walking.empty-desc':'Upload foto model & baju, pilih tema ruangan dan angle kamera, lalu generate foto model di atas walking pad!',
+                'walking.18-themes':'18 Tema Ruangan',
+                'walking.6-angles':'6 Camera Angle',
+                'walking.video-ready':'Siap Image to Video',
+            }
+        };
+
         var currentLang = localStorage.getItem('app_language') || 'en';
 
-        // Trigger Google Translate to change language
-        function triggerTranslate(lang) {
-            var select = document.querySelector('.goog-te-combo');
-            if (select) {
-                select.value = lang === 'en' ? 'en' : 'id';
-                select.dispatchEvent(new Event('change'));
+        function applyText(el, text) {
+            var hasChildEl = Array.from(el.childNodes).some(function(n){ return n.nodeType === 1; });
+            if (hasChildEl) {
+                Array.from(el.childNodes).forEach(function(n){
+                    if (n.nodeType === 3 && n.textContent.trim()) {
+                        var ws = n.textContent.match(/^(s*)/)[1];
+                        n.textContent = ws + text;
+                    }
+                });
+            } else {
+                el.textContent = text;
             }
         }
 
-        // Update toggle button active states
-        function updateToggleBtns(lang) {
-            document.querySelectorAll('.lang-toggle-btn, .mobile-lang-btn').forEach(function(btn) {
-                btn.classList.toggle('lang-active', btn.getAttribute('data-lang') === lang);
-            });
-        }
-
-        // Set language
-        window.setAppLanguage = function(lang) {
+        function applyLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('app_language', lang);
-            updateToggleBtns(lang);
-            triggerTranslate(lang);
-        };
+            var t = T[lang];
+            if (!t) return;
 
-        document.addEventListener('DOMContentLoaded', function() {
-            // Wire toggle buttons
-            document.querySelectorAll('.lang-toggle-btn, .mobile-lang-btn').forEach(function(btn) {
-                btn.addEventListener('click', function() {
-                    setAppLanguage(btn.getAttribute('data-lang'));
-                });
+            if (t.nav) Object.keys(t.nav).forEach(function(tab){
+                var el = document.querySelector('.main-tab-btn[data-tab="'+tab+'"] .btn-text');
+                if (el) el.textContent = t.nav[tab];
             });
 
-            updateToggleBtns(currentLang);
-
-            // Wait for Google Translate to load, then apply saved language
-            var tries = 0;
-            var interval = setInterval(function() {
-                var select = document.querySelector('.goog-te-combo');
-                if (select) {
-                    clearInterval(interval);
-                    if (currentLang === 'en') {
-                        triggerTranslate('en');
-                    }
-                } else if (++tries > 40) {
-                    clearInterval(interval); // timeout after 4s
+            if (t.nav_mobile) Object.keys(t.nav_mobile).forEach(function(tab){
+                var btn = document.querySelector('.mobile-tab-btn[data-tab="'+tab+'"]');
+                if (!btn) return;
+                var spans = btn.querySelectorAll('span');
+                for (var i=0;i<spans.length;i++){
+                    if (!spans[i].classList.contains('new-badge')){ spans[i].textContent = t.nav_mobile[tab]; break; }
                 }
-            }, 100);
+            });
+
+            document.querySelectorAll('[data-i18n-cat]').forEach(function(el){
+                var key = el.getAttribute('data-i18n-cat');
+                if (t.categories && t.categories[key]) {
+                    var icon = el.querySelector('i');
+                    el.textContent = ' ' + t.categories[key];
+                    if (icon) el.insertBefore(icon, el.firstChild);
+                }
+            });
+
+            if (t.headers) Object.keys(t.headers).forEach(function(id){
+                var panel = document.getElementById('content-'+id);
+                if (!panel) return;
+                var h = panel.querySelector('header h1') || panel.querySelector('header h2') || panel.querySelector('h1');
+                if (h) applyText(h, t.headers[id]);
+            });
+
+            document.querySelectorAll('[data-i18n]').forEach(function(el){
+                var key = el.getAttribute('data-i18n');
+                if (t[key] !== undefined) applyText(el, t[key]);
+            });
+
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
+                var key = el.getAttribute('data-i18n-placeholder');
+                if (t[key] !== undefined) el.placeholder = t[key];
+            });
+
+            document.querySelectorAll('.lang-toggle-btn, .mobile-lang-btn').forEach(function(btn){
+                btn.classList.toggle('lang-active', btn.getAttribute('data-lang') === lang);
+            });
+
+            document.documentElement.lang = lang;
+        }
+
+        window.setAppLanguage = function(lang){ applyLanguage(lang); };
+
+        document.addEventListener('DOMContentLoaded', function(){
+            applyLanguage(currentLang);
+            document.querySelectorAll('.lang-toggle-btn, .mobile-lang-btn').forEach(function(btn){
+                btn.addEventListener('click', function(){ setAppLanguage(btn.getAttribute('data-lang')); });
+            });
         });
     })();
     </script>
