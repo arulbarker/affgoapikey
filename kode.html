@@ -8890,6 +8890,13 @@
         .timelapse-frame-btn.timelapse-frame-selected { background: linear-gradient(135deg, #f59e0b 0%, #0d9488 100%) !important; color: white !important; border-color: #f59e0b !important; font-weight: 700 !important; box-shadow: 0 4px 12px rgba(245,158,11,0.35) !important; }
 
 
+        /* Language Toggle */
+        .lang-toggle { display:inline-flex; border-radius:999px; overflow:hidden; border:1.5px solid #bae6fd; margin-top:0.4rem; }
+        .lang-toggle-btn { padding:0.18rem 0.55rem; border:none; background:transparent; color:#64748b; cursor:pointer; font-size:0.65rem; font-weight:700; transition:all 0.2s; }
+        .lang-toggle-btn.lang-active { background:linear-gradient(135deg,#0ea5e9,#6366f1); color:white; }
+        .mobile-lang-row { display:flex; align-items:center; justify-content:center; gap:0.3rem; margin-top:0.3rem; }
+        .mobile-lang-btn { padding:0.15rem 0.5rem; border-radius:999px; border:1.5px solid rgba(255,255,255,0.35); background:transparent; color:rgba(255,255,255,0.7); font-size:0.62rem; font-weight:700; cursor:pointer; transition:all 0.2s; }
+        .mobile-lang-btn.lang-active { background:white; color:#0ea5e9; border-color:white; }
     </style>
 </head>
 <body>
@@ -8931,6 +8938,10 @@
     <div class="mobile-header">
         <h1><i class="fas fa-magic"></i> Affiliate Go Foto Studio <span class="text-xs bg-gradient-to-r from-sky-500 to-violet-500 text-white px-2 py-1 rounded-full">V21</span></h1>
         <p class="text-xs text-gray-400 mt-1">by Arul CG</p>
+        <div class="mobile-lang-row">
+            <button class="mobile-lang-btn lang-active" data-lang="en">EN</button>
+            <button class="mobile-lang-btn" data-lang="id">ID</button>
+        </div>
     </div>
 
     <div class="app-container">
@@ -8941,8 +8952,12 @@
                     Affiliate Go Foto Studio
                 </h1>
                 <p class="text-xs text-gray-500 mt-1">by Arul CG</p>
-                <div class="mt-2">
+                <div class="mt-2 flex items-center justify-center gap-2">
                     <span class="text-xs bg-gradient-to-r from-sky-500 to-violet-500 text-white px-3 py-1 rounded-full font-semibold shadow-lg">V21</span>
+                    <div class="lang-toggle">
+                        <button class="lang-toggle-btn lang-active" data-lang="en">EN</button>
+                        <button class="lang-toggle-btn" data-lang="id">ID</button>
+                    </div>
                 </div>
             </div>
 
@@ -8968,7 +8983,7 @@
 
                 <!-- PHOTO STUDIO Category -->
                 <div class="menu-category">
-                    <div class="menu-category-title">
+                    <div class="menu-category-title" data-i18n-cat="photo-studio">
                         <i class="fas fa-camera mr-1"></i> Photo Studio
                     </div>
                     <button data-tab="mockup-studio" class="main-tab-btn">
@@ -8998,7 +9013,7 @@
 
                 <!-- UGC CONTENT Category -->
                 <div class="menu-category">
-                    <div class="menu-category-title">
+                    <div class="menu-category-title" data-i18n-cat="ugc-content">
                         <i class="fas fa-fire mr-1"></i> UGC Content Affiliate GO
                     </div>
                     <button data-tab="affiliate" class="main-tab-btn">
@@ -9084,7 +9099,7 @@
 
                 <!-- AFFILIATE & E-COMMERCE Category -->
                 <div class="menu-category">
-                    <div class="menu-category-title">
+                    <div class="menu-category-title" data-i18n-cat="affiliate-ecommerce">
                         <i class="fas fa-shopping-cart mr-1"></i> Affiliate & E-Commerce
                     </div>
                     <button data-tab="deskripsi-produk" class="main-tab-btn">
@@ -9103,7 +9118,7 @@
 
                 <!-- ALAT BISNIS Category -->
                 <div class="menu-category">
-                    <div class="menu-category-title">
+                    <div class="menu-category-title" data-i18n-cat="business-tools">
                         <i class="fas fa-briefcase mr-1"></i> Alat Bisnis
                     </div>
                     <button data-tab="rencana-bisnis" class="main-tab-btn">
@@ -9130,7 +9145,7 @@
 
                 <!-- FAMILY & LIFESTYLE Category -->
                 <div class="menu-category">
-                    <div class="menu-category-title">
+                    <div class="menu-category-title" data-i18n-cat="family-lifestyle">
                         <i class="fas fa-home mr-1"></i> Family & Lifestyle
                     </div>
                     <button data-tab="family" class="main-tab-btn">
@@ -9208,7 +9223,7 @@
 
                 <!-- CREATIVE TOOLS Category -->
                 <div class="menu-category">
-                    <div class="menu-category-title">
+                    <div class="menu-category-title" data-i18n-cat="creative-tools">
                         <i class="fas fa-magic mr-1"></i> Creative Tools
                     </div>
                     <button data-tab="miniature" class="main-tab-btn">
@@ -9396,7 +9411,7 @@
 
                 <!-- VIDEO & AUDIO Category -->
                 <div class="menu-category">
-                    <div class="menu-category-title">
+                    <div class="menu-category-title" data-i18n-cat="video-audio">
                         <i class="fas fa-film mr-1"></i> Video & Audio
                     </div>
                     <button data-tab="veo" class="main-tab-btn">
@@ -69507,6 +69522,383 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             }
         });
     </script>
+
+    <!-- ==================== i18n LANGUAGE SYSTEM ==================== -->
+    <script>
+    (function() {
+        var T = {
+            en: {
+                nav: {
+                    'apikey-settings':'API Key','beranda':'Home','buat-model':'Create Model',
+                    'mockup-studio':'Mockup Studio','pov-tangan':'POV Hand','touring':'Product Tour',
+                    'mirror-selfie':'Mirror Selfie','walking-pad':'Walking Pad',
+                    'affiliate':'Affiliate Photo','affiliate-islami':'Religious Theme',
+                    'virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion',
+                    'food-selfie':'Food Selfie','product-review':'Product Review',
+                    'skincare-review':'Skincare Review','food-review':'Food Review',
+                    'product-ads':'Product Ads','professional-headshot':'Pro Headshot',
+                    'unboxing-scene':'Unboxing Scene','before-after':'Before/After',
+                    'product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card',
+                    'size-guide':'Size Guide','video-frames':'Video Frames',
+                    'vehicle-modifier':'Vehicle Modifier','deskripsi-produk':'SEO Description',
+                    'ide-konten-tiktok':'TikTok Ideas','script-story-iklan':'Ad Script',
+                    'rencana-bisnis':'Business Plan','hr-assistant':'HR Assistant',
+                    'konten-marketing':'Marketing Content','riset-pasar':'Market Research',
+                    'financial-forecast':'Budget Simulation','family':'Family Photo',
+                    'new-born':'Newborn Studio','maternity':'Maternity Photo',
+                    'profesi-anak':'Kids Career Photo','wedding':'Wedding',
+                    'wedding-design':'Wedding Design','umrah-haji':'Umrah/Hajj Photo',
+                    'passport-photo':'Passport Photo','graduation-photo':'Graduation Photo',
+                    'photo-booth':'Photo Booth','birthday-photo':'Birthday Photo',
+                    'kartu-lebaran':'Eid Greeting Card','desain-rumah':'Home Design',
+                    'desain-kamar':'Room Design','sketsa-gambar':'Sketch Drawing',
+                    'bikin-carousel':'Make Carousel','miniature':'Miniature Me',
+                    'karikatur':'Caricature Generator','photo-editor':'Photo Editor Pro',
+                    'ai-beauty':'AI Beauty Editor','tattoo-editor':'Tattoo Editor',
+                    'halu':'Idol Fantasy','sticker':'Sticker Creator',
+                    'hair-generator':'Hair Generator','expression-changer':'Expression Changer',
+                    'face-swap':'Face Swap','bg-remover':'Change Background',
+                    'photo-extender':'Photo Extender','story-board':'Story Board',
+                    'twibon':'Twibon Frame','story-update':'Story Update',
+                    'image-analyzer':'Image to Prompt','packaging-design':'Packaging Design',
+                    'photo-angle':'Photo Angle','style-matcher':'Style Matcher',
+                    'thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'IG & TikTok Cover',
+                    'photo-restoration':'Photo Restoration','object-remover':'Object Remover',
+                    'logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit',
+                    'content-calendar':'Content Calendar','ab-testing':'A/B Testing AI',
+                    'roi-calculator':'ROI Calculator AI','caption-generator':'AI Caption Generator',
+                    'product-comparison':'Product Comparison','mascot-generator':'Mascot Generator',
+                    'poster-generator':'Poster Generator','banner-generator':'Banner Generator',
+                    'sketch-catalog':'Sketch to Catalog','fotogenic':'Fotogenic',
+                    'timelapse-renovasi':'Renovation Timelapse','veo':'Affiliate Go Pro',
+                    'opal':'Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer'
+                },
+                nav_mobile: {
+                    'apikey-settings':'API Key','beranda':'Home','buat-model':'Model',
+                    'mockup-studio':'Mockup','pov-tangan':'POV','touring':'Tour',
+                    'mirror-selfie':'Mirror','walking-pad':'Walking',
+                    'affiliate':'Product','affiliate-islami':'Religion',
+                    'virtual-tryon':'Try-On','pose-fashion':'Pose',
+                    'food-selfie':'Food','product-review':'Review',
+                    'skincare-review':'Skincare','food-review':'Food Rev',
+                    'product-ads':'Ads','professional-headshot':'Headshot',
+                    'unboxing-scene':'Unboxing','before-after':'Before/After',
+                    'product-mockup':'Mockup','testimonial-generator':'Testimonial',
+                    'size-guide':'Size','video-frames':'Frames',
+                    'vehicle-modifier':'Vehicle','deskripsi-produk':'SEO Desc',
+                    'ide-konten-tiktok':'TikTok','script-story-iklan':'Script',
+                    'rencana-bisnis':'Business','hr-assistant':'HR',
+                    'konten-marketing':'Marketing','riset-pasar':'Research',
+                    'financial-forecast':'Budget','family':'Family',
+                    'new-born':'Newborn','maternity':'Maternity',
+                    'profesi-anak':'Kids Career','wedding':'Wedding',
+                    'wedding-design':'Design','umrah-haji':'Umrah',
+                    'passport-photo':'Passport','graduation-photo':'Graduation',
+                    'photo-booth':'Booth','birthday-photo':'Birthday',
+                    'kartu-lebaran':'Eid Card','desain-rumah':'Home Design',
+                    'desain-kamar':'Room Design','sketsa-gambar':'Sketch',
+                    'bikin-carousel':'Carousel','miniature':'Miniature',
+                    'karikatur':'Caricature','photo-editor':'Editor',
+                    'ai-beauty':'Beauty','tattoo-editor':'Tattoo',
+                    'halu':'Idol','sticker':'Sticker',
+                    'hair-generator':'Hair','expression-changer':'Expression',
+                    'face-swap':'Face Swap','bg-remover':'Change BG',
+                    'photo-extender':'Extend','story-board':'Storyboard',
+                    'twibon':'Twibon','story-update':'Story',
+                    'image-analyzer':'Analyzer','packaging-design':'Packaging',
+                    'photo-angle':'Angle','style-matcher':'Style',
+                    'thumbnail-generator':'Thumbnail','cover-photo-generator':'Cover',
+                    'photo-restoration':'Restore','object-remover':'Remove',
+                    'logo-generator':'Logo','brand-kit-generator':'Brand Kit',
+                    'content-calendar':'Calendar','ab-testing':'A/B Test',
+                    'roi-calculator':'ROI','caption-generator':'Caption',
+                    'product-comparison':'Compare','mascot-generator':'Mascot',
+                    'poster-generator':'Poster','banner-generator':'Banner',
+                    'sketch-catalog':'Catalog','fotogenic':'Fotogenic',
+                    'timelapse-renovasi':'Timelapse','veo':'Go Pro',
+                    'opal':'Img to Video','voice-over':'Voice','video-analyzer':'Analyzer'
+                },
+                categories: {
+                    'photo-studio':'Photo Studio','ugc-content':'UGC Content Affiliate GO',
+                    'affiliate-ecommerce':'Affiliate & E-Commerce','business-tools':'Business Tools',
+                    'family-lifestyle':'Family & Lifestyle','creative-tools':'Creative Tools',
+                    'video-audio':'Video & Audio'
+                },
+                headers: {
+                    'beranda':'Welcome to Affiliate Go Photo Studio',
+                    'buat-model':'Create Model','mockup-studio':'Mockup Studio',
+                    'miniature':'Miniature Me','karikatur':'Caricature Generator',
+                    'photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor',
+                    'halu':'Idol Fantasy','affiliate':'Affiliate Product Photo',
+                    'virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion',
+                    'affiliate-islami':'Religious Affiliate Theme',
+                    'banner-generator':'Banner Generator','family':'Family Photo',
+                    'food-selfie':'Food Selfie','product-review':'Product Review',
+                    'skincare-review':'Skincare Review','food-review':'Food Review',
+                    'product-ads':'Product Ads','new-born':'Newborn Studio',
+                    'profesi-anak':'Kids Career Photo','story-update':'Story Update',
+                    'photo-angle':'Photo Angle','style-matcher':'Style Matcher',
+                    'thumbnail-generator':'Thumbnail Pro',
+                    'cover-photo-generator':'IG & TikTok Cover Photo',
+                    'photo-restoration':'Photo Restoration','logo-generator':'Logo Generator',
+                    'brand-kit-generator':'AI Brand Kit Generator',
+                    'content-calendar':'Content Calendar Planner',
+                    'ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI',
+                    'mascot-generator':'Mascot Generator','maternity':'Maternity Photo',
+                    'wedding':'Wedding','wedding-design':'Wedding Design',
+                    'umrah-haji':'Umrah/Hajj Photo','passport-photo':'Passport Photo',
+                    'graduation-photo':'Graduation Photo','photo-booth':'Photo Booth',
+                    'expression-changer':'Expression Changer','face-swap':'Face Swap',
+                    'bg-remover':'Change Background','photo-extender':'Photo Extender',
+                    'tattoo-editor':'Tattoo Editor','story-board':'Story Board',
+                    'twibon':'Twibon Frame','professional-headshot':'Professional Headshot',
+                    'birthday-photo':'Birthday Photo','kartu-lebaran':'Eid Greeting Card',
+                    'image-analyzer':'Image to Prompt','packaging-design':'Packaging Design',
+                    'before-after':'Before/After','desain-rumah':'Home Design',
+                    'desain-kamar':'Room Design','sketsa-gambar':'Sketch Drawing',
+                    'bikin-carousel':'Make Carousel','veo':'Affiliate Go Pro',
+                    'opal':'Image to Video','voice-over':'Voice Over',
+                    'video-analyzer':'Video Analyzer','sticker':'Sticker Creator',
+                    'hair-generator':'Hair Generator','pov-tangan':'POV Hand',
+                    'touring':'Product Tour Photo','mirror-selfie':'POV Mirror Selfie',
+                    'sketch-catalog':'Sketch to Catalog','poster-generator':'Poster Generator',
+                    'object-remover':'Object Remover','walking-pad':'Walking Pad',
+                    'timelapse-renovasi':'Renovation Timelapse','fotogenic':'Fotogenic',
+                    'apikey-settings':'Gemini API Key','rencana-bisnis':'Business Plan & SWOT',
+                    'hr-assistant':'HR Assistant','konten-marketing':'Marketing Content',
+                    'riset-pasar':'Market Research & Ideas','financial-forecast':'Budget Simulation',
+                    'script-story-iklan':'Ad Story Script','ide-konten-tiktok':'TikTok Content Ideas',
+                    'deskripsi-produk':'SEO Product Description',
+                    'caption-generator':'AI Caption Generator',
+                    'product-comparison':'Product Comparison','unboxing-scene':'Unboxing Scene',
+                    'product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card',
+                    'size-guide':'Size Guide','video-frames':'Video Frames',
+                    'vehicle-modifier':'Vehicle Modifier'
+                }
+            },
+            id: {
+                nav: {
+                    'apikey-settings':'API Key','beranda':'Beranda','buat-model':'Membuat Model',
+                    'mockup-studio':'Mockup Studio','pov-tangan':'POV Tangan',
+                    'touring':'Foto Touring','mirror-selfie':'POV Mirror Selfie',
+                    'walking-pad':'Walking Pad','affiliate':'Foto Produk Affiliate',
+                    'affiliate-islami':'Affiliate Agama','virtual-tryon':'Virtual Try-On',
+                    'pose-fashion':'Pose Fashion','food-selfie':'Food Selfie',
+                    'product-review':'Product Review','skincare-review':'Skincare Review',
+                    'food-review':'Food Review','product-ads':'Iklan Produk',
+                    'professional-headshot':'Professional Headshot',
+                    'unboxing-scene':'Unboxing Scene','before-after':'Before/After',
+                    'product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card',
+                    'size-guide':'Size Guide','video-frames':'Video Frames',
+                    'vehicle-modifier':'Vehicle Modifier','deskripsi-produk':'Deskripsi Produk SEO',
+                    'ide-konten-tiktok':'Ide Konten TikTok','script-story-iklan':'Script Story Iklan',
+                    'rencana-bisnis':'Rencana Bisnis & SWOT','hr-assistant':'HR Assistant',
+                    'konten-marketing':'Konten Marketing','riset-pasar':'Riset Pasar & Ide',
+                    'financial-forecast':'Simulasi Anggaran','family':'Foto Keluarga',
+                    'new-born':'New Born Studio','maternity':'Foto Maternity',
+                    'profesi-anak':'Foto Profesi Anak','wedding':'Wedding',
+                    'wedding-design':'Desain Pernikahan','umrah-haji':'Foto Umrah/Haji',
+                    'passport-photo':'Pas Foto Warna','graduation-photo':'Foto Wisuda',
+                    'photo-booth':'Photo Booth','birthday-photo':'Foto Ulang Tahun',
+                    'kartu-lebaran':'Kartu Lebaran','desain-rumah':'Desain Rumah',
+                    'desain-kamar':'Desain Kamar','sketsa-gambar':'Sketsa Gambar',
+                    'bikin-carousel':'Bikin Carousel','miniature':'Miniature Me',
+                    'karikatur':'Karikatur Generator','photo-editor':'Photo Editor Pro',
+                    'ai-beauty':'AI Beauty Editor','tattoo-editor':'Tattoo Editor',
+                    'halu':'Halu Idol','sticker':'Sticker Tempel',
+                    'hair-generator':'Hair Generator','expression-changer':'Expression Changer',
+                    'face-swap':'Face Swap','bg-remover':'Ubah Background',
+                    'photo-extender':'Perluas Foto','story-board':'Story Board',
+                    'twibon':'Twibon Frame','story-update':'Story Update',
+                    'image-analyzer':'Image to Prompt','packaging-design':'Packaging Design',
+                    'photo-angle':'Photo Angle','style-matcher':'Style Matcher',
+                    'thumbnail-generator':'Thumbnail Pro',
+                    'cover-photo-generator':'Foto Sampul IG & Tiktok',
+                    'photo-restoration':'Restorasi Foto','object-remover':'Hapus Object',
+                    'logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit Generator',
+                    'content-calendar':'Content Calendar Planner','ab-testing':'A/B Testing AI',
+                    'roi-calculator':'ROI Calculator AI','caption-generator':'AI Caption Generator',
+                    'product-comparison':'Product Comparison','mascot-generator':'Mascot Generator',
+                    'poster-generator':'Poster Generator','banner-generator':'Banner Generator',
+                    'sketch-catalog':'Sketsa ke Katalog','fotogenic':'Fotogenic',
+                    'timelapse-renovasi':'Timelapse Renovasi','veo':'Affiliate Go Pro',
+                    'opal':'Opal Image to Video','voice-over':'Voice Over',
+                    'video-analyzer':'Video Analyzer'
+                },
+                nav_mobile: {
+                    'apikey-settings':'API Key','beranda':'Beranda','buat-model':'Model',
+                    'mockup-studio':'Mockup','pov-tangan':'POV','touring':'Touring',
+                    'mirror-selfie':'Mirror','walking-pad':'Walking Pad',
+                    'affiliate':'Produk','affiliate-islami':'Agama',
+                    'virtual-tryon':'Try-On','pose-fashion':'Pose',
+                    'food-selfie':'Food','product-review':'Review',
+                    'skincare-review':'Skincare','food-review':'Food',
+                    'product-ads':'Iklan','professional-headshot':'Headshot',
+                    'unboxing-scene':'Unboxing','before-after':'Sblm/Ssdh',
+                    'product-mockup':'Mockup','testimonial-generator':'Testimonial',
+                    'size-guide':'Ukuran','video-frames':'Frame',
+                    'vehicle-modifier':'Kendaraan','deskripsi-produk':'Deskripsi',
+                    'ide-konten-tiktok':'TikTok','script-story-iklan':'Script',
+                    'rencana-bisnis':'Bisnis','hr-assistant':'HR',
+                    'konten-marketing':'Marketing','riset-pasar':'Riset',
+                    'financial-forecast':'Anggaran','family':'Keluarga',
+                    'new-born':'Bayi','maternity':'Maternity',
+                    'profesi-anak':'Profesi','wedding':'Wedding',
+                    'wedding-design':'Desain','umrah-haji':'Umrah',
+                    'passport-photo':'Pas Foto','graduation-photo':'Wisuda',
+                    'photo-booth':'Photo Booth','birthday-photo':'Birthday',
+                    'kartu-lebaran':'Kartu Lebaran','desain-rumah':'Rumah',
+                    'desain-kamar':'Kamar','sketsa-gambar':'Sketsa',
+                    'bikin-carousel':'Carousel','miniature':'Miniatur',
+                    'karikatur':'Karikatur','photo-editor':'Editor',
+                    'ai-beauty':'Beauty','tattoo-editor':'Tattoo',
+                    'halu':'Halu','sticker':'Sticker',
+                    'hair-generator':'Rambut','expression-changer':'Ekspresi',
+                    'face-swap':'Face Swap','bg-remover':'Ubah BG',
+                    'photo-extender':'Perluas','story-board':'Storyboard',
+                    'twibon':'Twibon','story-update':'Story',
+                    'image-analyzer':'Analyzer','packaging-design':'Packaging',
+                    'photo-angle':'Angle','style-matcher':'Style',
+                    'thumbnail-generator':'Thumbnail','cover-photo-generator':'Sampul',
+                    'photo-restoration':'Restorasi','object-remover':'Hapus',
+                    'logo-generator':'Logo','brand-kit-generator':'Brand Kit',
+                    'content-calendar':'Kalender','ab-testing':'A/B Test',
+                    'roi-calculator':'ROI','caption-generator':'Caption',
+                    'product-comparison':'Bandingkan','mascot-generator':'Maskot',
+                    'poster-generator':'Poster','banner-generator':'Banner',
+                    'sketch-catalog':'Katalog','fotogenic':'Fotogenic',
+                    'timelapse-renovasi':'Timelapse','veo':'Go Pro',
+                    'opal':'Img ke Video','voice-over':'Voice','video-analyzer':'Analyzer'
+                },
+                categories: {
+                    'photo-studio':'Photo Studio','ugc-content':'UGC Content Affiliate GO',
+                    'affiliate-ecommerce':'Affiliate & E-Commerce','business-tools':'Alat Bisnis',
+                    'family-lifestyle':'Family & Lifestyle','creative-tools':'Creative Tools',
+                    'video-audio':'Video & Audio'
+                },
+                headers: {
+                    'beranda':'Selamat Datang di Affiliate Go Foto Studio',
+                    'buat-model':'Membuat Model','mockup-studio':'Mockup Studio',
+                    'miniature':'Miniature Me','karikatur':'Karikatur Generator',
+                    'photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor',
+                    'halu':'Halu Idol','affiliate':'Foto Produk Affiliate',
+                    'virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion',
+                    'affiliate-islami':'Affiliate Agama','banner-generator':'Banner Generator',
+                    'family':'Foto Keluarga','food-selfie':'Food Selfie',
+                    'product-review':'Product Review','skincare-review':'Skincare Review',
+                    'food-review':'Food Review','product-ads':'Iklan Produk',
+                    'new-born':'New Born Studio','profesi-anak':'Foto Profesi Anak',
+                    'story-update':'Story Update','photo-angle':'Photo Angle',
+                    'style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro',
+                    'cover-photo-generator':'Foto sampul IG & Tiktok',
+                    'photo-restoration':'Restorasi Foto','logo-generator':'Logo Generator',
+                    'brand-kit-generator':'AI Brand Kit Generator',
+                    'content-calendar':'Content Calendar Planner',
+                    'ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI',
+                    'mascot-generator':'Mascot Generator','maternity':'Foto Maternity',
+                    'wedding':'Wedding','wedding-design':'Desain Pernikahan',
+                    'umrah-haji':'Foto Umrah/Haji','passport-photo':'Pas Foto Warna',
+                    'graduation-photo':'Foto Wisuda','photo-booth':'Photo Booth',
+                    'expression-changer':'Expression Changer','face-swap':'Face Swap',
+                    'bg-remover':'Ubah Background','photo-extender':'Perluas Foto',
+                    'tattoo-editor':'Tattoo Editor','story-board':'Story Board',
+                    'twibon':'Twibon Frame','professional-headshot':'Professional Headshot',
+                    'birthday-photo':'Foto Ulang Tahun','kartu-lebaran':'Kartu Lebaran',
+                    'image-analyzer':'Image to Prompt','packaging-design':'Packaging Design',
+                    'before-after':'Before/After','desain-rumah':'Desain Rumah',
+                    'desain-kamar':'Desain Kamar','sketsa-gambar':'Sketsa Gambar',
+                    'bikin-carousel':'Bikin Carousel','veo':'Affiliate Go Pro',
+                    'opal':'Opal Image to Video','voice-over':'Voice Over',
+                    'video-analyzer':'Video Analyzer','sticker':'Sticker Tempel',
+                    'hair-generator':'Hair Generator','pov-tangan':'POV Tangan',
+                    'touring':'Foto Touring','mirror-selfie':'POV Mirror Selfie',
+                    'sketch-catalog':'Sketsa ke Katalog','poster-generator':'Poster Generator',
+                    'object-remover':'Hapus Object','walking-pad':'Walking Pad',
+                    'timelapse-renovasi':'Timelapse Renovasi','fotogenic':'Fotogenic',
+                    'apikey-settings':'Gemini API Key','rencana-bisnis':'Rencana Bisnis & SWOT',
+                    'hr-assistant':'HR Assistant','konten-marketing':'Konten Marketing',
+                    'riset-pasar':'Riset Pasar & Ide','financial-forecast':'Simulasi Anggaran',
+                    'script-story-iklan':'Script Story Iklan',
+                    'ide-konten-tiktok':'Ide Konten TikTok',
+                    'deskripsi-produk':'Deskripsi Produk SEO',
+                    'caption-generator':'AI Caption Generator',
+                    'product-comparison':'Product Comparison','unboxing-scene':'Unboxing Scene',
+                    'product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card',
+                    'size-guide':'Size Guide','video-frames':'Video Frames',
+                    'vehicle-modifier':'Vehicle Modifier'
+                }
+            }
+        };
+
+        var currentLang = localStorage.getItem('app_language') || 'en';
+
+        function applyLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('app_language', lang);
+            var t = T[lang];
+
+            // Sidebar nav labels (.btn-text)
+            Object.keys(t.nav).forEach(function(tab) {
+                var btn = document.querySelector('.main-tab-btn[data-tab="' + tab + '"] .btn-text');
+                if (btn) btn.textContent = t.nav[tab];
+            });
+
+            // Mobile nav labels (first span that's not .new-badge)
+            Object.keys(t.nav_mobile).forEach(function(tab) {
+                var btn = document.querySelector('.mobile-tab-btn[data-tab="' + tab + '"]');
+                if (!btn) return;
+                var spans = btn.querySelectorAll('span');
+                for (var i = 0; i < spans.length; i++) {
+                    if (!spans[i].classList.contains('new-badge')) {
+                        spans[i].textContent = t.nav_mobile[tab];
+                        break;
+                    }
+                }
+            });
+
+            // Category headers (preserving icon)
+            document.querySelectorAll('[data-i18n-cat]').forEach(function(el) {
+                var key = el.getAttribute('data-i18n-cat');
+                if (t.categories[key]) {
+                    var icon = el.querySelector('i');
+                    el.textContent = ' ' + t.categories[key];
+                    if (icon) el.insertBefore(icon, el.firstChild);
+                }
+            });
+
+            // Content panel main headers
+            Object.keys(t.headers).forEach(function(panelId) {
+                var panel = document.getElementById('content-' + panelId);
+                if (!panel) return;
+                var h = panel.querySelector('header h1') || panel.querySelector('header h2') ||
+                        panel.querySelector('h1') || panel.querySelector('h2');
+                if (h) h.textContent = t.headers[panelId];
+            });
+
+            // Toggle button active states
+            document.querySelectorAll('.lang-toggle-btn, .mobile-lang-btn').forEach(function(btn) {
+                btn.classList.toggle('lang-active', btn.getAttribute('data-lang') === lang);
+            });
+
+            // Update html lang attribute
+            document.documentElement.lang = lang === 'en' ? 'en' : 'id';
+        }
+
+        // Expose globally
+        window.setAppLanguage = function(lang) { applyLanguage(lang); };
+
+        // Apply on DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', function() {
+            applyLanguage(currentLang);
+            document.querySelectorAll('.lang-toggle-btn, .mobile-lang-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    setAppLanguage(btn.getAttribute('data-lang'));
+                });
+            });
+        });
+    })();
+    </script>
+    <!-- ==================== END i18n LANGUAGE SYSTEM ==================== -->
 
 </body>
 </html>
