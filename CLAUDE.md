@@ -18,57 +18,110 @@ npx html-minifier-terser kode.html --collapse-whitespace --remove-comments --rem
 ### Critical Rules
 1. **ALWAYS edit `kode.html`** — never `kode-min.html` directly
 2. **Use Unicode escape sequences for ALL emoji** — direct emoji corrupt during minification
-3. **Empty `apiKey = ""`** is intentional — Canvas injects the key at runtime
-4. **Minify before deployment** — Canvas sharing limit is ~2 MB
+3. **`const apiKey = ""`** is intentional in every IIFE — Canvas injects key at runtime; Vercel uses the fetch interceptor
+4. **Minify before Canvas deployment** — Canvas sharing limit is ~2 MB
 
 ---
 
 ## Project Overview
 
-Single-file SPA (`kode.html`, ~69,300 lines, ~3.76 MB) running in **Google Gemini AI Studio Canvas**. Contains **86 AI Tools** for photo/video generation. Everything — HTML, CSS, JavaScript — lives in one file.
+Single-file SPA (`kode.html`, ~69,600+ lines, ~3.8 MB) with **86 AI Tools** for photo/video generation.
+
+**Two deployment targets:**
+| Target | How API key is supplied | Image model used |
+|--------|------------------------|-----------------|
+| **Canvas** (AI Studio) | Auto-injected into `const apiKey = ""` at runtime | `gemini-2.5-flash-image-preview` |
+| **Vercel** (standalone) | User inputs via settings UI → fetch interceptor injects | `gemini-2.5-flash-image` (GA, no -preview) |
 
 - `kode.html` — Development version. **Edit this.**
-- `kode-min.html` — Production version (~2.12 MB). Generated, do not edit.
+- `kode-min.html` — Production/Canvas version (~2.12 MB). Generated, do not edit.
+- `vercel.json` — Static deployment config (serves `kode.html` for all routes).
 
 ---
 
 ## Architecture
 
 ### Navigation System
-Multi-category tab system. Each tab has:
-- A `data-tab="feature-name"` sidebar button (desktop)
-- A `data-tab="feature-name"` mobile nav button (identical `data-tab` value)
-- A `<div id="content-feature-name" class="main-content-panel hidden">` content panel
+Multi-category tab system. Each tab requires matching IDs across three places:
+- `data-tab="feature-name"` sidebar button (desktop) — inside `<aside class="sidebar">`
+- `data-tab="feature-name"` mobile nav button — inside `<nav class="mobile-bottom-nav">`
+- `<div id="content-feature-name" class="main-content-panel hidden">` content panel
 
 **File zones (approximate):**
 | Zone | Lines |
 |------|-------|
-| CSS styles | 1–8,700 |
-| HTML: Sidebar + all content panels | 8,700–28,090 |
-| HTML: Mobile navigation | 68,693–69,170 |
-| JavaScript: DOMContentLoaded wrapper | 28,091–69,150 |
-| JavaScript: Login system | 69,170+ (separate `<script>` block) |
+| CSS styles | 1–8,930 |
+| HTML: Sidebar + all content panels | 8,930–25,100 |
+| HTML: Mobile navigation | ~69,074–69,516 |
+| JavaScript: DOMContentLoaded wrapper | ~25,200–69,070 |
+| JavaScript: Login system | ~69,400+ (separate `<script>` block) |
+| JavaScript: Language system (i18n) | ~69,530–69,855 (last `<script>` block) |
 
 ### JavaScript Module Pattern
 Each feature is an IIFE inside `document.addEventListener('DOMContentLoaded', () => { ... })`:
 ```javascript
 // ==================== FEATURE NAME ====================
 (function() {
-    const apiKey = "";
+    const apiKey = "";  // Canvas injects here; Vercel uses fetch interceptor
     // ... implementation
 })();
 ```
 
 ---
 
+## API Key System (Dual-Mode)
+
+### How it works
+A **fetch interceptor** is installed at module load time (before DOMContentLoaded), reading `window.GEMINI_USER_API_KEY` on **every** API call:
+
+```javascript
+// Runs at script evaluation time — before any IIFE
+window.GEMINI_USER_API_KEY = localStorage.getItem('gemini_user_api_key') || '';
+
+(function() {
+    const _origFetch = window.fetch.bind(window);
+    window.fetch = function(url, options) {
+        if (typeof url === 'string' && url.includes('generativelanguage.googleapis.com')) {
+            const u = new URL(url);
+            const existingKey = u.searchParams.get('key');
+            // Only fires when Canvas did NOT inject a key (empty ?key= param)
+            if ((!existingKey || existingKey === '') && window.GEMINI_USER_API_KEY) {
+                u.searchParams.set('key', window.GEMINI_USER_API_KEY);
+                // Swap Canvas-only model to GA version for external keys
+                u.pathname = u.pathname.replace('gemini-2.5-flash-image-preview', 'gemini-2.5-flash-image');
+                url = u.toString();
+            }
+        }
+        return _origFetch(url, options);
+    };
+})();
+```
+
+**Priority:** Canvas-injected key (non-empty `?key=`) always wins. User key is fallback.
+
+### localStorage keys
+- `gemini_user_api_key` — raw API key string
+
+### UI entry points
+Both desktop and mobile use **the same shared content panel** `#content-apikey-settings`:
+- **Desktop**: `data-tab="apikey-settings"` first button in sidebar nav
+- **Mobile**: `data-tab="apikey-settings"` first button in mobile bottom nav (`<nav class="mobile-bottom-nav">`)
+
+Both update `window.GEMINI_USER_API_KEY` immediately — no page reload required.
+
+---
+
 ## API Integration
 
-### Working Models
-| Model | Use |
-|-------|-----|
-| `gemini-2.5-flash-image-preview` | Image generation/editing (Fetch API) |
-| `gemini-2.5-flash-preview` | Text generation, multimodal analysis |
-| `gemini-2.5-flash-preview-tts` | Text-to-speech |
+### Models by deployment
+| Model | Deployment | Use |
+|-------|-----------|-----|
+| `gemini-2.5-flash-image-preview` | Canvas only | Image generation/editing |
+| `gemini-2.5-flash-image` | Vercel/external keys | Image generation/editing (auto-swapped by interceptor) |
+| `gemini-2.5-flash-preview` | Both | Text generation, multimodal analysis |
+| `gemini-2.5-flash-preview-tts` | Both | Text-to-speech |
+
+> **DO NOT** globally change `gemini-2.5-flash-image-preview` to `gemini-2.5-flash-image` in the source — the interceptor handles the swap automatically only when needed.
 
 ### Fetch API Pattern (used throughout)
 ```javascript
@@ -90,22 +143,83 @@ window.showUniversalModal(title, html)   // generic info/support modal
 window.downloadDataURINew(url, filename) // primary download helper
 window.downloadImage(url, filename)      // fallback download helper
 ```
-> **Do NOT use `window.showImagePreviewModal`** — that function does not exist. The correct name is `window.showPreviewModal`.
+> **Do NOT use `window.showImagePreviewModal`** — does not exist. Use `window.showPreviewModal`.
+
+---
+
+## i18n Language System
+
+The app supports bilingual **EN / ID** switching. The entire system lives in the last `<script>` block at the bottom of `kode.html` (after the login script).
+
+### How translation works
+```javascript
+var T = {
+    en: { nav: {...}, nav_mobile: {...}, categories: {...}, headers: {...}, 'key': 'value', ... },
+    id: { nav: {...}, nav_mobile: {...}, categories: {...}, headers: {...}, 'key': 'value', ... }
+};
+```
+
+`applyLanguage(lang)` runs in this order:
+1. Nav labels — via `.main-tab-btn[data-tab="x"] .btn-text`
+2. Mobile nav labels — via `.mobile-tab-btn[data-tab="x"] span:not(.new-badge)`
+3. Category headers — via `[data-i18n-cat]` attribute
+4. Panel h1 headers — via `#content-{id} header h1` (no HTML change needed — covered by `headers` dict)
+5. All `[data-i18n]` elements — via `applyText()`
+6. All `[data-i18n-placeholder]` elements — `.placeholder =`
+
+### `applyText(el, text)` behaviour
+Preserves child elements (icons, spans). Updates **text nodes only**:
+- If element has child elements → replaces non-empty text nodes, leaves `<i>` / `<span>` children intact
+- If element is text-only → sets `el.textContent`
+
+**Warning for h3/h2 with nested subtitle spans** (e.g. `<h3>Title <span>(note)</span></h3>`):
+- Do NOT put `data-i18n` directly on the h3 with a translation value that includes the parenthetical — the span content will be duplicated
+- Instead: wrap main text in `<span data-i18n="key">`, add separate `data-i18n` on the nested span with its own key
+
+### Marking elements for translation
+```html
+<!-- Text content -->
+<p data-i18n="feature.key">Indonesian text here</p>
+
+<!-- Placeholder -->
+<input data-i18n-placeholder="feature.key" placeholder="Teks placeholder">
+
+<!-- Category header -->
+<span data-i18n-cat="photo-studio">Photo Studio</span>
+
+<!-- h3 with nested span subtitle -->
+<h3><span data-i18n="feature.title">Judul</span> <span class="text-sm text-gray-400" data-i18n="feature.subtitle-label">(catatan)</span></h3>
+```
+
+### Adding translations for a new feature
+1. Add `data-i18n="feature.key"` attributes to HTML elements in the panel
+2. Add matching keys to **both** `T.en` and `T.id` in the language script block
+3. Nav label: already covered by `T.en.nav['tab-id']` — no HTML change needed
+4. Panel h1: already covered by `T.en.headers['tab-id']` — no HTML change needed
+
+### Toggle UI
+- **Desktop**: `.lang-toggle-btn[data-lang="en|id"]` in sidebar header
+- **Mobile**: `.mobile-lang-btn[data-lang="en|id"]` in mobile header
+- Active state: `.lang-active` CSS class
+- `window.setAppLanguage(lang)` — exposed globally
+- Persisted in `localStorage['app_language']`, default `'en'`
+
+### Translation progress (as of v21)
+Panels with full `data-i18n` coverage: API Key, Home (Beranda), Membuat Model, Mockup Studio, POV Tangan, Foto Touring, POV Mirror Selfie, Walking Pad.
+All other panels: nav labels and h1 headers only.
 
 ---
 
 ## Critical Patterns
 
-### 12. Canvas Image API Rate Limit — Parallel + Per-Card Retry (March 2026)
-`gemini-2.5-flash-image-preview` in Canvas allows ~1 image generation per ~35 seconds (RPM limit). Solution: launch all in parallel, each card handles its own retry with a visible countdown.
+### 1. Canvas Rate Limit — Per-Card Parallel Retry
+`gemini-2.5-flash-image-preview` in Canvas: ~1 image per ~35 seconds. Launch all cards in parallel; each retries independently.
 
 ```javascript
-// Add once per IIFE:
 async function countdown(seconds, labelFn) {
     for (let s = seconds; s > 0; s--) { labelFn(s); await new Promise(r => setTimeout(r, 1000)); }
 }
 
-// In generateSingleXxx(index, ..., retryCount):
 async function generateSingleXxx(index, ..., retryCount) {
     const MAX_RETRIES = 6;
     const card = document.getElementById(`card-${index}`);
@@ -113,55 +227,40 @@ async function generateSingleXxx(index, ..., retryCount) {
         // ... API call ...
     } catch (error) {
         if (retryCount < MAX_RETRIES) {
-            const nextRetry = retryCount + 1;
             await countdown(35, (s) => {
-                if (card) card.innerHTML = `<div class="text-center text-yellow-500 p-4"><i class="fas fa-hourglass-half text-xl mb-1"></i><p class="text-xs mt-1 font-semibold">Foto ${index}</p><p class="text-xs">retry ${nextRetry}/${MAX_RETRIES} \u2014 ${s}d</p></div>`;
+                card.innerHTML = `..retry ${retryCount+1}/${MAX_RETRIES} \u2014 ${s}d..`;
             });
-            if (card) card.innerHTML = '<div class="loader"></div>';
-            return generateSingleXxx(index, ..., nextRetry);
+            card.innerHTML = '<div class="loader"></div>';
+            return generateSingleXxx(index, ..., retryCount + 1);
         }
         card.innerHTML = `<div class="text-red-500 p-4 text-center">Gagal</div>`;
     }
 }
-
-// Main handler — launch all in parallel:
 await Promise.allSettled(Array.from({ length: count }, (_, i) => generateSingleXxx(i + 1, ..., 0)));
 ```
-> **Applied to**: Membuat Model, Foto Touring, Walking Pad, POV Mirror Selfie.
-> **Mockup Studio & POV Tangan**: use `generateImageWithRetry(payload, retries=6, delay=35000)` pattern instead (batch-based architecture).
+> Applied to: Membuat Model, Foto Touring, Walking Pad, POV Mirror Selfie.
+> Mockup Studio & POV Tangan: use `generateImageWithRetry(payload, retries=6, delay=35000)` (batch-based).
 
----
-
-### 1. Parallel Generation — INDEXED ASSIGNMENT (never `.push()`)
+### 2. Parallel Generation — INDEXED ASSIGNMENT (never `.push()`)
 ```javascript
-// ✅ CORRECT
-async function generateSingle(index) {
-    const imageUrl = await callAPI();
-    generatedImages[index - 1] = { url: imageUrl, filename };   // indexed
-    card.innerHTML = `<button data-index="${index - 1}">`;       // indexed
-}
-const promises = Array.from({ length: count }, (_, i) => generateSingle(i + 1));
-await Promise.allSettled(promises);
-
-// ❌ WRONG — causes preview/download to show wrong image
-generatedImages.push({ url: imageUrl });
-card.innerHTML = `<button data-index="${generatedImages.length - 1}">`;
+// CORRECT — indexed, not pushed
+generatedImages[index - 1] = { url: imageUrl, filename };
+card.innerHTML = `<button data-index="${index - 1}">`;
 ```
-> **Why**: `Promise.allSettled` runs in parallel. Images complete out of order. `.push()` stores them in completion order, not generation order. This caused a major bug across 35+ tabs (fixed Jan 2026).
+`Promise.allSettled` completes out of order. `.push()` stores in completion order → wrong image on preview/download.
 
-### 2. Mobile Event Handling
+### 3. Mobile Event Handling
 ```javascript
-// ✅ CORRECT — click only, stopPropagation only
 resultsGrid.addEventListener('click', async (e) => {
     e.stopPropagation();  // YES
-    // e.preventDefault() — NO (breaks mobile downloads)
+    // e.preventDefault() — NO, breaks mobile downloads
     const btn = e.target.closest('[data-action]');
     if (!btn) return;
 });
-// ❌ WRONG — no touchstart/touchend handlers (cause page refresh on mobile)
+// NO touchstart/touchend handlers — cause page refresh on mobile
 ```
 
-### 3. HEIC Conversion (iPhone compatibility)
+### 4. HEIC Conversion (iPhone)
 ```javascript
 if (file.type === 'image/heic' || file.name.toLowerCase().endsWith('.heic')) {
     const convertedBlob = await heic2any({ blob: file, toType: 'image/jpeg', quality: 0.9 });
@@ -169,31 +268,22 @@ if (file.type === 'image/heic' || file.name.toLowerCase().endsWith('.heic')) {
 }
 ```
 
-### 4. Upload Box Click (div, not label)
-When the upload area is a `div` (not a `<label for>`), add an explicit click handler:
-```javascript
-uploadBox.addEventListener('click', () => uploadInput.click());
-```
-Do NOT add this if the box already has a `<label for="input-id">` wrapper — causes double-trigger.
-
 ### 5. Unicode Escape for Emoji
 ```javascript
-// ✅ Safe for minification
+// CORRECT — safe for minification
 const emoji1 = '\u0031\uFE0F\u20E3'; // 1️⃣
-const prompt = `${emoji1} Section`;
 
-// ❌ Corrupts during minification
+// WRONG — corrupts during minification
 const prompt = `1️⃣ Section`;
 ```
 
-### 6. Tab Initialization (mobile + desktop)
+### 6. Tab Initialization (both desktop + mobile)
 ```javascript
 const tabDesktop = document.querySelector('.main-tab-btn[data-tab="feature"]');
 const tabMobile  = document.querySelector('.mobile-tab-btn[data-tab="feature"]');
 if (tabDesktop) tabDesktop.addEventListener('click', initFeature);
 if (tabMobile)  tabMobile.addEventListener('click', initFeature);
 ```
-Without the mobile listener, features won't initialize on mobile devices.
 
 ### 7. Download Helper
 ```javascript
@@ -202,69 +292,27 @@ else if (window.downloadImage) await window.downloadImage(url, filename);
 ```
 
 ### 8. Mobile-Visible Result Overlays
-Action buttons (Preview/Download) on image cards must be visible on mobile. Use responsive opacity — always visible on mobile, hover-only on desktop:
 ```html
-<!-- ✅ CORRECT -->
+<!-- CORRECT — always visible mobile, hover-only desktop -->
 <div class="absolute inset-0 ... opacity-100 sm:opacity-0 sm:group-hover:opacity-100 ...">
 
-<!-- ❌ WRONG — buttons invisible on mobile (no hover state) -->
+<!-- WRONG — invisible on mobile (no hover) -->
 <div class="absolute inset-0 ... opacity-0 group-hover:opacity-100 ...">
 ```
 
-### 9. Custom Theme Input Pattern
-When adding a custom text theme alongside preset buttons:
+### 9. Consistent Camera Across Parallel Frames
 ```javascript
-// Clear custom input when preset button is clicked
-setupOptionButtons(themeContainer, (value) => {
-    selectedTheme = value;
-    if (customThemeInput) customThemeInput.value = '';
-});
-
-// Deselect all preset buttons when user types custom theme
-customThemeInput.addEventListener('input', () => {
-    if (customThemeInput.value.trim() !== '') {
-        themeContainer.querySelectorAll('.option-btn-feature').forEach(btn => btn.classList.remove('selected'));
-        selectedTheme = 'custom';
-    }
-});
-
-// In prompt builder:
-const themeDesc = (selectedTheme === 'custom' && customThemeInput.value.trim())
-    ? customThemeInput.value.trim()
-    : (themeDescriptions[selectedTheme] || 'default theme');
-```
-
-### 10. Dynamic Aspect Ratio Helper
-When a feature lets the user choose output ratio, use a helper instead of hardcoding:
-```javascript
-let selectedRatio = '9:16';
-
-function getAspectClass() {
-    if (selectedRatio === '9:16') return 'aspect-[9/16]';
-    if (selectedRatio === '3:4') return 'aspect-[3/4]';
-    if (selectedRatio === '1:1') return 'aspect-square';
-    return 'aspect-video'; // default 16:9
-}
-// Use getAspectClass() for placeholder cards AND result cards.
-// Pass selectedRatio directly into imageConfig: { aspectRatio: selectedRatio }
-```
-
-### 11. Consistent Output Across Parallel Frames (camera anchor)
-When generating a sequence of related images in parallel (e.g., timelapse), include a shared "anchor" string derived once per session so all frames share the same camera position in the prompt:
-```javascript
-// Generate ONCE before Promise.allSettled — reuse in every generateSingle call
+// Generate ONCE, reuse in every generateSingle call
 const cameraAnchor = `slight left diagonal view, medium distance, eye-level [session:${Math.floor(Math.random()*999999)}]`;
-
-// Pass into each prompt:
-`CRITICAL: use fixed camera — ${cameraAnchor} — same angle for ALL frames`
+// Pass into prompt: `CRITICAL: use fixed camera — ${cameraAnchor} — same angle for ALL frames`
 ```
 
 ---
 
-## Adding a New Feature Tab (5 required steps)
+## Adding a New Feature Tab (6 required steps)
 
-1. **CSS** (before `</style>`, ~line 8,700): Add `.upload-box-feature`, `.option-btn-feature`, `.option-btn-feature.selected`
-2. **Sidebar button** (inside appropriate category `div`, ~lines 8,700–28,000):
+1. **CSS** (before `</style>`, ~line 8,920): Add `.upload-box-feature`, `.option-btn-feature`, `.option-btn-feature.selected`
+2. **Sidebar button** (~lines 9,000–25,000):
    ```html
    <button data-tab="feature-name" class="main-tab-btn">
        <i class="fas fa-icon"></i>
@@ -272,15 +320,16 @@ const cameraAnchor = `slight left diagonal view, medium distance, eye-level [ses
        <span class="new-badge">NEW</span>
    </button>
    ```
-3. **Content panel** (before `<!-- Floating Support Button -->`, ~line 24,957):
+3. **Content panel** (before `<!-- Floating Update Info Button -->`, ~line 25,037):
    ```html
    <div id="content-feature-name" class="main-content-panel hidden">...</div>
    ```
-4. **Mobile nav button** (inside `<nav class="mobile-bottom-nav">`, ~line 68,693):
+4. **Mobile nav button** (inside `<nav class="mobile-bottom-nav">`, ~line 69,074):
    ```html
    <button data-tab="feature-name" class="mobile-tab-btn">...</button>
    ```
-5. **JavaScript IIFE** (before `// ==================== TWIBON ====================`, ~line 53,487)
+5. **JavaScript IIFE** (inside DOMContentLoaded, ~line 28,400+)
+6. **i18n keys** (in the language `<script>` block at end of file): Add `'feature-name'` to `T.en.nav`, `T.en.nav_mobile`, `T.en.headers`, `T.id.nav`, `T.id.nav_mobile`, `T.id.headers`. Then add `data-i18n` to individual panel elements as needed.
 
 ---
 
@@ -301,27 +350,33 @@ Each feature uses a unique gradient. Examples:
 
 ## Debugging
 
-**Results not appearing after generation**: Look for references to non-existent element IDs (`getElementById('wrong-id')` returning `null`).
+**Results not appearing**: Non-existent element ID — `getElementById('wrong-id')` returns `null`.
 
-**Wrong image on preview/download**: Using `.push()` with parallel generation — switch to indexed assignment `array[index-1] = value`.
+**Wrong image on preview/download**: `.push()` with parallel generation — switch to indexed assignment.
 
-**Upload requires double-click**: Both a `<label for>` and a JS `.click()` handler exist — remove one.
+**Upload requires double-click**: Both `<label for>` and JS `.click()` handler exist — remove one.
 
-**API 403 errors**: Model unavailable. Use verified models from the table above.
+**API 403 / model not found (Canvas)**: Use `gemini-2.5-flash-image-preview` — do not change.
+
+**API model not found (Vercel/external key)**: `gemini-2.5-flash-image-preview` is Canvas-only. The fetch interceptor should auto-swap to `gemini-2.5-flash-image`. Verify `window.GEMINI_USER_API_KEY` is set and interceptor is active.
+
+**User key not working after Save**: Key is saved immediately to `window.GEMINI_USER_API_KEY` — no reload needed. If still failing, check interceptor catches empty `?key=` param correctly.
 
 **Mobile download refreshes page**: `e.preventDefault()` on results grid — remove it, keep only `e.stopPropagation()`.
 
 **Feature broken on mobile only**: Missing `.mobile-tab-btn` click listener for tab initialization.
 
-**Undefined variable in generation**: Function parameter name doesn't match array index variable (e.g., function takes `id` but code uses `index`).
+**Download/Preview not tappable on mobile**: Overlay uses `opacity-0 group-hover:opacity-100` — fix to `opacity-100 sm:opacity-0 sm:group-hover:opacity-100`.
 
-**Nothing happens on upload click**: Upload box is a `div` with no click handler — add `uploadBox.addEventListener('click', () => uploadInput.click())`.
+**Preview modal doesn't open**: Called `window.showImagePreviewModal` — use `window.showPreviewModal(url)`.
 
-**Download/Preview buttons not tappable on mobile**: Overlay uses `opacity-0 group-hover:opacity-100` — no hover on mobile so buttons never appear. Fix: use `opacity-100 sm:opacity-0 sm:group-hover:opacity-100` (always visible mobile, hover-only desktop).
+**Edit tool "File has not been read yet"**: Must read the specific section of `kode.html` being edited first.
 
-**Preview modal doesn't open**: Called `window.showImagePreviewModal` — that function does not exist. Use `window.showPreviewModal(url)`.
+**i18n text not updating**: Element missing `data-i18n` attribute, OR translation key missing from both `T.en` and `T.id` in the language script block.
 
-**Edit tool "File has not been read yet" error**: Must read the specific section of `kode.html` you are about to edit first — a prior read of a different section is not sufficient.
+**i18n duplicates parenthetical text**: h3 has nested span and `applyText` replaced the leading text node with full translation (which already includes the parenthetical) — split into two separate `data-i18n` spans.
+
+**Bulk HTML edits**: For adding many `data-i18n` attributes across a panel, use a Node.js script with `fs.readFileSync`/`writeFileSync` and string `.replace()`. Watch for CRLF line endings on Windows — use regex `/\r?\n/` when matching across lines.
 
 ---
 
@@ -331,9 +386,9 @@ Each feature uses a unique gradient. Examples:
 
 **UGC Content (8)**: Foto Produk Affiliate, Affiliate Tema Agama (50 themes / 5 religions), Virtual Try-On, Pose Fashion, Food Selfie, Product Review, Iklan Produk, Professional Headshot
 
-**Family & Lifestyle (12)**: Family Photo, Wedding (50 themes + custom, multi-religion), New Born, Profesi Anak, Foto Tema Ibadah (40 locations / 5 religions), Pas Foto, Photo Booth, Desain Rumah, Sketsa, Carousel, Birthday Photo (20 themes + custom, all ages baby–senior, group up to 5 people), **Kartu Ucapan Lebaran** (20 themes, optional family photo, custom name & greeting)
+**Family & Lifestyle (12)**: Family Photo, Wedding (50 themes + custom), New Born, Profesi Anak, Foto Tema Ibadah, Pas Foto, Photo Booth, Desain Rumah, Sketsa, Carousel, Birthday Photo, Kartu Ucapan Lebaran
 
-**Creative Tools PRO (20)**: Miniature Me, Halu Idol, Sticker, Hair Generator, Expression Changer, Story Update, Photo Angle, Style Matcher, Thumbnail Pro, Cover Photo, Photo Restoration, Logo Generator, Mascot Generator, Face Swap, Background Remover, Photo Extender, Story Board (16:9/9:16/1:1), Twibon, Fotogenic (56 effects / 7 categories), **Timelapse Renovasi** (20 renovation themes, 2–6 frames, locked camera angle, all ratios, no upload required)
+**Creative Tools PRO (20)**: Miniature Me, Halu Idol, Sticker, Hair Generator, Expression Changer, Story Update, Photo Angle, Style Matcher, Thumbnail Pro, Cover Photo, Photo Restoration, Logo Generator, Mascot Generator, Face Swap, Background Remover, Photo Extender, Story Board, Twibon, Fotogenic (56 effects), Timelapse Renovasi
 
 **Video & Audio (4)**: VEO Generator, Opal Image to Video, Voice Over Pro, Video Analyzer Pro
 
@@ -346,29 +401,40 @@ Each feature uses a unique gradient. Examples:
 - Email-based auth via Google Apps Script + Google Sheets
 - Token stored in `localStorage`: `affiliatego_email`, `affiliatego_token`, `affiliatego_name`
 - Session validated every 10 seconds — login on another device kicks out the first session
-- `SCRIPT_URL` constant near line 69,220 — replace with your Apps Script deployment URL
+- `SCRIPT_URL` constant near line ~69,400 — replace with your Apps Script deployment URL
 
 ---
 
 ## Floating Update Button
 
-A floating button (`#update-info-btn`) shows a changelog modal when clicked. To update it when adding a new feature:
-1. Update `UPDATE_VERSION` constant in the IIFE (currently `'21'`)
-2. Update the version badge and "N AI Tools" count in the `html` string
-3. Add a new item in the "Fitur Baru" section of the modal HTML
-4. The red pulse dot auto-hides after the user clicks (`localStorage` key: `affiliatego_update_seen`)
+`#update-info-btn` shows changelog modal. When adding a feature:
+1. Update `UPDATE_VERSION` constant (currently `'21'`)
+2. Update version badge and "N AI Tools" count
+3. Add item in "Fitur Baru" section
+4. Red pulse dot auto-hides after click (`localStorage` key: `affiliatego_update_seen`)
 
 ---
 
-## Canvas Environment Notes
+## Deployment
 
-- No `iframe` embeds for external services (YouTube, etc.) — use link buttons instead
-- API key auto-injected at runtime — never hardcode
-- Single-file constraint — everything must stay in `kode.html`
+### Canvas (AI Studio)
+- Upload `kode-min.html` — must be under 2 MB
+- Canvas auto-injects API key into `const apiKey = ""`
+- No user key setup needed
+
+### Vercel (Standalone)
+- Push `kode.html` + `vercel.json` to GitHub → auto-deploys
+- `vercel.json` serves `kode.html` as static for all routes
+- Users enter their own Google AI Studio API key via the settings UI
+- Image model auto-swapped from `gemini-2.5-flash-image-preview` → `gemini-2.5-flash-image`
+
+### Notes
+- No `iframe` embeds — use external link buttons instead
 - Prompts in **Bahasa Indonesia** produce better results for Indonesian content
+- Single-file constraint — everything stays in `kode.html`
 
 ---
 
 ## File Statistics (v21 — March 2026)
-- `kode.html`: ~69,304 lines, ~3.76 MB
+- `kode.html`: ~69,600+ lines, ~3.8 MB
 - `kode-min.html`: ~2.12 MB (43.6% compression)
