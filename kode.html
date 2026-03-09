@@ -10031,18 +10031,18 @@
             <div class="container mx-auto">
                 <header class="text-center mb-8">
                     <h1 class="text-4xl md:text-5xl font-bold text-[#1e3a8a]">Miniature Me</h1>
-                    <p class="text-lg text-gray-600 mt-2">Ubah fotomu menjadi miniatur AI yang unik ✨</p>
+                    <p class="text-lg text-gray-600 mt-2" data-i18n="miniature.desc">Ubah fotomu menjadi miniatur AI yang unik ✨</p>
                 </header>
 
                 <main class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div id="miniature-result-container" class="w-full p-6 md:p-8 rounded-2xl shadow-lg glassmorphism flex flex-col justify-center items-center text-center min-h-[400px]">
                         <div id="miniature-placeholder-result">
                             <i class="fas fa-user-astronaut text-8xl text-[#a5b4fc]"></i>
-                            <p class="mt-4 text-xl text-gray-600">20 Pilihan miniatur AI akan muncul di sini</p>
+                            <p class="mt-4 text-xl text-gray-600" data-i18n="miniature.placeholder">20 Pilihan miniatur AI akan muncul di sini</p>
                         </div>
                         <div id="miniature-loader" class="hidden flex-col items-center">
                             <div class="loader"></div>
-                            <p class="mt-4 text-lg text-gray-700">AI sedang menyusutkan Anda... Mohon tunggu!</p>
+                            <p class="mt-4 text-lg text-gray-700" data-i18n="miniature.loading">AI sedang menyusutkan Anda... Mohon tunggu!</p>
                         </div>
                         <div id="miniature-result-content" class="hidden w-full grid grid-cols-2 sm:grid-cols-4 gap-4"></div>
                         <div id="miniature-error-message" class="hidden text-red-600"></div>
@@ -10050,19 +10050,19 @@
 
                     <div class="w-full p-6 md:p-8 rounded-2xl shadow-lg glassmorphism">
                         <div>
-                            <label class="block text-xl font-semibold mb-3 text-[#1e3a8a]">1. Unggah Fotomu (Wajib)</label>
+                            <label class="block text-xl font-semibold mb-3 text-[#1e3a8a]" data-i18n="miniature.step1-title">1. Unggah Fotomu (Wajib)</label>
                             <div id="miniature-person-image-uploader" class="image-uploader-box rounded-lg p-6 text-center cursor-pointer transition-colors">
                                 <input type="file" id="miniature-person-file-input" class="hidden" accept="image/*">
                                 <div id="miniature-person-upload-prompt">
                                     <i class="fas fa-user-circle text-4xl text-[#a5b4fc] mb-2"></i>
-                                    <p class="text-gray-700">Klik atau seret fotomu ke sini</p>
+                                    <p class="text-gray-700" data-i18n="miniature.upload-drag">Klik atau seret fotomu ke sini</p>
                                 </div>
                                 <img id="miniature-person-image-preview" src="" alt="Pratinjau Foto" class="hidden max-h-80 mx-auto rounded-lg shadow-lg">
                             </div>
                         </div>
 
                         <div class="mt-6">
-                            <label class="block text-xl font-semibold mb-3 text-[#1e3a8a]">2. Pilih Rasio Aspek</label>
+                            <label class="block text-xl font-semibold mb-3 text-[#1e3a8a]" data-i18n="miniature.step2-title">2. Pilih Rasio Aspek</label>
                             <div id="miniature-ratio-selection" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
                                 <button type="button" data-ratio="1:1" class="ratio-btn-mini">
                                     <i class="fas fa-square mr-2"></i>1:1
@@ -10080,13 +10080,13 @@
                         </div>
 
                         <div class="mt-6">
-                            <label for="miniature-manual-prompt" class="block text-xl font-semibold mb-2 text-[#1e3a8a]">3. Tulis Prompt Manual (Opsional)</label>
-                            <p class="text-sm text-gray-600 mb-3">Tambahkan detail spesifik untuk semua gambar.</p>
-                            <textarea id="miniature-manual-prompt" class="w-full p-3 rounded-lg border-2 min-h-[100px]" placeholder="Contoh: cute chibi style, ultra realistic, 8k"></textarea>
+                            <label for="miniature-manual-prompt" class="block text-xl font-semibold mb-2 text-[#1e3a8a]" data-i18n="miniature.step3-title">3. Tulis Prompt Manual (Opsional)</label>
+                            <p class="text-sm text-gray-600 mb-3" data-i18n="miniature.step3-desc">Tambahkan detail spesifik untuk semua gambar.</p>
+                            <textarea id="miniature-manual-prompt" class="w-full p-3 rounded-lg border-2 min-h-[100px]" data-i18n-placeholder="miniature.prompt-placeholder" placeholder="Contoh: cute chibi style, ultra realistic, 8k"></textarea>
                         </div>
 
                         <div class="mt-8">
-                            <button id="miniature-generate-btn" class="w-full bg-[#4f46e5] text-white py-4 px-6 rounded-lg text-lg font-bold hover:bg-[#4338ca] transition-transform transform hover:scale-105 shadow-md disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100" disabled>
+                            <button id="miniature-generate-btn" class="w-full bg-[#4f46e5] text-white py-4 px-6 rounded-lg text-lg font-bold hover:bg-[#4338ca] transition-transform transform hover:scale-105 shadow-md disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100" data-i18n="miniature.gen-btn" disabled>
                                 <i class="fas fa-magic mr-2"></i>Generate 6 Miniatur
                             </button>
                         </div>
@@ -10100,7 +10100,7 @@
             <div class="container mx-auto px-4 py-8">
                 <header class="text-center mb-8">
                     <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 to-yellow-500 bg-clip-text text-transparent">Karikatur Generator</h1>
-                    <p class="text-lg text-gray-600 mt-2">Ubah fotomu menjadi berbagai style karikatur profesional dengan AI 🎨</p>
+                    <p class="text-lg text-gray-600 mt-2" data-i18n="karikatur.desc">Ubah fotomu menjadi berbagai style karikatur profesional dengan AI 🎨</p>
                 </header>
 
                 <main class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -10110,13 +10110,13 @@
                         <div class="mb-6">
                             <div class="flex items-center gap-3 mb-3">
                                 <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-yellow-500 text-white font-bold text-sm shadow-lg">1</div>
-                                <label class="text-xl font-semibold text-gray-800">Unggah Foto</label>
+                                <label class="text-xl font-semibold text-gray-800" data-i18n="karikatur.step1-title">Unggah Foto</label>
                             </div>
                             <label for="karikatur-image-input" class="upload-box-karikatur block relative border-3 border-dashed border-gray-300 rounded-xl p-8 text-center cursor-pointer bg-gradient-to-br from-orange-50 to-yellow-50 hover:shadow-xl transition-all">
                                 <input type="file" id="karikatur-image-input" class="hidden" accept="image/png, image/jpeg, image/webp, image/heic, .heic">
                                 <div id="karikatur-upload-prompt">
                                     <i class="fas fa-image text-5xl text-orange-400 mb-3"></i>
-                                    <p class="text-gray-700 font-semibold">Klik atau seret foto di sini</p>
+                                    <p class="text-gray-700 font-semibold" data-i18n="karikatur.upload-drag">Klik atau seret foto di sini</p>
                                     <p class="text-sm text-gray-500 mt-1">PNG, JPG, WEBP, HEIC</p>
                                 </div>
                                 <img id="karikatur-image-preview" src="" alt="Preview" class="hidden w-full h-auto rounded-lg">
@@ -10125,7 +10125,7 @@
                             <div id="karikatur-preview-container" class="mt-3 hidden lg:hidden">
                                 <img id="karikatur-mobile-preview" src="" alt="Preview" class="w-full rounded-lg shadow-lg max-h-48 object-cover">
                                 <button id="karikatur-remove-preview" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg transition-colors">
-                                    <i class="fas fa-times mr-1"></i> Hapus Foto
+                                    <i class="fas fa-times mr-1"></i> <span data-i18n="unboxing.remove-photo">Hapus Foto</span>
                                 </button>
                             </div>
                         </div>
@@ -10134,7 +10134,7 @@
                         <div class="mb-6">
                             <div class="flex items-center gap-3 mb-3">
                                 <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-yellow-500 text-white font-bold text-sm shadow-lg">2</div>
-                                <label class="text-xl font-semibold text-gray-800">Style Karikatur</label>
+                                <label class="text-xl font-semibold text-gray-800" data-i18n="karikatur.step2-title">Style Karikatur</label>
                             </div>
                             <div id="karikatur-style-options" class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                                 <!-- Classic Styles -->
@@ -10313,7 +10313,7 @@
                                 </button>
                             </div>
                             <div id="karikatur-custom-style-container" class="mt-3 hidden">
-                                <input type="text" id="karikatur-custom-style" class="w-full px-4 py-2 border-2 border-orange-300 rounded-lg focus:border-orange-500 focus:outline-none" placeholder="Masukkan style custom, contoh: disney style, ghibli style">
+                                <input type="text" id="karikatur-custom-style" class="w-full px-4 py-2 border-2 border-orange-300 rounded-lg focus:border-orange-500 focus:outline-none" data-i18n-placeholder="karikatur.custom-placeholder" placeholder="Masukkan style custom, contoh: disney style, ghibli style">
                             </div>
                         </div>
 
@@ -10321,7 +10321,7 @@
                         <div class="mb-6">
                             <div class="flex items-center gap-3 mb-3">
                                 <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-yellow-500 text-white font-bold text-sm shadow-lg">3</div>
-                                <label class="text-xl font-semibold text-gray-800">Tingkat Exaggeration</label>
+                                <label class="text-xl font-semibold text-gray-800" data-i18n="karikatur.step3-title">Tingkat Exaggeration</label>
                             </div>
                             <div id="karikatur-exaggeration-options" class="grid grid-cols-3 gap-3">
                                 <button type="button" data-exaggeration="subtle" class="option-btn-karikatur">
@@ -10395,17 +10395,17 @@
                         <div class="mb-6">
                             <div class="flex items-center gap-3 mb-3">
                                 <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-yellow-500 text-white font-bold text-sm shadow-lg">6</div>
-                                <label class="text-xl font-semibold text-gray-800">Jumlah Variasi</label>
+                                <label class="text-xl font-semibold text-gray-800" data-i18n="karikatur.step6-title">Jumlah Variasi</label>
                             </div>
                             <div id="karikatur-count-options" class="grid grid-cols-3 gap-3">
                                 <button type="button" data-count="4" class="option-btn-karikatur selected">
-                                    <span>4 Gambar</span>
+                                    <span data-i18n="maternity.count-4">4 Gambar</span>
                                 </button>
                                 <button type="button" data-count="6" class="option-btn-karikatur">
-                                    <span>6 Gambar</span>
+                                    <span data-i18n="maternity.count-6">6 Gambar</span>
                                 </button>
                                 <button type="button" data-count="8" class="option-btn-karikatur">
-                                    <span>8 Gambar</span>
+                                    <span data-i18n="maternity.count-8">8 Gambar</span>
                                 </button>
                             </div>
                         </div>
@@ -10418,7 +10418,7 @@
                             </div>
                             <button id="karikatur-generate-btn" class="w-full bg-gradient-to-r from-orange-600 to-yellow-500 hover:from-orange-700 hover:to-yellow-600 text-white py-4 px-6 rounded-xl text-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100" disabled>
                                 <i class="fas fa-palette mr-2"></i>
-                                <span>Generate Karikatur</span>
+                                <span data-i18n="karikatur.gen-btn">Generate Karikatur</span>
                             </button>
                         </div>
                     </div>
@@ -10428,7 +10428,7 @@
                         <div class="flex items-center justify-between mb-6">
                             <h2 class="text-2xl font-bold text-gray-800">
                                 <i class="fas fa-images text-orange-500 mr-2"></i>
-                                Hasil Karikatur
+                                <span data-i18n="karikatur.results-title">Hasil Karikatur</span>
                             </h2>
                             <button id="karikatur-download-all-btn" class="hidden bg-gradient-to-r from-orange-600 to-yellow-500 hover:from-orange-700 hover:to-yellow-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300">
                                 <i class="fas fa-download mr-2"></i>
@@ -10438,8 +10438,8 @@
 
                         <div id="karikatur-placeholder" class="flex flex-col items-center justify-center min-h-[500px] text-center">
                             <i class="fas fa-palette text-8xl text-orange-300 mb-4"></i>
-                            <p class="text-xl text-gray-600">Karikatur akan muncul di sini</p>
-                            <p class="text-sm text-gray-500 mt-2">Unggah foto dan pilih style untuk memulai</p>
+                            <p class="text-xl text-gray-600" data-i18n="karikatur.placeholder">Karikatur akan muncul di sini</p>
+                            <p class="text-sm text-gray-500 mt-2" data-i18n="karikatur.placeholder-sub">Unggah foto dan pilih style untuk memulai</p>
                         </div>
 
                         <div id="karikatur-results-grid" class="hidden grid grid-cols-2 gap-4 max-h-[70vh] md:max-h-96 overflow-y-auto" style="-webkit-overflow-scrolling: touch;"></div>
@@ -10453,7 +10453,7 @@
             <div class="container mx-auto px-4 py-8">
                 <header class="text-center mb-8">
                     <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-violet-500 bg-clip-text text-transparent">Photo Editor Pro</h1>
-                    <p class="text-lg text-gray-600 mt-2">Edit foto dengan preset profesional ala Lightroom ✨📸</p>
+                    <p class="text-lg text-gray-600 mt-2" data-i18n="photoeditor.desc">Edit foto dengan preset profesional ala Lightroom ✨📸</p>
                 </header>
 
                 <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -10463,13 +10463,13 @@
                         <div class="w-full p-6 md:p-8 rounded-2xl shadow-lg bg-white">
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-violet-500 text-white font-bold text-sm shadow-lg">1</div>
-                                <label class="text-xl font-semibold text-gray-800">Unggah Foto</label>
+                                <label class="text-xl font-semibold text-gray-800" data-i18n="photoeditor.step1-title">Unggah Foto</label>
                             </div>
                             <label for="photoeditor-image-input" class="upload-box-photoeditor block relative border-3 border-dashed border-gray-300 rounded-xl p-8 text-center cursor-pointer bg-gradient-to-br from-purple-50 to-violet-50 hover:shadow-xl transition-all">
                                 <input type="file" id="photoeditor-image-input" class="hidden" accept="image/png, image/jpeg, image/webp, image/heic, .heic">
                                 <div id="photoeditor-upload-prompt">
                                     <i class="fas fa-images text-5xl text-purple-400 mb-3"></i>
-                                    <p class="text-gray-700 font-semibold">Klik atau seret foto di sini</p>
+                                    <p class="text-gray-700 font-semibold" data-i18n="photoeditor.upload-drag">Klik atau seret foto di sini</p>
                                     <p class="text-sm text-gray-500 mt-1">PNG, JPG, WEBP, HEIC</p>
                                 </div>
                                 <img id="photoeditor-image-preview" src="" alt="Preview" class="hidden w-full h-auto rounded-lg">
@@ -10478,7 +10478,7 @@
                             <div id="photoeditor-preview-container" class="mt-3 hidden lg:hidden">
                                 <img id="photoeditor-mobile-preview" src="" alt="Preview" class="w-full rounded-lg shadow-lg max-h-48 object-cover">
                                 <button id="photoeditor-remove-preview" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg transition-colors">
-                                    <i class="fas fa-times mr-1"></i> Hapus Foto
+                                    <i class="fas fa-times mr-1"></i> <span data-i18n="unboxing.remove-photo">Hapus Foto</span>
                                 </button>
                             </div>
                         </div>
@@ -10498,15 +10498,15 @@
 
                             <div id="photoeditor-placeholder" class="flex flex-col items-center justify-center min-h-[400px] text-center">
                                 <i class="fas fa-sliders-h text-8xl text-purple-300 mb-4"></i>
-                                <p class="text-xl text-gray-600">Preview akan muncul di sini</p>
-                                <p class="text-sm text-gray-500 mt-2">Unggah foto untuk mulai editing</p>
+                                <p class="text-xl text-gray-600" data-i18n="photoeditor.placeholder">Preview akan muncul di sini</p>
+                                <p class="text-sm text-gray-500 mt-2" data-i18n="photoeditor.placeholder-sub">Unggah foto untuk mulai editing</p>
                             </div>
 
                             <div id="photoeditor-preview-area" class="hidden">
                                 <canvas id="photoeditor-canvas" class="w-full rounded-lg shadow-lg"></canvas>
                                 <p class="text-xs text-gray-500 text-center mt-2">
                                     <i class="fas fa-info-circle mr-1"></i>
-                                    Preview di-scale untuk tampilan, download akan menggunakan ukuran original
+                                    <span data-i18n="photoeditor.canvas-tip">Preview di-scale untuk tampilan, download akan menggunakan ukuran original</span>
                                 </p>
                                 <div class="mt-4 flex flex-wrap gap-2 justify-center">
                                     <button id="photoeditor-reset-btn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg font-semibold transition-colors">
@@ -70327,6 +70327,36 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'carousel.gen-btn':'Create Carousel',
             'carousel.placeholder-title':'Your Carousel Results',
             'carousel.placeholder-desc':'Your finished carousel will appear here.',
+            // miniature
+            'miniature.desc':'Turn your photo into a unique AI miniature ✨',
+            'miniature.placeholder':'20 AI miniature options will appear here',
+            'miniature.loading':'AI is shrinking you... Please wait!',
+            'miniature.step1-title':'1. Upload Your Photo (Required)',
+            'miniature.upload-drag':'Click or drag your photo here',
+            'miniature.step2-title':'2. Choose Aspect Ratio',
+            'miniature.step3-title':'3. Write Manual Prompt (Optional)',
+            'miniature.step3-desc':'Add specific details for all images.',
+            'miniature.prompt-placeholder':'Example: cute chibi style, ultra realistic, 8k',
+            'miniature.gen-btn':'Generate 6 Miniatures',
+            // karikatur
+            'karikatur.desc':'Transform your photo into professional caricature styles with AI 🎨',
+            'karikatur.step1-title':'Upload Photo',
+            'karikatur.upload-drag':'Click or drag photo here',
+            'karikatur.step2-title':'Caricature Style',
+            'karikatur.custom-placeholder':'Enter custom style, e.g.: disney style, ghibli style',
+            'karikatur.step3-title':'Exaggeration Level',
+            'karikatur.step6-title':'Number of Variations',
+            'karikatur.gen-btn':'Generate Caricature',
+            'karikatur.results-title':'Caricature Results',
+            'karikatur.placeholder':'Caricature will appear here',
+            'karikatur.placeholder-sub':'Upload a photo and choose a style to start',
+            // photoeditor
+            'photoeditor.desc':'Edit photos with professional Lightroom-style presets ✨📸',
+            'photoeditor.step1-title':'Upload Photo',
+            'photoeditor.upload-drag':'Click or drag photo here',
+            'photoeditor.placeholder':'Preview will appear here',
+            'photoeditor.placeholder-sub':'Upload a photo to start editing',
+            'photoeditor.canvas-tip':'Preview is scaled for display; download will use the original size',
             },
             id: {
                 nav: { 'apikey-settings':'API Key','beranda':'Beranda','buat-model':'Membuat Model','mockup-studio':'Mockup Studio','pov-tangan':'POV Tangan','touring':'Foto Touring','mirror-selfie':'POV Mirror Selfie','walking-pad':'Walking Pad','affiliate':'Foto Produk Affiliate','affiliate-islami':'Affiliate Agama','virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion','food-selfie':'Food Selfie','product-review':'Product Review','skincare-review':'Skincare Review','food-review':'Food Review','product-ads':'Iklan Produk','professional-headshot':'Professional Headshot','unboxing-scene':'Unboxing Scene','before-after':'Before/After','product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card','size-guide':'Size Guide','video-frames':'Video Frames','vehicle-modifier':'Vehicle Modifier','deskripsi-produk':'Deskripsi Produk SEO','ide-konten-tiktok':'Ide Konten TikTok','script-story-iklan':'Script Story Iklan','rencana-bisnis':'Rencana Bisnis & SWOT','hr-assistant':'HR Assistant','konten-marketing':'Konten Marketing','riset-pasar':'Riset Pasar & Ide','financial-forecast':'Simulasi Anggaran','family':'Foto Keluarga','new-born':'New Born Studio','maternity':'Foto Maternity','profesi-anak':'Foto Profesi Anak','wedding':'Wedding','wedding-design':'Desain Pernikahan','umrah-haji':'Foto Umrah/Haji','passport-photo':'Pas Foto Warna','graduation-photo':'Foto Wisuda','photo-booth':'Photo Booth','birthday-photo':'Foto Ulang Tahun','kartu-lebaran':'Kartu Lebaran','desain-rumah':'Desain Rumah','desain-kamar':'Desain Kamar','sketsa-gambar':'Sketsa Gambar','bikin-carousel':'Bikin Carousel','miniature':'Miniature Me','karikatur':'Karikatur Generator','photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor','tattoo-editor':'Tattoo Editor','halu':'Halu Idol','sticker':'Sticker Tempel','hair-generator':'Hair Generator','expression-changer':'Expression Changer','face-swap':'Face Swap','bg-remover':'Ubah Background','photo-extender':'Perluas Foto','story-board':'Story Board','twibon':'Twibon Frame','story-update':'Story Update','image-analyzer':'Image to Prompt','packaging-design':'Packaging Design','photo-angle':'Photo Angle','style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'Foto Sampul IG & Tiktok','photo-restoration':'Restorasi Foto','object-remover':'Hapus Object','logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit Generator','content-calendar':'Content Calendar Planner','ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI','caption-generator':'AI Caption Generator','product-comparison':'Product Comparison','mascot-generator':'Mascot Generator','poster-generator':'Poster Generator','banner-generator':'Banner Generator','sketch-catalog':'Sketsa ke Katalog','fotogenic':'Fotogenic','timelapse-renovasi':'Timelapse Renovasi','veo':'Affiliate Go Pro','opal':'Opal Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer' },
@@ -71133,6 +71163,36 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'carousel.gen-btn':'Buat Carousel',
             'carousel.placeholder-title':'Hasil Carousel Anda',
             'carousel.placeholder-desc':'Carousel yang sudah jadi akan muncul di sini.',
+            // miniature
+            'miniature.desc':'Ubah fotomu menjadi miniatur AI yang unik ✨',
+            'miniature.placeholder':'20 Pilihan miniatur AI akan muncul di sini',
+            'miniature.loading':'AI sedang menyusutkan Anda... Mohon tunggu!',
+            'miniature.step1-title':'1. Unggah Fotomu (Wajib)',
+            'miniature.upload-drag':'Klik atau seret fotomu ke sini',
+            'miniature.step2-title':'2. Pilih Rasio Aspek',
+            'miniature.step3-title':'3. Tulis Prompt Manual (Opsional)',
+            'miniature.step3-desc':'Tambahkan detail spesifik untuk semua gambar.',
+            'miniature.prompt-placeholder':'Contoh: cute chibi style, ultra realistic, 8k',
+            'miniature.gen-btn':'Generate 6 Miniatur',
+            // karikatur
+            'karikatur.desc':'Ubah fotomu menjadi berbagai style karikatur profesional dengan AI 🎨',
+            'karikatur.step1-title':'Unggah Foto',
+            'karikatur.upload-drag':'Klik atau seret foto di sini',
+            'karikatur.step2-title':'Style Karikatur',
+            'karikatur.custom-placeholder':'Masukkan style custom, contoh: disney style, ghibli style',
+            'karikatur.step3-title':'Tingkat Exaggeration',
+            'karikatur.step6-title':'Jumlah Variasi',
+            'karikatur.gen-btn':'Generate Karikatur',
+            'karikatur.results-title':'Hasil Karikatur',
+            'karikatur.placeholder':'Karikatur akan muncul di sini',
+            'karikatur.placeholder-sub':'Unggah foto dan pilih style untuk memulai',
+            // photoeditor
+            'photoeditor.desc':'Edit foto dengan preset profesional ala Lightroom ✨📸',
+            'photoeditor.step1-title':'Unggah Foto',
+            'photoeditor.upload-drag':'Klik atau seret foto di sini',
+            'photoeditor.placeholder':'Preview akan muncul di sini',
+            'photoeditor.placeholder-sub':'Unggah foto untuk mulai editing',
+            'photoeditor.canvas-tip':'Preview di-scale untuk tampilan, download akan menggunakan ukuran original',
             }
         };
 
