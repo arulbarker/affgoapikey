@@ -12851,7 +12851,7 @@
                         Generator Review Produk Skincare
                     </h1>
                     <p class="text-lg text-gray-500 mt-2 max-w-3xl mx-auto">
-                        Buat 10 scene review skincare profesional untuk konten video Anda.
+                        <span data-i18n="skincare.desc">Buat 10 scene review skincare profesional untuk konten video Anda.</span>
                     </p>
                 </header>
 
@@ -12862,13 +12862,13 @@
                             <div>
                                 <div class="flex items-center gap-2 mb-3">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 text-white font-bold text-sm shadow-lg">1</div>
-                                    <h2 class="text-xl font-semibold text-gray-800">Unggah Produk Skincare</h2>
+                                    <h2 class="text-xl font-semibold text-gray-800" data-i18n="skincare.step1-title">Unggah Produk Skincare</h2>
                                 </div>
                                 <div id="skincare-image-upload-area">
                                     <label for="skincare-image-input" class="file-input-label rounded-xl p-8 text-center text-gray-500 flex flex-col items-center justify-center min-h-[140px] cursor-pointer hover:bg-gradient-to-br hover:from-pink-50 hover:to-rose-50 transition-all">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mb-3 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                                        <span class="font-medium text-base">Klik atau seret gambar produk</span>
-                                        <span class="text-xs mt-2 text-gray-400">PNG, JPG, WEBP, HEIC (Bisa lebih dari satu)</span>
+                                        <span class="font-medium text-base" data-i18n="skincare.upload-click">Klik atau seret gambar produk</span>
+                                        <span class="text-xs mt-2 text-gray-400" data-i18n="skincare.upload-hint">PNG, JPG, WEBP, HEIC (Bisa lebih dari satu)</span>
                                     </label>
                                     <input type="file" id="skincare-image-input" class="hidden" accept="image/png, image/jpeg, image/webp, image/heic, .heic" multiple>
                                 </div>
@@ -12881,26 +12881,26 @@
                                 <div class="flex items-center justify-between mb-3">
                                     <div class="flex items-center gap-2">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 text-white font-bold text-sm shadow-lg">2</div>
-                                        <h2 class="text-xl font-semibold text-gray-800">Deskripsi Skincare</h2>
+                                        <h2 class="text-xl font-semibold text-gray-800" data-i18n="skincare.step2-title">Deskripsi Skincare</h2>
                                     </div>
                                     <button id="skincare-generate-desc-btn" class="btn-secondary text-xs font-semibold py-2 px-3 rounded-lg flex items-center gap-1 shadow-sm hover:shadow-md transition-shadow" disabled>
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M13 7H7v6h6V7z"/><path fill-rule="evenodd" d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1H9v1a1 1 0 11-2 0v-1H5a2 2 0 01-2-2v-2H2a1 1 0 110-2h1V9H2a1 1 0 010-2h1V5a2 2 0 012-2h2V2zM5 5h10v10H5V5z" clip-rule="evenodd"/></svg>
                                         <span>AI Generate</span>
                                     </button>
                                 </div>
-                                <textarea id="skincare-product-desc-input" rows="4" class="w-full p-4 bg-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition resize-none" placeholder="Deskripsikan produk skincare Anda: jenis produk, manfaat, bahan utama, tekstur..."></textarea>
-                                <p class="text-xs text-gray-400 mt-2">💡 Contoh: Serum Vitamin C dengan Niacinamide, mencerahkan kulit, mengurangi flek hitam</p>
+                                <textarea id="skincare-product-desc-input" rows="4" class="w-full p-4 bg-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition resize-none" data-i18n-placeholder="skincare.desc-placeholder" placeholder="Deskripsikan produk skincare Anda: jenis produk, manfaat, bahan utama, tekstur..."></textarea>
+                                <p class="text-xs text-gray-400 mt-2" data-i18n="skincare.desc-tip">💡 Contoh: Serum Vitamin C dengan Niacinamide, mencerahkan kulit, mengurangi flek hitam</p>
                             </div>
 
                             <div>
                                 <div class="flex items-center gap-2 mb-3">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 text-white font-bold text-sm shadow-lg">3</div>
-                                    <h2 class="text-xl font-semibold text-gray-800">Foto Model <span class="text-sm text-gray-400">(Opsional)</span></h2>
+                                    <h2 class="text-xl font-semibold text-gray-800"><span data-i18n="review.step3-title">Foto Model</span> <span class="text-sm text-gray-400" data-i18n="review.optional-label">(Opsional)</span></h2>
                                 </div>
                                 <div id="skincare-model-image-upload-area">
                                     <label for="skincare-model-image-input" class="file-input-label rounded-xl p-6 text-center text-gray-500 flex flex-col items-center justify-center min-h-[120px] cursor-pointer hover:bg-gradient-to-br hover:from-pink-50 hover:to-rose-50 transition-all">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-                                        <span class="font-medium">Upload foto reviewer/model</span>
+                                        <span class="font-medium" data-i18n="skincare.model-click">Upload foto reviewer/model</span>
                                     </label>
                                     <input type="file" id="skincare-model-image-input" class="hidden" accept="image/png, image/jpeg, image/webp, image/heic, .heic">
                                 </div>
@@ -12910,13 +12910,13 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                                     </button>
                                 </div>
-                                <p class="text-xs text-gray-400 mt-2">🎭 Untuk review lebih personal dengan wajah reviewer</p>
+                                <p class="text-xs text-gray-400 mt-2" data-i18n="skincare.model-tip">🎭 Untuk review lebih personal dengan wajah reviewer</p>
                             </div>
 
                             <div>
                                 <div class="flex items-center gap-2 mb-3">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 text-white font-bold text-sm shadow-lg">4</div>
-                                    <h2 class="text-xl font-semibold text-gray-800">Pilih Tema Review</h2>
+                                    <h2 class="text-xl font-semibold text-gray-800" data-i18n="skincare.theme-title">Pilih Tema Review</h2>
                                 </div>
                                 <div id="skincare-theme-selection" class="grid grid-cols-2 gap-3 max-h-64 overflow-y-auto pr-2" style="-webkit-overflow-scrolling: touch;">
                                     <button type="button" class="theme-btn-skincare selected flex flex-col items-start gap-1 p-3 border-2 rounded-xl transition-all active:scale-95 text-left" data-theme="professional-commercial" style="border-color: #ec4899; background: linear-gradient(135deg, #ec4899, #f43f5e); color: white; box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);">
@@ -12924,55 +12924,55 @@
                                             <i class="fas fa-camera text-lg"></i>
                                             <span class="font-semibold text-sm">Professional Commercial</span>
                                         </div>
-                                        <span class="text-xs opacity-80">Iklan produk profesional & mewah</span>
+                                        <span class="text-xs opacity-80" data-i18n="skincare.theme-commercial-sub">Iklan produk profesional & mewah</span>
                                     </button>
                                     <button type="button" class="theme-btn-skincare flex flex-col items-start gap-1 p-3 border-2 border-gray-200 rounded-xl hover:border-pink-400 transition-all active:scale-95 text-left" data-theme="problem-solution">
                                         <div class="flex items-center gap-2">
                                             <i class="fas fa-exchange-alt text-lg text-pink-500"></i>
                                             <span class="font-semibold text-sm text-gray-700">Problem & Solution</span>
                                         </div>
-                                        <span class="text-xs text-gray-500">Before-after masalah kulit</span>
+                                        <span class="text-xs text-gray-500" data-i18n="skincare.theme-ps-sub">Before-after masalah kulit</span>
                                     </button>
                                     <button type="button" class="theme-btn-skincare flex flex-col items-start gap-1 p-3 border-2 border-gray-200 rounded-xl hover:border-pink-400 transition-all active:scale-95 text-left" data-theme="honest-ugc">
                                         <div class="flex items-center gap-2">
                                             <i class="fas fa-user-friends text-lg text-pink-500"></i>
                                             <span class="font-semibold text-sm text-gray-700">Honest UGC Review</span>
                                         </div>
-                                        <span class="text-xs text-gray-500">Review jujur ala pengguna</span>
+                                        <span class="text-xs text-gray-500" data-i18n="skincare.theme-ugc-sub">Review jujur ala pengguna</span>
                                     </button>
                                     <button type="button" class="theme-btn-skincare flex flex-col items-start gap-1 p-3 border-2 border-gray-200 rounded-xl hover:border-pink-400 transition-all active:scale-95 text-left" data-theme="the-battle-vs">
                                         <div class="flex items-center gap-2">
                                             <i class="fas fa-bolt text-lg text-pink-500"></i>
                                             <span class="font-semibold text-sm text-gray-700">The Battle (VS)</span>
                                         </div>
-                                        <span class="text-xs text-gray-500">Perbandingan 2+ produk</span>
+                                        <span class="text-xs text-gray-500" data-i18n="skincare.theme-vs-sub">Perbandingan 2+ produk</span>
                                     </button>
                                     <button type="button" class="theme-btn-skincare flex flex-col items-start gap-1 p-3 border-2 border-gray-200 rounded-xl hover:border-pink-400 transition-all active:scale-95 text-left" data-theme="science-routine">
                                         <div class="flex items-center gap-2">
                                             <i class="fas fa-flask text-lg text-pink-500"></i>
                                             <span class="font-semibold text-sm text-gray-700">Science & Routine</span>
                                         </div>
-                                        <span class="text-xs text-gray-500">Edukasi ingredients & skincare routine</span>
+                                        <span class="text-xs text-gray-500" data-i18n="skincare.theme-science-sub">Edukasi ingredients & skincare routine</span>
                                     </button>
                                     <button type="button" class="theme-btn-skincare flex flex-col items-start gap-1 p-3 border-2 border-gray-200 rounded-xl hover:border-pink-400 transition-all active:scale-95 text-left" data-theme="aesthetic-asmr">
                                         <div class="flex items-center gap-2">
                                             <i class="fas fa-spa text-lg text-pink-500"></i>
                                             <span class="font-semibold text-sm text-gray-700">Aesthetic / ASMR</span>
                                         </div>
-                                        <span class="text-xs text-gray-500">Visual satisfying & relaxing</span>
+                                        <span class="text-xs text-gray-500" data-i18n="skincare.theme-asmr-sub">Visual satisfying & relaxing</span>
                                     </button>
                                     <button type="button" class="theme-btn-skincare flex flex-col items-start gap-1 p-3 border-2 border-gray-200 rounded-xl hover:border-pink-400 transition-all active:scale-95 text-left col-span-2" data-theme="custom">
                                         <div class="flex items-center gap-2">
                                             <i class="fas fa-pencil-alt text-lg text-pink-500"></i>
                                             <span class="font-semibold text-sm text-gray-700">Custom Theme</span>
                                         </div>
-                                        <span class="text-xs text-gray-500">Tulis tema sendiri sesuai kebutuhan</span>
+                                        <span class="text-xs text-gray-500" data-i18n="skincare.theme-custom-sub">Tulis tema sendiri sesuai kebutuhan</span>
                                     </button>
                                 </div>
                                 <div id="skincare-custom-theme-container" class="hidden mt-3">
-                                    <textarea id="skincare-photo-theme-input" rows="3" class="w-full p-4 bg-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition resize-none" placeholder="Contoh: Clean & minimalis dengan background putih, aesthetic pink vibes, natural lighting outdoor..."></textarea>
+                                    <textarea id="skincare-photo-theme-input" rows="3" class="w-full p-4 bg-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition resize-none" data-i18n-placeholder="skincare.theme-placeholder" placeholder="Contoh: Clean & minimalis dengan background putih, aesthetic pink vibes, natural lighting outdoor..."></textarea>
                                 </div>
-                                <p class="text-xs text-gray-400 mt-2"><i class="fas fa-info-circle mr-1"></i>Untuk tema VS, upload 2+ produk skincare di Step 1</p>
+                                <p class="text-xs text-gray-400 mt-2" data-i18n="skincare.vs-tip"><i class="fas fa-info-circle mr-1"></i>Untuk tema VS, upload 2+ produk skincare di Step 1</p>
                             </div>
 
                             <div>
@@ -13003,7 +13003,7 @@
                             <div>
                                 <div class="flex items-center gap-2 mb-3">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 text-white font-bold text-sm shadow-lg">6</div>
-                                    <h2 class="text-xl font-semibold text-gray-800">Jumlah Scene</h2>
+                                    <h2 class="text-xl font-semibold text-gray-800" data-i18n="review.count-title">Jumlah Scene</h2>
                                 </div>
                                 <div id="skincare-count-selection" class="grid grid-cols-3 gap-3">
                                     <button type="button" class="count-btn-skincare flex items-center justify-center gap-2 p-3 border-2 border-gray-200 rounded-xl hover:border-pink-400 transition-all active:scale-95" data-count="4">
@@ -13023,7 +13023,7 @@
 
                             <button id="skincare-generate-btn" class="w-full btn-primary font-bold py-4 px-6 rounded-xl flex items-center justify-center text-lg shadow-xl hover:shadow-2xl transition-all bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-600 hover:to-rose-700" disabled>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                                <span>Buat <span id="skincare-count-text">7</span> Scene Skincare Review</span>
+                                <span><span data-i18n="review.gen-prefix">Buat</span> <span id="skincare-count-text">7</span> <span data-i18n="skincare.gen-suffix">Scene Skincare Review</span></span>
                             </button>
                         </div>
                     </div>
@@ -13045,7 +13045,7 @@
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500">
                         Generator Review Makanan Profesional
                     </h1>
-                    <p class="mt-4 text-lg sm:text-xl text-gray-600">Buat review makanan seperti TikToker & Selebgram dengan AI</p>
+                    <p class="mt-4 text-lg sm:text-xl text-gray-600" data-i18n="frev.desc">Buat review makanan seperti TikToker & Selebgram dengan AI</p>
                 </header>
 
                 <main class="space-y-8">
@@ -13053,14 +13053,14 @@
                     <div class="card p-6">
                         <div class="flex items-center gap-2 mb-4">
                             <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-amber-600 text-white font-bold text-sm shadow-lg">1</div>
-                            <h2 class="text-xl font-semibold text-gray-800">Upload Foto Makanan</h2>
+                            <h2 class="text-xl font-semibold text-gray-800" data-i18n="frev.step1-title">Upload Foto Makanan</h2>
                         </div>
-                        <p class="text-sm text-gray-600 mb-4">Upload 1 atau lebih foto makanan yang akan direview (maksimal 5 foto)</p>
+                        <p class="text-sm text-gray-600 mb-4" data-i18n="frev.upload-tip">Upload 1 atau lebih foto makanan yang akan direview (maksimal 5 foto)</p>
                         <input type="file" id="food-image-input" accept="image/png, image/jpeg, image/webp, image/heic, .heic" multiple class="hidden">
                         <div id="food-image-upload-area" class="upload-box-food cursor-pointer border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-orange-500 transition-all">
                             <i class="fas fa-images text-5xl text-orange-500 mb-3"></i>
-                            <p class="text-gray-700 font-medium">Klik untuk upload foto makanan</p>
-                            <p class="text-sm text-gray-500 mt-1">Format: JPG, PNG, WEBP, HEIC (iPhone)</p>
+                            <p class="text-gray-700 font-medium" data-i18n="frev.upload-click">Klik untuk upload foto makanan</p>
+                            <p class="text-sm text-gray-500 mt-1" data-i18n="frev.upload-hint">Format: JPG, PNG, WEBP, HEIC (iPhone)</p>
                         </div>
                         <div id="food-image-preview-container" class="hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mt-4"></div>
                     </div>
@@ -13069,30 +13069,30 @@
                     <div class="card p-6">
                         <div class="flex items-center gap-2 mb-4">
                             <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-amber-600 text-white font-bold text-sm shadow-lg">2</div>
-                            <h2 class="text-xl font-semibold text-gray-800">Deskripsi Makanan</h2>
+                            <h2 class="text-xl font-semibold text-gray-800" data-i18n="frev.step2-title">Deskripsi Makanan</h2>
                         </div>
-                        <p class="text-sm text-gray-600 mb-3">Jelaskan makanan ini (nama, rasa, tekstur, bahan, tempat, harga, dll)</p>
+                        <p class="text-sm text-gray-600 mb-3" data-i18n="frev.desc-tip">Jelaskan makanan ini (nama, rasa, tekstur, bahan, tempat, harga, dll)</p>
                         <div class="flex gap-2 mb-3">
                             <button id="food-generate-desc-btn" class="bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white font-semibold py-2 px-4 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 text-sm" disabled>
                                 <i class="fas fa-magic"></i>
                                 <span>Generate AI</span>
                             </button>
                         </div>
-                        <textarea id="food-product-desc-input" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" placeholder="Contoh: Nasi Goreng Spesial dengan telur mata sapi, ayam fillet, dan kerupuk. Rasanya gurih dan pedas pas. Harga Rp 35.000 di Warung Nasi Pak Budi..."></textarea>
+                        <textarea id="food-product-desc-input" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" data-i18n-placeholder="frev.desc-placeholder" placeholder="Contoh: Nasi Goreng Spesial dengan telur mata sapi, ayam fillet, dan kerupuk. Rasanya gurih dan pedas pas. Harga Rp 35.000 di Warung Nasi Pak Budi..."></textarea>
                     </div>
 
                     <!-- Step 3: Optional Model Photo -->
                     <div class="card p-6">
                         <div class="flex items-center gap-2 mb-4">
                             <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-amber-600 text-white font-bold text-sm shadow-lg">3</div>
-                            <h2 class="text-xl font-semibold text-gray-800">Upload Foto Food Reviewer (Opsional)</h2>
+                            <h2 class="text-xl font-semibold text-gray-800" data-i18n="frev.step3-title">Upload Foto Food Reviewer (Opsional)</h2>
                         </div>
-                        <p class="text-sm text-gray-600 mb-4">Upload foto reviewer untuk konsistensi karakter di semua scene. Jika tidak diupload, fokus pada makanan saja.</p>
+                        <p class="text-sm text-gray-600 mb-4" data-i18n="frev.step3-tip">Upload foto reviewer untuk konsistensi karakter di semua scene. Jika tidak diupload, fokus pada makanan saja.</p>
                         <input type="file" id="food-model-image-input" accept="image/png, image/jpeg, image/webp, image/heic, .heic" class="hidden">
                         <div id="food-model-image-upload-area" class="upload-box-food cursor-pointer border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-orange-500 transition-all">
                             <i class="fas fa-user-circle text-4xl text-orange-500 mb-2"></i>
-                            <p class="text-gray-700 font-medium">Klik untuk upload foto reviewer</p>
-                            <p class="text-xs text-gray-500 mt-1">Opsional - untuk konsistensi model di semua scene</p>
+                            <p class="text-gray-700 font-medium" data-i18n="frev.model-click">Klik untuk upload foto reviewer</p>
+                            <p class="text-xs text-gray-500 mt-1" data-i18n="frev.model-hint">Opsional - untuk konsistensi model di semua scene</p>
                         </div>
                         <div id="food-model-image-preview-container" class="hidden mt-3">
                             <div class="relative inline-block">
@@ -13108,10 +13108,10 @@
                     <div class="card p-6">
                         <div class="flex items-center gap-2 mb-4">
                             <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-amber-600 text-white font-bold text-sm shadow-lg">4</div>
-                            <h2 class="text-xl font-semibold text-gray-800">Tema Visual (Opsional)</h2>
+                            <h2 class="text-xl font-semibold text-gray-800" data-i18n="frev.step4-title">Tema Visual (Opsional)</h2>
                         </div>
-                        <p class="text-sm text-gray-600 mb-3">Atur tema atau mood visual untuk review (kosongkan jika default)</p>
-                        <input type="text" id="food-photo-theme-input" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" placeholder="Contoh: natural lighting, cozy cafe ambience, street food vibes, fine dining elegant, dll...">
+                        <p class="text-sm text-gray-600 mb-3" data-i18n="frev.step4-tip">Atur tema atau mood visual untuk review (kosongkan jika default)</p>
+                        <input type="text" id="food-photo-theme-input" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" data-i18n-placeholder="frev.theme-placeholder" placeholder="Contoh: natural lighting, cozy cafe ambience, street food vibes, fine dining elegant, dll...">
                     </div>
 
                     <!-- Step 5: Aspect Ratio -->
@@ -13144,7 +13144,7 @@
                     <div class="card p-6">
                         <div class="flex items-center gap-2 mb-4">
                             <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-amber-600 text-white font-bold text-sm shadow-lg">6</div>
-                            <h2 class="text-xl font-semibold text-gray-800">Jumlah Scene</h2>
+                            <h2 class="text-xl font-semibold text-gray-800" data-i18n="review.count-title">Jumlah Scene</h2>
                         </div>
                         <div id="food-count-selection" class="grid grid-cols-3 gap-3">
                             <button type="button" class="count-btn-food flex items-center justify-center gap-2 p-3 border-2 border-gray-200 rounded-xl hover:border-orange-400 transition-all active:scale-95" data-count="4">
@@ -13168,7 +13168,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
-                            <span>Buat <span id="food-count-text">7</span> Scene Food Review</span>
+                            <span><span data-i18n="review.gen-prefix">Buat</span> <span id="food-count-text">7</span> <span data-i18n="frev.gen-suffix">Scene Food Review</span></span>
                         </button>
                     </div>
 
@@ -13179,7 +13179,7 @@
                                 <i class="fas fa-check-circle text-orange-500 mr-2"></i>
                                 <span id="food-results-count">7</span> Scene Food Review Generated!
                             </h2>
-                            <p class="text-gray-600">Klik scene untuk preview, edit, regenerate, atau download</p>
+                            <p class="text-gray-600" data-i18n="frev.results-tip">Klik scene untuk preview, edit, regenerate, atau download</p>
                         </div>
                         <div id="food-grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6"></div>
                     </div>
@@ -13195,7 +13195,7 @@
                         Generator Story Iklan
                     </h1>
                     <p class="text-lg text-gray-500 mt-2 max-w-3xl mx-auto">
-                        Solusi AI untuk konten promosi brand Anda.
+                        <span data-i18n="ads.desc">Solusi AI untuk konten promosi brand Anda.</span>
                     </p>
                 </header>
 
@@ -13206,13 +13206,13 @@
                             <div>
                                 <div class="flex items-center gap-2 mb-3">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 text-white font-bold text-sm shadow-lg">1</div>
-                                    <h2 class="text-xl font-semibold text-gray-800">Unggah Gambar Produk</h2>
+                                    <h2 class="text-xl font-semibold text-gray-800" data-i18n="review.step1-title">Unggah Gambar Produk</h2>
                                 </div>
                                 <div id="ads-image-upload-area">
                                     <label for="ads-image-input" class="file-input-label rounded-xl p-8 text-center text-gray-500 flex flex-col items-center justify-center min-h-[140px]">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                                        <span class="font-medium text-base">Klik atau seret gambar ke sini</span>
-                                        <span class="text-xs mt-2 text-gray-400">PNG, JPG, WEBP (Bisa lebih dari satu)</span>
+                                        <span class="font-medium text-base" data-i18n="review.upload-click">Klik atau seret gambar ke sini</span>
+                                        <span class="text-xs mt-2 text-gray-400" data-i18n="review.upload-hint">PNG, JPG, WEBP (Bisa lebih dari satu)</span>
                                     </label>
                                     <input type="file" id="ads-image-input" class="hidden" accept="image/png, image/jpeg, image/webp" multiple>
                                 </div>
@@ -13225,26 +13225,26 @@
                                 <div class="flex items-center justify-between mb-3">
                                     <div class="flex items-center gap-2">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 text-white font-bold text-sm shadow-lg">2</div>
-                                        <h2 class="text-xl font-semibold text-gray-800">Deskripsi Produk</h2>
+                                        <h2 class="text-xl font-semibold text-gray-800" data-i18n="review.step2-title">Deskripsi Produk</h2>
                                     </div>
                                     <button id="ads-generate-desc-btn" class="btn-secondary text-xs font-semibold py-2 px-3 rounded-lg flex items-center gap-1 shadow-sm" disabled>
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M13 7H7v6h6V7z"/><path fill-rule="evenodd" d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1H9v1a1 1 0 11-2 0v-1H5a2 2 0 01-2-2v-2H2a1 1 0 110-2h1V9H2a1 1 0 010-2h1V5a2 2 0 012-2h2V2zM5 5h10v10H5V5z" clip-rule="evenodd"/></svg>
                                         <span>AI Generate</span>
                                     </button>
                                 </div>
-                                <textarea id="ads-product-desc-input" rows="4" class="w-full p-4 bg-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition resize-none" placeholder="Deskripsikan produk Anda secara detail... atau gunakan AI Generate"></textarea>
-                                <p class="text-xs text-gray-400 mt-2">💡 Tip: Deskripsi detail menghasilkan iklan yang lebih menarik</p>
+                                <textarea id="ads-product-desc-input" rows="4" class="w-full p-4 bg-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition resize-none" data-i18n-placeholder="review.desc-placeholder" placeholder="Deskripsikan produk Anda secara detail... atau gunakan AI Generate"></textarea>
+                                <p class="text-xs text-gray-400 mt-2" data-i18n="ads.desc-tip">💡 Tip: Deskripsi detail menghasilkan iklan yang lebih menarik</p>
                             </div>
 
                             <div>
                                 <div class="flex items-center gap-2 mb-3">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 text-white font-bold text-sm shadow-lg">3</div>
-                                    <h2 class="text-xl font-semibold text-gray-800">Foto Model <span class="text-sm text-gray-400">(Opsional)</span></h2>
+                                    <h2 class="text-xl font-semibold text-gray-800"><span data-i18n="review.step3-title">Foto Model</span> <span class="text-sm text-gray-400" data-i18n="review.optional-label">(Opsional)</span></h2>
                                 </div>
                                 <div id="ads-model-image-upload-area">
                                     <label for="ads-model-image-input" class="file-input-label rounded-xl p-6 text-center text-gray-500 flex flex-col items-center justify-center min-h-[120px]">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-                                        <span class="font-medium">Klik untuk pilih foto model</span>
+                                        <span class="font-medium" data-i18n="review.model-click">Klik untuk pilih foto model</span>
                                     </label>
                                     <input type="file" id="ads-model-image-input" class="hidden" accept="image/png, image/jpeg, image/webp">
                                 </div>
@@ -13252,22 +13252,22 @@
                                     <img id="ads-model-image-preview" src="#" alt="Pratinjau Model" class="rounded-xl w-full h-auto object-contain shadow-md">
                                     <button id="ads-remove-model-image-btn" class="absolute top-2 right-2 bg-red-500 text-white rounded-full p-2 hover:bg-red-600 transition-all shadow-lg hover:shadow-xl active:scale-95"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
                                 </div>
-                                <p class="text-xs text-gray-400 mt-2">🎭 Upload foto model untuk hasil lebih personal</p>
+                                <p class="text-xs text-gray-400 mt-2" data-i18n="review.model-tip">🎭 Upload foto model untuk hasil lebih personal</p>
                             </div>
 
                             <div>
                                 <div class="flex items-center gap-2 mb-3">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 text-white font-bold text-sm shadow-lg">4</div>
-                                    <h2 class="text-xl font-semibold text-gray-800">Tema Foto <span class="text-sm text-gray-400">(Opsional)</span></h2>
+                                    <h2 class="text-xl font-semibold text-gray-800"><span data-i18n="review.step4-title">Tema Foto</span> <span class="text-sm text-gray-400" data-i18n="review.optional-label">(Opsional)</span></h2>
                                 </div>
-                                <textarea id="ads-photo-theme-input" rows="3" class="w-full p-4 bg-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition resize-none" placeholder="Contoh: Minimalis & bersih, nuansa alam tropis, futuristik dengan neon..."></textarea>
-                                <p class="text-xs text-gray-400 mt-2">🎨 Tentukan style visual untuk hasil lebih menarik</p>
+                                <textarea id="ads-photo-theme-input" rows="3" class="w-full p-4 bg-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition resize-none" data-i18n-placeholder="review.theme-placeholder" placeholder="Contoh: Minimalis & bersih, nuansa alam tropis, futuristik dengan neon..."></textarea>
+                                <p class="text-xs text-gray-400 mt-2" data-i18n="review.theme-tip">🎨 Tentukan style visual untuk hasil lebih menarik</p>
                             </div>
 
                             <div>
                                 <div class="flex items-center gap-2 mb-3">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 text-white font-bold text-sm shadow-lg">5</div>
-                                    <h2 class="text-xl font-semibold text-gray-800">Pilih Suara Narator</h2>
+                                    <h2 class="text-xl font-semibold text-gray-800" data-i18n="ads.narrator-title">Pilih Suara Narator</h2>
                                 </div>
                                 <select id="ads-narrator-voice" class="w-full p-4 bg-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition cursor-pointer">
                                     <option value="Puck" data-desc="Ceria & Enerjik (Pria)">🎙️ Puck - Pria, Ceria & Enerjik</option>
@@ -13281,13 +13281,13 @@
                                     <option value="Aoede" data-desc="Lancar & Santai (Wanita)">🎙️ Aoede - Wanita, Lancar & Santai</option>
                                     <option value="Gacrux" data-desc="Dewasa & Bijak (Wanita)">🎙️ Gacrux - Wanita, Dewasa & Bijak</option>
                                 </select>
-                                <p class="text-xs text-gray-400 mt-2">🎬 Pilih narator sesuai target audiens iklan</p>
+                                <p class="text-xs text-gray-400 mt-2" data-i18n="ads.narrator-tip">🎬 Pilih narator sesuai target audiens iklan</p>
                             </div>
 
                             <div>
                                 <div class="flex items-center gap-2 mb-3">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 text-white font-bold text-sm shadow-lg">6</div>
-                                    <h2 class="text-xl font-semibold text-gray-800">Pilih Rasio Aspek</h2>
+                                    <h2 class="text-xl font-semibold text-gray-800" data-i18n="ads.ratio-title">Pilih Rasio Aspek</h2>
                                 </div>
                                 <div id="ads-ratio-selection" class="grid grid-cols-2 gap-3">
                                     <button type="button" class="ratio-btn-ads flex flex-col items-center justify-center p-4 border-2 border-gray-200 rounded-xl cursor-pointer transition hover:border-pink-400 hover:shadow-md active:scale-95" data-ratio="1:1">
@@ -13312,7 +13312,7 @@
                             <div>
                                 <div class="flex items-center gap-2 mb-3">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 text-white font-bold text-sm shadow-lg">7</div>
-                                    <h2 class="text-xl font-semibold text-gray-800">Jumlah Scene</h2>
+                                    <h2 class="text-xl font-semibold text-gray-800" data-i18n="review.count-title">Jumlah Scene</h2>
                                 </div>
                                 <div id="ads-count-selection" class="grid grid-cols-3 gap-3">
                                     <button type="button" class="count-btn-ads flex items-center justify-center gap-2 p-3 border-2 border-gray-200 rounded-xl hover:border-pink-400 transition-all active:scale-95" data-count="4">
@@ -13332,7 +13332,7 @@
 
                             <button id="ads-generate-btn" class="w-full btn-primary font-bold py-4 px-6 rounded-xl flex items-center justify-center text-lg shadow-xl" disabled>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                                <span>Buat <span id="ads-count-text">7</span> Scene Iklan</span>
+                                <span><span data-i18n="review.gen-prefix">Buat</span> <span id="ads-count-text">7</span> <span data-i18n="ads.gen-suffix">Scene Iklan</span></span>
                             </button>
                         </div>
                     </div>
@@ -69840,6 +69840,52 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
                 'review.count-title':'Number of Scenes',
                 'review.gen-prefix':'Create',
                 'review.gen-suffix':'Scene Review',
+                // skincare review
+                'skincare.desc':'Create 10 professional skincare review scenes for your video content.',
+                'skincare.step1-title':'Upload Skincare Product',
+                'skincare.upload-click':'Click or drag product image',
+                'skincare.upload-hint':'PNG, JPG, WEBP, HEIC (Can upload more than one)',
+                'skincare.step2-title':'Skincare Description',
+                'skincare.desc-placeholder':'Describe your skincare product: type, benefits, key ingredients, texture...',
+                'skincare.desc-tip':'💡 Example: Vitamin C Serum with Niacinamide, brightens skin, reduces dark spots',
+                'skincare.model-click':'Upload reviewer/model photo',
+                'skincare.model-tip':'🎭 For more personal review with reviewer face',
+                'skincare.theme-title':'Select Review Theme',
+                'skincare.theme-commercial-sub':'Professional & luxurious product ad',
+                'skincare.theme-ps-sub':'Before-after skin issues',
+                'skincare.theme-ugc-sub':'Honest user-style review',
+                'skincare.theme-vs-sub':'Comparison of 2+ products',
+                'skincare.theme-science-sub':'Ingredients education & skincare routine',
+                'skincare.theme-asmr-sub':'Satisfying & relaxing visuals',
+                'skincare.theme-custom-sub':'Write your own theme as needed',
+                'skincare.theme-placeholder':'Example: Clean & minimalist white background, aesthetic pink vibes, natural lighting outdoor...',
+                'skincare.vs-tip':'For VS theme, upload 2+ skincare products in Step 1',
+                'skincare.gen-suffix':'Skincare Review Scenes',
+                // food review
+                'frev.desc':'Create food reviews like TikTokers & Instagram influencers with AI',
+                'frev.step1-title':'Upload Food Photos',
+                'frev.upload-tip':'Upload 1 or more food photos to review (max 5 photos)',
+                'frev.upload-click':'Click to upload food photo',
+                'frev.upload-hint':'Format: JPG, PNG, WEBP, HEIC (iPhone)',
+                'frev.step2-title':'Food Description',
+                'frev.desc-tip':'Describe this food (name, taste, texture, ingredients, location, price, etc.)',
+                'frev.desc-placeholder':'Example: Special Fried Rice with sunny side egg, fillet chicken, and crackers. Savory and perfectly spicy. Price Rp 35,000 at Warung Nasi Pak Budi...',
+                'frev.step3-title':'Upload Food Reviewer Photo (Optional)',
+                'frev.step3-tip':'Upload reviewer photo for character consistency across all scenes. If not uploaded, focus on food only.',
+                'frev.model-click':'Click to upload reviewer photo',
+                'frev.model-hint':'Optional - for model consistency across all scenes',
+                'frev.step4-title':'Visual Theme (Optional)',
+                'frev.step4-tip':'Set visual theme or mood for review (leave empty for default)',
+                'frev.theme-placeholder':'Example: natural lighting, cozy cafe ambience, street food vibes, fine dining elegant, etc...',
+                'frev.gen-suffix':'Scene Food Review',
+                'frev.results-tip':'Click scene to preview, edit, regenerate, or download',
+                // product ads
+                'ads.desc':'AI solution for your brand promotional content.',
+                'ads.desc-tip':'💡 Tip: Detailed descriptions produce more engaging ads',
+                'ads.narrator-title':'Select Narrator Voice',
+                'ads.narrator-tip':'🎬 Choose narrator matching your ad target audience',
+                'ads.ratio-title':'Select Aspect Ratio',
+                'ads.gen-suffix':'Ad Scenes',
             },
             id: {
                 nav: { 'apikey-settings':'API Key','beranda':'Beranda','buat-model':'Membuat Model','mockup-studio':'Mockup Studio','pov-tangan':'POV Tangan','touring':'Foto Touring','mirror-selfie':'POV Mirror Selfie','walking-pad':'Walking Pad','affiliate':'Foto Produk Affiliate','affiliate-islami':'Affiliate Agama','virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion','food-selfie':'Food Selfie','product-review':'Product Review','skincare-review':'Skincare Review','food-review':'Food Review','product-ads':'Iklan Produk','professional-headshot':'Professional Headshot','unboxing-scene':'Unboxing Scene','before-after':'Before/After','product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card','size-guide':'Size Guide','video-frames':'Video Frames','vehicle-modifier':'Vehicle Modifier','deskripsi-produk':'Deskripsi Produk SEO','ide-konten-tiktok':'Ide Konten TikTok','script-story-iklan':'Script Story Iklan','rencana-bisnis':'Rencana Bisnis & SWOT','hr-assistant':'HR Assistant','konten-marketing':'Konten Marketing','riset-pasar':'Riset Pasar & Ide','financial-forecast':'Simulasi Anggaran','family':'Foto Keluarga','new-born':'New Born Studio','maternity':'Foto Maternity','profesi-anak':'Foto Profesi Anak','wedding':'Wedding','wedding-design':'Desain Pernikahan','umrah-haji':'Foto Umrah/Haji','passport-photo':'Pas Foto Warna','graduation-photo':'Foto Wisuda','photo-booth':'Photo Booth','birthday-photo':'Foto Ulang Tahun','kartu-lebaran':'Kartu Lebaran','desain-rumah':'Desain Rumah','desain-kamar':'Desain Kamar','sketsa-gambar':'Sketsa Gambar','bikin-carousel':'Bikin Carousel','miniature':'Miniature Me','karikatur':'Karikatur Generator','photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor','tattoo-editor':'Tattoo Editor','halu':'Halu Idol','sticker':'Sticker Tempel','hair-generator':'Hair Generator','expression-changer':'Expression Changer','face-swap':'Face Swap','bg-remover':'Ubah Background','photo-extender':'Perluas Foto','story-board':'Story Board','twibon':'Twibon Frame','story-update':'Story Update','image-analyzer':'Image to Prompt','packaging-design':'Packaging Design','photo-angle':'Photo Angle','style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'Foto Sampul IG & Tiktok','photo-restoration':'Restorasi Foto','object-remover':'Hapus Object','logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit Generator','content-calendar':'Content Calendar Planner','ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI','caption-generator':'AI Caption Generator','product-comparison':'Product Comparison','mascot-generator':'Mascot Generator','poster-generator':'Poster Generator','banner-generator':'Banner Generator','sketch-catalog':'Sketsa ke Katalog','fotogenic':'Fotogenic','timelapse-renovasi':'Timelapse Renovasi','veo':'Affiliate Go Pro','opal':'Opal Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer' },
@@ -70159,6 +70205,52 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
                 'review.count-title':'Jumlah Scene',
                 'review.gen-prefix':'Buat',
                 'review.gen-suffix':'Scene Review',
+                // skincare review
+                'skincare.desc':'Buat 10 scene review skincare profesional untuk konten video Anda.',
+                'skincare.step1-title':'Unggah Produk Skincare',
+                'skincare.upload-click':'Klik atau seret gambar produk',
+                'skincare.upload-hint':'PNG, JPG, WEBP, HEIC (Bisa lebih dari satu)',
+                'skincare.step2-title':'Deskripsi Skincare',
+                'skincare.desc-placeholder':'Deskripsikan produk skincare Anda: jenis produk, manfaat, bahan utama, tekstur...',
+                'skincare.desc-tip':'💡 Contoh: Serum Vitamin C dengan Niacinamide, mencerahkan kulit, mengurangi flek hitam',
+                'skincare.model-click':'Upload foto reviewer/model',
+                'skincare.model-tip':'🎭 Untuk review lebih personal dengan wajah reviewer',
+                'skincare.theme-title':'Pilih Tema Review',
+                'skincare.theme-commercial-sub':'Iklan produk profesional & mewah',
+                'skincare.theme-ps-sub':'Before-after masalah kulit',
+                'skincare.theme-ugc-sub':'Review jujur ala pengguna',
+                'skincare.theme-vs-sub':'Perbandingan 2+ produk',
+                'skincare.theme-science-sub':'Edukasi ingredients & skincare routine',
+                'skincare.theme-asmr-sub':'Visual satisfying & relaxing',
+                'skincare.theme-custom-sub':'Tulis tema sendiri sesuai kebutuhan',
+                'skincare.theme-placeholder':'Contoh: Clean & minimalis dengan background putih, aesthetic pink vibes, natural lighting outdoor...',
+                'skincare.vs-tip':'Untuk tema VS, upload 2+ produk skincare di Step 1',
+                'skincare.gen-suffix':'Scene Skincare Review',
+                // food review
+                'frev.desc':'Buat review makanan seperti TikToker & Selebgram dengan AI',
+                'frev.step1-title':'Upload Foto Makanan',
+                'frev.upload-tip':'Upload 1 atau lebih foto makanan yang akan direview (maksimal 5 foto)',
+                'frev.upload-click':'Klik untuk upload foto makanan',
+                'frev.upload-hint':'Format: JPG, PNG, WEBP, HEIC (iPhone)',
+                'frev.step2-title':'Deskripsi Makanan',
+                'frev.desc-tip':'Jelaskan makanan ini (nama, rasa, tekstur, bahan, tempat, harga, dll)',
+                'frev.desc-placeholder':'Contoh: Nasi Goreng Spesial dengan telur mata sapi, ayam fillet, dan kerupuk. Rasanya gurih dan pedas pas. Harga Rp 35.000 di Warung Nasi Pak Budi...',
+                'frev.step3-title':'Upload Foto Food Reviewer (Opsional)',
+                'frev.step3-tip':'Upload foto reviewer untuk konsistensi karakter di semua scene. Jika tidak diupload, fokus pada makanan saja.',
+                'frev.model-click':'Klik untuk upload foto reviewer',
+                'frev.model-hint':'Opsional - untuk konsistensi model di semua scene',
+                'frev.step4-title':'Tema Visual (Opsional)',
+                'frev.step4-tip':'Atur tema atau mood visual untuk review (kosongkan jika default)',
+                'frev.theme-placeholder':'Contoh: natural lighting, cozy cafe ambience, street food vibes, fine dining elegant, dll...',
+                'frev.gen-suffix':'Scene Food Review',
+                'frev.results-tip':'Klik scene untuk preview, edit, regenerate, atau download',
+                // product ads
+                'ads.desc':'Solusi AI untuk konten promosi brand Anda.',
+                'ads.desc-tip':'💡 Tip: Deskripsi detail menghasilkan iklan yang lebih menarik',
+                'ads.narrator-title':'Pilih Suara Narator',
+                'ads.narrator-tip':'🎬 Pilih narator sesuai target audiens iklan',
+                'ads.ratio-title':'Pilih Rasio Aspek',
+                'ads.gen-suffix':'Scene Iklan',
             }
         };
 
