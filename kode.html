@@ -25311,27 +25311,27 @@
                     <h1 class="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
                         <i class="fas fa-search-dollar mr-3"></i>Asisten Riset Pasar & Ide Produk AI
                     </h1>
-                    <p class="text-lg text-gray-600 mb-2">
+                    <p class="text-lg text-gray-600 mb-2" data-i18n="research.desc">
                         Dapatkan ide produk baru dan insight tren pasar terkini
                     </p>
                 </header>
 
                 <div class="grid lg:grid-cols-2 gap-6">
                     <div class="card p-6">
-                        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+                        <h2 class="text-2xl font-bold mb-6 text-gray-800" data-i18n="research.input-title">
                             <i class="fas fa-edit mr-2 text-purple-600"></i>Info Riset
                         </h2>
 
                         <div class="space-y-5">
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="research.label-business">
                                     Jenis Bisnis Saat Ini <span class="text-red-500">*</span>
                                 </label>
                                 <input type="text" id="rm-bisnis" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all" placeholder="Contoh: Kafe, Toko Online Fashion, Salon">
                             </div>
 
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="research.label-goal">
                                     Tujuan Riset
                                 </label>
                                 <select id="rm-tujuan" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all">
@@ -25343,36 +25343,36 @@
                             </div>
 
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="research.label-location">
                                     Lokasi/Target Market
                                 </label>
                                 <input type="text" id="rm-target" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all" placeholder="Contoh: Jakarta, Indonesia, Gen Z">
                             </div>
 
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="research.label-pref">
                                     Preferensi Khusus (Opsional)
                                 </label>
                                 <textarea id="rm-preferensi" rows="3" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all" placeholder="Contoh: Ramah lingkungan, budget terbatas, viral di media sosial, dll"></textarea>
                             </div>
 
                             <button id="rm-generate-btn" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                                <i class="fas fa-sparkles mr-2"></i>Generate Riset & Ide
+                                <span data-i18n="research.gen-btn">Generate Riset & Ide</span>
                             </button>
                         </div>
                     </div>
 
                     <div class="card p-6">
-                        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+                        <h2 class="text-2xl font-bold mb-6 text-gray-800" data-i18n="research.output-title">
                             <i class="fas fa-lightbulb mr-2 text-purple-600"></i>Hasil Riset
                         </h2>
 
                         <div id="rm-output-container" class="hidden space-y-4">
                             <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-4 border border-purple-200">
                                 <div class="flex justify-between items-start mb-2">
-                                    <h3 class="font-bold text-gray-800">Riset Pasar & Ide Produk</h3>
+                                    <h3 class="font-bold text-gray-800" data-i18n="research.output-h3">Riset Pasar & Ide Produk</h3>
                                     <button id="rm-copy-btn" class="text-purple-600 hover:text-purple-700 font-semibold text-sm flex items-center gap-1">
-                                        <i class="fas fa-copy"></i>Salin
+                                        <i class="fas fa-copy"></i><span data-i18n="research.copy-btn">Salin</span>
                                     </button>
                                 </div>
                                 <div id="rm-output" class="text-gray-700 whitespace-pre-wrap leading-relaxed text-sm max-h-[70vh] md:max-h-96 overflow-y-auto" style="-webkit-overflow-scrolling: touch;"></div>
@@ -25381,8 +25381,8 @@
 
                         <div id="rm-placeholder" class="flex flex-col items-center justify-center h-96 text-center text-gray-400">
                             <i class="fas fa-search-dollar text-6xl mb-4"></i>
-                            <p class="text-lg font-semibold">Hasil Riset & Ide</p>
-                            <p class="text-sm">Isi info bisnis untuk mulai riset</p>
+                            <p class="text-lg font-semibold" data-i18n="research.placeholder-title">Hasil Riset & Ide</p>
+                            <p class="text-sm" data-i18n="research.placeholder-desc">Isi info bisnis untuk mulai riset</p>
                         </div>
                     </div>
                 </div>
@@ -25396,27 +25396,27 @@
                     <h1 class="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-cyan-600">
                         <i class="fas fa-calculator mr-3"></i>Simulator Anggaran & Perkiraan Keuangan
                     </h1>
-                    <p class="text-lg text-gray-600 mb-2">
+                    <p class="text-lg text-gray-600 mb-2" data-i18n="budget.desc">
                         Buat proyeksi anggaran dan skenario keuangan untuk bisnis Anda
                     </p>
                 </header>
 
                 <div class="grid lg:grid-cols-2 gap-6">
                     <div class="card p-6">
-                        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+                        <h2 class="text-2xl font-bold mb-6 text-gray-800" data-i18n="budget.input-title">
                             <i class="fas fa-edit mr-2 text-emerald-600"></i>Data Keuangan
                         </h2>
 
                         <div class="space-y-5">
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="budget.label-revenue">
                                     Proyeksi Pendapatan Bulanan <span class="text-red-500">*</span>
                                 </label>
                                 <input type="text" id="ff-pendapatan" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all" placeholder="Contoh: Rp 50.000.000 atau 50 juta">
                             </div>
 
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="budget.label-type">
                                     Tipe Bisnis
                                 </label>
                                 <select id="ff-tipe" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all">
@@ -25428,14 +25428,14 @@
                             </div>
 
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="budget.label-industry">
                                     Industri
                                 </label>
                                 <input type="text" id="ff-industri" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all" placeholder="Contoh: F&B, Retail, Jasa, E-commerce">
                             </div>
 
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="budget.label-scenario">
                                     Skenario yang Ingin Disimulasikan
                                 </label>
                                 <select id="ff-skenario" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all">
@@ -25447,29 +25447,29 @@
                             </div>
 
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="budget.label-extra">
                                     Detail Tambahan (Opsional)
                                 </label>
                                 <textarea id="ff-detail" rows="3" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all" placeholder="Contoh: Jumlah karyawan, rencana investasi, target profit margin, dll"></textarea>
                             </div>
 
                             <button id="ff-generate-btn" class="w-full bg-gradient-to-r from-emerald-600 to-cyan-600 text-white font-bold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                                <i class="fas fa-sparkles mr-2"></i>Generate Proyeksi Anggaran
+                                <span data-i18n="budget.gen-btn">Generate Proyeksi Anggaran</span>
                             </button>
                         </div>
                     </div>
 
                     <div class="card p-6">
-                        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+                        <h2 class="text-2xl font-bold mb-6 text-gray-800" data-i18n="budget.output-title">
                             <i class="fas fa-chart-pie mr-2 text-emerald-600"></i>Hasil Proyeksi
                         </h2>
 
                         <div id="ff-output-container" class="hidden space-y-4">
                             <div class="bg-gradient-to-r from-emerald-50 to-cyan-50 rounded-lg p-4 border border-emerald-200">
                                 <div class="flex justify-between items-start mb-2">
-                                    <h3 class="font-bold text-gray-800">Proyeksi Anggaran & Saran</h3>
+                                    <h3 class="font-bold text-gray-800" data-i18n="budget.output-h3">Proyeksi Anggaran & Saran</h3>
                                     <button id="ff-copy-btn" class="text-emerald-600 hover:text-emerald-700 font-semibold text-sm flex items-center gap-1">
-                                        <i class="fas fa-copy"></i>Salin
+                                        <i class="fas fa-copy"></i><span data-i18n="budget.copy-btn">Salin</span>
                                     </button>
                                 </div>
                                 <div id="ff-output" class="text-gray-700 whitespace-pre-wrap leading-relaxed text-sm max-h-[70vh] md:max-h-96 overflow-y-auto" style="-webkit-overflow-scrolling: touch;"></div>
@@ -25478,8 +25478,8 @@
 
                         <div id="ff-placeholder" class="flex flex-col items-center justify-center h-96 text-center text-gray-400">
                             <i class="fas fa-calculator text-6xl mb-4"></i>
-                            <p class="text-lg font-semibold">Proyeksi Keuangan Anda</p>
-                            <p class="text-sm">Isi data untuk simulasi anggaran</p>
+                            <p class="text-lg font-semibold" data-i18n="budget.placeholder-title">Proyeksi Keuangan Anda</p>
+                            <p class="text-sm" data-i18n="budget.placeholder-desc">Isi data untuk simulasi anggaran</p>
                         </div>
                     </div>
                 </div>
@@ -70057,6 +70057,31 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'marketing.copy-btn':'Copy All',
             'marketing.placeholder-title':'Your Marketing Content',
             'marketing.placeholder-desc':'Fill in promotion info to generate',
+            'research.desc':'Get new product ideas and insights on the latest market trends',
+            'research.input-title':'Research Info',
+            'research.label-business':'Current Business Type',
+            'research.label-goal':'Research Goal',
+            'research.label-location':'Location/Target Market',
+            'research.label-pref':'Special Preferences (Optional)',
+            'research.gen-btn':'Generate Research & Ideas',
+            'research.output-title':'Research Results',
+            'research.output-h3':'Market Research & Product Ideas',
+            'research.copy-btn':'Copy',
+            'research.placeholder-title':'Research Results & Ideas',
+            'research.placeholder-desc':'Fill in business info to start research',
+            'budget.desc':'Create budget projections and financial scenarios for your business',
+            'budget.input-title':'Financial Data',
+            'budget.label-revenue':'Monthly Revenue Projection',
+            'budget.label-type':'Business Type',
+            'budget.label-industry':'Industry',
+            'budget.label-scenario':'Scenario to Simulate',
+            'budget.label-extra':'Additional Details (Optional)',
+            'budget.gen-btn':'Generate Budget Projection',
+            'budget.output-title':'Projection Results',
+            'budget.output-h3':'Budget Projection & Recommendations',
+            'budget.copy-btn':'Copy',
+            'budget.placeholder-title':'Your Financial Projection',
+            'budget.placeholder-desc':'Fill in data for budget simulation',
             },
             id: {
                 nav: { 'apikey-settings':'API Key','beranda':'Beranda','buat-model':'Membuat Model','mockup-studio':'Mockup Studio','pov-tangan':'POV Tangan','touring':'Foto Touring','mirror-selfie':'POV Mirror Selfie','walking-pad':'Walking Pad','affiliate':'Foto Produk Affiliate','affiliate-islami':'Affiliate Agama','virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion','food-selfie':'Food Selfie','product-review':'Product Review','skincare-review':'Skincare Review','food-review':'Food Review','product-ads':'Iklan Produk','professional-headshot':'Professional Headshot','unboxing-scene':'Unboxing Scene','before-after':'Before/After','product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card','size-guide':'Size Guide','video-frames':'Video Frames','vehicle-modifier':'Vehicle Modifier','deskripsi-produk':'Deskripsi Produk SEO','ide-konten-tiktok':'Ide Konten TikTok','script-story-iklan':'Script Story Iklan','rencana-bisnis':'Rencana Bisnis & SWOT','hr-assistant':'HR Assistant','konten-marketing':'Konten Marketing','riset-pasar':'Riset Pasar & Ide','financial-forecast':'Simulasi Anggaran','family':'Foto Keluarga','new-born':'New Born Studio','maternity':'Foto Maternity','profesi-anak':'Foto Profesi Anak','wedding':'Wedding','wedding-design':'Desain Pernikahan','umrah-haji':'Foto Umrah/Haji','passport-photo':'Pas Foto Warna','graduation-photo':'Foto Wisuda','photo-booth':'Photo Booth','birthday-photo':'Foto Ulang Tahun','kartu-lebaran':'Kartu Lebaran','desain-rumah':'Desain Rumah','desain-kamar':'Desain Kamar','sketsa-gambar':'Sketsa Gambar','bikin-carousel':'Bikin Carousel','miniature':'Miniature Me','karikatur':'Karikatur Generator','photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor','tattoo-editor':'Tattoo Editor','halu':'Halu Idol','sticker':'Sticker Tempel','hair-generator':'Hair Generator','expression-changer':'Expression Changer','face-swap':'Face Swap','bg-remover':'Ubah Background','photo-extender':'Perluas Foto','story-board':'Story Board','twibon':'Twibon Frame','story-update':'Story Update','image-analyzer':'Image to Prompt','packaging-design':'Packaging Design','photo-angle':'Photo Angle','style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'Foto Sampul IG & Tiktok','photo-restoration':'Restorasi Foto','object-remover':'Hapus Object','logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit Generator','content-calendar':'Content Calendar Planner','ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI','caption-generator':'AI Caption Generator','product-comparison':'Product Comparison','mascot-generator':'Mascot Generator','poster-generator':'Poster Generator','banner-generator':'Banner Generator','sketch-catalog':'Sketsa ke Katalog','fotogenic':'Fotogenic','timelapse-renovasi':'Timelapse Renovasi','veo':'Affiliate Go Pro','opal':'Opal Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer' },
@@ -70593,6 +70618,31 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'marketing.copy-btn':'Salin Semua',
             'marketing.placeholder-title':'Konten Marketing Anda',
             'marketing.placeholder-desc':'Isi info promosi untuk generate',
+            'research.desc':'Dapatkan ide produk baru dan insight tren pasar terkini',
+            'research.input-title':'Info Riset',
+            'research.label-business':'Jenis Bisnis Saat Ini',
+            'research.label-goal':'Tujuan Riset',
+            'research.label-location':'Lokasi/Target Market',
+            'research.label-pref':'Preferensi Khusus (Opsional)',
+            'research.gen-btn':'Generate Riset & Ide',
+            'research.output-title':'Hasil Riset',
+            'research.output-h3':'Riset Pasar & Ide Produk',
+            'research.copy-btn':'Salin',
+            'research.placeholder-title':'Hasil Riset & Ide',
+            'research.placeholder-desc':'Isi info bisnis untuk mulai riset',
+            'budget.desc':'Buat proyeksi anggaran dan skenario keuangan untuk bisnis Anda',
+            'budget.input-title':'Data Keuangan',
+            'budget.label-revenue':'Proyeksi Pendapatan Bulanan',
+            'budget.label-type':'Tipe Bisnis',
+            'budget.label-industry':'Industri',
+            'budget.label-scenario':'Skenario yang Ingin Disimulasikan',
+            'budget.label-extra':'Detail Tambahan (Opsional)',
+            'budget.gen-btn':'Generate Proyeksi Anggaran',
+            'budget.output-title':'Hasil Proyeksi',
+            'budget.output-h3':'Proyeksi Anggaran & Saran',
+            'budget.copy-btn':'Salin',
+            'budget.placeholder-title':'Proyeksi Keuangan Anda',
+            'budget.placeholder-desc':'Isi data untuk simulasi anggaran',
             }
         };
 
