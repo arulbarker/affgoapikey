@@ -9846,7 +9846,7 @@
                 <div class="card mb-8">
                     <!-- Upload Design Section -->
                     <div class="mb-6">
-                        <h2 class="text-2xl font-bold mb-4 text-gray-800">
+                        <h2 class="text-2xl font-bold mb-4 text-gray-800" data-i18n="mockup.upload-title">
                             <i class="fas fa-cloud-upload-alt mr-2"></i>Upload Design/Artwork
                         </h2>
                         <div id="mockup-upload-area" class="upload-area cursor-pointer">
@@ -9899,7 +9899,7 @@
                             accept="image/*"
                             class="hidden"
                         />
-                        <p class="text-xs text-gray-500 mt-2">
+                        <p class="text-xs text-gray-500 mt-2" data-i18n="mockup.template-tips">
                             <i class="fas fa-lightbulb mr-1"></i>
                             Tips: Upload foto template (contoh: foto kaos, gelas, poster, dll). Design akan ditempelkan secara realistis
                         </p>
@@ -9916,7 +9916,7 @@
                             placeholder="Contoh: gelas, kaos, poster, mug, buku, smartphone, tote bag, dll..."
                             class="w-full p-4 border-2 border-purple-200 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all"
                         / data-i18n-placeholder="mockup.theme-placeholder">
-                        <p class="text-xs text-gray-500 mt-2">
+                        <p class="text-xs text-gray-500 mt-2" data-i18n="mockup.theme-tips">
                             <i class="fas fa-info-circle mr-1"></i>
                             Tips: Sebutkan jenis mockup yang Anda inginkan. Kosongkan untuk variasi otomatis
                         </p>
@@ -9924,7 +9924,7 @@
 
                     <!-- Aspect Ratio Selection -->
                     <div class="mb-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">
+                        <h3 class="text-xl font-bold mb-3 text-gray-800" data-i18n="mockup.aspect-ratio-title">
                             <i class="fas fa-expand-arrows-alt mr-2"></i>Rasio Aspek
                         </h3>
                         <div id="mockup-ratio-selection" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -9941,7 +9941,7 @@
                                 <i class="fas fa-mobile-alt mr-2"></i>9:16
                             </button>
                         </div>
-                        <p class="text-xs text-gray-500 mt-2">
+                        <p class="text-xs text-gray-500 mt-2" data-i18n="mockup.aspect-ratio-tips">
                             <i class="fas fa-lightbulb mr-1"></i>
                             Pilih rasio aspek untuk semua mockup yang akan di-generate
                         </p>
@@ -9955,7 +9955,7 @@
                             disabled
                         >
                             <i class="fas fa-magic mr-3"></i>
-                            Generate 7 Mockup
+                            <span data-i18n="mockup.generate-btn">Generate 7 Mockup</span>
                         </button>
                     </div>
                 </div>
@@ -9969,7 +9969,7 @@
                                 Sedang Membuat Mockup...
                             </h3>
                             <p class="text-gray-600 mb-4">
-                                Mohon tunggu, AI sedang menghasilkan <span id="mockup-progress-text">0/7</span> mockup
+                                <span data-i18n="mockup.loading-wait">Mohon tunggu, AI sedang menghasilkan</span> <span id="mockup-progress-text">0/7</span> <span data-i18n="mockup.loading-suffix">mockup</span>
                             </p>
                             <div class="w-full max-w-md bg-gray-200 rounded-full h-3">
                                 <div
@@ -9995,7 +9995,7 @@
                                 class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition-all"
                             >
                                 <i class="fas fa-download mr-2"></i>
-                                Download Semua
+                                <span data-i18n="mockup.download-all">Download Semua</span>
                             </button>
                         </div>
                         <div id="mockup-results-grid" class="result-grid">
@@ -10016,7 +10016,7 @@
                                     id="mockup-retry-btn"
                                     class="mt-4 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-lg transition-all"
                                 >
-                                    <i class="fas fa-redo mr-2"></i>Coba Lagi
+                                    <i class="fas fa-redo mr-2"></i><span data-i18n="mockup.retry">Coba Lagi</span>
                                 </button>
                             </div>
                         </div>
@@ -22765,7 +22765,7 @@
                             accept="image/*"
                             class="hidden"
                         />
-                        <p class="text-xs text-gray-500 mt-2">
+                        <p class="text-xs text-gray-500 mt-2" data-i18n="pov.bg-tips">
                             <i class="fas fa-magic mr-1"></i>
                             Tips: Upload foto lokasi apapun (bengkel, cafe, kamar, taman, dll). Produk akan digabungkan ke lokasi tersebut dengan POV tangan
                         </p>
@@ -22778,11 +22778,12 @@
                         </h3>
                         <textarea
                             id="pov-product-description"
+                            data-i18n-placeholder="pov.bg-placeholder"
                             placeholder="Contoh: Meja kayu minimalis dengan tanaman hijau, Cafe aesthetic Korea dengan latte, Background pink aesthetic dengan pegboard, dll..."
                             class="w-full p-4 border-2 border-purple-200 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all"
                             rows="3"
                         ></textarea>
-                        <p class="text-xs text-gray-500 mt-2">
+                        <p class="text-xs text-gray-500 mt-2" data-i18n="pov.bg-desc-tips">
                             <i class="fas fa-lightbulb mr-1"></i>
                             Tips: Deskripsikan background/setting yang Anda inginkan. Kosongkan untuk mendapatkan berbagai aesthetic background otomatis.
                         </p>
@@ -22795,13 +22796,13 @@
                         </h3>
                         <div id="pov-hand-count-selection" class="grid grid-cols-2 gap-3">
                             <button type="button" data-hand-count="1" class="hand-count-btn-pov selected">
-                                <i class="fas fa-hand-paper mr-2"></i>1 Tangan
+                                <i class="fas fa-hand-paper mr-2"></i><span data-i18n="pov.hand-1">1 Tangan</span>
                             </button>
                             <button type="button" data-hand-count="2" class="hand-count-btn-pov">
-                                <i class="fas fa-hands mr-2"></i>2 Tangan
+                                <i class="fas fa-hands mr-2"></i><span data-i18n="pov.hand-2">2 Tangan</span>
                             </button>
                         </div>
-                        <p class="text-xs text-gray-500 mt-2">
+                        <p class="text-xs text-gray-500 mt-2" data-i18n="pov.hand-desc">
                             <i class="fas fa-lightbulb mr-1"></i>
                             Pilih apakah produk akan digenggam dengan 1 tangan atau 2 tangan
                         </p>
@@ -22809,7 +22810,7 @@
 
                     <!-- Aspect Ratio Selection -->
                     <div class="mb-6">
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">
+                        <h3 class="text-xl font-bold mb-3 text-gray-800" data-i18n="pov.aspect-title">
                             <i class="fas fa-expand-arrows-alt mr-2"></i>Rasio Aspek
                         </h3>
                         <div id="pov-ratio-selection" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -22826,7 +22827,7 @@
                                 <i class="fas fa-mobile-alt mr-2"></i>9:16
                             </button>
                         </div>
-                        <p class="text-xs text-gray-500 mt-2">
+                        <p class="text-xs text-gray-500 mt-2" data-i18n="pov.aspect-desc">
                             <i class="fas fa-lightbulb mr-1"></i>
                             Pilih rasio aspek untuk semua foto POV yang akan di-generate
                         </p>
@@ -22840,7 +22841,7 @@
                             disabled
                         >
                             <i class="fas fa-magic mr-3"></i>
-                            Generate 7 Foto POV Tangan
+                            <span data-i18n="pov.generate-btn">Generate 7 Foto POV Tangan</span>
                         </button>
                     </div>
                 </div>
@@ -22850,11 +22851,11 @@
                     <div class="card inline-block">
                         <div class="flex flex-col items-center">
                             <div class="pov-loader mb-6"></div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-2">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2" data-i18n="pov.loading-title">
                                 Sedang Membuat Foto POV Tangan...
                             </h3>
                             <p class="text-gray-600 mb-4">
-                                Mohon tunggu, AI sedang menghasilkan <span id="pov-progress-text">0/7</span> foto
+                                <span data-i18n="pov.loading-wait">Mohon tunggu, AI sedang menghasilkan</span> <span id="pov-progress-text">0/7</span> <span data-i18n="pov.loading-suffix">foto</span>
                             </p>
                             <div class="w-full max-w-md bg-gray-200 rounded-full h-3">
                                 <div
@@ -22871,7 +22872,7 @@
                 <div id="pov-results-section" class="hidden">
                     <div class="card">
                         <div class="flex justify-between items-center mb-6">
-                            <h2 class="text-3xl font-bold text-gray-800">
+                            <h2 class="text-3xl font-bold text-gray-800" data-i18n="pov.results-title">
                                 <i class="fas fa-check-circle text-green-500 mr-2"></i>
                                 Hasil POV Tangan (<span id="pov-result-count">0</span> foto)
                             </h2>
@@ -22880,7 +22881,7 @@
                                 class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition-all"
                             >
                                 <i class="fas fa-download mr-2"></i>
-                                Download Semua
+                                <span data-i18n="pov.download-all">Download Semua</span>
                             </button>
                         </div>
                         <div id="pov-results-grid" class="result-grid">
@@ -22895,13 +22896,13 @@
                         <div class="flex items-start">
                             <i class="fas fa-exclamation-triangle text-red-500 text-3xl mr-4 mt-1"></i>
                             <div>
-                                <h3 class="text-xl font-bold text-red-800 mb-2">Terjadi Kesalahan</h3>
+                                <h3 class="text-xl font-bold text-red-800 mb-2" data-i18n="pov.error-title">Terjadi Kesalahan</h3>
                                 <p id="pov-error-message" class="text-red-700"></p>
                                 <button
                                     id="pov-retry-btn"
                                     class="mt-4 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-lg transition-all"
                                 >
-                                    <i class="fas fa-redo mr-2"></i>Coba Lagi
+                                    <i class="fas fa-redo mr-2"></i><span data-i18n="pov.retry">Coba Lagi</span>
                                 </button>
                             </div>
                         </div>
@@ -69544,6 +69545,9 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
                 'mockup.download-all':'Download All',
                 'mockup.error-title':'An Error Occurred',
                 'mockup.retry':'Try Again',
+                'mockup.upload-title':'Upload Design/Artwork',
+                'mockup.loading-wait':'Please wait, AI is generating',
+                'mockup.loading-suffix':'mockups',
                 'pov.desc1':'Create 7 POV hand-holding product photos with custom or aesthetic backgrounds',
                 'pov.desc2':'Upload any location photo → Your product will be placed at that location!',
                 'pov.upload-title':'Upload Product Photo',
@@ -69562,6 +69566,13 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
                 'pov.aspect-title':'Aspect Ratio',
                 'pov.aspect-desc':'Choose the aspect ratio for all POV photos to be generated',
                 'pov.generate-btn':'Generate 7 POV Hand Photos',
+                'pov.loading-title':'Creating POV Hand Photos...',
+                'pov.loading-wait':'Please wait, AI is generating',
+                'pov.loading-suffix':'photos',
+                'pov.results-title':'POV Hand Results',
+                'pov.download-all':'Download All',
+                'pov.error-title':'An Error Occurred',
+                'pov.retry':'Try Again',
                 // API Key tab
                 'apikey.subtitle':'Enter your Google AI Studio API key',
                 'apikey.how-to-title':'How to get API Key:',
@@ -69724,6 +69735,9 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
                 'mockup.download-all':'Download Semua',
                 'mockup.error-title':'Terjadi Kesalahan',
                 'mockup.retry':'Coba Lagi',
+                'mockup.upload-title':'Upload Design/Artwork',
+                'mockup.loading-wait':'Mohon tunggu, AI sedang menghasilkan',
+                'mockup.loading-suffix':'mockup',
                 'pov.desc1':'Buat 7 foto POV tangan memegang produk dengan background custom atau aesthetic otomatis',
                 'pov.desc2':'Upload foto lokasi apapun → Produk Anda akan ditempatkan di lokasi tersebut!',
                 'pov.upload-title':'Upload Foto Produk',
@@ -69742,6 +69756,13 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
                 'pov.aspect-title':'Rasio Aspek',
                 'pov.aspect-desc':'Pilih rasio aspek untuk semua foto POV yang akan di-generate',
                 'pov.generate-btn':'Generate 7 Foto POV Tangan',
+                'pov.loading-title':'Sedang Membuat Foto POV Tangan...',
+                'pov.loading-wait':'Mohon tunggu, AI sedang menghasilkan',
+                'pov.loading-suffix':'foto',
+                'pov.results-title':'Hasil POV Tangan',
+                'pov.download-all':'Download Semua',
+                'pov.error-title':'Terjadi Kesalahan',
+                'pov.retry':'Coba Lagi',
                 'touring.desc1':'Buat foto touring kamu jadi super keren seperti hasil kamera profesional! Upload foto model, motor, helm, dan aksesoris lainnya.',
                 // API Key tab (ID)
                 'apikey.subtitle':'Masukkan API key Google AI Studio milikmu',
