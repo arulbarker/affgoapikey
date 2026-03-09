@@ -12591,7 +12591,7 @@
                                                 </svg>
                                             </button>
                                             <p class="text-xs text-green-600 mt-1 text-center" data-i18n="food.bg-confirm">
-                                                <i class="fas fa-check-circle mr-1"></i> Background custom akan digunakan
+                                                <i class="fas fa-check-circle mr-1"></i> <span data-i18n="graduation.bg-active">Background custom akan digunakan</span>
                                             </p>
                                         </div>
                                         <p class="text-xs text-gray-500 mt-2" data-i18n="food.bg-tip">
@@ -17482,12 +17482,12 @@
                             <span class="text-xs font-semibold px-3 py-1 rounded-full mt-1" style="background: linear-gradient(135deg, #F59E0B 0%, #FB923C 100%); color: white;">✨ AI Powered</span>
                         </div>
                     </div>
-                    <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                        Abadikan momen spiritual Anda dengan teknologi AI. Unggah foto diri dan dapatkan foto profesional dengan latar lokasi suci.
+                    <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed" data-i18n="umrah.desc">
+                    Abadikan momen spiritual Anda dengan teknologi AI. Unggah foto diri dan dapatkan foto profesional dengan latar lokasi suci.
                     </p>
                     <div class="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-xl border-2 shadow-sm" style="border-color: #F59E0B; background: linear-gradient(135deg, #FEF3C7 0%, #FFFBEB 100%);">
                         <i class="fas fa-bolt" style="color: #F59E0B;"></i>
-                        <span class="text-sm font-medium" style="color: #D97706;">Hasil instant dalam hitungan detik</span>
+                        <span class="text-sm font-medium" style="color: #D97706;" data-i18n="umrah.badge">Hasil instant dalam hitungan detik</span>
                     </div>
                 </header>
 
@@ -17500,12 +17500,12 @@
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #F59E0B 0%, #FB923C 100%);">
                                             1
                                         </div>
-                                        <h3 class="text-lg font-bold text-gray-800">Unggah Foto (1-5 Orang)</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="umrah.step1-title">Unggah Foto (1-5 Orang)</h3>
                                     </div>
                                     <div id="umrah-file-input-area" class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3"></div>
                                     <button type="button" id="umrah-add-photo-btn" class="w-full py-3 px-4 rounded-xl border-2 border-dashed font-semibold text-sm transition-all duration-300 active:scale-95 shadow-md hover:shadow-lg flex items-center justify-center gap-2 touch-manipulation" style="border-color: #F59E0B; color: #D97706; background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);">
                                         <i class="fas fa-plus"></i>
-                                        <span>Tambah Foto</span>
+                                        <span data-i18n="touring.add-photo">Tambah Foto</span>
                                     </button>
                                     <div id="umrah-validation" class="text-center text-sm mt-3 font-medium"></div>
                                 </div>
@@ -17514,7 +17514,7 @@
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #F59E0B 0%, #FB923C 100%);">
                                             2
                                         </div>
-                                        <h3 class="text-lg font-bold text-gray-800">Pilih Pakaian</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="umrah.step2-title">Pilih Pakaian</h3>
                                     </div>
                                     <div id="umrah-attire-options" class="grid grid-cols-2 gap-4">
                                         <button type="button" data-value="pakaian Ihram putih yang sesuai" class="option-btn-umrah selected">
@@ -17530,7 +17530,7 @@
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #F59E0B 0%, #FB923C 100%);">
                                             3
                                         </div>
-                                        <h3 class="text-lg font-bold text-gray-800">Pilih Lokasi</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="umrah.step3-title">Pilih Lokasi</h3>
                                     </div>
                                     <div id="umrah-theme-options" class="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm">
                                         <button type="button" data-value="Gaya pemotretan modern & profesional..." class="option-btn-umrah selected">
@@ -17564,7 +17564,7 @@
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #F59E0B 0%, #FB923C 100%);">
                                             4
                                         </div>
-                                        <h3 class="text-lg font-bold text-gray-800">Pilih Rasio Gambar</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="umrah.step4-title">Pilih Rasio Gambar</h3>
                                     </div>
                                     <div id="umrah-ratio-options" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
                                         <button type="button" data-value="1:1" class="option-btn-umrah">
@@ -17584,7 +17584,7 @@
                                 <button id="umrah-generate-btn" class="w-full text-white font-bold py-4 px-8 rounded-2xl flex items-center justify-center text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none relative overflow-hidden group" style="background: linear-gradient(135deg, #F59E0B 0%, #FB923C 100%);" disabled>
                                     <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                                     <i class="fas fa-sparkles mr-3 text-xl relative z-10"></i>
-                                    <span class="relative z-10">Buat Foto Umrah/Haji</span>
+                                    <span class="relative z-10" data-i18n="umrah.gen-btn">Buat Foto Umrah/Haji</span>
                                 </button>
                             </div>
                         </div>
@@ -17595,8 +17595,8 @@
                                 <div class="w-28 h-28 rounded-3xl flex items-center justify-center mb-6 shadow-lg" style="background: linear-gradient(135deg, #FEF3C7 0%, #FCD34D 100%);">
                                     <i class="fas fa-images text-6xl" style="color: #F59E0B;"></i>
                                 </div>
-                                <h3 class="font-bold text-2xl mb-3" style="color: #D97706;">Hasil Foto Umrah/Haji Anda</h3>
-                                <p class="text-gray-500 text-base max-w-md">Unggah foto Anda dan pilih preferensi untuk memulai. Hasil foto akan muncul di sini dengan kualitas profesional.</p>
+                                <h3 class="font-bold text-2xl mb-3" style="color: #D97706;" data-i18n="umrah.placeholder-title">Hasil Foto Umrah/Haji Anda</h3>
+                                <p class="text-gray-500 text-base max-w-md" data-i18n="umrah.placeholder-desc">Unggah foto Anda dan pilih preferensi untuk memulai. Hasil foto akan muncul di sini dengan kualitas profesional.</p>
                                 <div class="mt-8 flex items-center gap-6">
                                     <div class="flex items-center gap-2">
                                         <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #F59E0B 0%, #FB923C 100%);">
@@ -17623,14 +17623,14 @@
                                     <div class="text-center md:text-left">
                                         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl shadow-md mb-2" style="background: linear-gradient(135deg, #F59E0B 0%, #FB923C 100%);">
                                             <i class="fas fa-check-circle text-white"></i>
-                                            <span class="text-white font-semibold">Foto Berhasil Dibuat!</span>
+                                            <span class="text-white font-semibold" data-i18n="umrah.success-badge">Foto Berhasil Dibuat!</span>
                                         </div>
-                                        <h3 class="text-xl md:text-2xl font-bold text-gray-800">Hasil Foto Umrah/Haji Anda</h3>
-                                        <p class="text-gray-500 text-sm mt-1">Klik gambar untuk preview atau unduh</p>
+                                        <h3 class="text-xl md:text-2xl font-bold text-gray-800" data-i18n="umrah.results-title">Hasil Foto Umrah/Haji Anda</h3>
+                                        <p class="text-gray-500 text-sm mt-1" data-i18n="umrah.results-desc">Klik gambar untuk preview atau unduh</p>
                                     </div>
                                     <button id="umrah-download-all-btn" class="mt-4 md:mt-0 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-6 py-2 rounded-full font-semibold shadow-lg transition transform hover:scale-105 flex items-center gap-2">
                                         <i class="fas fa-download"></i>
-                                        Download Semua
+                                        <span data-i18n="family.download-all">Download Semua</span>
                                     </button>
                                 </div>
                                 <div id="umrah-results-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
@@ -17648,7 +17648,7 @@
                     <h1 class="text-4xl md:text-5xl font-bold mb-3">
                         <i class="fas fa-id-card mr-3"></i>Pas Foto Warna
                     </h1>
-                    <p class="text-lg text-gray-600">
+                    <p class="text-lg text-gray-600" data-i18n="passport.desc">
                         Buat pas foto formal dengan berbagai warna latar dan pilihan pakaian instan. Cepat dan praktis untuk semua kebutuhan.
                     </p>
                 </header>
@@ -17658,11 +17658,11 @@
                         <div class="card p-6 sticky top-6">
                             <div class="flex flex-col gap-5">
                                 <div>
-                                    <h3 class="text-base font-semibold mb-3 text-gray-800">1. Unggah Foto Wajah</h3>
+                                    <h3 class="text-base font-semibold mb-3 text-gray-800" data-i18n="passport.step1-title">1. Unggah Foto Wajah</h3>
                                     <label for="passport-input" id="passport-upload-box" class="upload-box-passport w-full h-56 sm:h-64 rounded-lg flex items-center justify-center cursor-pointer relative overflow-hidden border-2 border-dashed border-gray-300">
                                         <div id="passport-placeholder" class="text-center text-gray-500 p-2">
                                             <i class="fas fa-user-circle" style="font-size: 3rem;"></i>
-                                            <p class="mt-2 text-sm md:text-base">Klik atau seret foto close-up</p>
+                                            <p class="mt-2 text-sm md:text-base" data-i18n="passport.upload-hint">Klik atau seret foto close-up</p>
                                         </div>
                                         <img id="passport-preview" class="hidden absolute top-0 left-0 w-full h-full object-contain" alt="Pratinjau Pas Foto">
                                         <button type="button" id="passport-remove-btn" class="hidden absolute top-2 right-2 bg-red-600 text-white rounded-full p-1 hover:bg-red-700 z-10">
@@ -17673,7 +17673,7 @@
                                     <div id="passport-validation" class="text-center text-sm mt-2"></div>
                                 </div>
                                 <div>
-                                    <h3 class="text-base font-semibold mb-3 text-gray-800">2. Pilih Warna Background</h3>
+                                    <h3 class="text-base font-semibold mb-3 text-gray-800" data-i18n="passport.step2-title">2. Pilih Warna Background</h3>
                                     <div id="passport-bg-options" class="grid grid-cols-2 md:grid-cols-4 gap-3">
                                         <button type="button" data-value="Merah" class="option-btn-passport selected">Merah</button>
                                         <button type="button" data-value="Biru" class="option-btn-passport">Biru</button>
@@ -17682,7 +17682,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 class="text-base font-semibold mb-3 text-gray-800">3. Mode Pakaian Otomatis</h3>
+                                    <h3 class="text-base font-semibold mb-3 text-gray-800" data-i18n="passport.step3-title">3. Mode Pakaian Otomatis</h3>
                                     <div id="passport-attire-options" class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                                         <button type="button" data-value="Ganti dengan Jas Hitam dan Dasi" class="option-btn-passport selected">Jas + Dasi</button>
                                         <button type="button" data-value="Ganti dengan Blazer Formal Wanita" class="option-btn-passport">Blazer</button>
@@ -17691,7 +17691,7 @@
                                         <button type="button" data-value="Kustom" class="option-btn-passport">Kustom</button>
                                     </div>
                                     <div id="passport-school-options-container" class="hidden mt-4">
-                                        <h4 class="text-sm font-semibold mb-2 text-gray-700">Pilih Jenjang:</h4>
+                                        <h4 class="text-sm font-semibold mb-2 text-gray-700" data-i18n="passport.school-label">Pilih Jenjang:</h4>
                                         <div id="passport-school-options" class="grid grid-cols-3 gap-3">
                                             <button type="button" data-value="SD (putih merah)" class="option-btn-passport selected text-sm !p-2">SD</button>
                                             <button type="button" data-value="SMP (putih biru)" class="option-btn-passport text-sm !p-2">SMP</button>
@@ -17699,13 +17699,13 @@
                                         </div>
                                     </div>
                                     <div id="passport-custom-attire-container" class="hidden mt-4 space-y-4">
-                                        <h4 class="text-sm font-semibold text-gray-700">Pakaian Kustom:</h4>
+                                        <h4 class="text-sm font-semibold text-gray-700" data-i18n="passport.custom-label">Pakaian Kustom:</h4>
                                         <input type="text" id="passport-custom-attire-input" class="w-full p-3 rounded-lg border border-gray-300" placeholder="Contoh: kemeja batik...">
                                         <div class="text-center text-sm font-semibold text-gray-500">ATAU</div>
                                         <label for="passport-custom-attire-ref-input" id="passport-custom-attire-ref-upload-box" class="upload-box-passport w-full h-40 rounded-lg flex items-center justify-center cursor-pointer relative overflow-hidden border-2 border-dashed border-gray-300">
                                             <div id="passport-custom-attire-ref-placeholder" class="text-center text-gray-500 p-2">
                                                 <i class="fas fa-image" style="font-size: 2rem;"></i>
-                                                <p class="mt-2 text-sm">Unggah referensi</p>
+                                                <p class="mt-2 text-sm" data-i18n="passport.upload-ref">Unggah referensi</p>
                                             </div>
                                             <img id="passport-custom-attire-ref-preview" class="hidden absolute top-0 left-0 w-full h-full object-contain" alt="Pratinjau Referensi Pakaian">
                                             <button type="button" id="passport-custom-attire-ref-remove-btn" class="hidden absolute top-2 right-2 bg-red-600 text-white rounded-full p-1 hover:bg-red-700 z-10">
@@ -17716,7 +17716,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 class="text-base font-semibold mb-3 text-gray-800">4. Ukuran Output</h3>
+                                    <h3 class="text-base font-semibold mb-3 text-gray-800" data-i18n="passport.step4-title">4. Ukuran Output</h3>
                                     <div id="passport-size-options" class="grid grid-cols-3 gap-3">
                                         <button type="button" data-value="2:3" class="option-btn-passport">2x3</button>
                                         <button type="button" data-value="3:4" class="option-btn-passport selected">3x4</button>
@@ -17725,7 +17725,7 @@
                                 </div>
                                 <button id="passport-generate-btn" class="w-full text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center text-lg shadow-md hover:shadow-lg hover:-translate-y-px transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed" style="background: linear-gradient(to right, #7DDCDD, #79D7DE);" disabled>
                                     <i class="fas fa-magic mr-2"></i>
-                                    <span>Buat Pas Foto</span>
+                                    <span> data-i18n="passport.gen-btn">Buat Pas Foto</span>
                                 </button>
                             </div>
                         </div>
@@ -17734,8 +17734,8 @@
                         <div class="card p-6 h-full flex flex-col">
                             <div id="passport-results-placeholder" class="flex flex-grow flex-col items-center justify-center text-center text-slate-500">
                                 <i class="fas fa-image" style="font-size: 4rem; color: #cbd5e1; margin-bottom: 1rem;"></i>
-                                <h3 class="font-semibold text-lg text-slate-600">Hasil Pas Foto Anda</h3>
-                                <p class="mt-1 text-sm">Hasil foto akan muncul di sini.</p>
+                                <h3 class="font-semibold text-lg text-slate-600" data-i18n="passport.placeholder-title">Hasil Pas Foto Anda</h3>
+                                <p class="mt-1 text-sm" data-i18n="passport.placeholder-desc">Hasil foto akan muncul di sini.</p>
                             </div>
                             <div id="passport-results-container" class="hidden">
                                 <div class="flex flex-col md:flex-row items-center justify-between mb-6 bg-gradient-to-r from-cyan-50 to-teal-50 p-4 rounded-xl border-2 border-cyan-200">
@@ -17744,7 +17744,7 @@
                                     </h3>
                                     <button id="passport-download-all-btn" class="mt-4 md:mt-0 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white px-6 py-2 rounded-full font-semibold shadow-lg transition transform hover:scale-105 flex items-center gap-2">
                                         <i class="fas fa-download"></i>
-                                        Download Semua
+                                        <span data-i18n="family.download-all">Download Semua</span>
                                     </button>
                                 </div>
                                 <div id="passport-results-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"></div>
@@ -17771,8 +17771,8 @@
                             <span class="text-xs font-semibold px-3 py-1 rounded-full mt-1 text-white" style="background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);">🎓 AI Foto Wisuda</span>
                         </div>
                     </div>
-                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                        Buat foto wisuda profesional dengan toga dan background kampus yang stunning! Perfect untuk kenang-kenangan moment spesialmu. ✨
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-i18n="graduation.desc">
+                    Buat foto wisuda profesional dengan toga dan background kampus yang stunning! Perfect untuk kenang-kenangan moment spesialmu. ✨
                     </p>
                 </header>
 
@@ -17786,12 +17786,12 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #a855f7, #ec4899);">1</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Upload Foto (1-5 Orang) *</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="graduation.step1-title">Upload Foto (1-5 Orang) *</h3>
                                     </div>
                                     <div id="graduation-file-input-area" class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3"></div>
                                     <button type="button" id="graduation-add-photo-btn" class="w-full py-3 px-4 rounded-xl border-2 border-dashed font-semibold text-sm transition-all duration-300 active:scale-95 shadow-md hover:shadow-lg flex items-center justify-center gap-2 touch-manipulation" style="border-color: #a855f7; color: #a855f7; background: linear-gradient(135deg, #fae8ff 0%, #f3e8ff 100%);">
                                         <i class="fas fa-plus"></i>
-                                        <span>Tambah Foto</span>
+                                        <span data-i18n="touring.add-photo">Tambah Foto</span>
                                     </button>
                                     <div id="graduation-validation" class="text-center text-sm mt-3 font-medium"></div>
                                 </div>
@@ -17800,7 +17800,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #a855f7, #ec4899);">2</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Gaya Toga *</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="graduation.step2-title">Gaya Toga *</h3>
                                     </div>
 
                                     <div id="graduation-toga-style-options" class="grid grid-cols-2 gap-3">
@@ -17823,7 +17823,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #a855f7, #ec4899);">3</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Background *</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="graduation.step3-title">Background *</h3>
                                     </div>
 
                                     <div id="graduation-background-options" class="grid grid-cols-2 gap-3">
@@ -17849,15 +17849,15 @@
 
                                     <!-- Optional Custom Background Upload -->
                                     <div class="mt-4">
-                                        <p class="text-sm font-medium text-gray-700 mb-2">
-                                            <i class="fas fa-image mr-1"></i> Upload Background Custom (Opsional)
+                                        <p class="text-sm font-medium text-gray-700 mb-2" data-i18n="graduation.bg-custom-label">
+                                        <i class="fas fa-image mr-1"></i> Upload Background Custom (Opsional)
                                         </p>
                                         <div id="graduation-background-upload-area" class="border-2 border-dashed border-purple-300 rounded-lg p-4 text-center hover:border-purple-500 transition-all cursor-pointer bg-purple-50/50">
                                             <label for="graduation-background-input" class="cursor-pointer flex flex-col items-center justify-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mb-2 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                                 </svg>
-                                                <span class="text-sm text-purple-600">Pilih Background Custom</span>
+                                                <span class="text-sm text-purple-600" data-i18n="graduation.bg-pick">Pilih Background Custom</span>
                                             </label>
                                             <input type="file" id="graduation-background-input" class="hidden" accept="image/png, image/jpeg, image/webp, image/heic, .heic">
                                         </div>
@@ -17873,7 +17873,7 @@
                                             </p>
                                         </div>
                                         <p class="text-xs text-gray-500 mt-2">
-                                            💡 Upload background sendiri atau pilih dari pilihan di atas
+                                            💡 <span data-i18n="graduation.bg-tip">Upload background sendiri atau pilih dari pilihan di atas</span>
                                         </p>
                                     </div>
                                 </div>
@@ -17882,7 +17882,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #a855f7, #ec4899);">4</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Pose & Expression</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="graduation.step4-title">Pose & Expression</h3>
                                     </div>
 
                                     <div id="graduation-pose-options" class="grid grid-cols-2 gap-2 text-sm">
@@ -17905,7 +17905,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #a855f7, #ec4899);">5</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Aksesoris (Optional)</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="graduation.step5-title">Aksesoris (Optional)</h3>
                                     </div>
 
                                     <div id="graduation-accessories-options" class="grid grid-cols-2 gap-2 text-xs">
@@ -17982,7 +17982,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #a855f7, #ec4899);">6</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Aspect Ratio</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="graduation.step6-title">Aspect Ratio</h3>
                                     </div>
 
                                     <div id="graduation-aspect-options" class="grid grid-cols-3 gap-2 text-sm">
@@ -17999,18 +17999,18 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #a855f7, #ec4899);">7</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Jumlah Foto</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="graduation.step7-title">Jumlah Foto</h3>
                                     </div>
 
                                     <div id="graduation-count-selection" class="grid grid-cols-3 gap-3">
                                         <button type="button" data-count="4" class="count-btn-graduation">
-                                            4 Foto
+                                            <span data-i18n="maternity.count-4">4 Foto</span>
                                         </button>
                                         <button type="button" data-count="6" class="count-btn-graduation count-selected">
-                                            6 Foto
+                                            <span data-i18n="maternity.count-6">6 Foto</span>
                                         </button>
                                         <button type="button" data-count="8" class="count-btn-graduation">
-                                            8 Foto
+                                            <span data-i18n="maternity.count-8">8 Foto</span>
                                         </button>
                                     </div>
                                 </div>
@@ -18018,7 +18018,7 @@
                                 <!-- Generate Button -->
                                 <button type="button" id="graduation-generate-btn" class="w-full py-4 px-6 rounded-xl font-bold text-lg text-white shadow-lg transition-all" style="background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);" disabled>
                                     <i class="fas fa-wand-magic-sparkles mr-2"></i>
-                                    <span>Generate <span id="graduation-count-text">6</span> Foto Wisuda</span>
+                                    <span><span data-i18n="kids.gen-prefix">Generate</span> <span id="graduation-count-text">6</span> <span data-i18n="graduation.gen-suffix">Foto Wisuda</span></span>
                                 </button>
                                 <p class="text-xs text-center text-gray-500">⏱️ Proses ~20-30 detik</p>
                             </div>
@@ -18031,7 +18031,7 @@
                             <!-- Placeholder -->
                             <div id="graduation-placeholder" class="flex flex-col items-center justify-center h-96">
                                 <i class="fas fa-user-graduate text-6xl mb-4" style="color: #a855f7;"></i>
-                                <p class="text-xl font-bold text-gray-800 mb-2">Foto Wisuda Profesional</p>
+                                <p class="text-xl font-bold text-gray-800 mb-2" data-i18n="graduation.placeholder-title">Foto Wisuda Profesional</p>
                                 <p class="text-gray-600 text-center max-w-md">
                                     Upload foto wajahmu dan pilih style toga, background, dan pose favoritmu untuk mendapatkan foto wisuda yang stunning! 🎓✨
                                 </p>
@@ -18063,7 +18063,7 @@
                                     </h3>
                                     <button type="button" id="graduation-download-all-btn" class="px-4 py-2 rounded-lg font-semibold text-white text-sm transition-all" style="background: linear-gradient(135deg, #a855f7, #ec4899);">
                                         <i class="fas fa-download mr-1"></i>
-                                        <span>Download All</span>
+                                        <span data-i18n="graduation.download-all">Download All</span>
                                     </button>
                                 </div>
 
@@ -70187,6 +70187,45 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'wdesign.feature-1':'10 Customization Elements',
             'wdesign.feature-2':'Indonesian Themes',
             'wdesign.feature-3':'Realistic 3D Results',
+            'umrah.desc':'Capture your spiritual moments with AI technology. Upload your photo and get a professional photo with holy location backgrounds.',
+            'umrah.badge':'Instant results in seconds',
+            'umrah.step1-title':'Upload Photo (1-5 People)',
+            'umrah.step2-title':'Choose Outfit',
+            'umrah.step3-title':'Choose Location',
+            'umrah.step4-title':'Choose Image Ratio',
+            'umrah.gen-btn':'Create Umrah/Hajj Photo',
+            'umrah.placeholder-title':'Your Umrah/Hajj Photo Results',
+            'umrah.placeholder-desc':'Upload your photo and choose preferences to start. Results will appear here in professional quality.',
+            'umrah.success-badge':'Photos Created Successfully!',
+            'umrah.results-title':'Your Umrah/Hajj Photo Results',
+            'umrah.results-desc':'Click image to preview or download',
+            'passport.desc':'Create formal ID photos with various background colors and instant outfit options. Quick and practical for all needs.',
+            'passport.step1-title':'1. Upload Face Photo',
+            'passport.upload-hint':'Click or drag a close-up photo',
+            'passport.step2-title':'2. Choose Background Color',
+            'passport.step3-title':'3. Auto Outfit Mode',
+            'passport.school-label':'Choose Level:',
+            'passport.custom-label':'Custom Outfit:',
+            'passport.upload-ref':'Upload reference',
+            'passport.step4-title':'4. Output Size',
+            'passport.gen-btn':'Create ID Photo',
+            'passport.placeholder-title':'Your ID Photo Result',
+            'passport.placeholder-desc':'Photo result will appear here.',
+            'graduation.desc':'Create a professional graduation photo with toga and stunning campus backgrounds! Perfect for memorable special moments.',
+            'graduation.step1-title':'Upload Photo (1-5 People) *',
+            'graduation.step2-title':'Toga Style *',
+            'graduation.step3-title':'Background *',
+            'graduation.bg-custom-label':'Upload Custom Background (Optional)',
+            'graduation.bg-pick':'Select Custom Background',
+            'graduation.bg-active':'Custom background will be used',
+            'graduation.bg-tip':'Upload your own background or choose from the options above',
+            'graduation.step4-title':'Pose & Expression',
+            'graduation.step5-title':'Accessories (Optional)',
+            'graduation.step6-title':'Aspect Ratio',
+            'graduation.step7-title':'Number of Photos',
+            'graduation.gen-suffix':'Graduation Photos',
+            'graduation.placeholder-title':'Professional Graduation Photo',
+            'graduation.download-all':'Download All',
             },
             id: {
                 nav: { 'apikey-settings':'API Key','beranda':'Beranda','buat-model':'Membuat Model','mockup-studio':'Mockup Studio','pov-tangan':'POV Tangan','touring':'Foto Touring','mirror-selfie':'POV Mirror Selfie','walking-pad':'Walking Pad','affiliate':'Foto Produk Affiliate','affiliate-islami':'Affiliate Agama','virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion','food-selfie':'Food Selfie','product-review':'Product Review','skincare-review':'Skincare Review','food-review':'Food Review','product-ads':'Iklan Produk','professional-headshot':'Professional Headshot','unboxing-scene':'Unboxing Scene','before-after':'Before/After','product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card','size-guide':'Size Guide','video-frames':'Video Frames','vehicle-modifier':'Vehicle Modifier','deskripsi-produk':'Deskripsi Produk SEO','ide-konten-tiktok':'Ide Konten TikTok','script-story-iklan':'Script Story Iklan','rencana-bisnis':'Rencana Bisnis & SWOT','hr-assistant':'HR Assistant','konten-marketing':'Konten Marketing','riset-pasar':'Riset Pasar & Ide','financial-forecast':'Simulasi Anggaran','family':'Foto Keluarga','new-born':'New Born Studio','maternity':'Foto Maternity','profesi-anak':'Foto Profesi Anak','wedding':'Wedding','wedding-design':'Desain Pernikahan','umrah-haji':'Foto Umrah/Haji','passport-photo':'Pas Foto Warna','graduation-photo':'Foto Wisuda','photo-booth':'Photo Booth','birthday-photo':'Foto Ulang Tahun','kartu-lebaran':'Kartu Lebaran','desain-rumah':'Desain Rumah','desain-kamar':'Desain Kamar','sketsa-gambar':'Sketsa Gambar','bikin-carousel':'Bikin Carousel','miniature':'Miniature Me','karikatur':'Karikatur Generator','photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor','tattoo-editor':'Tattoo Editor','halu':'Halu Idol','sticker':'Sticker Tempel','hair-generator':'Hair Generator','expression-changer':'Expression Changer','face-swap':'Face Swap','bg-remover':'Ubah Background','photo-extender':'Perluas Foto','story-board':'Story Board','twibon':'Twibon Frame','story-update':'Story Update','image-analyzer':'Image to Prompt','packaging-design':'Packaging Design','photo-angle':'Photo Angle','style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'Foto Sampul IG & Tiktok','photo-restoration':'Restorasi Foto','object-remover':'Hapus Object','logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit Generator','content-calendar':'Content Calendar Planner','ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI','caption-generator':'AI Caption Generator','product-comparison':'Product Comparison','mascot-generator':'Mascot Generator','poster-generator':'Poster Generator','banner-generator':'Banner Generator','sketch-catalog':'Sketsa ke Katalog','fotogenic':'Fotogenic','timelapse-renovasi':'Timelapse Renovasi','veo':'Affiliate Go Pro','opal':'Opal Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer' },
@@ -70853,6 +70892,45 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'wdesign.feature-1':'10 Elemen Kustomisasi',
             'wdesign.feature-2':'Tema Indonesia',
             'wdesign.feature-3':'Hasil 3D Realistis',
+            'umrah.desc':'Abadikan momen spiritual Anda dengan teknologi AI. Unggah foto diri dan dapatkan foto profesional dengan latar lokasi suci.',
+            'umrah.badge':'Hasil instant dalam hitungan detik',
+            'umrah.step1-title':'Unggah Foto (1-5 Orang)',
+            'umrah.step2-title':'Pilih Pakaian',
+            'umrah.step3-title':'Pilih Lokasi',
+            'umrah.step4-title':'Pilih Rasio Gambar',
+            'umrah.gen-btn':'Buat Foto Umrah/Haji',
+            'umrah.placeholder-title':'Hasil Foto Umrah/Haji Anda',
+            'umrah.placeholder-desc':'Unggah foto Anda dan pilih preferensi untuk memulai. Hasil foto akan muncul di sini dengan kualitas profesional.',
+            'umrah.success-badge':'Foto Berhasil Dibuat!',
+            'umrah.results-title':'Hasil Foto Umrah/Haji Anda',
+            'umrah.results-desc':'Klik gambar untuk preview atau unduh',
+            'passport.desc':'Buat pas foto formal dengan berbagai warna latar dan pilihan pakaian instan. Cepat dan praktis untuk semua kebutuhan.',
+            'passport.step1-title':'1. Unggah Foto Wajah',
+            'passport.upload-hint':'Klik atau seret foto close-up',
+            'passport.step2-title':'2. Pilih Warna Background',
+            'passport.step3-title':'3. Mode Pakaian Otomatis',
+            'passport.school-label':'Pilih Jenjang:',
+            'passport.custom-label':'Pakaian Kustom:',
+            'passport.upload-ref':'Unggah referensi',
+            'passport.step4-title':'4. Ukuran Output',
+            'passport.gen-btn':'Buat Pas Foto',
+            'passport.placeholder-title':'Hasil Pas Foto Anda',
+            'passport.placeholder-desc':'Hasil foto akan muncul di sini.',
+            'graduation.desc':'Buat foto wisuda profesional dengan toga dan background kampus yang stunning! Perfect untuk kenangan moment spesialmu.',
+            'graduation.step1-title':'Upload Foto (1-5 Orang) *',
+            'graduation.step2-title':'Gaya Toga *',
+            'graduation.step3-title':'Background *',
+            'graduation.bg-custom-label':'Upload Background Custom (Opsional)',
+            'graduation.bg-pick':'Pilih Background Custom',
+            'graduation.bg-active':'Background custom akan digunakan',
+            'graduation.bg-tip':'Upload background sendiri atau pilih dari pilihan di atas',
+            'graduation.step4-title':'Pose & Expression',
+            'graduation.step5-title':'Aksesoris (Optional)',
+            'graduation.step6-title':'Aspect Ratio',
+            'graduation.step7-title':'Jumlah Foto',
+            'graduation.gen-suffix':'Foto Wisuda',
+            'graduation.placeholder-title':'Foto Wisuda Profesional',
+            'graduation.download-all':'Unduh Semua',
             }
         };
 
