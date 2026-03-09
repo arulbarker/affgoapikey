@@ -21218,17 +21218,17 @@
                     <h1 class="text-4xl md:text-5xl font-bold mb-3">
                         <i class="fas fa-home mr-3"></i>ReDesain Rumah
                     </h1>
-                    <p class="text-lg text-gray-600">
+                    <p class="text-lg text-gray-600" data-i18n="desainrumah.desc">
                         Desain ulang ruangan interior atau renovasi eksterior rumah Anda dengan AI
                     </p>
                 </header>
 
                 <div class="mb-8 max-w-md mx-auto p-1.5 bg-slate-100 rounded-xl flex items-center justify-center gap-2 shadow-inner">
                     <button id="dr-tab-interior" class="option-btn-desain selected w-full text-center">
-                        Interior
+                        <span data-i18n="desainrumah.tab-interior">Interior</span>
                     </button>
                     <button id="dr-tab-eksterior" class="option-btn-desain w-full text-center">
-                        Eksterior
+                        <span data-i18n="desainrumah.tab-exterior">Eksterior</span>
                         <span class="bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full ml-1">New</span>
                     </button>
                 </div>
@@ -21237,18 +21237,18 @@
                 <div id="dr-content-interior">
                     <div class="mb-6 flex items-center gap-3 p-3 sm:p-4 rounded-xl border text-left" style="background: linear-gradient(to right, #E0F2FE, #E0F2FE); border-color: #0EA5E9; color: #0284C7;">
                         <div class="flex-shrink-0"><i class="fas fa-info-circle" style="color: #0EA5E9;"></i></div>
-                        <p class="text-sm md:text-base">Unggah foto ruangan, tambahkan furnitur, pilih gaya, dan biarkan AI mendesain ulang ruangan Anda secara ajaib.</p>
+                        <p class="text-sm md:text-base"><span data-i18n="desainrumah.interior-tip">Unggah foto ruangan, tambahkan furnitur, pilih gaya, dan biarkan AI mendesain ulang ruangan Anda secara ajaib.</span></p>
                     </div>
                     <div class="mt-8 flex flex-col lg:flex-row gap-8 w-full">
                         <div class="w-full lg:w-5/12 flex-shrink-0">
                             <div class="card p-4 sm:p-6 sticky top-6">
                                 <div class="flex flex-col gap-5">
                                     <div>
-                                        <h3 class="text-base font-semibold mb-3 text-gray-800">1. Unggah Foto Ruangan</h3>
+                                        <h3 class="text-base font-semibold mb-3 text-gray-800" data-i18n="desainrumah.int-step1">1. Unggah Foto Ruangan</h3>
                                         <label for="dr-interior-room-input" id="dr-interior-room-upload-box" class="upload-box-desain w-full h-48 rounded-lg flex items-center justify-center cursor-pointer relative overflow-hidden border-2 border-dashed border-gray-300">
                                             <div id="dr-interior-room-placeholder" class="text-center text-gray-500 p-2">
                                                 <i class="fas fa-door-open" style="font-size: 2.5rem;"></i>
-                                                <p class="mt-2 text-sm">Klik atau seret foto</p>
+                                                <p class="mt-2 text-sm" data-i18n="common.upload-drag">Klik atau seret foto</p>
                                             </div>
                                             <img id="dr-interior-room-preview" class="hidden absolute top-0 left-0 w-full h-full object-contain" alt="Pratinjau Ruangan">
                                             <button type="button" id="dr-interior-remove-room-btn" class="hidden absolute top-2 right-2 bg-red-600 text-white rounded-full p-1 hover:bg-red-700 z-10">
@@ -21259,7 +21259,7 @@
                                     </div>
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
-                                            <h3 class="text-base font-semibold mb-2 text-gray-800">2. Tambah Furnitur AI</h3>
+                                            <h3 class="text-base font-semibold mb-2 text-gray-800" data-i18n="desainrumah.int-step2">2. Tambah Furnitur AI</h3>
                                             <div class="flex gap-2">
                                                 <input type="text" id="dr-interior-furniture-prompt" class="w-full p-2 text-sm rounded-lg border border-gray-300" placeholder="sofa modern...">
                                                 <button type="button" id="dr-interior-add-furniture-btn" class="text-white font-semibold px-3 rounded-lg disabled:opacity-50" style="background-color: #0EA5E9;" disabled>
@@ -21267,11 +21267,11 @@
                                                 </button>
                                             </div>
                                             <div id="dr-interior-ai-furniture-container" class="mt-2 grid grid-cols-3 gap-2 min-h-[5rem] bg-gray-50 p-2 rounded-lg border">
-                                                <p id="dr-interior-ai-furniture-placeholder" class="col-span-full text-center text-gray-400 text-xs self-center">Furnitur AI akan muncul di sini.</p>
+                                                <p id="dr-interior-ai-furniture-placeholder" class="col-span-full text-center text-gray-400 text-xs self-center" data-i18n="desainrumah.furniture-placeholder">Furnitur AI akan muncul di sini.</p>
                                             </div>
                                         </div>
                                         <div>
-                                            <h3 class="text-base font-semibold mb-2 text-gray-800">3. Unggah Furnitur</h3>
+                                            <h3 class="text-base font-semibold mb-2 text-gray-800" data-i18n="desainrumah.int-step3">3. Unggah Furnitur</h3>
                                             <label for="dr-interior-manual-furniture-input" class="text-white text-sm px-3 py-2 rounded-lg cursor-pointer inline-flex items-center gap-2" style="background-color: #0EA5E9;">
                                                 <i class="fas fa-plus"></i> Tambah
                                             </label>
@@ -21280,7 +21280,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <h3 class="text-base font-semibold mb-2 text-gray-800">4. Instruksi & Rasio</h3>
+                                        <h3 class="text-base font-semibold mb-2 text-gray-800" data-i18n="desainrumah.int-step4">4. Instruksi & Rasio</h3>
                                         <div class="relative mb-3">
                                             <textarea id="dr-interior-instruction-input" class="w-full p-2.5 text-sm rounded-lg border border-gray-300 pr-12" rows="3" placeholder="Contoh: Letakkan sofa di depan jendela..."></textarea>
                                             <button type="button" id="dr-interior-magic-instruction-btn" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-lg bg-white border disabled:opacity-50" disabled title="Buat Instruksi Otomatis">
@@ -21300,7 +21300,7 @@
                                         </div>
                                     </div>
                                     <button id="dr-interior-generate-btn" class="w-full text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center text-lg shadow-md hover:shadow-lg hover:-translate-y-px transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed" style="background: linear-gradient(to right, #0EA5E9, #0284C7);" disabled>
-                                        <i class="fas fa-magic mr-2"></i><span>Desain Ruangan</span>
+                                        <i class="fas fa-magic mr-2"></i><span data-i18n="desainrumah.int-gen-btn">Desain Ruangan</span>
                                     </button>
                                 </div>
                             </div>
@@ -21310,8 +21310,8 @@
                             <div class="card p-4 sm:p-6 h-full flex flex-col">
                                 <div id="dr-interior-results-placeholder" class="flex flex-grow flex-col items-center justify-center text-center text-slate-500">
                                     <i class="fas fa-image" style="font-size: 4rem; color: #cbd5e1; margin-bottom: 1rem;"></i>
-                                    <h3 class="font-semibold text-lg text-slate-600">Hasil Desain Interior</h3>
-                                    <p class="mt-1 text-sm">Hasil desain ruangan Anda akan muncul di sini.</p>
+                                    <h3 class="font-semibold text-lg text-slate-600" data-i18n="desainrumah.int-placeholder-title">Hasil Desain Interior</h3>
+                                    <p class="mt-1 text-sm" data-i18n="desainrumah.int-placeholder-desc">Hasil desain ruangan Anda akan muncul di sini.</p>
                                 </div>
                                 <div id="dr-interior-results-container" class="hidden">
                                     <div id="dr-interior-results-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
@@ -21325,18 +21325,18 @@
                 <div id="dr-content-eksterior" class="hidden">
                     <div class="mb-6 flex items-center gap-3 p-3 sm:p-4 rounded-xl border text-left" style="background: linear-gradient(to right, #E0F2FE, #E0F2FE); border-color: #0EA5E9; color: #0284C7;">
                         <div class="flex-shrink-0"><i class="fas fa-info-circle" style="color: #0EA5E9;"></i></div>
-                        <p class="text-sm md:text-base">Unggah foto luar rumah Anda, pilih gaya renovasi, dan biarkan AI menyulap fasad rumah Anda menjadi baru.</p>
+                        <p class="text-sm md:text-base"><span data-i18n="desainrumah.exterior-tip">Unggah foto luar rumah Anda, pilih gaya renovasi, dan biarkan AI menyulap fasad rumah Anda menjadi baru.</span></p>
                     </div>
                     <div class="mt-8 flex flex-col lg:flex-row gap-8 w-full">
                         <div class="w-full lg:w-5/12 flex-shrink-0">
                             <div class="card p-4 sm:p-6 sticky top-6">
                                 <div class="flex flex-col gap-5">
                                     <div>
-                                        <h3 class="text-base font-semibold mb-3 text-gray-800">1. Unggah Foto Luar Rumah</h3>
+                                        <h3 class="text-base font-semibold mb-3 text-gray-800" data-i18n="desainrumah.ext-step1">1. Unggah Foto Luar Rumah</h3>
                                         <label for="dr-eksterior-house-input" id="dr-eksterior-house-upload-box" class="upload-box-desain w-full h-48 rounded-lg flex items-center justify-center cursor-pointer relative overflow-hidden border-2 border-dashed border-gray-300">
                                             <div id="dr-eksterior-house-placeholder" class="text-center text-gray-500 p-2">
                                                 <i class="fas fa-building" style="font-size: 2.5rem;"></i>
-                                                <p class="mt-2 text-sm">Klik atau seret foto</p>
+                                                <p class="mt-2 text-sm" data-i18n="common.upload-drag">Klik atau seret foto</p>
                                             </div>
                                             <img id="dr-eksterior-house-preview" class="hidden absolute top-0 left-0 w-full h-full object-contain" alt="Pratinjau Rumah">
                                             <button type="button" id="dr-eksterior-remove-house-btn" class="hidden absolute top-2 right-2 bg-red-600 text-white rounded-full p-1 hover:bg-red-700 z-10">
@@ -21346,7 +21346,7 @@
                                         <input type="file" id="dr-eksterior-house-input" class="hidden" accept="image/png, image/jpeg, image/webp, .heic, .HEIC">
                                     </div>
                                     <div>
-                                        <h3 class="text-base font-semibold mb-3 text-gray-800">2. Pilih Gaya Renovasi</h3>
+                                        <h3 class="text-base font-semibold mb-3 text-gray-800" data-i18n="desainrumah.ext-step2">2. Pilih Gaya Renovasi</h3>
                                         <div id="dr-eksterior-style-options" class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm">
                                             <button type="button" data-value="Ganti Warna Cat" class="checkbox-btn-desain justify-center">Ganti Cat</button>
                                             <button type="button" data-value="Modernisasi Fasad" class="checkbox-btn-desain justify-center">Modern</button>
@@ -21361,7 +21361,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <h3 class="text-base font-semibold mb-2 text-gray-800">3. Instruksi & Rasio</h3>
+                                        <h3 class="text-base font-semibold mb-2 text-gray-800" data-i18n="desainrumah.ext-step3">3. Instruksi & Rasio</h3>
                                         <div class="relative mb-3">
                                             <textarea id="dr-eksterior-instruction-input" class="w-full p-2.5 text-sm rounded-lg border border-gray-300 pr-12" rows="3" placeholder="Contoh: Ganti cat menjadi putih, dengan aksen kayu..."></textarea>
                                             <button type="button" id="dr-eksterior-magic-instruction-btn" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-lg bg-white border disabled:opacity-50" disabled title="Buat Instruksi Otomatis">
@@ -21381,7 +21381,7 @@
                                         </div>
                                     </div>
                                     <button id="dr-eksterior-generate-btn" class="w-full text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center text-lg shadow-md hover:shadow-lg hover:-translate-y-px transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed" style="background: linear-gradient(to right, #0EA5E9, #0284C7);" disabled>
-                                        <i class="fas fa-magic mr-2"></i><span>Redesain Rumah</span>
+                                        <i class="fas fa-magic mr-2"></i><span data-i18n="desainrumah.ext-gen-btn">Redesain Rumah</span>
                                     </button>
                                 </div>
                             </div>
@@ -21391,8 +21391,8 @@
                             <div class="card p-4 sm:p-6 h-full flex flex-col">
                                 <div id="dr-eksterior-results-placeholder" class="flex flex-grow flex-col items-center justify-center text-center text-slate-500">
                                     <i class="fas fa-image" style="font-size: 4rem; color: #cbd5e1; margin-bottom: 1rem;"></i>
-                                    <h3 class="font-semibold text-lg text-slate-600">Hasil Desain Eksterior</h3>
-                                    <p class="mt-1 text-sm">Hasil redesain rumah Anda akan muncul di sini.</p>
+                                    <h3 class="font-semibold text-lg text-slate-600" data-i18n="desainrumah.ext-placeholder-title">Hasil Desain Eksterior</h3>
+                                    <p class="mt-1 text-sm" data-i18n="desainrumah.ext-placeholder-desc">Hasil redesain rumah Anda akan muncul di sini.</p>
                                 </div>
                                 <div id="dr-eksterior-results-container" class="hidden">
                                     <div id="dr-eksterior-results-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
@@ -21420,7 +21420,7 @@
                             <span class="text-xs font-semibold px-3 py-1 rounded-full mt-1 text-white" style="background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);">🏠 Professional Interior Room Design</span>
                         </div>
                     </div>
-                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-i18n="room.desc">
                         Transform your room with AI-powered interior design themes
                     </p>
                 </header>
@@ -21435,7 +21435,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">1</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Upload Foto Kamar</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="room.step1-title">Upload Foto Kamar</h3>
                                     </div>
                                     <label for="room-upload" id="room-upload-box" class="upload-box-room w-full h-40 rounded-xl flex items-center justify-center cursor-pointer relative overflow-hidden border-2 border-dashed border-gray-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                                         <div id="room-placeholder" class="text-center text-gray-500 p-4">
@@ -21450,7 +21450,7 @@
                                     <div id="room-preview-container" class="mt-3 hidden lg:hidden">
                                         <img id="room-preview" src="" alt="Preview" class="w-full rounded-lg shadow-lg max-h-48 object-cover">
                                         <button id="room-remove-preview" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg">
-                                            <i class="fas fa-times mr-1"></i> Hapus Foto
+                                        <i class="fas fa-times mr-1"></i> <span data-i18n="room.remove-photo">Hapus Foto</span>
                                         </button>
                                     </div>
                                 </div>
@@ -21459,7 +21459,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">2</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Tema Desain</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="room.step2-title">Tema Desain</h3>
                                     </div>
                                     <div id="room-theme-options" class="grid grid-cols-2 gap-3 max-h-64 overflow-y-auto pr-2" style="scrollbar-width: thin; scrollbar-color: #0ea5e9 #e0f2fe;">
                                         <button type="button" data-theme="modern-minimalist" class="option-btn-room selected">
@@ -21522,12 +21522,12 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">3</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Referensi Desain <span class="text-sm text-gray-500">(Opsional)</span></h3>
+                                        <h3 class="text-lg font-bold text-gray-800"><span data-i18n="room.step3-title">Referensi Desain</span> <span class="text-sm text-gray-500" data-i18n="family.optional-label">(Opsional)</span></h3>
                                     </div>
                                     <label for="room-reference-upload" id="room-reference-upload-box" class="upload-box-room w-full h-32 rounded-xl flex items-center justify-center cursor-pointer relative overflow-hidden border-2 border-dashed border-gray-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                                         <div id="room-reference-placeholder" class="text-center text-gray-500 p-4">
                                             <i class="fas fa-image transition-transform duration-300" style="font-size: 2rem; color: #0ea5e9;"></i>
-                                            <p class="mt-2 text-xs font-semibold">Upload referensi desain (opsional)</p>
+                                            <p class="mt-2 text-xs font-semibold" data-i18n="room.ref-upload-hint">Upload referensi desain (opsional)</p>
                                         </div>
                                     </label>
                                     <input type="file" id="room-reference-upload" class="hidden" accept="image/png, image/jpeg, image/webp, .heic, .HEIC">
@@ -21536,7 +21536,7 @@
                                     <div id="room-reference-preview-container" class="mt-3 hidden lg:hidden">
                                         <img id="room-reference-preview" src="" alt="Preview" class="w-full rounded-lg shadow-lg max-h-32 object-cover">
                                         <button id="room-remove-reference-preview" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg">
-                                            <i class="fas fa-times mr-1"></i> Hapus Referensi
+                                        <i class="fas fa-times mr-1"></i> <span data-i18n="room.remove-ref">Hapus Referensi</span>
                                         </button>
                                     </div>
                                 </div>
@@ -21545,7 +21545,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">4</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Rasio Foto</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="room.step4-title">Rasio Foto</h3>
                                     </div>
                                     <div id="room-ratio-options" class="grid grid-cols-2 gap-3">
                                         <button type="button" data-value="1:1" class="option-btn-room selected">
@@ -21567,17 +21567,17 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">5</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Jumlah Desain</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="room.step5-title">Jumlah Desain</h3>
                                     </div>
                                     <div id="room-count-selection" class="grid grid-cols-3 gap-3">
                                         <button type="button" data-count="4" class="room-count-btn bg-gray-50 hover:bg-gray-100 text-gray-700 px-3 py-2.5 rounded-lg border-2 border-gray-300 transition-all text-sm font-medium">
-                                            4 Desain
+                                            <span data-i18n="room.count-4">4 Desain</span>
                                         </button>
                                         <button type="button" data-count="7" class="room-count-btn room-count-selected bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-3 py-2.5 rounded-lg border-2 border-cyan-500 transition-all text-sm font-bold shadow-md">
-                                            7 Desain
+                                            <span data-i18n="room.count-7">7 Desain</span>
                                         </button>
                                         <button type="button" data-count="10" class="room-count-btn bg-gray-50 hover:bg-gray-100 text-gray-700 px-3 py-2.5 rounded-lg border-2 border-gray-300 transition-all text-sm font-medium">
-                                            10 Desain
+                                            <span data-i18n="room.count-10">10 Desain</span>
                                         </button>
                                     </div>
                                 </div>
@@ -21585,7 +21585,7 @@
                                 <!-- Generate Button -->
                                 <button id="room-generate-btn" class="w-full py-4 px-6 rounded-xl font-bold text-lg text-white shadow-lg transition-all duration-300 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100" style="background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);" disabled>
                                     <i class="fas fa-wand-magic-sparkles mr-2"></i>
-                                    <span>Generate <span id="room-count-text">7</span> Desain Kamar</span>
+                                    <span><span data-i18n="kids.gen-prefix">Generate</span> <span id="room-count-text">7</span> <span data-i18n="room.gen-suffix">Desain Kamar</span></span>
                                 </button>
                             </div>
                         </div>
@@ -21617,8 +21617,8 @@
                             <div class="w-24 h-24 rounded-full flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);">
                                 <i class="fas fa-images text-5xl" style="color: #0ea5e9;"></i>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Belum Ada Desain</h3>
-                            <p class="text-gray-500 max-w-md">Upload foto kamar, pilih tema desain, lalu klik Generate untuk membuat desain profesional</p>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2" data-i18n="room.empty-title">Belum Ada Desain</h3>
+                            <p class="text-gray-500 max-w-md" data-i18n="room.empty-desc">Upload foto kamar, pilih tema desain, lalu klik Generate untuk membuat desain profesional</p>
                         </div>
 
                         <!-- Results Header -->
@@ -21648,7 +21648,7 @@
                     <h1 class="text-4xl md:text-5xl font-bold mb-3">
                         <i class="fas fa-pencil-ruler mr-3"></i>Ubah Sketsa Jadi Gambar
                     </h1>
-                    <p class="text-lg text-gray-600">
+                    <p class="text-lg text-gray-600" data-i18n="sketsa.desc">
                         Unggah sketsa Anda, pilih tujuan, dan biarkan AI mengubahnya menjadi karya seni digital yang menakjubkan.
                     </p>
                 </header>
@@ -21658,11 +21658,11 @@
                         <div class="card p-4 sm:p-6 sticky top-6">
                             <div class="flex flex-col gap-5">
                                 <div>
-                                    <h3 class="text-base font-semibold mb-3 text-gray-800">1. Unggah Gambar Sketsa</h3>
+                                    <h3 class="text-base font-semibold mb-3 text-gray-800" data-i18n="sketsa.step1-title">1. Unggah Gambar Sketsa</h3>
                                     <label for="sti-image-input" id="sti-upload-box" class="upload-box-sketsa w-full h-48 rounded-lg flex items-center justify-center cursor-pointer relative overflow-hidden border-2 border-dashed border-gray-300">
                                         <div id="sti-placeholder" class="text-center text-gray-500 p-2">
                                             <i class="fas fa-pencil-alt" style="font-size: 2.5rem;"></i>
-                                            <p class="mt-2 text-sm">Klik atau seret sketsa</p>
+                                            <p class="mt-2 text-sm" data-i18n="sketsa.upload-hint">Klik atau seret sketsa</p>
                                         </div>
                                         <img id="sti-preview" class="hidden absolute top-0 left-0 w-full h-full object-contain" alt="Pratinjau Sketsa">
                                         <button type="button" id="sti-remove-btn" class="hidden absolute top-2 right-2 bg-red-600 text-white rounded-full p-1 hover:bg-red-700 z-10">
@@ -21672,7 +21672,7 @@
                                     <input type="file" id="sti-image-input" class="hidden" accept="image/png, image/jpeg, image/webp, .heic, .HEIC">
                                 </div>
                                 <div>
-                                    <h3 class="text-base font-semibold mb-3 text-gray-800">2. Tujuan Gambar</h3>
+                                    <h3 class="text-base font-semibold mb-3 text-gray-800" data-i18n="sketsa.step2-title">2. Tujuan Gambar</h3>
                                     <div id="sti-purpose-options" class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-sm">
                                         <button type="button" data-value="Logo" class="option-btn-sketsa selected">Logo</button>
                                         <button type="button" data-value="Banner" class="option-btn-sketsa">Banner</button>
@@ -21687,7 +21687,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 class="text-base font-semibold mb-3 text-gray-800">3. Instruksi</h3>
+                                    <h3 class="text-base font-semibold mb-3 text-gray-800" data-i18n="sketsa.step3-title">3. Instruksi</h3>
                                     <div class="relative">
                                         <textarea id="sti-prompt-input" class="w-full p-2.5 text-sm rounded-lg border border-gray-300 pr-12" rows="3" placeholder="Klik tombol magic untuk mengisi otomatis..."></textarea>
                                         <button type="button" id="sti-magic-prompt-btn" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-lg bg-white border disabled:opacity-50" disabled title="Buat Instruksi Otomatis">
@@ -21696,7 +21696,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 class="text-base font-semibold mb-3 text-gray-800">4. Pilih Rasio</h3>
+                                    <h3 class="text-base font-semibold mb-3 text-gray-800" data-i18n="sketsa.step4-title">4. Pilih Rasio</h3>
                                     <div id="sti-ratio-options" class="grid grid-cols-4 gap-2">
                                         <button type="button" data-value="1:1" class="option-btn-sketsa selected gap-1 text-xs">
                                             <i class="fas fa-square"></i><span>1:1</span>
@@ -21714,7 +21714,7 @@
                                 </div>
                                 <button id="sti-generate-btn" class="w-full text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center text-lg shadow-md hover:shadow-lg hover:-translate-y-px transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed" style="background: linear-gradient(to right, #8B5CF6, #7C3AED);" disabled>
                                     <i class="fas fa-magic mr-2"></i>
-                                    <span>Buat 4 Gambar</span>
+                                    <span data-i18n="sketsa.gen-btn">Buat 4 Gambar</span>
                                 </button>
                             </div>
                         </div>
@@ -21724,8 +21724,8 @@
                         <div class="card p-4 sm:p-6 h-full flex flex-col">
                             <div id="sti-results-placeholder" class="flex flex-grow flex-col items-center justify-center text-center text-slate-500">
                                 <i class="fas fa-image" style="font-size: 4rem; color: #cbd5e1; margin-bottom: 1rem;"></i>
-                                <h3 class="font-semibold text-lg text-slate-600">Hasil dari Sketsa Anda</h3>
-                                <p class="mt-1 text-sm">Empat variasi gambar akan muncul di sini.</p>
+                                <h3 class="font-semibold text-lg text-slate-600" data-i18n="sketsa.placeholder-title">Hasil dari Sketsa Anda</h3>
+                                <p class="mt-1 text-sm" data-i18n="sketsa.placeholder-desc">Empat variasi gambar akan muncul di sini.</p>
                             </div>
                             <div id="sti-results-container" class="hidden">
                                 <div id="sti-results-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6"></div>
@@ -21740,12 +21740,12 @@
         <div id="content-bikin-carousel" class="main-content-panel hidden">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-6">
-                    <h2 class="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text" style="background: linear-gradient(to right, #EC4899, #DB2777); -webkit-background-clip: text; background-clip: text;">Bikin Carousel Produk</h2>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text" style="background: linear-gradient(to right, #EC4899, #DB2777); -webkit-background-clip: text; background-clip: text;" data-i18n="carousel.title">Bikin Carousel Produk</h2>
                     <div class="mt-4 flex items-center gap-3 p-3 sm:p-4 rounded-xl border text-left max-w-4xl mx-auto" style="background: linear-gradient(to right, #FCE7F3, #FCE7F3); border-color: #EC4899; color: #DB2777;">
                         <div class="flex-shrink-0">
                             <i class="fas fa-info-circle" style="color: #EC4899;"></i>
                         </div>
-                        <p class="text-sm md:text-base">Unggah satu foto produk, dan biarkan AI membuatkan satu set carousel yang menarik untuk media sosial atau marketplace Anda.</p>
+                        <p class="text-sm md:text-base"><span data-i18n="carousel.tip">Unggah satu foto produk, dan biarkan AI membuatkan satu set carousel yang menarik untuk media sosial atau marketplace Anda.</span></p>
                     </div>
                 </div>
 
@@ -21754,11 +21754,11 @@
                         <div class="card p-4 sm:p-6 sticky top-6">
                             <div class="flex flex-col gap-5">
                                 <div>
-                                    <h3 class="text-base font-semibold mb-3 text-gray-800">1. Unggah Gambar Produk</h3>
+                                    <h3 class="text-base font-semibold mb-3 text-gray-800" data-i18n="carousel.step1-title">1. Unggah Gambar Produk</h3>
                                     <label for="crsl-image-input" id="crsl-upload-box" class="upload-box w-full h-48 rounded-lg flex items-center justify-center cursor-pointer relative overflow-hidden">
                                         <div id="crsl-placeholder" class="text-center text-gray-500 p-2">
                                             <i class="fas fa-box text-4xl mx-auto mb-2"></i>
-                                            <p class="mt-2 text-sm">Klik atau seret foto</p>
+                                            <p class="mt-2 text-sm" data-i18n="common.upload-drag">Klik atau seret foto</p>
                                         </div>
                                         <img id="crsl-preview" class="hidden absolute top-0 left-0 w-full h-full object-contain" alt="Pratinjau Produk">
                                         <button id="crsl-remove-btn" class="hidden absolute top-2 right-2 bg-red-600 text-white rounded-full p-1 hover:bg-red-700 z-10"><i class="fas fa-times"></i></button>
@@ -21767,10 +21767,10 @@
                                 </div>
                                 <div>
                                     <div class="flex justify-between items-center mb-2">
-                                        <h3 class="text-base font-semibold text-gray-800">2. Nama & Deskripsi</h3>
+                                        <h3 class="text-base font-semibold text-gray-800" data-i18n="carousel.step2-title">2. Nama & Deskripsi</h3>
                                         <div class="relative">
                                             <button id="crsl-auto-btn" class="flex items-center gap-2 text-sm font-semibold transition disabled:opacity-50" style="color: #EC4899;" disabled>
-                                                <i class="fas fa-wand-magic-sparkles w-4 h-4"></i><span>Otomatis</span>
+                                                <i class="fas fa-wand-magic-sparkles w-4 h-4"></i><span data-i18n="carousel.auto-btn">Otomatis</span>
                                             </button>
                                             <div id="crsl-auto-name-tooltip" class="crsl-tooltip">Klik untuk buat nama & deskripsi otomatis</div>
                                         </div>
@@ -21781,11 +21781,11 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 class="text-base font-semibold mb-3 text-gray-800">3. Pengaturan</h3>
+                                    <h3 class="text-base font-semibold mb-3 text-gray-800" data-i18n="carousel.step3-title">3. Pengaturan</h3>
                                     <div class="grid grid-cols-1 gap-4">
                                         <div class="grid grid-cols-2 gap-4">
                                             <div>
-                                                <h4 class="font-medium text-xs mb-2 text-gray-600">Jumlah Slide</h4>
+                                                <h4 class="font-medium text-xs mb-2 text-gray-600" data-i18n="carousel.h4-slides">Jumlah Slide</h4>
                                                 <div id="crsl-slides-options" class="grid grid-cols-3 gap-2">
                                                     <button data-value="3" class="option-btn justify-center text-sm !p-2">3</button>
                                                     <button data-value="5" class="option-btn selected justify-center text-sm !p-2">5</button>
@@ -21793,7 +21793,7 @@
                                                 </div>
                                             </div>
                                             <div>
-                                                <h4 class="font-medium text-xs mb-2 text-gray-600">Aspek Rasio</h4>
+                                                <h4 class="font-medium text-xs mb-2 text-gray-600" data-i18n="carousel.h4-ratio">Aspek Rasio</h4>
                                                 <div id="crsl-ratio-options" class="grid grid-cols-3 gap-2">
                                                     <button data-value="1:1" class="option-btn selected justify-center text-xs !p-2 flex-col">
                                                         <i class="fas fa-square text-base mb-1"></i>
@@ -21811,7 +21811,7 @@
                                             </div>
                                         </div>
                                         <div>
-                                            <h4 class="font-medium text-xs mb-2 text-gray-600">Tampilan</h4>
+                                            <h4 class="font-medium text-xs mb-2 text-gray-600" data-i18n="carousel.h4-style">Tampilan</h4>
                                             <div id="crsl-style-options" class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
                                                 <button data-value="Minimalis & Cerah" class="option-btn selected justify-center">Minimalis</button>
                                                 <button data-value="Elegan & Mewah" class="option-btn justify-center">Elegan</button>
@@ -21823,7 +21823,7 @@
                                 </div>
 
                                 <div class="flex items-center justify-between">
-                                    <h3 class="text-base font-semibold text-gray-800">4. Tambahkan Teks</h3>
+                                    <h3 class="text-base font-semibold text-gray-800" data-i18n="carousel.step4-title">4. Tambahkan Teks</h3>
                                     <label class="toggle-switch">
                                         <input type="checkbox" id="crsl-text-mode-toggle" checked>
                                         <span class="slider"></span>
@@ -21832,10 +21832,10 @@
 
                                 <div id="crsl-script-section" class="space-y-3">
                                     <div class="flex justify-between items-center">
-                                        <h4 class="text-sm font-semibold text-gray-700">Script Konten</h4>
+                                        <h4 class="text-sm font-semibold text-gray-700" data-i18n="carousel.script-title">Script Konten</h4>
                                         <div class="relative">
                                             <button id="crsl-auto-script-btn" class="flex items-center gap-2 text-sm font-semibold transition disabled:opacity-50" style="color: #EC4899;" disabled>
-                                                <i class="fas fa-wand-magic-sparkles w-4 h-4"></i><span>Buat Script</span>
+                                                <i class="fas fa-wand-magic-sparkles w-4 h-4"></i><span data-i18n="carousel.script-btn">Buat Script</span>
                                             </button>
                                             <div id="crsl-auto-script-tooltip" class="crsl-tooltip">Klik untuk bikin konten slide otomatis</div>
                                         </div>
@@ -21854,7 +21854,7 @@
                                 </div>
 
                                 <div id="crsl-text-settings-section">
-                                    <h3 class="text-base font-semibold mb-3 text-gray-800">5. Posisi Tulisan & Font</h3>
+                                    <h3 class="text-base font-semibold mb-3 text-gray-800" data-i18n="carousel.step5-title">5. Posisi Tulisan & Font</h3>
                                     <div class="grid grid-cols-1 gap-y-4">
                                         <div>
                                             <h4 class="font-medium text-xs mb-2 text-gray-600">Posisi Tulisan</h4>
@@ -21888,7 +21888,7 @@
                                 </div>
                                 <button id="crsl-generate-btn" class="w-full mt-4 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center text-lg shadow-md hover:shadow-lg hover:-translate-y-px transition-all duration-300 disabled:bg-slate-200 disabled:shadow-none disabled:translate-y-0" style="background: linear-gradient(to right, #EC4899, #DB2777);" disabled>
                                     <i class="fas fa-sparkles w-5 h-5 mr-2"></i>
-                                    <span>Buat Carousel</span>
+                                    <span data-i18n="carousel.gen-btn">Buat Carousel</span>
                                 </button>
                             </div>
                         </div>
@@ -21898,8 +21898,8 @@
                         <div class="card p-4 sm:p-6 h-full flex flex-col">
                             <div id="crsl-results-placeholder" class="flex flex-grow flex-col items-center justify-center text-center text-slate-500">
                                 <i class="fas fa-images text-6xl text-slate-400 mb-4"></i>
-                                <h3 class="font-semibold text-lg text-slate-600">Hasil Carousel Anda</h3>
-                                <p class="mt-1 text-sm">Carousel yang sudah jadi akan muncul di sini.</p>
+                                <h3 class="font-semibold text-lg text-slate-600" data-i18n="carousel.placeholder-title">Hasil Carousel Anda</h3>
+                                <p class="mt-1 text-sm" data-i18n="carousel.placeholder-desc">Carousel yang sudah jadi akan muncul di sini.</p>
                             </div>
                             <div id="crsl-results-container" class="hidden flex-grow flex flex-col">
                                 <div id="crsl-results-grid" class="grid grid-cols-1 gap-6">
@@ -70267,6 +70267,66 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'lebaran.gen-btn':'Generate 4 Eid Cards',
             'lebaran.empty-title':'Ready to Create Eid Greeting Cards',
             'lebaran.empty-desc':'Choose a card theme, write your family name, choose a greeting, then click generate to create beautiful Eid cards!',
+            'common.upload-drag':'Click or drag photo',
+            'desainrumah.desc':'Redesign your interior rooms or renovate the exterior of your home with AI',
+            'desainrumah.tab-interior':'Interior',
+            'desainrumah.tab-exterior':'Exterior',
+            'desainrumah.interior-tip':'Upload a room photo, add furniture, choose a style, and let AI magically redesign your room.',
+            'desainrumah.int-step1':'1. Upload Room Photo',
+            'desainrumah.int-step2':'2. Add AI Furniture',
+            'desainrumah.furniture-placeholder':'AI furniture will appear here.',
+            'desainrumah.int-step3':'3. Upload Furniture',
+            'desainrumah.int-step4':'4. Instructions & Ratio',
+            'desainrumah.int-gen-btn':'Design Room',
+            'desainrumah.int-placeholder-title':'Interior Design Results',
+            'desainrumah.int-placeholder-desc':'Your room design results will appear here.',
+            'desainrumah.exterior-tip':'Upload a photo of the outside of your house, choose a renovation style, and let AI transform your home\'s facade.',
+            'desainrumah.ext-step1':'1. Upload Exterior Photo',
+            'desainrumah.ext-step2':'2. Choose Renovation Style',
+            'desainrumah.ext-step3':'3. Instructions & Ratio',
+            'desainrumah.ext-gen-btn':'Redesign Home',
+            'desainrumah.ext-placeholder-title':'Exterior Design Results',
+            'desainrumah.ext-placeholder-desc':'Your home redesign results will appear here.',
+            'room.desc':'Transform your room with AI-powered interior design themes',
+            'room.step1-title':'Upload Room Photo',
+            'room.remove-photo':'Remove Photo',
+            'room.step2-title':'Design Theme',
+            'room.step3-title':'Design Reference',
+            'room.ref-upload-hint':'Upload design reference (optional)',
+            'room.remove-ref':'Remove Reference',
+            'room.step4-title':'Photo Ratio',
+            'room.step5-title':'Number of Designs',
+            'room.count-4':'4 Designs',
+            'room.count-7':'7 Designs',
+            'room.count-10':'10 Designs',
+            'room.gen-suffix':'Room Designs',
+            'room.empty-title':'No Designs Yet',
+            'room.empty-desc':'Upload a room photo, choose a design theme, then click Generate to create professional designs',
+            'sketsa.desc':'Upload your sketch, choose a purpose, and let AI transform it into amazing digital artwork.',
+            'sketsa.step1-title':'1. Upload Sketch Image',
+            'sketsa.upload-hint':'Click or drag sketch',
+            'sketsa.step2-title':'2. Image Purpose',
+            'sketsa.step3-title':'3. Instructions',
+            'sketsa.step4-title':'4. Choose Ratio',
+            'sketsa.gen-btn':'Create 4 Images',
+            'sketsa.placeholder-title':'Results from Your Sketch',
+            'sketsa.placeholder-desc':'Four image variations will appear here.',
+            'carousel.title':'Create Product Carousel',
+            'carousel.tip':'Upload one product photo, and let AI create an attractive carousel set for your social media or marketplace.',
+            'carousel.step1-title':'1. Upload Product Image',
+            'carousel.step2-title':'2. Name & Description',
+            'carousel.auto-btn':'Auto',
+            'carousel.step3-title':'3. Settings',
+            'carousel.h4-slides':'Number of Slides',
+            'carousel.h4-ratio':'Aspect Ratio',
+            'carousel.h4-style':'Appearance',
+            'carousel.step4-title':'4. Add Text',
+            'carousel.script-title':'Content Script',
+            'carousel.script-btn':'Create Script',
+            'carousel.step5-title':'5. Text Position & Font',
+            'carousel.gen-btn':'Create Carousel',
+            'carousel.placeholder-title':'Your Carousel Results',
+            'carousel.placeholder-desc':'Your finished carousel will appear here.',
             },
             id: {
                 nav: { 'apikey-settings':'API Key','beranda':'Beranda','buat-model':'Membuat Model','mockup-studio':'Mockup Studio','pov-tangan':'POV Tangan','touring':'Foto Touring','mirror-selfie':'POV Mirror Selfie','walking-pad':'Walking Pad','affiliate':'Foto Produk Affiliate','affiliate-islami':'Affiliate Agama','virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion','food-selfie':'Food Selfie','product-review':'Product Review','skincare-review':'Skincare Review','food-review':'Food Review','product-ads':'Iklan Produk','professional-headshot':'Professional Headshot','unboxing-scene':'Unboxing Scene','before-after':'Before/After','product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card','size-guide':'Size Guide','video-frames':'Video Frames','vehicle-modifier':'Vehicle Modifier','deskripsi-produk':'Deskripsi Produk SEO','ide-konten-tiktok':'Ide Konten TikTok','script-story-iklan':'Script Story Iklan','rencana-bisnis':'Rencana Bisnis & SWOT','hr-assistant':'HR Assistant','konten-marketing':'Konten Marketing','riset-pasar':'Riset Pasar & Ide','financial-forecast':'Simulasi Anggaran','family':'Foto Keluarga','new-born':'New Born Studio','maternity':'Foto Maternity','profesi-anak':'Foto Profesi Anak','wedding':'Wedding','wedding-design':'Desain Pernikahan','umrah-haji':'Foto Umrah/Haji','passport-photo':'Pas Foto Warna','graduation-photo':'Foto Wisuda','photo-booth':'Photo Booth','birthday-photo':'Foto Ulang Tahun','kartu-lebaran':'Kartu Lebaran','desain-rumah':'Desain Rumah','desain-kamar':'Desain Kamar','sketsa-gambar':'Sketsa Gambar','bikin-carousel':'Bikin Carousel','miniature':'Miniature Me','karikatur':'Karikatur Generator','photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor','tattoo-editor':'Tattoo Editor','halu':'Halu Idol','sticker':'Sticker Tempel','hair-generator':'Hair Generator','expression-changer':'Expression Changer','face-swap':'Face Swap','bg-remover':'Ubah Background','photo-extender':'Perluas Foto','story-board':'Story Board','twibon':'Twibon Frame','story-update':'Story Update','image-analyzer':'Image to Prompt','packaging-design':'Packaging Design','photo-angle':'Photo Angle','style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'Foto Sampul IG & Tiktok','photo-restoration':'Restorasi Foto','object-remover':'Hapus Object','logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit Generator','content-calendar':'Content Calendar Planner','ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI','caption-generator':'AI Caption Generator','product-comparison':'Product Comparison','mascot-generator':'Mascot Generator','poster-generator':'Poster Generator','banner-generator':'Banner Generator','sketch-catalog':'Sketsa ke Katalog','fotogenic':'Fotogenic','timelapse-renovasi':'Timelapse Renovasi','veo':'Affiliate Go Pro','opal':'Opal Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer' },
@@ -71013,6 +71073,66 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'lebaran.gen-btn':'Generate 4 Kartu Lebaran',
             'lebaran.empty-title':'Siap Membuat Kartu Ucapan Lebaran',
             'lebaran.empty-desc':'Pilih tema kartu, tulis nama keluarga, pilih ucapan, lalu klik generate untuk membuat kartu lebaran yang cantik!',
+            'common.upload-drag':'Klik atau seret foto',
+            'desainrumah.desc':'Desain ulang ruangan interior atau renovasi eksterior rumah Anda dengan AI',
+            'desainrumah.tab-interior':'Interior',
+            'desainrumah.tab-exterior':'Eksterior',
+            'desainrumah.interior-tip':'Unggah foto ruangan, tambahkan furnitur, pilih gaya, dan biarkan AI mendesain ulang ruangan Anda secara ajaib.',
+            'desainrumah.int-step1':'1. Unggah Foto Ruangan',
+            'desainrumah.int-step2':'2. Tambah Furnitur AI',
+            'desainrumah.furniture-placeholder':'Furnitur AI akan muncul di sini.',
+            'desainrumah.int-step3':'3. Unggah Furnitur',
+            'desainrumah.int-step4':'4. Instruksi & Rasio',
+            'desainrumah.int-gen-btn':'Desain Ruangan',
+            'desainrumah.int-placeholder-title':'Hasil Desain Interior',
+            'desainrumah.int-placeholder-desc':'Hasil desain ruangan Anda akan muncul di sini.',
+            'desainrumah.exterior-tip':'Unggah foto luar rumah Anda, pilih gaya renovasi, dan biarkan AI menyulap fasad rumah Anda menjadi baru.',
+            'desainrumah.ext-step1':'1. Unggah Foto Luar Rumah',
+            'desainrumah.ext-step2':'2. Pilih Gaya Renovasi',
+            'desainrumah.ext-step3':'3. Instruksi & Rasio',
+            'desainrumah.ext-gen-btn':'Redesain Rumah',
+            'desainrumah.ext-placeholder-title':'Hasil Desain Eksterior',
+            'desainrumah.ext-placeholder-desc':'Hasil redesain rumah Anda akan muncul di sini.',
+            'room.desc':'Ubah kamar Anda dengan tema desain interior bertenaga AI',
+            'room.step1-title':'Upload Foto Kamar',
+            'room.remove-photo':'Hapus Foto',
+            'room.step2-title':'Tema Desain',
+            'room.step3-title':'Referensi Desain',
+            'room.ref-upload-hint':'Upload referensi desain (opsional)',
+            'room.remove-ref':'Hapus Referensi',
+            'room.step4-title':'Rasio Foto',
+            'room.step5-title':'Jumlah Desain',
+            'room.count-4':'4 Desain',
+            'room.count-7':'7 Desain',
+            'room.count-10':'10 Desain',
+            'room.gen-suffix':'Desain Kamar',
+            'room.empty-title':'Belum Ada Desain',
+            'room.empty-desc':'Upload foto kamar, pilih tema desain, lalu klik Generate untuk membuat desain profesional',
+            'sketsa.desc':'Unggah sketsa Anda, pilih tujuan, dan biarkan AI mengubahnya menjadi karya seni digital yang menakjubkan.',
+            'sketsa.step1-title':'1. Unggah Gambar Sketsa',
+            'sketsa.upload-hint':'Klik atau seret sketsa',
+            'sketsa.step2-title':'2. Tujuan Gambar',
+            'sketsa.step3-title':'3. Instruksi',
+            'sketsa.step4-title':'4. Pilih Rasio',
+            'sketsa.gen-btn':'Buat 4 Gambar',
+            'sketsa.placeholder-title':'Hasil dari Sketsa Anda',
+            'sketsa.placeholder-desc':'Empat variasi gambar akan muncul di sini.',
+            'carousel.title':'Bikin Carousel Produk',
+            'carousel.tip':'Unggah satu foto produk, dan biarkan AI membuatkan satu set carousel yang menarik untuk media sosial atau marketplace Anda.',
+            'carousel.step1-title':'1. Unggah Gambar Produk',
+            'carousel.step2-title':'2. Nama & Deskripsi',
+            'carousel.auto-btn':'Otomatis',
+            'carousel.step3-title':'3. Pengaturan',
+            'carousel.h4-slides':'Jumlah Slide',
+            'carousel.h4-ratio':'Aspek Rasio',
+            'carousel.h4-style':'Tampilan',
+            'carousel.step4-title':'4. Tambahkan Teks',
+            'carousel.script-title':'Script Konten',
+            'carousel.script-btn':'Buat Script',
+            'carousel.step5-title':'5. Posisi Tulisan & Font',
+            'carousel.gen-btn':'Buat Carousel',
+            'carousel.placeholder-title':'Hasil Carousel Anda',
+            'carousel.placeholder-desc':'Carousel yang sudah jadi akan muncul di sini.',
             }
         };
 
