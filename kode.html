@@ -10432,7 +10432,7 @@
                             </h2>
                             <button id="karikatur-download-all-btn" class="hidden bg-gradient-to-r from-orange-600 to-yellow-500 hover:from-orange-700 hover:to-yellow-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300">
                                 <i class="fas fa-download mr-2"></i>
-                                <span>Download Semua</span>
+                                <span data-i18n="family.download-all">Download Semua</span>
                             </button>
                         </div>
 
@@ -11233,7 +11233,7 @@
                             <span class="text-xs font-semibold px-3 py-1 rounded-full mt-1 bg-gradient-to-r from-teal-500 to-lime-500 text-white">✨ AI Powered</span>
                         </div>
                     </div>
-                    <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed" data-i18n="family.desc">
                         <span data-i18n="tryon.desc">Coba produk fashion secara virtual dengan AI. Pilih angle dan dapatkan hasil profesional!</span>
                     </p>
                 </header>
@@ -12084,7 +12084,7 @@
                     </p>
                     <div class="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-xl border-2 shadow-sm" style="border-color: #14b8a6; background: linear-gradient(135deg, #ccfbf1 0%, #f0fdfa 100%);">
                         <i class="fas fa-bolt" style="color: #14b8a6;"></i>
-                        <span class="text-sm font-medium" style="color: #0d9488;">Generate 6 foto sekaligus dalam hitungan detik</span>
+                        <span class="text-sm font-medium" style="color: #0d9488;" data-i18n="family.badge">Generate 6 foto sekaligus dalam hitungan detik</span>
                     </div>
                 </header>
 
@@ -12097,19 +12097,19 @@
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);">
                                             1
                                         </div>
-                                        <h3 class="text-lg font-bold text-gray-800">Unggah Foto Keluarga</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="family.step1-title">Unggah Foto Keluarga</h3>
                                     </div>
                                     <div id="family-file-input-area" class="flex flex-wrap gap-4">
                                         <div class="file-input-wrapper">
                                             <input type="file" accept="image/*" class="file-input" data-index="0">
                                             <img class="file-preview hidden">
-                                            <span class="text-gray-500 text-center text-sm">Tambahkan Foto</span>
+                                            <span class="text-gray-500 text-center text-sm" data-i18n="family.add-photo">Tambahkan Foto</span>
                                             <button class="delete-btn" onclick="familyDeletePhoto(event, 0)">×</button>
                                         </div>
                                         <div class="file-input-wrapper">
                                             <input type="file" accept="image/*" class="file-input" data-index="1">
                                             <img class="file-preview hidden">
-                                            <span class="text-gray-500 text-center text-sm">Tambahkan Foto</span>
+                                            <span class="text-gray-500 text-center text-sm" data-i18n="family.add-photo">Tambahkan Foto</span>
                                             <button class="delete-btn" onclick="familyDeletePhoto(event, 1)">×</button>
                                         </div>
                                     </div>
@@ -12123,16 +12123,16 @@
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);">
                                             2
                                         </div>
-                                        <h3 class="text-lg font-bold text-gray-800">Upload Background <span class="text-sm text-gray-500">(Opsional)</span></h3>
+                                        <h3 class="text-lg font-bold text-gray-800"><span data-i18n="family.step2-title">Upload Background</span> <span class="text-sm text-gray-500" data-i18n="family.optional-label">(Opsional)</span></h3>
                                     </div>
-                                    <p class="text-xs text-gray-600 mb-3">
+                                    <p class="text-xs text-gray-600 mb-3" data-i18n="family.step2-tip">
                                         <i class="fas fa-info-circle mr-1"></i>
                                         Upload background sendiri atau kosongkan untuk background AI
                                     </p>
                                     <div id="family-background-upload-area" class="border-2 border-dashed rounded-lg p-4 text-center hover:border-teal-500 transition-all cursor-pointer bg-teal-50/50" style="border-color: #5eead4;">
                                         <label for="family-background-input" class="cursor-pointer flex flex-col items-center justify-center">
                                             <i class="fas fa-image text-4xl mb-2 text-teal-400"></i>
-                                            <span class="text-sm text-teal-600 font-medium">Pilih Background</span>
+                                            <span class="text-sm text-teal-600 font-medium" data-i18n="family.bg-label">Pilih Background</span>
                                             <span class="text-xs text-gray-500 mt-1">PNG, JPG, HEIC</span>
                                         </label>
                                         <input type="file" id="family-background-input" class="hidden" accept="image/png, image/jpeg, image/webp, image/heic, .heic">
@@ -12145,7 +12145,7 @@
                                             </svg>
                                         </button>
                                         <p class="text-xs text-green-600 mt-1 text-center">
-                                            <i class="fas fa-check-circle mr-1"></i> Background akan digunakan
+                                            <i class="fas fa-check-circle mr-1"></i><span data-i18n="family.bg-confirmed"> Background akan digunakan</span>
                                         </p>
                                     </div>
                                 </div>
@@ -12155,7 +12155,7 @@
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);">
                                             3
                                         </div>
-                                        <h3 class="text-lg font-bold text-gray-800">Pilih Rasio Gambar</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="family.step3-title">Pilih Rasio Gambar</h3>
                                     </div>
                                     <div id="family-ratio-options" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
                                         <button type="button" data-value="1:1" class="option-btn-family">
@@ -12178,7 +12178,7 @@
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);">
                                             4
                                         </div>
-                                        <h3 class="text-lg font-bold text-gray-800">Pilih Tema</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="family.step4-title">Pilih Tema</h3>
                                     </div>
                                     <div class="max-h-96 overflow-y-auto pr-2 space-y-3">
                                         <div>
@@ -12237,21 +12237,21 @@
                                                 <button class="theme-btn text-xs" data-theme="foto realistis keluarga bergaya mafia klasik di Chicago tahun 1920"><i class="fas fa-user-secret mr-1"></i>Mafia</button>
                                             </div>
                                         </div>
-                                        <button id="family-random-theme-btn" class="w-full theme-btn text-sm py-3" style="background: linear-gradient(135deg, #14b8a6, #0d9488); color: white;">
+                                        <button id="family-random-theme-btn" data-i18n="family.random-theme" class="w-full theme-btn text-sm py-3" style="background: linear-gradient(135deg, #14b8a6, #0d9488); color: white;">
                                             <i class="fas fa-dice mr-2"></i>Tema Acak
                                         </button>
                                     </div>
                                     <div class="mt-4">
-                                        <label class="text-sm font-semibold text-gray-600 mb-2 block">Atau Tulis Tema Custom (Opsional)</label>
-                                        <textarea id="family-custom-theme-input" rows="3" class="w-full p-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition resize-none text-sm" placeholder="Contoh: keluarga di taman bunga dengan suasana musim semi..."></textarea>
-                                        <p class="text-xs text-gray-400 mt-1">💡 Kosongkan jika ingin menggunakan tema yang dipilih di atas</p>
+                                        <label class="text-sm font-semibold text-gray-600 mb-2 block" data-i18n="family.custom-label">Atau Tulis Tema Custom (Opsional)</label>
+                                        <textarea id="family-custom-theme-input" rows="3" class="w-full p-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition resize-none text-sm" placeholder="Contoh: keluarga di taman bunga dengan suasana musim semi..." data-i18n-placeholder="family.custom-placeholder"></textarea>
+                                        <p class="text-xs text-gray-400 mt-1" data-i18n="family.custom-tip">💡 Kosongkan jika ingin menggunakan tema yang dipilih di atas</p>
                                     </div>
                                 </div>
 
                                 <button id="family-generate-btn" class="w-full text-white font-bold py-4 px-8 rounded-2xl flex items-center justify-center text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none relative overflow-hidden group" style="background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);">
                                     <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                                     <i class="fas fa-sparkles mr-3 text-xl relative z-10"></i>
-                                    <span class="relative z-10">Buat 6 Foto Keluarga</span>
+                                    <span class="relative z-10" data-i18n="family.gen-btn">Buat 6 Foto Keluarga</span>
                                 </button>
                             </div>
                         </div>
@@ -12261,14 +12261,14 @@
                         <div class="card p-8 h-full flex flex-col shadow-xl rounded-2xl border" style="border-color: #ccfbf1; background: linear-gradient(to bottom, #ffffff 0%, #fafcfc 100%);">
                             <div id="loading-indicator" class="hidden flex-col items-center justify-center flex-grow">
                                 <div class="spinner"></div>
-                                <span class="mt-4 text-lg text-gray-600">Membuat foto keluarga Anda...</span>
+                                <span class="mt-4 text-lg text-gray-600" data-i18n="family.loading">Membuat foto keluarga Anda...</span>
                             </div>
                             <div id="family-results-header" class="hidden mb-6 flex items-center justify-between">
                                 <h3 class="text-xl font-bold" style="color: #0d9488;">
                                     <i class="fas fa-check-circle mr-2"></i>
-                                    <span id="family-result-count">6</span> Foto Berhasil Dibuat
+                                    <span id="family-result-count">6</span><span data-i18n="family.results-suffix"> Foto Berhasil Dibuat</span>
                                 </h3>
-                                <button id="family-download-all-btn" class="px-6 py-2 rounded-lg flex items-center gap-2 font-semibold text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all" style="background: linear-gradient(135deg, #14b8a6, #0d9488);">
+                                <button id="family-download-all-btn" data-i18n="family.download-all" class="px-6 py-2 rounded-lg flex items-center gap-2 font-semibold text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all" style="background: linear-gradient(135deg, #14b8a6, #0d9488);">
                                     <i class="fas fa-download"></i>
                                     Download Semua
                                 </button>
@@ -12278,8 +12278,8 @@
                                 <div class="w-28 h-28 rounded-3xl flex items-center justify-center mb-6 shadow-lg" style="background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%);">
                                     <i class="fas fa-images text-6xl" style="color: #14b8a6;"></i>
                                 </div>
-                                <h3 class="font-bold text-2xl mb-3" style="color: #0d9488;">Hasil Foto Keluarga Anda</h3>
-                                <p class="text-gray-500 text-base max-w-md">Unggah foto keluarga dan pilih tema favorit. Hasil 6 foto akan muncul di sini dengan kualitas profesional.</p>
+                                <h3 class="font-bold text-2xl mb-3" style="color: #0d9488;" data-i18n="family.placeholder-title">Hasil Foto Keluarga Anda</h3>
+                                <p class="text-gray-500 text-base max-w-md" data-i18n="family.placeholder-desc">Unggah foto keluarga dan pilih tema favorit. Hasil 6 foto akan muncul di sini dengan kualitas profesional.</p>
                             </div>
                         </div>
                     </div>
@@ -13352,7 +13352,7 @@
             <div class="container mx-auto p-4 md:p-8 max-w-6xl">
                 <header class="text-center mb-8">
                     <h1 class="text-4xl md:text-5xl font-bold text-gray-800">Editor Foto Bayi Ajaib</h1>
-                    <p class="text-lg text-gray-600 mt-2">Unggah foto bayi Anda dan biarkan keajaiban terjadi!</p>
+                    <p class="text-lg text-gray-600 mt-2" data-i18n="newborn.desc">Unggah foto bayi Anda dan biarkan keajaiban terjadi!</p>
                 </header>
 
                 <main class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
@@ -13362,10 +13362,10 @@
                         <div class="flex flex-col items-center">
                             <div id="new-born-image-preview-container" class="w-full max-w-sm h-80 bg-gray-200 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300 mb-4">
                                 <img id="new-born-image-preview" src="" alt="Pratinjau Foto Bayi" class="hidden max-h-full max-w-full rounded-md object-contain">
-                                <span id="new-born-preview-text" class="text-gray-500">Pratinjau Gambar</span>
+                                <span id="new-born-preview-text" class="text-gray-500" data-i18n="newborn.preview-text">Pratinjau Gambar</span>
                             </div>
                             <input type="file" id="new-born-image-upload" accept="image/*" class="hidden">
-                            <button id="new-born-upload-button" class="w-full max-w-sm bg-indigo-600 text-white font-semibold py-3 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300 shadow-md">
+                            <button id="new-born-upload-button" data-i18n="newborn.upload-btn" class="w-full max-w-sm bg-indigo-600 text-white font-semibold py-3 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300 shadow-md">
                                 Pilih Foto Bayi
                             </button>
                         </div>
@@ -13373,28 +13373,28 @@
                         <!-- Right Column: Options and Generate -->
                         <div class="flex flex-col justify-center space-y-6">
                             <div>
-                                <h3 class="text-xl font-semibold mb-3">1. Pilih Gender</h3>
+                                <h3 class="text-xl font-semibold mb-3" data-i18n="newborn.step1-title">1. Pilih Gender</h3>
                                 <div class="flex space-x-4">
                                     <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer has-[:checked]:bg-indigo-50 has-[:checked]:border-indigo-500">
                                         <input type="radio" name="gender" value="laki-laki" class="form-radio h-5 w-5 text-indigo-600" checked>
-                                        <span class="ml-3 text-gray-700">Laki-laki</span>
+                                        <span class="ml-3 text-gray-700" data-i18n="newborn.gender-male">Laki-laki</span>
                                     </label>
                                     <label class="flex items-center p-3 border border-gray-300 rounded-lg cursor-pointer has-[:checked]:bg-indigo-50 has-[:checked]:border-indigo-500">
                                         <input type="radio" name="gender" value="perempuan" class="form-radio h-5 w-5 text-indigo-600">
-                                        <span class="ml-3 text-gray-700">Perempuan</span>
+                                        <span class="ml-3 text-gray-700" data-i18n="newborn.gender-female">Perempuan</span>
                                     </label>
                                 </div>
                             </div>
                              <div>
-                                <h3 class="text-xl font-semibold mb-3">2. Nama Bayi (Opsional)</h3>
+                                <h3 class="text-xl font-semibold mb-3" data-i18n="newborn.step2-title">2. Nama Bayi (Opsional)</h3>
                                 <input type="text" id="new-born-name" placeholder="Contoh: Budi" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                             </div>
                             <div>
-                                <h3 class="text-xl font-semibold mb-3">3. Tanggal Lahir (Opsional)</h3>
+                                <h3 class="text-xl font-semibold mb-3" data-i18n="newborn.step3-title">3. Tanggal Lahir (Opsional)</h3>
                                 <input type="date" id="new-born-dob" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
                             </div>
                             <div>
-                                <h3 class="text-xl font-semibold mb-3">4. Pilih Rasio Gambar</h3>
+                                <h3 class="text-xl font-semibold mb-3" data-i18n="newborn.step4-title">4. Pilih Rasio Gambar</h3>
                                 <div id="newborn-ratio-options" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
                                     <button type="button" data-value="1:1" class="option-btn-newborn">
                                         <i class="fas fa-square mr-2"></i>1:1
@@ -13411,14 +13411,14 @@
                                 </div>
                             </div>
                             <div>
-                                <h3 class="text-xl font-semibold mb-3">5. Tema Custom (Opsional)</h3>
+                                <h3 class="text-xl font-semibold mb-3" data-i18n="newborn.step5-title">5. Tema Custom (Opsional)</h3>
                                 <textarea id="new-born-custom-theme" rows="3" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="Contoh: superhero cilik dengan kostum warna cerah..."></textarea>
-                                <p class="text-sm text-gray-500 mt-1">💡 Kosongkan untuk menggunakan tema acak otomatis</p>
+                                <p class="text-sm text-gray-500 mt-1" data-i18n="newborn.custom-tip">💡 Kosongkan untuk menggunakan tema acak otomatis</p>
                             </div>
                             <div>
-                               <h3 class="text-xl font-semibold mb-3">6. Mulai Keajaiban!</h3>
-                                <p class="text-gray-600 mb-4">Aplikasi akan membuat 7 foto unik dengan tema berkualitas tinggi.</p>
-                                <button id="new-born-generate-button" class="w-full bg-green-500 text-white font-bold py-4 px-4 rounded-lg hover:bg-green-600 transition-colors duration-300 text-lg shadow-lg disabled:bg-gray-400 disabled:cursor-not-allowed">
+                               <h3 class="text-xl font-semibold mb-3" data-i18n="newborn.step6-title">6. Mulai Keajaiban!</h3>
+                                <p class="text-gray-600 mb-4" data-i18n="newborn.step6-desc">Aplikasi akan membuat 7 foto unik dengan tema berkualitas tinggi.</p>
+                                <button id="new-born-generate-button" data-i18n="newborn.gen-btn" class="w-full bg-green-500 text-white font-bold py-4 px-4 rounded-lg hover:bg-green-600 transition-colors duration-300 text-lg shadow-lg disabled:bg-gray-400 disabled:cursor-not-allowed">
                                     Generate 7 Foto Ajaib
                                 </button>
                             </div>
@@ -13433,14 +13433,14 @@
                 <section id="new-born-results-section" class="mt-10">
                     <div id="new-born-loading-indicator" class="hidden flex flex-col items-center justify-center">
                         <div class="custom-loader"></div>
-                        <p class="text-lg text-gray-600 mt-4">Sedang menciptakan keajaiban... Mohon tunggu sebentar.</p>
+                        <p class="text-lg text-gray-600 mt-4" data-i18n="newborn.loading">Sedang menciptakan keajaiban... Mohon tunggu sebentar.</p>
                     </div>
                     <div id="new-born-results-header" class="hidden mb-6 flex items-center justify-between">
                         <h3 class="text-xl font-bold text-indigo-600">
                             <i class="fas fa-check-circle mr-2"></i>
-                            <span id="new-born-result-count">7</span> Foto Berhasil Dibuat
+                            <span id="new-born-result-count">7</span><span data-i18n="family.results-suffix"> Foto Berhasil Dibuat</span>
                         </h3>
-                        <button id="new-born-download-all-btn" class="px-6 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg flex items-center gap-2 font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all">
+                        <button id="new-born-download-all-btn" data-i18n="family.download-all" class="px-6 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg flex items-center gap-2 font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all">
                             <i class="fas fa-download"></i>
                             Download Semua
                         </button>
@@ -16643,7 +16643,7 @@
                     <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent">
                         <i class="fas fa-heart text-rose-500"></i> Foto Maternity Studio
                     </h1>
-                    <p class="text-lg text-gray-600 mt-3">Ciptakan momen indah kehamilan dengan foto maternity profesional & penuh makna</p>
+                    <p class="text-lg text-gray-600 mt-3" data-i18n="maternity.desc">Ciptakan momen indah kehamilan dengan foto maternity profesional & penuh makna</p>
                 </header>
 
                 <main class="bg-white p-6 md:p-10 rounded-2xl shadow-2xl border border-rose-100">
@@ -16654,9 +16654,9 @@
                             <div>
                                 <div class="flex items-center gap-2 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-rose-500 to-pink-500 text-white font-bold text-sm shadow-lg">1</div>
-                                    <h3 class="text-xl font-bold text-gray-800">Upload Foto (1-2 orang)</h3>
+                                    <h3 class="text-xl font-bold text-gray-800" data-i18n="maternity.step1-title">Upload Foto (1-2 orang)</h3>
                                 </div>
-                                <p class="text-sm text-gray-600 mb-3">
+                                <p class="text-sm text-gray-600 mb-3" data-i18n="maternity.step1-tip">
                                     <i class="fas fa-info-circle mr-1"></i>
                                     Upload 1 foto untuk solo maternity atau 2 foto untuk couple maternity
                                 </p>
@@ -16678,7 +16678,7 @@
                             <div>
                                 <div class="flex items-center gap-2 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-rose-500 to-pink-500 text-white font-bold text-sm shadow-lg">2</div>
-                                    <h3 class="text-xl font-bold text-gray-800">Pilih Tema</h3>
+                                    <h3 class="text-xl font-bold text-gray-800" data-i18n="family.step4-title">Pilih Tema</h3>
                                 </div>
                                 <div id="maternity-theme-options" class="grid grid-cols-2 gap-3">
                                     <button type="button" data-value="elegant-indoor" class="option-btn-maternity selected">
@@ -16725,7 +16725,7 @@
                             <div>
                                 <div class="flex items-center gap-2 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-rose-500 to-pink-500 text-white font-bold text-sm shadow-lg">3</div>
-                                    <h3 class="text-xl font-bold text-gray-800">Pilih Style</h3>
+                                    <h3 class="text-xl font-bold text-gray-800" data-i18n="maternity.step3-title">Pilih Style</h3>
                                 </div>
                                 <div id="maternity-style-options" class="grid grid-cols-2 gap-3">
                                     <button type="button" data-value="soft-dreamy" class="option-btn-maternity selected">
@@ -16755,7 +16755,7 @@
                         <div>
                             <div class="flex items-center gap-2 mb-4">
                                 <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-rose-500 to-pink-500 text-white font-bold text-sm shadow-lg">4</div>
-                                <h3 class="text-xl font-bold text-gray-800">Pilih Rasio Gambar</h3>
+                                <h3 class="text-xl font-bold text-gray-800" data-i18n="family.step3-title">Pilih Rasio Gambar</h3>
                             </div>
                             <div id="maternity-ratio-options" class="grid grid-cols-2 sm:grid-cols-5 gap-3">
                                 <button type="button" data-value="1:1" class="option-btn-maternity">
@@ -16785,17 +16785,17 @@
                         <div>
                             <div class="flex items-center gap-2 mb-4">
                                 <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-rose-500 to-pink-500 text-white font-bold text-sm shadow-lg">5</div>
-                                <h3 class="text-xl font-bold text-gray-800">Jumlah Foto</h3>
+                                <h3 class="text-xl font-bold text-gray-800" data-i18n="maternity.step5-title">Jumlah Foto</h3>
                             </div>
                             <div id="maternity-count-selection" class="grid grid-cols-3 gap-3">
                                 <button type="button" data-count="4" class="count-btn-maternity">
-                                    4 Foto
+                                    <span data-i18n="maternity.count-4">4 Foto</span>
                                 </button>
                                 <button type="button" data-count="6" class="count-btn-maternity count-selected">
-                                    6 Foto
+                                    <span data-i18n="maternity.count-6">6 Foto</span>
                                 </button>
                                 <button type="button" data-count="8" class="count-btn-maternity">
-                                    8 Foto
+                                    <span data-i18n="maternity.count-8">8 Foto</span>
                                 </button>
                             </div>
                         </div>
@@ -16804,13 +16804,13 @@
                         <div>
                             <div class="flex items-center gap-2 mb-4">
                                 <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-rose-500 to-pink-500 text-white font-bold text-sm shadow-lg">6</div>
-                                <h3 class="text-xl font-bold text-gray-800">Generate Foto</h3>
+                                <h3 class="text-xl font-bold text-gray-800" data-i18n="maternity.step6-title">Generate Foto</h3>
                             </div>
                             <button id="maternity-generate-btn" disabled class="w-full bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-lg">
                                 <i class="fas fa-wand-magic-sparkles mr-2"></i>
-                                Generate <span id="maternity-count-text">6</span> Foto Maternity
+                                <span data-i18n="maternity.gen-prefix">Generate</span> <span id="maternity-count-text">6</span> <span data-i18n="maternity.gen-suffix">Foto Maternity</span>
                             </button>
-                            <p class="text-sm text-gray-500 text-center mt-2">
+                            <p class="text-sm text-gray-500 text-center mt-2" data-i18n="maternity.gen-tip">
                                 <i class="fas fa-info-circle mr-1"></i>
                                 Proses membutuhkan waktu 30-60 detik
                             </p>
@@ -16842,7 +16842,7 @@
                     <div id="maternity-results-header" class="hidden mb-6 flex flex-col sm:flex-row items-center justify-between gap-4 bg-gradient-to-r from-rose-50 to-pink-50 p-4 rounded-xl border-2 border-rose-200">
                         <h3 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-600">
                             <i class="fas fa-check-circle mr-2"></i>
-                            <span id="maternity-results-count">6</span> Foto Maternity Berhasil Dibuat!
+                            <span id="maternity-results-count">6</span><span data-i18n="maternity.results-suffix"> Foto Maternity Berhasil Dibuat!</span>
                         </h3>
                         <button id="maternity-download-all-btn" class="px-6 py-3 bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white rounded-lg flex items-center gap-2 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all">
                             <i class="fas fa-download"></i>
@@ -70082,6 +70082,55 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'budget.copy-btn':'Copy',
             'budget.placeholder-title':'Your Financial Projection',
             'budget.placeholder-desc':'Fill in data for budget simulation',
+            'family.desc':'Create the perfect family photo with AI. Choose your favorite theme and create beautiful memories with your family.',
+            'family.badge':'Generate 6 photos at once in seconds',
+            'family.step1-title':'Upload Family Photos',
+            'family.add-photo':'Add Photo',
+            'family.step2-title':'Upload Background',
+            'family.optional-label':'(Optional)',
+            'family.step2-tip':'Upload your own background or leave empty for AI background',
+            'family.bg-label':'Choose Background',
+            'family.bg-confirmed':'Background will be used',
+            'family.step3-title':'Choose Aspect Ratio',
+            'family.step4-title':'Choose Theme',
+            'family.random-theme':'Random Theme',
+            'family.custom-label':'Or Write Custom Theme (Optional)',
+            'family.custom-placeholder':'Example: family in a flower garden with spring atmosphere...',
+            'family.custom-tip':'💡 Leave blank to use the selected theme above',
+            'family.gen-btn':'Create 6 Family Photos',
+            'family.loading':'Creating your family photos...',
+            'family.results-suffix':' Photos Created Successfully',
+            'family.download-all':'Download All',
+            'family.placeholder-title':'Your Family Photo Results',
+            'family.placeholder-desc':'Upload family photos and choose your favorite theme. 6 photos will appear here with professional quality.',
+            'newborn.desc':'Upload your baby\'s photo and let the magic happen!',
+            'newborn.preview-text':'Image Preview',
+            'newborn.upload-btn':'Choose Baby Photo',
+            'newborn.step1-title':'1. Choose Gender',
+            'newborn.gender-male':'Boy',
+            'newborn.gender-female':'Girl',
+            'newborn.step2-title':'2. Baby Name (Optional)',
+            'newborn.step3-title':'3. Date of Birth (Optional)',
+            'newborn.step4-title':'4. Choose Aspect Ratio',
+            'newborn.step5-title':'5. Custom Theme (Optional)',
+            'newborn.custom-tip':'💡 Leave blank to use automatic random theme',
+            'newborn.step6-title':'6. Start the Magic!',
+            'newborn.step6-desc':'The app will create 7 unique photos with high-quality themes.',
+            'newborn.gen-btn':'Generate 7 Magic Photos',
+            'newborn.loading':'Creating magic... Please wait a moment.',
+            'maternity.desc':'Capture beautiful pregnancy moments with professional & meaningful maternity photos',
+            'maternity.step1-title':'Upload Photo (1-2 people)',
+            'maternity.step1-tip':'Upload 1 photo for solo maternity or 2 photos for couple maternity',
+            'maternity.step3-title':'Choose Style',
+            'maternity.step5-title':'Number of Photos',
+            'maternity.count-4':'4 Photos',
+            'maternity.count-6':'6 Photos',
+            'maternity.count-8':'8 Photos',
+            'maternity.step6-title':'Generate Photos',
+            'maternity.gen-prefix':'Generate',
+            'maternity.gen-suffix':'Maternity Photos',
+            'maternity.gen-tip':'Process takes 30-60 seconds',
+            'maternity.results-suffix':' Maternity Photos Created!',
             },
             id: {
                 nav: { 'apikey-settings':'API Key','beranda':'Beranda','buat-model':'Membuat Model','mockup-studio':'Mockup Studio','pov-tangan':'POV Tangan','touring':'Foto Touring','mirror-selfie':'POV Mirror Selfie','walking-pad':'Walking Pad','affiliate':'Foto Produk Affiliate','affiliate-islami':'Affiliate Agama','virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion','food-selfie':'Food Selfie','product-review':'Product Review','skincare-review':'Skincare Review','food-review':'Food Review','product-ads':'Iklan Produk','professional-headshot':'Professional Headshot','unboxing-scene':'Unboxing Scene','before-after':'Before/After','product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card','size-guide':'Size Guide','video-frames':'Video Frames','vehicle-modifier':'Vehicle Modifier','deskripsi-produk':'Deskripsi Produk SEO','ide-konten-tiktok':'Ide Konten TikTok','script-story-iklan':'Script Story Iklan','rencana-bisnis':'Rencana Bisnis & SWOT','hr-assistant':'HR Assistant','konten-marketing':'Konten Marketing','riset-pasar':'Riset Pasar & Ide','financial-forecast':'Simulasi Anggaran','family':'Foto Keluarga','new-born':'New Born Studio','maternity':'Foto Maternity','profesi-anak':'Foto Profesi Anak','wedding':'Wedding','wedding-design':'Desain Pernikahan','umrah-haji':'Foto Umrah/Haji','passport-photo':'Pas Foto Warna','graduation-photo':'Foto Wisuda','photo-booth':'Photo Booth','birthday-photo':'Foto Ulang Tahun','kartu-lebaran':'Kartu Lebaran','desain-rumah':'Desain Rumah','desain-kamar':'Desain Kamar','sketsa-gambar':'Sketsa Gambar','bikin-carousel':'Bikin Carousel','miniature':'Miniature Me','karikatur':'Karikatur Generator','photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor','tattoo-editor':'Tattoo Editor','halu':'Halu Idol','sticker':'Sticker Tempel','hair-generator':'Hair Generator','expression-changer':'Expression Changer','face-swap':'Face Swap','bg-remover':'Ubah Background','photo-extender':'Perluas Foto','story-board':'Story Board','twibon':'Twibon Frame','story-update':'Story Update','image-analyzer':'Image to Prompt','packaging-design':'Packaging Design','photo-angle':'Photo Angle','style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'Foto Sampul IG & Tiktok','photo-restoration':'Restorasi Foto','object-remover':'Hapus Object','logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit Generator','content-calendar':'Content Calendar Planner','ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI','caption-generator':'AI Caption Generator','product-comparison':'Product Comparison','mascot-generator':'Mascot Generator','poster-generator':'Poster Generator','banner-generator':'Banner Generator','sketch-catalog':'Sketsa ke Katalog','fotogenic':'Fotogenic','timelapse-renovasi':'Timelapse Renovasi','veo':'Affiliate Go Pro','opal':'Opal Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer' },
@@ -70643,6 +70692,55 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'budget.copy-btn':'Salin',
             'budget.placeholder-title':'Proyeksi Keuangan Anda',
             'budget.placeholder-desc':'Isi data untuk simulasi anggaran',
+            'family.desc':'Ciptakan foto keluarga yang sempurna dengan AI. Pilih tema favorit dan buat kenangan indah bersama keluarga.',
+            'family.badge':'Generate 6 foto sekaligus dalam hitungan detik',
+            'family.step1-title':'Unggah Foto Keluarga',
+            'family.add-photo':'Tambahkan Foto',
+            'family.step2-title':'Upload Background',
+            'family.optional-label':'(Opsional)',
+            'family.step2-tip':'Upload background sendiri atau kosongkan untuk background AI',
+            'family.bg-label':'Pilih Background',
+            'family.bg-confirmed':'Background akan digunakan',
+            'family.step3-title':'Pilih Rasio Gambar',
+            'family.step4-title':'Pilih Tema',
+            'family.random-theme':'Tema Acak',
+            'family.custom-label':'Atau Tulis Tema Custom (Opsional)',
+            'family.custom-placeholder':'Contoh: keluarga di taman bunga dengan suasana musim semi...',
+            'family.custom-tip':'💡 Kosongkan jika ingin menggunakan tema yang dipilih di atas',
+            'family.gen-btn':'Buat 6 Foto Keluarga',
+            'family.loading':'Membuat foto keluarga Anda...',
+            'family.results-suffix':' Foto Berhasil Dibuat',
+            'family.download-all':'Download Semua',
+            'family.placeholder-title':'Hasil Foto Keluarga Anda',
+            'family.placeholder-desc':'Unggah foto keluarga dan pilih tema favorit. Hasil 6 foto akan muncul di sini dengan kualitas profesional.',
+            'newborn.desc':'Unggah foto bayi Anda dan biarkan keajaiban terjadi!',
+            'newborn.preview-text':'Pratinjau Gambar',
+            'newborn.upload-btn':'Pilih Foto Bayi',
+            'newborn.step1-title':'1. Pilih Gender',
+            'newborn.gender-male':'Laki-laki',
+            'newborn.gender-female':'Perempuan',
+            'newborn.step2-title':'2. Nama Bayi (Opsional)',
+            'newborn.step3-title':'3. Tanggal Lahir (Opsional)',
+            'newborn.step4-title':'4. Pilih Rasio Gambar',
+            'newborn.step5-title':'5. Tema Custom (Opsional)',
+            'newborn.custom-tip':'💡 Kosongkan untuk menggunakan tema acak otomatis',
+            'newborn.step6-title':'6. Mulai Keajaiban!',
+            'newborn.step6-desc':'Aplikasi akan membuat 7 foto unik dengan tema berkualitas tinggi.',
+            'newborn.gen-btn':'Generate 7 Foto Ajaib',
+            'newborn.loading':'Sedang menciptakan keajaiban... Mohon tunggu sebentar.',
+            'maternity.desc':'Ciptakan momen indah kehamilan dengan foto maternity profesional & penuh makna',
+            'maternity.step1-title':'Upload Foto (1-2 orang)',
+            'maternity.step1-tip':'Upload 1 foto untuk solo maternity atau 2 foto untuk couple maternity',
+            'maternity.step3-title':'Pilih Style',
+            'maternity.step5-title':'Jumlah Foto',
+            'maternity.count-4':'4 Foto',
+            'maternity.count-6':'6 Foto',
+            'maternity.count-8':'8 Foto',
+            'maternity.step6-title':'Generate Foto',
+            'maternity.gen-prefix':'Generate',
+            'maternity.gen-suffix':'Foto Maternity',
+            'maternity.gen-tip':'Proses membutuhkan waktu 30-60 detik',
+            'maternity.results-suffix':' Foto Maternity Berhasil Dibuat!',
             }
         };
 
