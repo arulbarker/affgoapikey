@@ -13467,7 +13467,7 @@
                             <span class="text-xs font-semibold px-3 py-1 rounded-full mt-1 text-white" style="background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);">🎓 Professional Child Photography</span>
                         </div>
                     </div>
-                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-i18n="kids.desc">
                         Ciptakan foto anak dengan berbagai profesi impian secara profesional dan natural
                     </p>
                 </header>
@@ -13482,13 +13482,13 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #a855f7, #ec4899);">1</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Upload Foto Anak</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="kids.step1-title">Upload Foto Anak</h3>
                                     </div>
                                     <label for="profesi-child-upload" id="profesi-child-upload-box" class="upload-box-profesi w-full h-40 rounded-xl flex items-center justify-center cursor-pointer relative overflow-hidden border-2 border-dashed border-gray-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                                         <div id="profesi-child-placeholder" class="text-center text-gray-500 p-4">
                                             <i class="fas fa-child transition-transform duration-300" style="font-size: 2.5rem; color: #a855f7;"></i>
-                                            <p class="mt-2 text-sm font-semibold">👦 Klik untuk upload foto anak</p>
-                                            <p class="mt-1 text-xs text-gray-400">Format: JPG, PNG, HEIC</p>
+                                            <p class="mt-2 text-sm font-semibold" data-i18n="kids.upload-click">👦 Klik untuk upload foto anak</p>
+                                            <p class="mt-1 text-xs text-gray-400" data-i18n="kids.upload-hint">Format: JPG, PNG, HEIC</p>
                                         </div>
                                     </label>
                                     <input type="file" id="profesi-child-upload" class="hidden" accept="image/png, image/jpeg, image/webp, .heic, .HEIC">
@@ -13496,7 +13496,7 @@
                                     <!-- Mobile-only preview -->
                                     <div id="profesi-child-preview-container" class="mt-3 hidden lg:hidden">
                                         <img id="profesi-child-preview" src="" alt="Preview" class="w-full rounded-lg shadow-lg max-h-48 object-cover">
-                                        <button id="profesi-remove-child-preview" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg">
+                                        <button id="profesi-remove-child-preview" data-i18n="unboxing.remove-photo" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg">
                                             <i class="fas fa-times mr-1"></i> Hapus Foto
                                         </button>
                                     </div>
@@ -13506,7 +13506,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #a855f7, #ec4899);">2</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Umur Anak</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="kids.step2-title">Umur Anak</h3>
                                     </div>
                                     <select id="profesi-age-select" class="w-full p-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition">
                                         <option value="3">3 tahun</option>
@@ -13524,11 +13524,11 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #a855f7, #ec4899);">3</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Tema Profesi <span class="text-sm text-gray-500">(Opsional)</span></h3>
+                                        <h3 class="text-lg font-bold text-gray-800"><span data-i18n="kids.step3-title">Tema Profesi</span> <span class="text-sm text-gray-500" data-i18n="family.optional-label">(Opsional)</span></h3>
                                     </div>
-                                    <input type="text" id="profesi-theme-input" class="w-full p-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition" placeholder="Contoh: dokter, pilot, chef, astronot...">
-                                    <p class="text-xs text-gray-500 mt-1">
-                                        <i class="fas fa-info-circle mr-1"></i>Kosongkan untuk tema profesi random otomatis
+                                    <input type="text" id="profesi-theme-input" data-i18n-placeholder="kids.theme-placeholder" class="w-full p-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition" placeholder="Contoh: dokter, pilot, chef, astronot...">
+                                    <p class="text-xs text-gray-500 mt-1" data-i18n="kids.theme-tip">
+                                    <i class="fas fa-info-circle mr-1"></i>Kosongkan untuk tema profesi random otomatis
                                     </p>
                                 </div>
 
@@ -13561,13 +13561,13 @@
                                         <h3 class="text-lg font-bold text-gray-800" data-i18n="walking.count-title">Jumlah Foto</h3>
                                     </div>
                                     <div id="profesi-count-selection" class="grid grid-cols-3 gap-3">
-                                        <button type="button" data-count="4" class="profesi-count-btn bg-gray-50 hover:bg-gray-100 text-gray-700 px-3 py-2.5 rounded-lg border-2 border-gray-300 transition-all text-sm font-medium">
+                                        <button type="button" data-i18n="kids.count-4" data-count="4" class="profesi-count-btn bg-gray-50 hover:bg-gray-100 text-gray-700 px-3 py-2.5 rounded-lg border-2 border-gray-300 transition-all text-sm font-medium">
                                             4 Foto
                                         </button>
-                                        <button type="button" data-count="7" class="profesi-count-btn profesi-count-selected bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 py-2.5 rounded-lg border-2 border-purple-500 transition-all text-sm font-bold shadow-md">
+                                        <button type="button" data-i18n="kids.count-7" data-count="7" class="profesi-count-btn profesi-count-selected bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 py-2.5 rounded-lg border-2 border-purple-500 transition-all text-sm font-bold shadow-md">
                                             7 Foto
                                         </button>
-                                        <button type="button" data-count="10" class="profesi-count-btn bg-gray-50 hover:bg-gray-100 text-gray-700 px-3 py-2.5 rounded-lg border-2 border-gray-300 transition-all text-sm font-medium">
+                                        <button type="button" data-i18n="kids.count-10" data-count="10" class="profesi-count-btn bg-gray-50 hover:bg-gray-100 text-gray-700 px-3 py-2.5 rounded-lg border-2 border-gray-300 transition-all text-sm font-medium">
                                             10 Foto
                                         </button>
                                     </div>
@@ -13576,7 +13576,7 @@
                                 <!-- Generate Button -->
                                 <button id="profesi-generate-btn" class="w-full py-4 px-6 rounded-xl font-bold text-lg text-white shadow-lg transition-all duration-300 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100" style="background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);" disabled>
                                     <i class="fas fa-wand-magic-sparkles mr-2"></i>
-                                    <span>Generate <span id="profesi-count-text">7</span> Foto Profesi</span>
+                                    <span><span data-i18n="kids.gen-prefix">Generate</span> <span id="profesi-count-text">7</span> <span data-i18n="kids.gen-suffix">Foto Profesi</span></span>
                                 </button>
                             </div>
                         </div>
@@ -13608,16 +13608,16 @@
                             <div class="w-24 h-24 rounded-full flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #faf5ff 0%, #fce7f3 100%);">
                                 <i class="fas fa-images text-5xl" style="color: #a855f7;"></i>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Belum Ada Foto</h3>
-                            <p class="text-gray-500 max-w-md">Upload foto anak, lalu klik Generate untuk membuat foto profesi profesional</p>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2" data-i18n="kids.empty-title">Belum Ada Foto</h3>
+                            <p class="text-gray-500 max-w-md" data-i18n="kids.empty-desc">Upload foto anak, lalu klik Generate untuk membuat foto profesi profesional</p>
                         </div>
 
                         <!-- Results Header -->
                         <div id="profesi-results-header" class="hidden flex items-center justify-between mb-6 bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-xl border-2 border-purple-200">
                             <h3 class="text-xl font-bold text-transparent bg-clip-text" style="background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);">
-                                🎓 <span id="profesi-results-count">7</span> Foto Profesi Generated!
+                                🎓 <span id="profesi-results-count">7</span><span data-i18n="kids.results-suffix"> Foto Profesi Generated!</span>
                             </h3>
-                            <button id="profesi-download-all-btn" class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-2 rounded-full font-semibold shadow-lg transition transform hover:scale-105 flex items-center gap-2">
+                            <button id="profesi-download-all-btn" data-i18n="kids.download-all" class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-2 rounded-full font-semibold shadow-lg transition transform hover:scale-105 flex items-center gap-2">
                                 <i class="fas fa-download"></i>
                                 Download All
                             </button>
@@ -14572,7 +14572,7 @@
                                 <i class="fas fa-image-portrait text-6xl text-purple-300"></i>
                             </div>
                             <h3 class="text-2xl font-bold text-gray-800 mb-3">Ready to Create Your Cover Photo</h3>
-                            <p class="text-gray-600 mb-6 max-w-md mx-auto">
+                            <p class="text-gray-600 mb-6 max-w-md mx-auto" data-i18n="wdesign.empty-desc">
                                 Choose your branding mode, fill in your details, and generate professional cover photos for your personal brand!
                             </p>
                             <div class="grid grid-cols-2 gap-4 max-w-md mx-auto">
@@ -16874,7 +16874,7 @@
                             <span class="text-xs font-semibold px-3 py-1 rounded-full mt-1 text-white" style="background: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);">💕 Professional Wedding Photography</span>
                         </div>
                     </div>
-                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-i18n="wedding.desc">
                         Ciptakan momen pernikahan impian dengan AI Photography berkualitas profesional
                     </p>
                 </header>
@@ -16889,13 +16889,13 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #f43f5e, #ec4899);">1</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Upload Foto Pria</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="wedding.step1-title">Upload Foto Pria</h3>
                                     </div>
                                     <label for="wedding-male-upload" id="wedding-male-upload-box" class="upload-box-wedding w-full h-40 rounded-xl flex items-center justify-center cursor-pointer relative overflow-hidden border-2 border-dashed border-gray-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                                         <div id="wedding-male-placeholder" class="text-center text-gray-500 p-4">
                                             <i class="fas fa-user-tie transition-transform duration-300" style="font-size: 2.5rem; color: #f43f5e;"></i>
-                                            <p class="mt-2 text-sm font-semibold">🤵 Klik untuk upload foto pria</p>
-                                            <p class="mt-1 text-xs text-gray-400">Format: JPG, PNG, HEIC</p>
+                                            <p class="mt-2 text-sm font-semibold" data-i18n="wedding.male-click">🤵 Klik untuk upload foto pria</p>
+                                            <p class="mt-1 text-xs text-gray-400" data-i18n="kids.upload-hint">Format: JPG, PNG, HEIC</p>
                                         </div>
                                     </label>
                                     <input type="file" id="wedding-male-upload" class="hidden" accept="image/png, image/jpeg, image/webp, .heic, .HEIC">
@@ -16903,7 +16903,7 @@
                                     <!-- Mobile-only preview -->
                                     <div id="wedding-male-preview-container" class="mt-3 hidden lg:hidden">
                                         <img id="wedding-male-preview" src="" alt="Preview" class="w-full rounded-lg shadow-lg max-h-48 object-cover">
-                                        <button id="wedding-remove-male-preview" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg">
+                                        <button id="wedding-remove-male-preview" data-i18n="unboxing.remove-photo" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg">
                                             <i class="fas fa-times mr-1"></i> Hapus Foto
                                         </button>
                                     </div>
@@ -16913,13 +16913,13 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #f43f5e, #ec4899);">2</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Upload Foto Wanita</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="wedding.step2-title">Upload Foto Wanita</h3>
                                     </div>
                                     <label for="wedding-female-upload" id="wedding-female-upload-box" class="upload-box-wedding w-full h-40 rounded-xl flex items-center justify-center cursor-pointer relative overflow-hidden border-2 border-dashed border-gray-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                                         <div id="wedding-female-placeholder" class="text-center text-gray-500 p-4">
                                             <i class="fas fa-user transition-transform duration-300" style="font-size: 2.5rem; color: #ec4899;"></i>
-                                            <p class="mt-2 text-sm font-semibold">👰 Klik untuk upload foto wanita</p>
-                                            <p class="mt-1 text-xs text-gray-400">Format: JPG, PNG, HEIC</p>
+                                            <p class="mt-2 text-sm font-semibold" data-i18n="wedding.female-click">👰 Klik untuk upload foto wanita</p>
+                                            <p class="mt-1 text-xs text-gray-400" data-i18n="kids.upload-hint">Format: JPG, PNG, HEIC</p>
                                         </div>
                                     </label>
                                     <input type="file" id="wedding-female-upload" class="hidden" accept="image/png, image/jpeg, image/webp, .heic, .HEIC">
@@ -16927,7 +16927,7 @@
                                     <!-- Mobile-only preview -->
                                     <div id="wedding-female-preview-container" class="mt-3 hidden lg:hidden">
                                         <img id="wedding-female-preview" src="" alt="Preview" class="w-full rounded-lg shadow-lg max-h-48 object-cover">
-                                        <button id="wedding-remove-female-preview" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg">
+                                        <button id="wedding-remove-female-preview" data-i18n="unboxing.remove-photo" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg">
                                             <i class="fas fa-times mr-1"></i> Hapus Foto
                                         </button>
                                     </div>
@@ -16937,11 +16937,11 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #f43f5e, #ec4899);">3</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Tema Foto <span class="text-sm text-gray-500">(Opsional)</span></h3>
+                                        <h3 class="text-lg font-bold text-gray-800"><span data-i18n="wedding.step3-title">Tema Foto</span> <span class="text-sm text-gray-500" data-i18n="family.optional-label">(Opsional)</span></h3>
                                     </div>
-                                    <textarea id="wedding-theme-input" rows="3" class="w-full p-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition" placeholder="Contoh: di pantai saat matahari terbenam, fairytale castle ballroom, vintage 1920s style, rustic barn with fairy lights..."></textarea>
-                                    <p class="text-xs text-gray-500 mt-1">
-                                        <i class="fas fa-info-circle mr-1"></i>Kosongkan untuk tema random otomatis
+                                    <textarea id="wedding-theme-input" data-i18n-placeholder="wedding.theme-placeholder" rows="3" class="w-full p-3 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-500 focus:border-rose-500 transition" placeholder="Contoh: di pantai saat matahari terbenam, fairytale castle ballroom, vintage 1920s style, rustic barn with fairy lights..."></textarea>
+                                    <p class="text-xs text-gray-500 mt-1" data-i18n="wedding.theme-tip">
+                                    <i class="fas fa-info-circle mr-1"></i>Kosongkan untuk tema random otomatis
                                     </p>
                                 </div>
 
@@ -16949,7 +16949,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #f43f5e, #ec4899);">4</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Jenis Foto</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="wedding.step4-title">Jenis Foto</h3>
                                     </div>
                                     <div id="wedding-type-options" class="grid grid-cols-2 gap-3">
                                         <button type="button" data-value="wedding" class="option-btn-wedding selected">
@@ -16965,7 +16965,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #f43f5e, #ec4899);">5</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Rasio Foto</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="wedding.step5-title">Rasio Foto</h3>
                                     </div>
                                     <div id="wedding-ratio-options" class="grid grid-cols-2 gap-3">
                                         <button type="button" data-value="9:16" class="option-btn-wedding selected">
@@ -16987,17 +16987,17 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #f43f5e, #ec4899);">6</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Jumlah Foto</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="maternity.step5-title">Jumlah Foto</h3>
                                     </div>
                                     <div id="wedding-count-selection" class="grid grid-cols-3 gap-3">
                                         <button type="button" data-count="4" class="wedding-count-btn bg-gray-50 hover:bg-gray-100 text-gray-700 px-3 py-2.5 rounded-lg border-2 border-gray-300 transition-all text-sm font-medium">
-                                            4 Foto
+                                            <span data-i18n="kids.count-4">4 Foto</span>
                                         </button>
                                         <button type="button" data-count="7" class="wedding-count-btn wedding-count-selected bg-gradient-to-r from-rose-500 to-pink-500 text-white px-3 py-2.5 rounded-lg border-2 border-rose-500 transition-all text-sm font-bold shadow-md">
-                                            7 Foto
+                                            <span data-i18n="kids.count-7">7 Foto</span>
                                         </button>
                                         <button type="button" data-count="10" class="wedding-count-btn bg-gray-50 hover:bg-gray-100 text-gray-700 px-3 py-2.5 rounded-lg border-2 border-gray-300 transition-all text-sm font-medium">
-                                            10 Foto
+                                            <span data-i18n="kids.count-10">10 Foto</span>
                                         </button>
                                     </div>
                                 </div>
@@ -17005,7 +17005,7 @@
                                 <!-- Generate Button -->
                                 <button id="wedding-generate-btn" class="w-full py-4 px-6 rounded-xl font-bold text-lg text-white shadow-lg transition-all duration-300 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100" style="background: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);" disabled>
                                     <i class="fas fa-wand-magic-sparkles mr-2"></i>
-                                    <span>Generate <span id="wedding-count-text">7</span> Foto Wedding</span>
+                                    <span><span data-i18n="kids.gen-prefix">Generate</span> <span id="wedding-count-text">7</span> <span data-i18n="wedding.gen-suffix">Foto Wedding</span></span>
                                 </button>
                             </div>
                         </div>
@@ -17037,16 +17037,16 @@
                             <div class="w-24 h-24 rounded-full flex items-center justify-center mb-6" style="background: linear-gradient(135deg, #fef2f2 0%, #fce7f3 100%);">
                                 <i class="fas fa-images text-5xl" style="color: #f43f5e;"></i>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Belum Ada Foto</h3>
-                            <p class="text-gray-500 max-w-md">Upload foto pria dan wanita, lalu klik Generate untuk membuat foto wedding profesional</p>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2" data-i18n="kids.empty-title">Belum Ada Foto</h3>
+                            <p class="text-gray-500 max-w-md" data-i18n="wedding.empty-desc">Upload foto pria dan wanita, lalu klik Generate untuk membuat foto wedding profesional</p>
                         </div>
 
                         <!-- Results Header -->
                         <div id="wedding-results-header" class="hidden flex items-center justify-between mb-6 bg-gradient-to-r from-rose-50 to-pink-50 p-4 rounded-xl border-2 border-rose-200">
                             <h3 class="text-xl font-bold text-transparent bg-clip-text" style="background: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);">
-                                💕 <span id="wedding-results-count">7</span> Foto Wedding Generated!
+                                💕 <span id="wedding-results-count">7</span><span data-i18n="wedding.results-suffix"> Foto Wedding Generated!</span>
                             </h3>
-                            <button id="wedding-download-all-btn" class="bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white px-6 py-2 rounded-full font-semibold shadow-lg transition transform hover:scale-105 flex items-center gap-2">
+                            <button id="wedding-download-all-btn" data-i18n="kids.download-all" class="bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white px-6 py-2 rounded-full font-semibold shadow-lg transition transform hover:scale-105 flex items-center gap-2">
                                 <i class="fas fa-download"></i>
                                 Download All
                             </button>
@@ -17076,12 +17076,12 @@
                             <span class="text-xs font-semibold px-3 py-1 rounded-full mt-1" style="background: linear-gradient(135deg, #d97706 0%, #dc2626 100%); color: white;">✨ Event Organizer PRO</span>
                         </div>
                     </div>
-                    <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    <p class="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed" data-i18n="wdesign.desc">
                         Generator desain pernikahan profesional untuk event organizer. Upload sketsa atau background, pilih elemen dekorasi, dan dapatkan visualisasi 3D realistis instant!
                     </p>
                     <div class="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-xl border-2 shadow-sm" style="border-color: #d97706; background: linear-gradient(135deg, #fef3c7 0%, #fffbeb 100%);">
                         <i class="fas fa-wand-magic-sparkles" style="color: #d97706;"></i>
-                        <span class="text-sm font-medium" style="color: #92400e;">Visualisasi profesional untuk presentasi klien</span>
+                        <span class="text-sm font-medium" style="color: #92400e;" data-i18n="wdesign.badge">Visualisasi profesional untuk presentasi klien</span>
                     </div>
                 </header>
 
@@ -17096,19 +17096,19 @@
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #d97706 0%, #dc2626 100%);">
                                             1
                                         </div>
-                                        <h3 class="text-lg font-bold text-gray-800">Upload Background / Sketsa</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="wdesign.step1-title">Upload Background / Sketsa</h3>
                                     </div>
                                     <label for="wedding-design-upload" class="upload-box-wedding block cursor-pointer text-center py-6 px-4 border-2 border-dashed rounded-xl transition-all duration-300 hover:scale-[1.02]" style="border-color: #d97706; background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);">
                                         <div class="flex flex-col items-center gap-2">
                                             <i class="fas fa-cloud-upload-alt text-4xl" style="color: #d97706;"></i>
-                                            <span class="font-semibold" style="color: #92400e;">Klik untuk upload</span>
-                                            <span class="text-xs text-gray-500">Sketsa ruangan atau background venue</span>
+                                            <span class="font-semibold" style="color: #92400e;" data-i18n="wdesign.upload-click">Klik untuk upload</span>
+                                            <span class="text-xs text-gray-500" data-i18n="wdesign.upload-hint">Sketsa ruangan atau background venue</span>
                                         </div>
                                         <input type="file" id="wedding-design-upload" class="hidden" accept="image/png, image/jpeg, image/webp, image/heic, .heic">
                                     </label>
                                     <div id="wedding-design-preview-container" class="mt-3 hidden">
                                         <img id="wedding-design-image-preview" src="" alt="Preview" class="w-full rounded-lg shadow-lg max-h-48 object-cover border-2" style="border-color: #d97706;">
-                                        <button id="wedding-design-remove-preview" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg transition-colors">
+                                        <button id="wedding-design-remove-preview" data-i18n="unboxing.remove-photo" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg transition-colors">
                                             <i class="fas fa-times mr-1"></i> Hapus Foto
                                         </button>
                                     </div>
@@ -17120,7 +17120,7 @@
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #d97706 0%, #dc2626 100%);">
                                             2
                                         </div>
-                                        <h3 class="text-lg font-bold text-gray-800">Tema Pernikahan</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="wdesign.step2-title">Tema Pernikahan</h3>
                                     </div>
                                     <div id="wedding-design-theme-options" class="grid grid-cols-2 gap-3">
                                         <button type="button" data-value="javanese-traditional" class="option-btn-wedding selected">
@@ -17156,7 +17156,7 @@
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #d97706 0%, #dc2626 100%);">
                                             3
                                         </div>
-                                        <h3 class="text-lg font-bold text-gray-800">Bingkai Dekorasi</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="wdesign.step3-title">Bingkai Dekorasi</h3>
                                     </div>
                                     <div id="wedding-design-frame-options" class="grid grid-cols-2 gap-3">
                                         <button type="button" data-value="frame-top" class="option-btn-wedding selected">
@@ -17186,7 +17186,7 @@
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #d97706 0%, #dc2626 100%);">
                                             4
                                         </div>
-                                        <h3 class="text-lg font-bold text-gray-800">Lampu Hias</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="wdesign.step4-title">Lampu Hias</h3>
                                     </div>
                                     <div id="wedding-design-light-options" class="grid grid-cols-2 gap-3">
                                         <button type="button" data-value="chandelier-crystal" class="option-btn-wedding selected">
@@ -17216,7 +17216,7 @@
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #d97706 0%, #dc2626 100%);">
                                             5
                                         </div>
-                                        <h3 class="text-lg font-bold text-gray-800">Kursi & Sofa Pelaminan</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="wdesign.step5-title">Kursi & Sofa Pelaminan</h3>
                                     </div>
                                     <div id="wedding-design-furniture-options" class="grid grid-cols-2 gap-3">
                                         <button type="button" data-value="sofa-pengantin-mewah" class="option-btn-wedding selected">
@@ -17246,7 +17246,7 @@
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #d97706 0%, #dc2626 100%);">
                                             6
                                         </div>
-                                        <h3 class="text-lg font-bold text-gray-800">Style Pelaminan</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="wdesign.step6-title">Style Pelaminan</h3>
                                     </div>
                                     <div id="wedding-design-pelaminan-options" class="grid grid-cols-2 gap-3">
                                         <button type="button" data-value="pelaminan-gebyok" class="option-btn-wedding selected">
@@ -17276,7 +17276,7 @@
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #d97706 0%, #dc2626 100%);">
                                             7
                                         </div>
-                                        <h3 class="text-lg font-bold text-gray-800">Warna Tema</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="wdesign.step7-title">Warna Tema</h3>
                                     </div>
                                     <div id="wedding-design-color-options" class="grid grid-cols-2 gap-3">
                                         <button type="button" data-value="gold-maroon" class="option-btn-wedding selected">
@@ -17306,7 +17306,7 @@
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #d97706 0%, #dc2626 100%);">
                                             8
                                         </div>
-                                        <h3 class="text-lg font-bold text-gray-800">Pencahayaan</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="wdesign.step8-title">Pencahayaan</h3>
                                     </div>
                                     <div id="wedding-design-lighting-options" class="grid grid-cols-2 gap-3">
                                         <button type="button" data-value="warm-romantic" class="option-btn-wedding selected">
@@ -17330,7 +17330,7 @@
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #d97706 0%, #dc2626 100%);">
                                             9
                                         </div>
-                                        <h3 class="text-lg font-bold text-gray-800">Rasio Gambar</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="wdesign.step9-title">Rasio Gambar</h3>
                                     </div>
                                     <div id="wedding-design-ratio-options" class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                                         <button type="button" data-value="1:1" class="option-btn-wedding">
@@ -17360,18 +17360,18 @@
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #d97706 0%, #dc2626 100%);">
                                             10
                                         </div>
-                                        <h3 class="text-lg font-bold text-gray-800">Jumlah Variasi Desain</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="wdesign.step10-title">Jumlah Variasi Desain</h3>
                                     </div>
                                     <div id="wedding-design-count-selection" class="grid grid-cols-3 gap-3">
                                         <button type="button" data-count="4" class="wedding-count-btn bg-gray-50 hover:bg-gray-100 text-gray-700 px-3 py-2.5 rounded-lg border-2 border-gray-300 transition-all text-sm font-medium">
-                                            4 Desain
-                                        </button>
+                                        <span data-i18n="wdesign.count-4">4 Desain</span>
+                                    </button>
                                         <button type="button" data-count="6" class="wedding-count-btn wedding-count-selected bg-gradient-to-r from-amber-500 to-red-600 text-white px-3 py-2.5 rounded-lg border-2 border-amber-500 transition-all text-sm font-bold shadow-md">
-                                            6 Desain
-                                        </button>
+                                        <span data-i18n="wdesign.count-6">6 Desain</span>
+                                    </button>
                                         <button type="button" data-count="8" class="wedding-count-btn bg-gray-50 hover:bg-gray-100 text-gray-700 px-3 py-2.5 rounded-lg border-2 border-gray-300 transition-all text-sm font-medium">
-                                            8 Desain
-                                        </button>
+                                        <span data-i18n="wdesign.count-8">8 Desain</span>
+                                    </button>
                                     </div>
                                 </div>
 
@@ -17379,7 +17379,7 @@
                                 <button id="wedding-design-generate-btn" class="w-full text-white font-bold py-4 px-8 rounded-2xl flex items-center justify-center text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none relative overflow-hidden group" style="background: linear-gradient(135deg, #d97706 0%, #dc2626 100%);" disabled>
                                     <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                                     <i class="fas fa-wand-magic-sparkles mr-3 text-xl relative z-10"></i>
-                                    <span class="relative z-10">Generate <span id="wedding-design-count-text">6</span> Desain</span>
+                                    <span class="relative z-10"><span data-i18n="kids.gen-prefix">Generate</span> <span id="wedding-design-count-text">6</span> <span data-i18n="wdesign.gen-suffix">Desain</span></span>
                                 </button>
 
                             </div>
@@ -17396,7 +17396,7 @@
                                         <div class="animate-spin rounded-full h-20 w-20 border-b-4 border-t-4" style="border-color: #d97706;"></div>
                                         <i class="fas fa-mosque absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl" style="color: #d97706;"></i>
                                     </div>
-                                    <p class="text-xl font-semibold mb-2" style="color: #92400e;">Sedang membuat desain pernikahan...</p>
+                                    <p class="text-xl font-semibold mb-2" style="color: #92400e;" data-i18n="wdesign.loading-title">Sedang membuat desain pernikahan...</p>
                                     <p id="wedding-design-loading-text" class="text-gray-600 text-center">Memproses elemen dekorasi...</p>
 
                                     <!-- Progress Bar -->
@@ -17416,7 +17416,7 @@
                                 <div class="flex items-start gap-3">
                                     <i class="fas fa-exclamation-circle text-red-500 text-2xl mt-1"></i>
                                     <div class="flex-1">
-                                        <h4 class="font-bold text-red-700 mb-1">Terjadi Kesalahan</h4>
+                                        <h4 class="font-bold text-red-700 mb-1" data-i18n="wdesign.error-title">Terjadi Kesalahan</h4>
                                         <p class="text-red-600 text-sm"></p>
                                     </div>
                                 </div>
@@ -17427,7 +17427,7 @@
                         <div id="wedding-design-results-header" class="hidden flex items-center justify-between mb-4 bg-gradient-to-r from-amber-50 to-red-50 p-4 rounded-xl border-2" style="border-color: #d97706;">
                             <h3 class="text-2xl font-bold" style="color: #92400e;">
                                 <i class="fas fa-check-circle mr-2" style="color: #d97706;"></i>
-                                <span id="wedding-design-results-count">6</span> Desain Pernikahan
+                                <span id="wedding-design-results-count">6</span><span data-i18n="wdesign.results-suffix"> Desain Pernikahan</span>
                             </h3>
                             <button id="wedding-design-download-all-btn" class="bg-gradient-to-r from-amber-600 to-red-600 hover:from-amber-700 hover:to-red-700 text-white px-6 py-2 rounded-full font-semibold shadow-lg transition transform hover:scale-105 flex items-center gap-2">
                                 <i class="fas fa-download"></i>
@@ -17443,22 +17443,22 @@
                         <!-- Empty State -->
                         <div id="wedding-design-empty-state" class="bg-white rounded-2xl shadow-lg p-12 text-center border-2 border-dashed" style="border-color: #d97706;">
                             <i class="fas fa-mosque text-6xl mb-4" style="color: #d97706;"></i>
-                            <h3 class="text-2xl font-bold mb-3" style="color: #92400e;">Siap Membuat Desain Pernikahan</h3>
+                            <h3 class="text-2xl font-bold mb-3" style="color: #92400e;" data-i18n="wdesign.empty-title">Siap Membuat Desain Pernikahan</h3>
                             <p class="text-gray-600 mb-6 max-w-md mx-auto">
                                 Upload sketsa atau background venue, pilih tema dan elemen dekorasi, lalu klik generate untuk membuat visualisasi 3D profesional!
                             </p>
                             <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle" style="color: #d97706;"></i>
-                                    <span>10 Elemen Kustomisasi</span>
+                                    <span data-i18n="wdesign.feature-1">10 Elemen Kustomisasi</span>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle" style="color: #d97706;"></i>
-                                    <span>Tema Indonesia</span>
+                                    <span data-i18n="wdesign.feature-2">Tema Indonesia</span>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle" style="color: #d97706;"></i>
-                                    <span>Hasil 3D Realistis</span>
+                                    <span data-i18n="wdesign.feature-3">Hasil 3D Realistis</span>
                                 </div>
                             </div>
                         </div>
@@ -70131,6 +70131,62 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'maternity.gen-suffix':'Maternity Photos',
             'maternity.gen-tip':'Process takes 30-60 seconds',
             'maternity.results-suffix':' Maternity Photos Created!',
+            'kids.desc':'Create professional career photos of your child in various dream professions',
+            'kids.step1-title':'Upload Child\'s Photo',
+            'kids.upload-click':'👦 Click to upload child\'s photo',
+            'kids.upload-hint':'Format: JPG, PNG, HEIC',
+            'kids.step2-title':'Child\'s Age',
+            'kids.step3-title':'Career Theme',
+            'kids.theme-placeholder':'Example: doctor, pilot, chef, astronaut...',
+            'kids.theme-tip':'Leave blank for automatic random career theme',
+            'kids.count-4':'4 Photos',
+            'kids.count-7':'7 Photos',
+            'kids.count-10':'10 Photos',
+            'kids.gen-prefix':'Generate',
+            'kids.gen-suffix':'Career Photos',
+            'kids.empty-title':'No Photos Yet',
+            'kids.empty-desc':'Upload a photo of your child, then click Generate to create professional career photos',
+            'kids.results-suffix':' Career Photos Generated!',
+            'kids.download-all':'Download All',
+            'wedding.desc':'Create your dream wedding moments with professional AI Photography',
+            'wedding.step1-title':'Upload Male Photo',
+            'wedding.male-click':'🤵 Click to upload male photo',
+            'wedding.step2-title':'Upload Female Photo',
+            'wedding.female-click':'👰 Click to upload female photo',
+            'wedding.step3-title':'Photo Theme',
+            'wedding.theme-placeholder':'Example: at the beach during sunset, fairytale castle ballroom, vintage 1920s style...',
+            'wedding.theme-tip':'Leave blank for automatic random theme',
+            'wedding.step4-title':'Photo Type',
+            'wedding.step5-title':'Photo Ratio',
+            'wedding.gen-suffix':'Wedding Photos',
+            'wedding.empty-desc':'Upload male and female photos, then click Generate to create professional wedding photos',
+            'wedding.results-suffix':' Wedding Photos Generated!',
+            'wdesign.desc':'Professional wedding design generator for event organizers. Upload a sketch or background, choose decorative elements, and get instant realistic 3D visualization!',
+            'wdesign.badge':'Professional visualization for client presentations',
+            'wdesign.step1-title':'Upload Background / Sketch',
+            'wdesign.upload-click':'Click to upload',
+            'wdesign.upload-hint':'Room sketch or venue background',
+            'wdesign.step2-title':'Wedding Theme',
+            'wdesign.step3-title':'Decoration Frame',
+            'wdesign.step4-title':'Decorative Lights',
+            'wdesign.step5-title':'Wedding Chairs & Sofa',
+            'wdesign.step6-title':'Wedding Stage Style',
+            'wdesign.step7-title':'Theme Colors',
+            'wdesign.step8-title':'Lighting',
+            'wdesign.step9-title':'Aspect Ratio',
+            'wdesign.step10-title':'Number of Design Variations',
+            'wdesign.count-4':'4 Designs',
+            'wdesign.count-6':'6 Designs',
+            'wdesign.count-8':'8 Designs',
+            'wdesign.gen-suffix':'Designs',
+            'wdesign.loading-title':'Creating wedding design...',
+            'wdesign.results-suffix':' Wedding Designs',
+            'wdesign.error-title':'An Error Occurred',
+            'wdesign.empty-title':'Ready to Create Wedding Designs',
+            'wdesign.empty-desc':'Upload a sketch or venue background, choose a theme and decorative elements, then click generate to create professional 3D visualization!',
+            'wdesign.feature-1':'10 Customization Elements',
+            'wdesign.feature-2':'Indonesian Themes',
+            'wdesign.feature-3':'Realistic 3D Results',
             },
             id: {
                 nav: { 'apikey-settings':'API Key','beranda':'Beranda','buat-model':'Membuat Model','mockup-studio':'Mockup Studio','pov-tangan':'POV Tangan','touring':'Foto Touring','mirror-selfie':'POV Mirror Selfie','walking-pad':'Walking Pad','affiliate':'Foto Produk Affiliate','affiliate-islami':'Affiliate Agama','virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion','food-selfie':'Food Selfie','product-review':'Product Review','skincare-review':'Skincare Review','food-review':'Food Review','product-ads':'Iklan Produk','professional-headshot':'Professional Headshot','unboxing-scene':'Unboxing Scene','before-after':'Before/After','product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card','size-guide':'Size Guide','video-frames':'Video Frames','vehicle-modifier':'Vehicle Modifier','deskripsi-produk':'Deskripsi Produk SEO','ide-konten-tiktok':'Ide Konten TikTok','script-story-iklan':'Script Story Iklan','rencana-bisnis':'Rencana Bisnis & SWOT','hr-assistant':'HR Assistant','konten-marketing':'Konten Marketing','riset-pasar':'Riset Pasar & Ide','financial-forecast':'Simulasi Anggaran','family':'Foto Keluarga','new-born':'New Born Studio','maternity':'Foto Maternity','profesi-anak':'Foto Profesi Anak','wedding':'Wedding','wedding-design':'Desain Pernikahan','umrah-haji':'Foto Umrah/Haji','passport-photo':'Pas Foto Warna','graduation-photo':'Foto Wisuda','photo-booth':'Photo Booth','birthday-photo':'Foto Ulang Tahun','kartu-lebaran':'Kartu Lebaran','desain-rumah':'Desain Rumah','desain-kamar':'Desain Kamar','sketsa-gambar':'Sketsa Gambar','bikin-carousel':'Bikin Carousel','miniature':'Miniature Me','karikatur':'Karikatur Generator','photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor','tattoo-editor':'Tattoo Editor','halu':'Halu Idol','sticker':'Sticker Tempel','hair-generator':'Hair Generator','expression-changer':'Expression Changer','face-swap':'Face Swap','bg-remover':'Ubah Background','photo-extender':'Perluas Foto','story-board':'Story Board','twibon':'Twibon Frame','story-update':'Story Update','image-analyzer':'Image to Prompt','packaging-design':'Packaging Design','photo-angle':'Photo Angle','style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'Foto Sampul IG & Tiktok','photo-restoration':'Restorasi Foto','object-remover':'Hapus Object','logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit Generator','content-calendar':'Content Calendar Planner','ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI','caption-generator':'AI Caption Generator','product-comparison':'Product Comparison','mascot-generator':'Mascot Generator','poster-generator':'Poster Generator','banner-generator':'Banner Generator','sketch-catalog':'Sketsa ke Katalog','fotogenic':'Fotogenic','timelapse-renovasi':'Timelapse Renovasi','veo':'Affiliate Go Pro','opal':'Opal Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer' },
@@ -70741,6 +70797,62 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'maternity.gen-suffix':'Foto Maternity',
             'maternity.gen-tip':'Proses membutuhkan waktu 30-60 detik',
             'maternity.results-suffix':' Foto Maternity Berhasil Dibuat!',
+            'kids.desc':'Ciptakan foto anak dengan berbagai profesi impian secara profesional dan natural',
+            'kids.step1-title':'Upload Foto Anak',
+            'kids.upload-click':'👦 Klik untuk upload foto anak',
+            'kids.upload-hint':'Format: JPG, PNG, HEIC',
+            'kids.step2-title':'Umur Anak',
+            'kids.step3-title':'Tema Profesi',
+            'kids.theme-placeholder':'Contoh: dokter, pilot, chef, astronot...',
+            'kids.theme-tip':'Kosongkan untuk tema profesi random otomatis',
+            'kids.count-4':'4 Foto',
+            'kids.count-7':'7 Foto',
+            'kids.count-10':'10 Foto',
+            'kids.gen-prefix':'Generate',
+            'kids.gen-suffix':'Foto Profesi',
+            'kids.empty-title':'Belum Ada Foto',
+            'kids.empty-desc':'Upload foto anak, lalu klik Generate untuk membuat foto profesi profesional',
+            'kids.results-suffix':' Foto Profesi Generated!',
+            'kids.download-all':'Download All',
+            'wedding.desc':'Ciptakan momen pernikahan impian dengan AI Photography berkualitas profesional',
+            'wedding.step1-title':'Upload Foto Pria',
+            'wedding.male-click':'🤵 Klik untuk upload foto pria',
+            'wedding.step2-title':'Upload Foto Wanita',
+            'wedding.female-click':'👰 Klik untuk upload foto wanita',
+            'wedding.step3-title':'Tema Foto',
+            'wedding.theme-placeholder':'Contoh: di pantai saat matahari terbenam, fairytale castle ballroom, vintage 1920s style...',
+            'wedding.theme-tip':'Kosongkan untuk tema random otomatis',
+            'wedding.step4-title':'Jenis Foto',
+            'wedding.step5-title':'Rasio Foto',
+            'wedding.gen-suffix':'Foto Wedding',
+            'wedding.empty-desc':'Upload foto pria dan wanita, lalu klik Generate untuk membuat foto wedding profesional',
+            'wedding.results-suffix':' Foto Wedding Generated!',
+            'wdesign.desc':'Generator desain pernikahan profesional untuk event organizer. Upload sketsa atau background, pilih elemen dekorasi, dan dapatkan visualisasi 3D realistis instant!',
+            'wdesign.badge':'Visualisasi profesional untuk presentasi klien',
+            'wdesign.step1-title':'Upload Background / Sketsa',
+            'wdesign.upload-click':'Klik untuk upload',
+            'wdesign.upload-hint':'Sketsa ruangan atau background venue',
+            'wdesign.step2-title':'Tema Pernikahan',
+            'wdesign.step3-title':'Bingkai Dekorasi',
+            'wdesign.step4-title':'Lampu Hias',
+            'wdesign.step5-title':'Kursi & Sofa Pelaminan',
+            'wdesign.step6-title':'Style Pelaminan',
+            'wdesign.step7-title':'Warna Tema',
+            'wdesign.step8-title':'Pencahayaan',
+            'wdesign.step9-title':'Rasio Gambar',
+            'wdesign.step10-title':'Jumlah Variasi Desain',
+            'wdesign.count-4':'4 Desain',
+            'wdesign.count-6':'6 Desain',
+            'wdesign.count-8':'8 Desain',
+            'wdesign.gen-suffix':'Desain',
+            'wdesign.loading-title':'Sedang membuat desain pernikahan...',
+            'wdesign.results-suffix':' Desain Pernikahan',
+            'wdesign.error-title':'Terjadi Kesalahan',
+            'wdesign.empty-title':'Siap Membuat Desain Pernikahan',
+            'wdesign.empty-desc':'Upload sketsa atau background venue, pilih tema dan elemen dekorasi, lalu klik generate untuk membuat visualisasi 3D profesional!',
+            'wdesign.feature-1':'10 Elemen Kustomisasi',
+            'wdesign.feature-2':'Tema Indonesia',
+            'wdesign.feature-3':'Hasil 3D Realistis',
             }
         };
 
