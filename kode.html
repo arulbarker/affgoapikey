@@ -12620,7 +12620,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md bg-gradient-to-br from-indigo-600 to-purple-600">5</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Jumlah Variasi</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="touring.count-title">Jumlah Variasi</h3>
                                     </div>
                                     <div id="food-selfie-count-selection" class="grid grid-cols-3 gap-3">
                                         <button type="button" data-count="4" class="count-btn bg-gray-50 hover:bg-gray-100 text-gray-700 px-3 py-2.5 rounded-lg border-2 border-gray-300 transition-all text-sm font-medium">
@@ -16667,7 +16667,7 @@
                                 <!-- Add Photo Button -->
                                 <button type="button" id="maternity-add-photo-btn" class="w-full py-3 px-4 rounded-xl border-2 border-dashed font-semibold text-sm transition-all duration-300 active:scale-95 shadow-md hover:shadow-lg flex items-center justify-center gap-2 touch-manipulation" style="border-color: #F43F5E; color: #E11D48; background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 100%);">
                                     <i class="fas fa-plus"></i>
-                                    <span>Tambah Foto</span>
+                                    <span data-i18n="touring.add-photo">Tambah Foto</span>
                                 </button>
                             </div>
                         </div>
@@ -17431,7 +17431,7 @@
                             </h3>
                             <button id="wedding-design-download-all-btn" class="bg-gradient-to-r from-amber-600 to-red-600 hover:from-amber-700 hover:to-red-700 text-white px-6 py-2 rounded-full font-semibold shadow-lg transition transform hover:scale-105 flex items-center gap-2">
                                 <i class="fas fa-download"></i>
-                                <span class="hidden sm:inline">Download Semua</span>
+                                <span class="hidden sm:inline" data-i18n="walking.download-all">Download Semua</span>
                             </button>
                         </div>
 
@@ -23029,12 +23029,12 @@
                                 <div class="mt-4">
                                     <p class="text-sm font-semibold text-gray-700 mb-2">
                                         <i class="fas fa-image mr-1" style="color: #f97316;"></i>
-                                        Custom Background <span class="text-xs text-gray-500">(Opsional)</span>
+                                        Custom Background <span class="text-xs text-gray-500" data-i18n="touring.optional-suffix">(Opsional)</span>
                                     </p>
                                     <div id="touring-bg-upload-area" class="upload-bg-custom" onclick="document.getElementById('touring-bg-input').click();">
                                         <i class="fas fa-mountain text-4xl mb-2" style="color: #f97316;"></i>
-                                        <p class="text-sm font-medium text-gray-700">Upload Background Sendiri</p>
-                                        <p class="text-xs text-gray-500 mt-1">Atau gunakan pilihan di atas</p>
+                                        <p class="text-sm font-medium text-gray-700" data-i18n="touring.upload-bg">Upload Background Sendiri</p>
+                                        <p class="text-xs text-gray-500 mt-1" data-i18n="touring.or-use">Atau gunakan pilihan di atas</p>
                                     </div>
                                     <input type="file" id="touring-bg-input" class="hidden" accept="image/png, image/jpeg, image/webp, image/heic, .heic">
                                     <div id="touring-bg-preview-container" class="hidden mt-3 relative">
@@ -23148,13 +23148,13 @@
 
                                 <div id="touring-count-selection" class="grid grid-cols-3 gap-3">
                                     <button type="button" data-count="4" class="option-btn-touring">
-                                        4 Foto
+                                        <span data-i18n="touring.count-4">4 Foto</span>
                                     </button>
                                     <button type="button" data-count="6" class="option-btn-touring selected">
-                                        6 Foto
+                                        <span data-i18n="touring.count-6">6 Foto</span>
                                     </button>
                                     <button type="button" data-count="8" class="option-btn-touring">
-                                        8 Foto
+                                        <span data-i18n="touring.count-8">8 Foto</span>
                                     </button>
                                 </div>
                             </div>
@@ -23162,7 +23162,7 @@
                             <!-- Generate Button -->
                             <button type="button" id="touring-generate-btn" class="btn-generate-touring w-full" disabled>
                                 <i class="fas fa-wand-magic-sparkles mr-2"></i>
-                                <span>Generate <span id="touring-count-text">6</span> Foto Touring</span>
+                                <span><span data-i18n="touring.gen-prefix">Generate</span> <span id="touring-count-text">6</span> <span data-i18n="touring.gen-suffix">Foto Touring</span></span>
                             </button>
                             <p class="text-xs text-center text-gray-500" data-i18n="touring.time-note">⏱️ Proses ~30-40 detik per foto</p>
                         </div>
@@ -23175,8 +23175,8 @@
                         <!-- Placeholder -->
                         <div id="touring-placeholder" class="flex flex-col items-center justify-center h-96">
                             <i class="fas fa-motorcycle text-6xl mb-4" style="color: #f97316;"></i>
-                            <p class="text-xl font-bold text-gray-800 mb-2">Foto Touring Profesional</p>
-                            <p class="text-gray-600 text-center max-w-md">
+                            <p class="text-xl font-bold text-gray-800 mb-2" data-i18n="touring.empty-title">Foto Touring Profesional</p>
+                            <p class="text-gray-600 text-center max-w-md" data-i18n="touring.empty-desc">
                                 Upload foto model + motor + helm + aksesoris, pilih background jalanan dan tema suasana untuk mendapatkan foto touring yang epic! 🏍️✨
                             </p>
                         </div>
@@ -23185,7 +23185,7 @@
                         <div id="touring-loading" class="hidden">
                             <div class="flex flex-col items-center justify-center py-12">
                                 <div class="animate-spin rounded-full h-16 w-16 border-b-4 mb-4" style="border-color: #f97316;"></div>
-                                <p class="text-lg font-semibold text-gray-700">Membuat foto touring...</p>
+                                <p class="text-lg font-semibold text-gray-700" data-i18n="touring.loading-text">Membuat foto touring...</p>
                                 <p class="text-sm text-gray-500 mt-2" id="touring-loading-text">Preparing your epic shots...</p>
 
                                 <!-- Progress Bar -->
@@ -23249,7 +23249,7 @@
                             <div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #06b6d4, #0284c1);">1</div>
-                                    <h3 class="text-lg font-bold text-gray-800">Upload Foto Produk</h3>
+                                    <h3 class="text-lg font-bold text-gray-800" data-i18n="mirror.upload-product-title">Upload Foto Produk</h3>
                                 </div>
                                 <label for="mirror-product-input" id="mirror-product-upload-box" class="upload-box-mirror w-full h-40 rounded-xl flex items-center justify-center cursor-pointer relative overflow-hidden border-2 border-dashed border-gray-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                                     <div id="mirror-product-placeholder" class="text-center text-gray-500 p-4">
@@ -23264,8 +23264,8 @@
                                 <div id="mirror-product-preview-container" class="mt-3 hidden lg:hidden">
                                     <img id="mirror-product-preview" src="" alt="Preview" class="w-full rounded-lg shadow-lg max-h-48 object-cover">
                                     <button id="mirror-remove-product-preview" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg">
-                                        <i class="fas fa-times mr-1"></i> Hapus Foto
-                                    </button>
+                                    <i class="fas fa-times mr-1"></i> <span data-i18n="mirror.delete-photo">Hapus Foto</span>
+                                </button>
                                 </div>
                             </div>
 
@@ -23273,7 +23273,7 @@
                             <div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #06b6d4, #0284c1);">2</div>
-                                    <h3 class="text-lg font-bold text-gray-800">Upload Foto Model <span class="text-sm text-gray-500">(Opsional)</span></h3>
+                                    <h3 class="text-lg font-bold text-gray-800"><span data-i18n="mirror.upload-model-title">Upload Foto Model</span> <span class="text-sm text-gray-500" data-i18n="mirror.model-optional-label">(Opsional)</span></h3>
                                 </div>
                                 <label for="mirror-model-input" id="mirror-model-upload-box" class="upload-box-mirror w-full h-40 rounded-xl flex items-center justify-center cursor-pointer relative overflow-hidden border-2 border-dashed border-gray-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                                     <div id="mirror-model-placeholder" class="text-center text-gray-500 p-4">
@@ -23288,8 +23288,8 @@
                                 <div id="mirror-model-preview-container" class="mt-3 hidden lg:hidden">
                                     <img id="mirror-model-preview" src="" alt="Preview" class="w-full rounded-lg shadow-lg max-h-48 object-cover">
                                     <button id="mirror-remove-model-preview" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg">
-                                        <i class="fas fa-times mr-1"></i> Hapus Foto Model
-                                    </button>
+                                    <i class="fas fa-times mr-1"></i> <span data-i18n="mirror.delete-model">Hapus Foto Model</span>
+                                </button>
                                 </div>
                             </div>
 
@@ -23405,22 +23405,22 @@
                                 </div>
                                 <div id="mirror-hand-options" class="grid grid-cols-2 gap-3">
                                     <button type="button" data-value="holding-phone" class="option-btn-mirror selected">
-                                        <i class="fas fa-hand-holding mr-1"></i>Pegang HP
+                                        <i class="fas fa-hand-holding mr-1"></i><span data-i18n="mirror.hand-hold-phone">Pegang HP</span>
                                     </button>
                                     <button type="button" data-value="one-hand-hip" class="option-btn-mirror">
-                                        <i class="fas fa-hand-rock mr-1"></i>Tangan di Pinggang
+                                        <i class="fas fa-hand-rock mr-1"></i><span data-i18n="mirror.hand-hips">Tangan di Pinggang</span>
                                     </button>
                                     <button type="button" data-value="peace-sign" class="option-btn-mirror">
                                         <i class="fas fa-hand-peace mr-1"></i>Peace Sign
                                     </button>
                                     <button type="button" data-value="holding-product" class="option-btn-mirror">
-                                        <i class="fas fa-box mr-1"></i>Pegang Produk
+                                        <i class="fas fa-box mr-1"></i><span data-i18n="mirror.hand-hold-product">Pegang Produk</span>
                                     </button>
                                     <button type="button" data-value="natural" class="option-btn-mirror">
-                                        <i class="fas fa-user mr-1"></i>Natural/Santai
+                                        <i class="fas fa-user mr-1"></i><span data-i18n="mirror.hand-natural">Natural/Santai</span>
                                     </button>
                                     <button type="button" data-value="both-hands-up" class="option-btn-mirror">
-                                        <i class="fas fa-hands mr-1"></i>Kedua Tangan Naik
+                                        <i class="fas fa-hands mr-1"></i><span data-i18n="mirror.hand-both-up">Kedua Tangan Naik</span>
                                     </button>
                                 </div>
                             </div>
@@ -23457,7 +23457,7 @@
                             <div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #06b6d4, #0284c1);">8</div>
-                                    <h3 class="text-lg font-bold text-gray-800">Rasio Foto</h3>
+                                    <h3 class="text-lg font-bold text-gray-800"><span data-i18n="mirror.aspect-title">Rasio Foto</span></h3>
                                 </div>
                                 <div id="mirror-ratio-options" class="grid grid-cols-3 gap-3">
                                     <button type="button" data-value="9:16" class="option-btn-mirror selected">
@@ -23482,17 +23482,17 @@
                             <div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #06b6d4, #0284c1);">9</div>
-                                    <h3 class="text-lg font-bold text-gray-800">Jumlah Foto</h3>
+                                    <h3 class="text-lg font-bold text-gray-800"><span data-i18n="mirror.count-title">Jumlah Foto</span></h3>
                                 </div>
                                 <div id="mirror-count-selection" class="grid grid-cols-3 gap-3">
                                     <button type="button" data-count="4" class="mirror-count-btn">
-                                        4 Foto
+                                        <span data-i18n="mirror.count-4">4 Foto</span>
                                     </button>
                                     <button type="button" data-count="6" class="mirror-count-btn mirror-count-selected">
-                                        6 Foto
+                                        <span data-i18n="mirror.count-6">6 Foto</span>
                                     </button>
                                     <button type="button" data-count="8" class="mirror-count-btn">
-                                        8 Foto
+                                        <span data-i18n="mirror.count-8">8 Foto</span>
                                     </button>
                                 </div>
                             </div>
@@ -23549,8 +23549,8 @@
                             <div class="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4" style="background: linear-gradient(135deg, #cffafe 0%, #a5f3fc 100%);">
                                 <i class="fas fa-mobile-alt text-5xl" style="color: #06b6d4;"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Belum ada mirror selfie yang dibuat</h3>
-                            <p class="text-gray-600">Upload produk dan klik Generate untuk membuat mirror selfie aesthetic!</p>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="mirror.empty-title">Belum ada mirror selfie yang dibuat</h3>
+                            <p class="text-gray-600" data-i18n="mirror.empty-desc">Upload produk dan klik Generate untuk membuat mirror selfie aesthetic!</p>
                         </div>
                     </div>
                 </div>
@@ -24412,15 +24412,15 @@
                                     <div id="walkpad-model-box" class="upload-box-walkpad block cursor-pointer text-center py-6 px-4 border-2 border-dashed rounded-xl transition-all duration-300 hover:scale-[1.02]" style="border-color: #7c3aed; background: linear-gradient(135deg, #f5f3ff 0%, #fdf2f8 100%);">
                                         <div id="walkpad-model-placeholder" class="flex flex-col items-center gap-2">
                                             <i class="fas fa-user text-4xl" style="color: #7c3aed;"></i>
-                                            <span class="font-semibold" style="color: #6d28d9;">Klik untuk upload foto model</span>
-                                            <span class="text-xs text-gray-500">Wajah model akan digunakan sebagai referensi</span>
+                                            <span class="font-semibold" style="color: #6d28d9;" data-i18n="walking.click-model">Klik untuk upload foto model</span>
+                                            <span class="text-xs text-gray-500" data-i18n="walking.model-desc">Wajah model akan digunakan sebagai referensi</span>
                                         </div>
                                         <input type="file" id="walkpad-model-input" class="hidden" accept="image/png, image/jpeg, image/webp, image/heic, .heic">
                                     </div>
                                     <div id="walkpad-model-preview-container" class="mt-3 hidden">
                                         <img id="walkpad-model-preview" src="" alt="Preview Model" class="w-full rounded-lg shadow-lg max-h-40 object-cover border-2" style="border-color: #7c3aed;">
                                         <button id="walkpad-remove-model" class="mt-2 w-full bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 text-sm py-2 px-3 rounded-lg transition-all">
-                                            <i class="fas fa-times mr-1"></i> Hapus Foto Model
+                                            <i class="fas fa-times mr-1"></i> <span data-i18n="walking.delete-model">Hapus Foto Model</span>
                                         </button>
                                     </div>
                                 </div>
@@ -24434,15 +24434,15 @@
                                     <div id="walkpad-product-box" class="upload-box-walkpad block cursor-pointer text-center py-6 px-4 border-2 border-dashed rounded-xl transition-all duration-300 hover:scale-[1.02]" style="border-color: #db2777; background: linear-gradient(135deg, #fdf2f8 0%, #f5f3ff 100%);">
                                         <div id="walkpad-product-placeholder" class="flex flex-col items-center gap-2">
                                             <i class="fas fa-tshirt text-4xl" style="color: #db2777;"></i>
-                                            <span class="font-semibold" style="color: #be185d;">Klik untuk upload foto baju/produk</span>
-                                            <span class="text-xs text-gray-500">Bisa upload 1&#8211;5 foto baju untuk referensi lebih detail</span>
+                                            <span class="font-semibold" style="color: #be185d;" data-i18n="walking.click-clothes">Klik untuk upload foto baju/produk</span>
+                                            <span class="text-xs text-gray-500" data-i18n="walking.clothes-desc">Bisa upload 1&#8211;5 foto baju untuk referensi lebih detail</span>
                                             <span class="text-xs font-medium" style="color: #db2777;" id="walkpad-product-count">0/5 foto</span>
                                         </div>
                                         <input type="file" id="walkpad-product-input" class="hidden" accept="image/png, image/jpeg, image/webp, image/heic, .heic" multiple>
                                     </div>
                                     <div id="walkpad-product-preview-container" class="mt-3 hidden grid grid-cols-3 gap-2"></div>
                                     <button id="walkpad-remove-product" class="hidden mt-2 w-full bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 text-sm py-2 px-3 rounded-lg transition-all">
-                                        <i class="fas fa-times mr-1"></i> Hapus Foto Baju
+                                        <i class="fas fa-times mr-1"></i> <span data-i18n="walking.delete-clothes">Hapus Foto Baju</span>
                                     </button>
                                 </div>
 
@@ -24455,7 +24455,7 @@
                                     <div id="walkpad-room-options" class="grid grid-cols-2 gap-2 max-h-64 overflow-y-auto p-2 border border-gray-200 rounded-lg" style="-webkit-overflow-scrolling: touch;">
                                         <div class="col-span-2 flex items-center gap-2 py-1">
                                             <i class="fas fa-venus text-xs" style="color: #db2777;"></i>
-                                            <span class="text-xs font-bold" style="color: #be185d;">Untuk Perempuan</span>
+                                            <span class="text-xs font-bold" style="color: #be185d;" data-i18n="walking.female-label">Untuk Perempuan</span>
                                         </div>
                                         <button type="button" data-value="aesthetic-pink" class="option-btn-walkpad selected"><i class="fas fa-heart mr-1"></i>Aesthetic Pink</button>
                                         <button type="button" data-value="korean-minimal" class="option-btn-walkpad"><i class="fas fa-star mr-1"></i>Korean Minimal</button>
@@ -24467,7 +24467,7 @@
                                         <button type="button" data-value="scandinavian" class="option-btn-walkpad"><i class="fas fa-snowflake mr-1"></i>Scandinavian</button>
                                         <div class="col-span-2 flex items-center gap-2 py-1 mt-1">
                                             <i class="fas fa-mars text-xs" style="color: #7c3aed;"></i>
-                                            <span class="text-xs font-bold" style="color: #6d28d9;">Untuk Laki-laki</span>
+                                            <span class="text-xs font-bold" style="color: #6d28d9;" data-i18n="walking.male-label">Untuk Laki-laki</span>
                                         </div>
                                         <button type="button" data-value="dark-modern" class="option-btn-walkpad"><i class="fas fa-moon mr-1"></i>Dark Modern</button>
                                         <button type="button" data-value="gaming-setup" class="option-btn-walkpad"><i class="fas fa-gamepad mr-1"></i>Gaming Setup</button>
@@ -24478,7 +24478,7 @@
                                         <button type="button" data-value="minimalist-gray" class="option-btn-walkpad"><i class="fas fa-square mr-1"></i>Minimalist Gray</button>
                                         <div class="col-span-2 flex items-center gap-2 py-1 mt-1">
                                             <i class="fas fa-circle text-xs text-gray-400"></i>
-                                            <span class="text-xs font-bold text-gray-400">Netral</span>
+                                            <span class="text-xs font-bold text-gray-400" data-i18n="walking.neutral-label">Netral</span>
                                         </div>
                                         <button type="button" data-value="white-studio" class="option-btn-walkpad"><i class="fas fa-camera mr-1"></i>White Studio</button>
                                         <button type="button" data-value="living-room" class="option-btn-walkpad"><i class="fas fa-couch mr-1"></i>Living Room</button>
@@ -24493,9 +24493,9 @@
                                         <h3 class="text-lg font-bold text-gray-800">Camera Angle</h3>
                                     </div>
                                     <div id="walkpad-angle-options" class="grid grid-cols-2 gap-2">
-                                        <button type="button" data-value="diagonal-right" class="option-btn-walkpad selected"><i class="fas fa-expand-arrows-alt mr-1"></i>3/4 Depan Kanan</button>
+                                        <button type="button" data-value="diagonal-right" class="option-btn-walkpad selected" data-i18n="walking.3-4-right"><i class="fas fa-expand-arrows-alt mr-1"></i>3/4 Depan Kanan</button>
                                         <button type="button" data-value="front-full" class="option-btn-walkpad"><i class="fas fa-user mr-1"></i>Front Full Body</button>
-                                        <button type="button" data-value="diagonal-left" class="option-btn-walkpad"><i class="fas fa-expand-arrows-alt mr-1"></i>3/4 Depan Kiri</button>
+                                        <button type="button" data-value="diagonal-left" class="option-btn-walkpad" data-i18n="walking.3-4-left"><i class="fas fa-expand-arrows-alt mr-1"></i>3/4 Depan Kiri</button>
                                         <button type="button" data-value="side-view" class="option-btn-walkpad"><i class="fas fa-arrows-alt-h mr-1"></i>Side View</button>
                                         <button type="button" data-value="low-angle" class="option-btn-walkpad"><i class="fas fa-arrow-up mr-1"></i>Low Angle</button>
                                         <button type="button" data-value="bust-shot" class="option-btn-walkpad"><i class="fas fa-portrait mr-1"></i>Half Body</button>
@@ -24510,13 +24510,13 @@
                                     </div>
                                     <div id="walkpad-pose-options" class="grid grid-cols-3 gap-2">
                                         <button type="button" data-value="walking-motion" class="option-btn-walkpad selected flex-col py-3">
-                                            <i class="fas fa-walking text-lg"></i><span class="text-xs mt-1">Berjalan</span>
+                                            <i class="fas fa-walking text-lg"></i><span class="text-xs mt-1" data-i18n="walking.walking">Berjalan</span>
                                         </button>
                                         <button type="button" data-value="standing-casual" class="option-btn-walkpad flex-col py-3">
-                                            <i class="fas fa-user text-lg"></i><span class="text-xs mt-1">Berdiri Santai</span>
+                                            <i class="fas fa-user text-lg"></i><span class="text-xs mt-1" data-i18n="walking.standing-casual">Berdiri Santai</span>
                                         </button>
                                         <button type="button" data-value="standing-confident" class="option-btn-walkpad flex-col py-3">
-                                            <i class="fas fa-user-tie text-lg"></i><span class="text-xs mt-1">Berdiri Percaya Diri</span>
+                                            <i class="fas fa-user-tie text-lg"></i><span class="text-xs mt-1" data-i18n="walking.standing-confident">Berdiri Percaya Diri</span>
                                         </button>
                                     </div>
                                 </div>
@@ -24559,12 +24559,12 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #7c3aed 0%, #db2877 100%);">8</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Jumlah Foto</h3>
+                                        <h3 class="text-lg font-bold text-gray-800"><span data-i18n="walking.count-title">Jumlah Foto</span></h3>
                                     </div>
                                     <div id="walkpad-count-selection" class="grid grid-cols-3 gap-3">
-                                        <button type="button" data-count="2" class="walkpad-count-btn">2 Foto</button>
-                                        <button type="button" data-count="4" class="walkpad-count-btn walkpad-count-selected">4 Foto</button>
-                                        <button type="button" data-count="6" class="walkpad-count-btn">6 Foto</button>
+                                        <button type="button" data-count="2" class="walkpad-count-btn" data-i18n="walking.count-2">2 Foto</button>
+                                        <button type="button" data-count="4" class="walkpad-count-btn walkpad-count-selected" data-i18n="walking.count-4">4 Foto</button>
+                                        <button type="button" data-count="6" class="walkpad-count-btn" data-i18n="walking.count-6">6 Foto</button>
                                     </div>
                                 </div>
 
@@ -24572,7 +24572,7 @@
                                 <button id="walkpad-generate-btn" class="w-full text-white font-bold py-4 px-8 rounded-2xl flex items-center justify-center text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none relative overflow-hidden group" style="background: linear-gradient(135deg, #7c3aed 0%, #db2877 100%);" disabled>
                                     <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                                     <i class="fas fa-walking mr-3 text-xl relative z-10"></i>
-                                    <span class="relative z-10">Generate 4 Foto Walking Pad</span>
+                                    <span class="relative z-10"><span data-i18n="walking.gen-prefix">Generate</span> <span id="walkpad-count-text">4</span> <span data-i18n="walking.gen-suffix">Foto Walking Pad</span></span>
                                 </button>
 
                             </div>
@@ -24589,7 +24589,7 @@
                                         <div class="animate-spin rounded-full h-20 w-20 border-b-4 border-t-4" style="border-color: #7c3aed;"></div>
                                         <i class="fas fa-walking absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl" style="color: #7c3aed;"></i>
                                     </div>
-                                    <p class="text-xl font-semibold mb-2" style="color: #6d28d9;">Membuat foto walking pad...</p>
+                                    <p class="text-xl font-semibold mb-2" style="color: #6d28d9;" data-i18n="walking.loading-1">Membuat foto walking pad...</p>
                                     <p id="walkpad-loading-text" class="text-gray-600 text-center">Menyiapkan model dan ruangan...</p>
                                     <div class="w-full max-w-md mt-6">
                                         <div class="bg-gray-200 rounded-full h-3 overflow-hidden">
@@ -24605,7 +24605,7 @@
                         <div id="walkpad-results-header" class="hidden flex items-center justify-between mb-4 bg-gradient-to-r from-violet-50 to-pink-50 p-4 rounded-xl border-2" style="border-color: #7c3aed;">
                             <h3 class="text-2xl font-bold" style="color: #6d28d9;">
                                 <i class="fas fa-check-circle mr-2" style="color: #7c3aed;"></i>
-                                <span id="walkpad-results-count">4</span> Foto Walking Pad
+                                <span id="walkpad-results-count">4</span> <span data-i18n="walking.results-suffix">Foto Walking Pad</span>
                             </h3>
                             <button id="walkpad-download-all-btn" class="hidden text-white px-6 py-2 rounded-full font-semibold shadow-lg transition transform hover:scale-105 flex items-center gap-2" style="background: linear-gradient(135deg, #7c3aed 0%, #db2877 100%);">
                                 <i class="fas fa-download"></i>
@@ -24619,22 +24619,22 @@
                         <!-- Empty State -->
                         <div id="walkpad-empty-state" class="bg-white rounded-2xl shadow-lg p-12 text-center border-2 border-dashed" style="border-color: #7c3aed;">
                             <i class="fas fa-walking text-6xl mb-4" style="color: #7c3aed;"></i>
-                            <h3 class="text-2xl font-bold mb-3" style="color: #6d28d9;">Siap Membuat Foto Walking Pad</h3>
-                            <p class="text-gray-600 mb-6 max-w-md mx-auto">
+                            <h3 class="text-2xl font-bold mb-3" style="color: #6d28d9;" data-i18n="walking.empty-title">Siap Membuat Foto Walking Pad</h3>
+                            <p class="text-gray-600 mb-6 max-w-md mx-auto" data-i18n="walking.empty-desc">
                                 Upload foto model &amp; baju, pilih tema ruangan dan angle kamera, lalu generate foto model di atas walking pad!
                             </p>
                             <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle" style="color: #7c3aed;"></i>
-                                    <span>18 Tema Ruangan</span>
+                                    <span data-i18n="walking.18-themes">18 Tema Ruangan</span>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle" style="color: #7c3aed;"></i>
-                                    <span>6 Camera Angle</span>
+                                    <span data-i18n="walking.6-angles">6 Camera Angle</span>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle" style="color: #7c3aed;"></i>
-                                    <span>Siap Image to Video</span>
+                                    <span data-i18n="walking.video-ready">Siap Image to Video</span>
                                 </div>
                             </div>
                         </div>
@@ -69649,6 +69649,18 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
                 'touring.empty-title':'Professional Touring Photo',
                 'touring.empty-desc':'Upload model + motorcycle + helmet + accessories photos, choose road background and mood theme for epic touring photos!',
                 'touring.download-all':'Download All',
+                'touring.optional-suffix':'(Optional)',
+                'touring.upload-bg':'Upload Your Own Background',
+                'touring.or-use':'Or use the options above',
+                'touring.add-photo':'Add Photo',
+                'touring.count-4':'4 Photos',
+                'touring.count-6':'6 Photos',
+                'touring.count-8':'8 Photos',
+                'touring.gen-prefix':'Generate',
+                'touring.gen-suffix':'Touring Photos',
+                'touring.loading-text':'Creating touring photos...',
+                'touring.empty-title':'Professional Touring Photo',
+                'touring.empty-desc':'Upload model + motorcycle + helmet + accessories photos, choose road background and mood theme for epic touring photos! 🏍️✨',
                 'mirror.desc1':'Transform any product into aesthetic mirror selfie photos!',
                 'mirror.desc2':'Upload product, choose style, and get cool mirror selfie results.',
                 'mirror.upload-product-title':'Upload Product Photo',
@@ -69675,6 +69687,12 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
                 'mirror.hand-both-up':'Both Hands Up',
                 'mirror.lighting-title':'Lighting',
                 'mirror.aspect-title':'Photo Ratio',
+                'mirror.count-title':'Number of Photos',
+                'mirror.count-4':'4 Photos',
+                'mirror.count-6':'6 Photos',
+                'mirror.count-8':'8 Photos',
+                'mirror.empty-title':'No mirror selfies created yet',
+                'mirror.empty-desc':'Upload product and click Generate to create aesthetic mirror selfies!',
                 'walking.desc':'Create model photos wearing clothes on a walking pad with various aesthetic room themes. Results can be directly used for Image to Video for TikTok & Reels content!',
                 'walking.tip':'Perfect for Image to Video — model walking on walking pad',
                 'walking.upload-model-title':'Upload Model Photo',
@@ -69711,6 +69729,12 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
                 'walking.18-themes':'18 Room Themes',
                 'walking.6-angles':'6 Camera Angles',
                 'walking.video-ready':'Ready for Image to Video',
+                'walking.gen-prefix':'Generate',
+                'walking.gen-suffix':'Walking Pad Photos',
+                'walking.count-2':'2 Photos',
+                'walking.count-4':'4 Photos',
+                'walking.count-6':'6 Photos',
+                'walking.results-suffix':'Walking Pad Photos',
             },
             id: {
                 nav: { 'apikey-settings':'API Key','beranda':'Beranda','buat-model':'Membuat Model','mockup-studio':'Mockup Studio','pov-tangan':'POV Tangan','touring':'Foto Touring','mirror-selfie':'POV Mirror Selfie','walking-pad':'Walking Pad','affiliate':'Foto Produk Affiliate','affiliate-islami':'Affiliate Agama','virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion','food-selfie':'Food Selfie','product-review':'Product Review','skincare-review':'Skincare Review','food-review':'Food Review','product-ads':'Iklan Produk','professional-headshot':'Professional Headshot','unboxing-scene':'Unboxing Scene','before-after':'Before/After','product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card','size-guide':'Size Guide','video-frames':'Video Frames','vehicle-modifier':'Vehicle Modifier','deskripsi-produk':'Deskripsi Produk SEO','ide-konten-tiktok':'Ide Konten TikTok','script-story-iklan':'Script Story Iklan','rencana-bisnis':'Rencana Bisnis & SWOT','hr-assistant':'HR Assistant','konten-marketing':'Konten Marketing','riset-pasar':'Riset Pasar & Ide','financial-forecast':'Simulasi Anggaran','family':'Foto Keluarga','new-born':'New Born Studio','maternity':'Foto Maternity','profesi-anak':'Foto Profesi Anak','wedding':'Wedding','wedding-design':'Desain Pernikahan','umrah-haji':'Foto Umrah/Haji','passport-photo':'Pas Foto Warna','graduation-photo':'Foto Wisuda','photo-booth':'Photo Booth','birthday-photo':'Foto Ulang Tahun','kartu-lebaran':'Kartu Lebaran','desain-rumah':'Desain Rumah','desain-kamar':'Desain Kamar','sketsa-gambar':'Sketsa Gambar','bikin-carousel':'Bikin Carousel','miniature':'Miniature Me','karikatur':'Karikatur Generator','photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor','tattoo-editor':'Tattoo Editor','halu':'Halu Idol','sticker':'Sticker Tempel','hair-generator':'Hair Generator','expression-changer':'Expression Changer','face-swap':'Face Swap','bg-remover':'Ubah Background','photo-extender':'Perluas Foto','story-board':'Story Board','twibon':'Twibon Frame','story-update':'Story Update','image-analyzer':'Image to Prompt','packaging-design':'Packaging Design','photo-angle':'Photo Angle','style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'Foto Sampul IG & Tiktok','photo-restoration':'Restorasi Foto','object-remover':'Hapus Object','logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit Generator','content-calendar':'Content Calendar Planner','ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI','caption-generator':'AI Caption Generator','product-comparison':'Product Comparison','mascot-generator':'Mascot Generator','poster-generator':'Poster Generator','banner-generator':'Banner Generator','sketch-catalog':'Sketsa ke Katalog','fotogenic':'Fotogenic','timelapse-renovasi':'Timelapse Renovasi','veo':'Affiliate Go Pro','opal':'Opal Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer' },
@@ -69839,6 +69863,18 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
                 'touring.empty-title':'Foto Touring Profesional',
                 'touring.empty-desc':'Upload foto model + motor + helm + aksesoris, pilih background jalanan dan tema suasana untuk mendapatkan foto touring yang epic!',
                 'touring.download-all':'Download All',
+                'touring.optional-suffix':'(Opsional)',
+                'touring.upload-bg':'Upload Background Sendiri',
+                'touring.or-use':'Atau gunakan pilihan di atas',
+                'touring.add-photo':'Tambah Foto',
+                'touring.count-4':'4 Foto',
+                'touring.count-6':'6 Foto',
+                'touring.count-8':'8 Foto',
+                'touring.gen-prefix':'Generate',
+                'touring.gen-suffix':'Foto Touring',
+                'touring.loading-text':'Membuat foto touring...',
+                'touring.empty-title':'Foto Touring Profesional',
+                'touring.empty-desc':'Upload foto model + motor + helm + aksesoris, pilih background jalanan dan tema suasana untuk mendapatkan foto touring yang epic! 🏍️✨',
                 'mirror.desc1':'Ubah produk apapun jadi foto mirror selfie yang aesthetic!',
                 'mirror.desc2':'Upload produk, pilih style, dan dapatkan hasil seperti mirror selfie yang keren.',
                 'mirror.upload-product-title':'Upload Foto Produk',
@@ -69865,6 +69901,12 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
                 'mirror.hand-both-up':'Kedua Tangan Naik',
                 'mirror.lighting-title':'Pencahayaan',
                 'mirror.aspect-title':'Rasio Foto',
+                'mirror.count-title':'Jumlah Foto',
+                'mirror.count-4':'4 Foto',
+                'mirror.count-6':'6 Foto',
+                'mirror.count-8':'8 Foto',
+                'mirror.empty-title':'Belum ada mirror selfie yang dibuat',
+                'mirror.empty-desc':'Upload produk dan klik Generate untuk membuat mirror selfie aesthetic!',
                 'walking.desc':'Buat foto model memakai baju di atas walking pad dengan berbagai tema ruangan aesthetic. Hasilnya bisa langsung di-Image to Video untuk konten TikTok & Reels!',
                 'walking.tip':'Cocok untuk Image to Video — model berjalan di walking pad',
                 'walking.upload-model-title':'Upload Foto Model',
@@ -69901,6 +69943,12 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
                 'walking.18-themes':'18 Tema Ruangan',
                 'walking.6-angles':'6 Camera Angle',
                 'walking.video-ready':'Siap Image to Video',
+                'walking.gen-prefix':'Generate',
+                'walking.gen-suffix':'Foto Walking Pad',
+                'walking.count-2':'2 Foto',
+                'walking.count-4':'4 Foto',
+                'walking.count-6':'6 Foto',
+                'walking.results-suffix':'Foto Walking Pad',
             }
         };
 
