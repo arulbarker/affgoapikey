@@ -11392,14 +11392,14 @@
                         <label for="poses-imageUpload" class="cursor-pointer">
                             <div class="flex flex-col items-center justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-gray-400 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242M12 12v9"/><path d="m16 16-4-4-4 4"/></svg>
-                                <p class="font-semibold text-lg">Klik atau seret gambar</p>
-                                <p class="text-sm text-gray-500 mt-1">PNG, JPG, atau WEBP (Maks. 5MB)</p>
+                                <p class="font-semibold text-lg" data-i18n="pose.upload-click">Klik atau seret gambar</p>
+                                <p class="text-sm text-gray-500 mt-1" data-i18n="pose.upload-hint">PNG, JPG, atau WEBP (Maks. 5MB)</p>
                             </div>
                             <input type="file" id="poses-imageUpload" class="hidden" accept="image/png, image/jpeg, image/webp">
                         </label>
                     </div>
                     <div id="poses-previewContainer" class="hidden mt-6 text-center">
-                        <p class="font-semibold mb-2">Gambar yang diunggah:</p>
+                        <p class="font-semibold mb-2" data-i18n="pose.uploaded-label">Gambar yang diunggah:</p>
                         <div class="relative inline-block border-2 border-gray-300 rounded-xl p-2">
                             <img id="poses-imagePreview" src="" alt="Pratinjau Gambar" class="max-h-40 rounded-lg mx-auto">
                         </div>
@@ -11409,10 +11409,10 @@
                     <!-- Custom Pose Input -->
                     <div class="mt-8">
                         <label for="poses-customPoseInput" class="block text-left mb-2">
-                            <h3 class="text-xl font-bold text-gray-800 flex items-center">
+                            <h3 class="text-xl font-bold text-gray-800 flex items-center" data-i18n="pose.custom-title">
                                 <i class="fas fa-magic mr-2 text-cyan-600"></i>Custom Pose (Opsional)
                             </h3>
-                            <p class="text-sm text-gray-600 mt-1">Tulis deskripsi pose yang Anda inginkan. Jika kosong, akan menggunakan pose default.</p>
+                            <p class="text-sm text-gray-600 mt-1" data-i18n="pose.custom-desc">Tulis deskripsi pose yang Anda inginkan. Jika kosong, akan menggunakan pose default.</p>
                         </label>
                         <textarea
                             id="poses-customPoseInput"
@@ -11422,7 +11422,7 @@
                         ></textarea>
                         <p class="text-xs text-gray-500 mt-2 flex items-start">
                             <i class="fas fa-lightbulb mr-2 text-yellow-500 mt-0.5"></i>
-                            <span><strong>Tips:</strong> Jelaskan pose dengan detail dalam bahasa Inggris untuk hasil terbaik. Contoh: "confident standing pose with arms crossed", "elegant sitting pose on chair", "dynamic action pose", dll.</span>
+                            <span data-i18n="pose.tips"><strong>Tips:</strong> Jelaskan pose dengan detail dalam bahasa Inggris untuk hasil terbaik. Contoh: "confident standing pose with arms crossed", "elegant sitting pose on chair", "dynamic action pose", dll.</span>
                         </p>
                     </div>
 
@@ -11430,16 +11430,16 @@
                         <button id="poses-selectPoseBtn" disabled class="bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-cyan-700 disabled:bg-gray-300 shadow-lg transition-all hover:shadow-xl active:scale-95">
                             <span class="flex items-center justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 16 2 2 4-4"/><path d="m3 12 2 2 4-4"/><path d="M10 6h11"/><path d="M10 12h11"/><path d="M10 18h11"/></svg>
-                                Pilih 6 Pose
+                                <span data-i18n="pose.select-btn">Pilih 6 Pose</span>
                             </span>
                         </button>
                     </div>
                     <div id="poses-resultsContainer" class="hidden mt-10">
                         <div class="mb-4 flex items-center justify-between">
-                            <h2 class="text-2xl font-bold text-gray-800">Hasil Pose...</h2>
+                            <h2 class="text-2xl font-bold text-gray-800" data-i18n="pose.results-title">Hasil Pose...</h2>
                             <button id="poses-download-all-btn" class="hidden btn-primary px-6 py-2 rounded-lg flex items-center gap-2">
                                 <i class="fas fa-download"></i>
-                                Download Semua
+                                <span data-i18n="pose.download-all">Download Semua</span>
                             </button>
                         </div>
                         <div id="poses-resultsGrid" class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"></div>
@@ -12323,13 +12323,13 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md bg-gradient-to-br from-indigo-600 to-purple-600">1</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Unggah Foto Makanan</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="food.upload-title">Unggah Foto Makanan</h3>
                                     </div>
                                     <div id="food-selfie-food-image-uploader" class="upload-box w-full h-48 rounded-lg flex items-center justify-center cursor-pointer relative overflow-hidden border-2 border-dashed border-gray-300 hover:border-indigo-500 transition-all bg-gradient-to-br from-gray-50 to-gray-100">
                                         <input type="file" id="food-selfie-food-file-input" class="hidden" accept="image/*">
                                         <div id="food-selfie-food-upload-prompt" class="text-center text-gray-400">
                                             <i class="fas fa-utensils text-4xl mb-2"></i>
-                                            <p class="text-sm">Klik atau seret foto makanan</p>
+                                            <p class="text-sm" data-i18n="food.upload-click">Klik atau seret foto makanan</p>
                                         </div>
                                         <img id="food-selfie-food-image-preview" src="" alt="Pratinjau Makanan" class="hidden absolute top-0 left-0 w-full h-full object-cover">
                                     </div>
@@ -12346,8 +12346,8 @@
                                     <div id="food-selfie-model-upload-area" class="border-2 border-dashed border-purple-300 rounded-lg p-4 text-center hover:border-purple-500 transition-all cursor-pointer bg-purple-50/50 touch-manipulation active:scale-95" style="-webkit-tap-highlight-color: transparent;">
                                         <label for="food-selfie-model-input" class="cursor-pointer flex flex-col items-center justify-center">
                                             <i class="fas fa-user-circle text-4xl mb-2 text-purple-400"></i>
-                                            <span class="text-sm text-purple-600 font-medium">Pilih Foto Model/Orang</span>
-                                            <span class="text-xs text-gray-500 mt-1">Orang ini akan muncul di foto dengan makanan</span>
+                                            <span class="text-sm text-purple-600 font-medium" data-i18n="food.model-pick">Pilih Foto Model/Orang</span>
+                                            <span class="text-xs text-gray-500 mt-1" data-i18n="food.model-hint">Orang ini akan muncul di foto dengan makanan</span>
                                         </label>
                                         <input type="file" id="food-selfie-model-input" class="hidden" accept="image/png, image/jpeg, image/webp, image/heic, .heic">
                                     </div>
@@ -12358,11 +12358,11 @@
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                                             </svg>
                                         </button>
-                                        <p class="text-xs text-green-600 mt-1 text-center font-medium">
+                                        <p class="text-xs text-green-600 mt-1 text-center font-medium" data-i18n="food.model-confirm">
                                             <i class="fas fa-check-circle mr-1"></i> Model akan muncul di foto bersama makanan
                                         </p>
                                     </div>
-                                    <p class="text-xs text-gray-500 mt-2">
+                                    <p class="text-xs text-gray-500 mt-2" data-i18n="food.model-tip">
                                         💡 Upload foto orang yang akan muncul di foto bersama makanan sesuai tema
                                     </p>
                                 </div>
@@ -12371,7 +12371,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md bg-gradient-to-br from-indigo-600 to-purple-600">2</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Pilih Rasio Aspek</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="food.ratio-title">Pilih Rasio Aspek</h3>
                                     </div>
                                     <div id="food-selfie-ratio-selection" class="grid grid-cols-2 gap-3">
                                         <button type="button" data-ratio="1:1" class="option-btn-food selected">
@@ -12393,7 +12393,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md bg-gradient-to-br from-indigo-600 to-purple-600">3</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Pilih Tema</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="food.theme-title">Pilih Tema</h3>
                                     </div>
                                     <div id="food-selfie-theme-selection" class="grid grid-cols-2 gap-3 max-h-96 overflow-y-auto pr-2">
                                         <!-- RAMADAN & LEBARAN -->
@@ -12427,7 +12427,7 @@
                                         </button>
                                         <!-- DIVIDER -->
                                         <div class="col-span-2 flex items-center gap-2 pb-1 border-b border-gray-200 mt-1">
-                                            <span class="text-xs font-bold text-gray-400">Tema Lainnya</span>
+                                            <span class="text-xs font-bold text-gray-400" data-i18n="food.section-other">Tema Lainnya</span>
                                         </div>
                                         <button class="theme-btn-food" data-theme="professional restaurant setting with elegant plating">
                                             <i class="fas fa-concierge-bell mr-2"></i>Fine Dining
@@ -12562,24 +12562,24 @@
 
                                     <!-- Custom Theme Input -->
                                     <div id="food-selfie-custom-theme-container" class="hidden mt-3">
-                                        <label class="block text-sm font-semibold text-gray-700 mb-2">✨ Tulis Tema Custom Anda:</label>
+                                        <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="food.custom-label">✨ Tulis Tema Custom Anda:</label>
                                         <textarea id="food-selfie-custom-theme-input" rows="3" class="w-full p-3 rounded-lg border-2 border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all resize-none" placeholder="Contoh: futuristic neon lights with cyberpunk aesthetic, vintage 80s retro with warm tones, dreamy pastel garden with flowers..."></textarea>
-                                        <p class="text-xs text-gray-500 mt-2">💡 Deskripsikan tema fotografi makanan yang Anda inginkan dengan detail</p>
+                                        <p class="text-xs text-gray-500 mt-2" data-i18n="food.custom-tip">💡 Deskripsikan tema fotografi makanan yang Anda inginkan dengan detail</p>
                                     </div>
 
-                                    <p class="text-xs text-gray-500 mt-2">💡 Pilih tema sesuai target konten Anda</p>
+                                    <p class="text-xs text-gray-500 mt-2" data-i18n="food.theme-tip">💡 Pilih tema sesuai target konten Anda</p>
 
                                     <!-- Optional Custom Background Upload -->
                                     <div class="mt-4">
-                                        <p class="text-sm font-medium text-gray-700 mb-2">
-                                            <i class="fas fa-image mr-1"></i> Upload Background Custom (Opsional)
-                                        </p>
+                                        <p class="text-sm font-medium text-gray-700 mb-2" data-i18n="food.bg-title">
+                                        <i class="fas fa-image mr-1"></i> Upload Background Custom (Opsional)
+                                    </p>
                                         <div id="food-selfie-background-upload-area" class="border-2 border-dashed border-indigo-300 rounded-lg p-3 text-center hover:border-indigo-500 transition-all cursor-pointer bg-indigo-50/50">
                                             <label for="food-selfie-background-input" class="cursor-pointer flex flex-col items-center justify-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mb-2 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                                 </svg>
-                                                <span class="text-sm text-indigo-600">Pilih Background Custom</span>
+                                                <span class="text-sm text-indigo-600" data-i18n="food.bg-pick">Pilih Background Custom</span>
                                             </label>
                                             <input type="file" id="food-selfie-background-input" class="hidden" accept="image/png, image/jpeg, image/webp, image/heic, .heic">
                                         </div>
@@ -12590,11 +12590,11 @@
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                                                 </svg>
                                             </button>
-                                            <p class="text-xs text-green-600 mt-1 text-center">
+                                            <p class="text-xs text-green-600 mt-1 text-center" data-i18n="food.bg-confirm">
                                                 <i class="fas fa-check-circle mr-1"></i> Background custom akan digunakan
                                             </p>
                                         </div>
-                                        <p class="text-xs text-gray-500 mt-2">
+                                        <p class="text-xs text-gray-500 mt-2" data-i18n="food.bg-tip">
                                             💡 Upload background sendiri atau gunakan tema di atas
                                         </p>
                                     </div>
@@ -12604,13 +12604,13 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md bg-gradient-to-br from-indigo-600 to-purple-600">4</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Referensi <span class="text-sm text-gray-500">(Opsional)</span></h3>
+                                        <h3 class="text-lg font-bold text-gray-800"><span data-i18n="food.ref-title">Referensi</span> <span class="text-sm text-gray-500" data-i18n="food.ref-optional">(Opsional)</span></h3>
                                     </div>
                                     <div id="food-selfie-style-image-uploader" class="upload-box w-full h-32 rounded-lg flex items-center justify-center cursor-pointer relative overflow-hidden border-2 border-dashed border-gray-300 hover:border-indigo-500 transition-all bg-gradient-to-br from-gray-50 to-gray-100">
                                         <input type="file" id="food-selfie-style-file-input" class="hidden" accept="image/*">
                                         <div id="food-selfie-style-upload-prompt" class="text-center text-gray-400">
                                             <i class="fas fa-palette text-3xl mb-1"></i>
-                                            <p class="text-xs">Komposisi referensi</p>
+                                            <p class="text-xs" data-i18n="food.ref-hint">Komposisi referensi</p>
                                         </div>
                                         <img id="food-selfie-style-image-preview" src="" alt="Pratinjau Referensi" class="hidden absolute top-0 left-0 w-full h-full object-cover">
                                     </div>
@@ -12711,7 +12711,7 @@
                         Generator Review Produk
                     </h1>
                     <p class="text-lg text-gray-500 mt-2 max-w-3xl mx-auto">
-                        Solusi AI untuk konten review produk afiliasi Anda.
+                        <span data-i18n="review.desc">Solusi AI untuk konten review produk afiliasi Anda.</span>
                     </p>
                 </header>
 
@@ -12722,13 +12722,13 @@
                             <div>
                                 <div class="flex items-center gap-2 mb-3">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 text-white font-bold text-sm shadow-lg">1</div>
-                                    <h2 class="text-xl font-semibold text-gray-800">Unggah Gambar Produk</h2>
+                                    <h2 class="text-xl font-semibold text-gray-800" data-i18n="review.step1-title">Unggah Gambar Produk</h2>
                                 </div>
                                 <div id="review-image-upload-area">
                                     <label for="review-image-input" class="file-input-label rounded-xl p-8 text-center text-gray-500 flex flex-col items-center justify-center min-h-[140px]">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                                        <span class="font-medium text-base">Klik atau seret gambar ke sini</span>
-                                        <span class="text-xs mt-2 text-gray-400">PNG, JPG, WEBP (Bisa lebih dari satu)</span>
+                                        <span class="font-medium text-base" data-i18n="review.upload-click">Klik atau seret gambar ke sini</span>
+                                        <span class="text-xs mt-2 text-gray-400" data-i18n="review.upload-hint">PNG, JPG, WEBP (Bisa lebih dari satu)</span>
                                     </label>
                                     <input type="file" id="review-image-input" class="hidden" accept="image/png, image/jpeg, image/webp" multiple>
                                 </div>
@@ -12741,26 +12741,26 @@
                                 <div class="flex items-center justify-between mb-3">
                                     <div class="flex items-center gap-2">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 text-white font-bold text-sm shadow-lg">2</div>
-                                        <h2 class="text-xl font-semibold text-gray-800">Deskripsi Produk</h2>
+                                        <h2 class="text-xl font-semibold text-gray-800" data-i18n="review.step2-title">Deskripsi Produk</h2>
                                     </div>
                                     <button id="review-generate-desc-btn" class="btn-secondary text-xs font-semibold py-2 px-3 rounded-lg flex items-center gap-1 shadow-sm" disabled>
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M13 7H7v6h6V7z"/><path fill-rule="evenodd" d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1H9v1a1 1 0 11-2 0v-1H5a2 2 0 01-2-2v-2H2a1 1 0 110-2h1V9H2a1 1 0 010-2h1V5a2 2 0 012-2h2V2zM5 5h10v10H5V5z" clip-rule="evenodd"/></svg>
                                         <span>AI Generate</span>
                                     </button>
                                 </div>
-                                <textarea id="review-product-desc-input" rows="4" class="w-full p-4 bg-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition resize-none" placeholder="Deskripsikan produk Anda secara detail... atau gunakan AI Generate"></textarea>
-                                <p class="text-xs text-gray-400 mt-2">💡 Tip: Deskripsi detail menghasilkan review yang lebih berkualitas</p>
+                                <textarea id="review-product-desc-input" rows="4" class="w-full p-4 bg-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition resize-none" data-i18n-placeholder="review.desc-placeholder" placeholder="Deskripsikan produk Anda secara detail... atau gunakan AI Generate"></textarea>
+                                <p class="text-xs text-gray-400 mt-2" data-i18n="review.desc-tip">💡 Tip: Deskripsi detail menghasilkan review yang lebih berkualitas</p>
                             </div>
 
                             <div>
                                 <div class="flex items-center gap-2 mb-3">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 text-white font-bold text-sm shadow-lg">3</div>
-                                    <h2 class="text-xl font-semibold text-gray-800">Foto Model <span class="text-sm text-gray-400">(Opsional)</span></h2>
+                                    <h2 class="text-xl font-semibold text-gray-800"><span data-i18n="review.step3-title">Foto Model</span> <span class="text-sm text-gray-400" data-i18n="review.optional-label">(Opsional)</span></h2>
                                 </div>
                                 <div id="review-model-image-upload-area">
                                     <label for="review-model-image-input" class="file-input-label rounded-xl p-6 text-center text-gray-500 flex flex-col items-center justify-center min-h-[120px]">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-                                        <span class="font-medium">Klik untuk pilih foto model</span>
+                                        <span class="font-medium" data-i18n="review.model-click">Klik untuk pilih foto model</span>
                                     </label>
                                     <input type="file" id="review-model-image-input" class="hidden" accept="image/png, image/jpeg, image/webp">
                                 </div>
@@ -12768,16 +12768,16 @@
                                     <img id="review-model-image-preview" src="#" alt="Pratinjau Model" class="rounded-xl w-full h-auto object-contain shadow-md">
                                     <button id="review-remove-model-image-btn" class="absolute top-2 right-2 bg-red-500 text-white rounded-full p-2 hover:bg-red-600 transition-all shadow-lg hover:shadow-xl active:scale-95"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
                                 </div>
-                                <p class="text-xs text-gray-400 mt-2">🎭 Upload foto model untuk hasil lebih personal</p>
+                                <p class="text-xs text-gray-400 mt-2" data-i18n="review.model-tip">🎭 Upload foto model untuk hasil lebih personal</p>
                             </div>
 
                             <div>
                                 <div class="flex items-center gap-2 mb-3">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 text-white font-bold text-sm shadow-lg">4</div>
-                                    <h2 class="text-xl font-semibold text-gray-800">Tema Foto <span class="text-sm text-gray-400">(Opsional)</span></h2>
+                                    <h2 class="text-xl font-semibold text-gray-800"><span data-i18n="review.step4-title">Tema Foto</span> <span class="text-sm text-gray-400" data-i18n="review.optional-label">(Opsional)</span></h2>
                                 </div>
-                                <textarea id="review-photo-theme-input" rows="3" class="w-full p-4 bg-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition resize-none" placeholder="Contoh: Minimalis & bersih, nuansa alam tropis, futuristik dengan neon..."></textarea>
-                                <p class="text-xs text-gray-400 mt-2">🎨 Tentukan style visual untuk hasil lebih menarik</p>
+                                <textarea id="review-photo-theme-input" rows="3" class="w-full p-4 bg-white border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition resize-none" data-i18n-placeholder="review.theme-placeholder" placeholder="Contoh: Minimalis & bersih, nuansa alam tropis, futuristik dengan neon..."></textarea>
+                                <p class="text-xs text-gray-400 mt-2" data-i18n="review.theme-tip">🎨 Tentukan style visual untuk hasil lebih menarik</p>
                             </div>
 
                             <div>
@@ -12808,7 +12808,7 @@
                             <div>
                                 <div class="flex items-center gap-2 mb-3">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 text-white font-bold text-sm shadow-lg">6</div>
-                                    <h2 class="text-xl font-semibold text-gray-800">Jumlah Scene</h2>
+                                    <h2 class="text-xl font-semibold text-gray-800" data-i18n="review.count-title">Jumlah Scene</h2>
                                 </div>
                                 <div id="review-count-selection" class="grid grid-cols-3 gap-3">
                                     <button type="button" class="count-btn-review flex items-center justify-center gap-2 p-3 border-2 border-gray-200 rounded-xl hover:border-indigo-400 transition-all active:scale-95" data-count="4">
@@ -12828,7 +12828,7 @@
 
                             <button id="review-generate-btn" class="w-full btn-primary font-bold py-4 px-6 rounded-xl flex items-center justify-center text-lg shadow-xl" disabled>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                                <span>Buat <span id="review-count-text">7</span> Scene Review</span>
+                                <span><span data-i18n="review.gen-prefix">Buat</span> <span id="review-count-text">7</span> <span data-i18n="review.gen-suffix">Scene Review</span></span>
                             </button>
                         </div>
                     </div>
@@ -69792,6 +69792,54 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
                 'religious.tips':'<strong>Tips:</strong> Choose themes that match your target market. 50 themes available for 5 official religions in Indonesia.',
                 'religious.results-title':'Religious Affiliate Photo Results',
                 'religious.download-all':'Download All',
+                // pose fashion
+                'pose.upload-click':'Click or drag image',
+                'pose.upload-hint':'PNG, JPG, or WEBP (Max. 5MB)',
+                'pose.uploaded-label':'Uploaded image:',
+                'pose.custom-title':'Custom Pose (Optional)',
+                'pose.custom-desc':'Write the pose description you want. If empty, default pose will be used.',
+                'pose.tips':' Describe the pose in detail in English for best results. Example: "confident standing pose with arms crossed", "elegant sitting pose on chair", "dynamic action pose", etc.',
+                'pose.select-btn':'Select 6 Poses',
+                'pose.results-title':'Pose Results...',
+                'pose.download-all':'Download All',
+                // food selfie
+                'food.upload-title':'Upload Food Photo',
+                'food.upload-click':'Click or drag food photo',
+                'food.model-pick':'Select Model/Person Photo',
+                'food.model-hint':'This person will appear in the photo with the food',
+                'food.model-confirm':' Model will appear in photo with food',
+                'food.model-tip':'💡 Upload a photo of the person who will appear in the food photo matching the theme',
+                'food.ratio-title':'Select Aspect Ratio',
+                'food.theme-title':'Select Theme',
+                'food.section-other':'Other Themes',
+                'food.custom-label':'✨ Write Your Custom Theme:',
+                'food.custom-tip':'💡 Describe the food photography theme you want in detail',
+                'food.theme-tip':'💡 Choose a theme that fits your content target',
+                'food.bg-title':' Upload Custom Background (Optional)',
+                'food.bg-pick':'Select Custom Background',
+                'food.bg-confirm':' Custom background will be used',
+                'food.bg-tip':'💡 Upload your own background or use the theme above',
+                'food.ref-title':'Reference',
+                'food.ref-optional':'(Optional)',
+                'food.ref-hint':'Reference composition',
+                // product review
+                'review.desc':'AI solution for your affiliate product review content.',
+                'review.step1-title':'Upload Product Image',
+                'review.upload-click':'Click or drag image here',
+                'review.upload-hint':'PNG, JPG, WEBP (Can upload more than one)',
+                'review.step2-title':'Product Description',
+                'review.desc-placeholder':'Describe your product in detail... or use AI Generate',
+                'review.desc-tip':'💡 Tip: Detailed descriptions produce higher quality reviews',
+                'review.step3-title':'Model Photo',
+                'review.optional-label':'(Optional)',
+                'review.model-click':'Click to select model photo',
+                'review.model-tip':'🎭 Upload model photo for more personal results',
+                'review.step4-title':'Photo Theme',
+                'review.theme-placeholder':'Example: Minimalist & clean, tropical nature vibes, futuristic with neon...',
+                'review.theme-tip':'🎨 Define visual style for more attractive results',
+                'review.count-title':'Number of Scenes',
+                'review.gen-prefix':'Create',
+                'review.gen-suffix':'Scene Review',
             },
             id: {
                 nav: { 'apikey-settings':'API Key','beranda':'Beranda','buat-model':'Membuat Model','mockup-studio':'Mockup Studio','pov-tangan':'POV Tangan','touring':'Foto Touring','mirror-selfie':'POV Mirror Selfie','walking-pad':'Walking Pad','affiliate':'Foto Produk Affiliate','affiliate-islami':'Affiliate Agama','virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion','food-selfie':'Food Selfie','product-review':'Product Review','skincare-review':'Skincare Review','food-review':'Food Review','product-ads':'Iklan Produk','professional-headshot':'Professional Headshot','unboxing-scene':'Unboxing Scene','before-after':'Before/After','product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card','size-guide':'Size Guide','video-frames':'Video Frames','vehicle-modifier':'Vehicle Modifier','deskripsi-produk':'Deskripsi Produk SEO','ide-konten-tiktok':'Ide Konten TikTok','script-story-iklan':'Script Story Iklan','rencana-bisnis':'Rencana Bisnis & SWOT','hr-assistant':'HR Assistant','konten-marketing':'Konten Marketing','riset-pasar':'Riset Pasar & Ide','financial-forecast':'Simulasi Anggaran','family':'Foto Keluarga','new-born':'New Born Studio','maternity':'Foto Maternity','profesi-anak':'Foto Profesi Anak','wedding':'Wedding','wedding-design':'Desain Pernikahan','umrah-haji':'Foto Umrah/Haji','passport-photo':'Pas Foto Warna','graduation-photo':'Foto Wisuda','photo-booth':'Photo Booth','birthday-photo':'Foto Ulang Tahun','kartu-lebaran':'Kartu Lebaran','desain-rumah':'Desain Rumah','desain-kamar':'Desain Kamar','sketsa-gambar':'Sketsa Gambar','bikin-carousel':'Bikin Carousel','miniature':'Miniature Me','karikatur':'Karikatur Generator','photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor','tattoo-editor':'Tattoo Editor','halu':'Halu Idol','sticker':'Sticker Tempel','hair-generator':'Hair Generator','expression-changer':'Expression Changer','face-swap':'Face Swap','bg-remover':'Ubah Background','photo-extender':'Perluas Foto','story-board':'Story Board','twibon':'Twibon Frame','story-update':'Story Update','image-analyzer':'Image to Prompt','packaging-design':'Packaging Design','photo-angle':'Photo Angle','style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'Foto Sampul IG & Tiktok','photo-restoration':'Restorasi Foto','object-remover':'Hapus Object','logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit Generator','content-calendar':'Content Calendar Planner','ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI','caption-generator':'AI Caption Generator','product-comparison':'Product Comparison','mascot-generator':'Mascot Generator','poster-generator':'Poster Generator','banner-generator':'Banner Generator','sketch-catalog':'Sketsa ke Katalog','fotogenic':'Fotogenic','timelapse-renovasi':'Timelapse Renovasi','veo':'Affiliate Go Pro','opal':'Opal Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer' },
@@ -70063,6 +70111,54 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
                 'religious.tips':'<strong>Tips:</strong> Pilih tema sesuai target market Anda. Tersedia 50 tema untuk 5 agama resmi di Indonesia.',
                 'religious.results-title':'Hasil Foto Affiliate Agama',
                 'religious.download-all':'Download Semua',
+                // pose fashion
+                'pose.upload-click':'Klik atau seret gambar',
+                'pose.upload-hint':'PNG, JPG, atau WEBP (Maks. 5MB)',
+                'pose.uploaded-label':'Gambar yang diunggah:',
+                'pose.custom-title':'Custom Pose (Opsional)',
+                'pose.custom-desc':'Tulis deskripsi pose yang Anda inginkan. Jika kosong, akan menggunakan pose default.',
+                'pose.tips':' Jelaskan pose dengan detail dalam bahasa Inggris untuk hasil terbaik. Contoh: "confident standing pose with arms crossed", "elegant sitting pose on chair", "dynamic action pose", dll.',
+                'pose.select-btn':'Pilih 6 Pose',
+                'pose.results-title':'Hasil Pose...',
+                'pose.download-all':'Download Semua',
+                // food selfie
+                'food.upload-title':'Unggah Foto Makanan',
+                'food.upload-click':'Klik atau seret foto makanan',
+                'food.model-pick':'Pilih Foto Model/Orang',
+                'food.model-hint':'Orang ini akan muncul di foto dengan makanan',
+                'food.model-confirm':' Model akan muncul di foto bersama makanan',
+                'food.model-tip':'💡 Upload foto orang yang akan muncul di foto bersama makanan sesuai tema',
+                'food.ratio-title':'Pilih Rasio Aspek',
+                'food.theme-title':'Pilih Tema',
+                'food.section-other':'Tema Lainnya',
+                'food.custom-label':'✨ Tulis Tema Custom Anda:',
+                'food.custom-tip':'💡 Deskripsikan tema fotografi makanan yang Anda inginkan dengan detail',
+                'food.theme-tip':'💡 Pilih tema sesuai target konten Anda',
+                'food.bg-title':' Upload Background Custom (Opsional)',
+                'food.bg-pick':'Pilih Background Custom',
+                'food.bg-confirm':' Background custom akan digunakan',
+                'food.bg-tip':'💡 Upload background sendiri atau gunakan tema di atas',
+                'food.ref-title':'Referensi',
+                'food.ref-optional':'(Opsional)',
+                'food.ref-hint':'Komposisi referensi',
+                // product review
+                'review.desc':'Solusi AI untuk konten review produk afiliasi Anda.',
+                'review.step1-title':'Unggah Gambar Produk',
+                'review.upload-click':'Klik atau seret gambar ke sini',
+                'review.upload-hint':'PNG, JPG, WEBP (Bisa lebih dari satu)',
+                'review.step2-title':'Deskripsi Produk',
+                'review.desc-placeholder':'Deskripsikan produk Anda secara detail... atau gunakan AI Generate',
+                'review.desc-tip':'💡 Tip: Deskripsi detail menghasilkan review yang lebih berkualitas',
+                'review.step3-title':'Foto Model',
+                'review.optional-label':'(Opsional)',
+                'review.model-click':'Klik untuk pilih foto model',
+                'review.model-tip':'🎭 Upload foto model untuk hasil lebih personal',
+                'review.step4-title':'Tema Foto',
+                'review.theme-placeholder':'Contoh: Minimalis & bersih, nuansa alam tropis, futuristik dengan neon...',
+                'review.theme-tip':'🎨 Tentukan style visual untuk hasil lebih menarik',
+                'review.count-title':'Jumlah Scene',
+                'review.gen-prefix':'Buat',
+                'review.gen-suffix':'Scene Review',
             }
         };
 
