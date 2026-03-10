@@ -12006,7 +12006,7 @@
                                 <div>
                                     <div class="flex items-center gap-2 mb-3">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-violet-500 to-violet-600 text-white font-bold text-sm shadow-lg">9</div>
-                                        <h3 class="text-base font-semibold text-gray-800">Jumlah Variasi</h3>
+                                        <h3 class="text-base font-semibold text-gray-800" data-i18n="expression.step4-title">Jumlah Variasi</h3>
                                     </div>
                                     <div id="banner-count-options" class="grid grid-cols-3 gap-3">
                                         <button type="button" data-value="4" class="option-btn-banner">4 Banner</button>
@@ -18278,7 +18278,7 @@
                     <h1 class="text-4xl md:text-5xl font-bold mb-3">
                         <i class="fas fa-face-laugh-beam mr-3"></i>Expression Changer
                     </h1>
-                    <p class="text-lg text-gray-600">
+                    <p class="text-lg text-gray-600" data-i18n="expression.desc">
                         Ubah ekspresi wajah dalam foto dengan AI canggih. Dari senyum hingga serius, semua ekspresi bisa diciptakan dengan natural!
                     </p>
                 </header>
@@ -18292,12 +18292,12 @@
                                 <div>
                                     <div class="flex items-center gap-2 mb-3">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 text-white font-bold text-sm shadow-lg">1</div>
-                                        <h3 class="text-base font-semibold text-gray-800">Unggah Foto Wajah</h3>
+                                        <h3 class="text-base font-semibold text-gray-800" data-i18n="expression.step1-title">Unggah Foto Wajah</h3>
                                     </div>
                                     <label for="expression-input" id="expression-upload-box" class="upload-box-expression w-full h-56 sm:h-64 rounded-xl flex items-center justify-center cursor-pointer relative overflow-hidden border-2 border-dashed border-gray-300 transition-all duration-300 hover:border-blue-500 hover:bg-gradient-to-br hover:from-blue-50 hover:to-cyan-50 hover:shadow-xl hover:-translate-y-1">
                                         <div id="expression-placeholder" class="text-center text-gray-500 p-4">
                                             <i class="fas fa-face-smile transition-transform duration-300" style="font-size: 3.5rem; color: #3b82f6;"></i>
-                                            <p class="mt-3 text-sm md:text-base font-semibold">😊 Klik atau seret foto close-up wajah</p>
+                                            <p class="mt-3 text-sm md:text-base font-semibold" data-i18n="expression.upload-p">😊 Klik atau seret foto close-up wajah</p>
                                             <p class="mt-1 text-xs text-gray-400">PNG, JPG, HEIC (Max 10MB)</p>
                                         </div>
                                         <img id="expression-preview" class="hidden absolute top-0 left-0 w-full h-full object-cover" alt="Preview">
@@ -18312,7 +18312,7 @@
                                 <div>
                                     <div class="flex items-center gap-2 mb-3">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 text-white font-bold text-sm shadow-lg">2</div>
-                                        <h3 class="text-base font-semibold text-gray-800">Pilih Ekspresi Target</h3>
+                                        <h3 class="text-base font-semibold text-gray-800" data-i18n="expression.step2-title">Pilih Ekspresi Target</h3>
                                     </div>
                                     <div id="expression-type-options" class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                                         <button type="button" data-value="Happy Smiling" class="option-btn-expression selected">
@@ -18355,9 +18355,9 @@
 
                                     <!-- Custom Expression Input -->
                                     <div id="expression-custom-container" class="hidden mt-4">
-                                        <label class="block text-sm font-semibold text-gray-700 mb-2">✨ Ekspresi Kustom Anda:</label>
-                                        <input type="text" id="expression-custom-input" class="w-full p-3 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" placeholder="Contoh: senyum malu-malu, wajah misterius, ekspresi memikat...">
-                                        <p class="text-xs text-gray-500 mt-2">💡 Deskripsikan ekspresi yang Anda inginkan dengan detail</p>
+                                        <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="expression.custom-label">✨ Ekspresi Kustom Anda:</label>
+                                        <input type="text" id="expression-custom-input" class="w-full p-3 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all" data-i18n-placeholder="expression.custom-placeholder" placeholder="Contoh: senyum malu-malu, wajah misterius, ekspresi memikat...">
+                                        <p class="text-xs text-gray-500 mt-2" data-i18n="expression.custom-tip">💡 Deskripsikan ekspresi yang Anda inginkan dengan detail</p>
                                     </div>
                                 </div>
 
@@ -18365,7 +18365,7 @@
                                 <div>
                                     <div class="flex items-center gap-2 mb-3">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 text-white font-bold text-sm shadow-lg">3</div>
-                                        <h3 class="text-base font-semibold text-gray-800">Intensitas Ekspresi</h3>
+                                        <h3 class="text-base font-semibold text-gray-800" data-i18n="expression.step3-title">Intensitas Ekspresi</h3>
                                     </div>
                                     <div id="expression-intensity-options" class="grid grid-cols-3 gap-3">
                                         <button type="button" data-value="Subtle" class="option-btn-expression">
@@ -18396,10 +18396,10 @@
                                 <!-- Generate Button -->
                                 <button id="expression-generate-btn" class="w-full text-white font-bold py-4 px-6 rounded-xl flex items-center justify-center text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0" style="background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);" disabled>
                                     <i class="fas fa-wand-magic-sparkles mr-2"></i>
-                                    <span>Ubah Ekspresi</span>
+                                    <span data-i18n="expression.gen-btn">Ubah Ekspresi</span>
                                 </button>
 
-                                <div class="text-center text-xs text-gray-500 mt-2">
+                                <div class="text-center text-xs text-gray-500 mt-2" data-i18n="expression.gen-note">
                                     ⚡ Proses generasi memerlukan waktu 15-30 detik per variasi
                                 </div>
                             </div>
@@ -18412,8 +18412,8 @@
                             <!-- Placeholder -->
                             <div id="expression-results-placeholder" class="flex flex-grow flex-col items-center justify-center text-center text-slate-500">
                                 <i class="fas fa-face-smile-wink" style="font-size: 4rem; color: #cbd5e1; margin-bottom: 1rem;"></i>
-                                <h3 class="font-semibold text-lg text-slate-600">Hasil Expression Changer</h3>
-                                <p class="mt-1 text-sm">Foto dengan ekspresi baru akan muncul di sini</p>
+                                <h3 class="font-semibold text-lg text-slate-600" data-i18n="expression.placeholder-title">Hasil Expression Changer</h3>
+                                <p class="mt-1 text-sm" data-i18n="expression.placeholder-desc">Foto dengan ekspresi baru akan muncul di sini</p>
                                 <div class="mt-4 p-4 bg-blue-50 rounded-lg max-w-md">
                                     <p class="text-xs text-blue-700">
                                         <i class="fas fa-info-circle mr-1"></i>
@@ -18426,12 +18426,12 @@
                             <div id="expression-results-container" class="hidden">
                                 <!-- Results Header -->
                                 <div class="flex flex-col md:flex-row items-center justify-between mb-6 bg-gradient-to-r from-blue-50 to-cyan-50 p-4 rounded-xl border-2 border-blue-200">
-                                    <h3 class="text-xl md:text-2xl font-bold text-gray-800">
+                                    <h3 class="text-xl md:text-2xl font-bold text-gray-800" data-i18n="expression.results-header">
                                         😊 Hasil Expression Changer 🎭
                                     </h3>
                                     <button id="expression-download-all-btn" class="mt-4 md:mt-0 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-6 py-2 rounded-full font-semibold shadow-lg transition transform hover:scale-105 flex items-center gap-2">
                                         <i class="fas fa-download"></i>
-                                        Download Semua
+                                        <span data-i18n="family.download-all">Download Semua</span>
                                     </button>
                                 </div>
 
@@ -22485,7 +22485,7 @@
                     <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-400">
                         Sticker Tempel
                     </h1>
-                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto" data-i18n="sticker.desc">
                         Buat stiker kustom dari fotomu dan tempelkan di atas foto aslinya!
                     </p>
                 </header>
@@ -22493,27 +22493,27 @@
                 <main class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white/70 backdrop-blur-xl p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-200/50">
                     <!-- Input Section -->
                     <div class="flex flex-col space-y-4 text-gray-800">
-                        <h2 class="text-2xl font-semibold text-center md:text-left">1. Unggah Foto</h2>
+                        <h2 class="text-2xl font-semibold text-center md:text-left" data-i18n="sticker.step1-title">1. Unggah Foto</h2>
                         <div id="sticker-image-upload-area" class="img-preview-container rounded-lg flex items-center justify-center text-gray-500 border-2 border-dashed border-gray-300">
                             <img id="sticker-image-preview" class="img-preview rounded-lg hidden" alt="Pratinjau Gambar">
-                            <span id="sticker-upload-placeholder">Pilih gambar untuk memulai...</span>
+                            <span id="sticker-upload-placeholder" data-i18n="sticker.upload-placeholder">Pilih gambar untuk memulai...</span>
                         </div>
                         <input type="file" id="sticker-image-input" accept="image/*" class="hidden">
-                        <button id="sticker-upload-button" class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+                        <button id="sticker-upload-button" class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 shadow-md hover:shadow-lg" data-i18n="sticker.upload-btn">
                             Pilih Gambar
                         </button>
                         <div class="pt-2">
-                            <label for="sticker-prompt-addition" class="block text-sm font-medium text-gray-600 mb-1">Tambahkan gaya spesifik (opsional):</label>
-                            <input type="text" id="sticker-prompt-addition" class="w-full bg-gray-100 border border-gray-300 text-gray-800 rounded-lg px-3 py-2 focus:ring-2 focus:ring-pink-400 focus:outline-none" placeholder="Contoh: gaya pixel art, cat air, komik">
+                            <label for="sticker-prompt-addition" class="block text-sm font-medium text-gray-600 mb-1" data-i18n="sticker.style-label">Tambahkan gaya spesifik (opsional):</label>
+                            <input type="text" id="sticker-prompt-addition" class="w-full bg-gray-100 border border-gray-300 text-gray-800 rounded-lg px-3 py-2 focus:ring-2 focus:ring-pink-400 focus:outline-none" data-i18n-placeholder="sticker.style-placeholder" placeholder="Contoh: gaya pixel art, cat air, komik">
                         </div>
-                        <button id="sticker-generate-button" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed shadow-md hover:shadow-lg">
+                        <button id="sticker-generate-button" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed shadow-md hover:shadow-lg" data-i18n="sticker.gen-btn">
                             Buat Stiker!
                         </button>
                     </div>
 
                     <!-- Output Section -->
                     <div class="flex flex-col space-y-4 text-gray-800">
-                        <h2 class="text-2xl font-semibold text-center md:text-left">2. Hasil Stiker</h2>
+                        <h2 class="text-2xl font-semibold text-center md:text-left" data-i18n="sticker.step2-title">2. Hasil Stiker</h2>
                         <div id="sticker-output-area" class="img-preview-container rounded-lg border-2 border-gray-300">
                             <div id="sticker-output-area-content">
                                 <div id="sticker-loading-spinner" class="loader-sticker hidden"></div>
@@ -22524,22 +22524,22 @@
                                         <div id="sticker-resize-handle"></div>
                                     </div>
                                 </div>
-                                <span id="sticker-output-placeholder" class="text-gray-500 text-center p-4">Hasil stiker akan muncul di sini...</span>
+                                <span id="sticker-output-placeholder" class="text-gray-500 text-center p-4" data-i18n="sticker.output-placeholder">Hasil stiker akan muncul di sini...</span>
                                 <div id="sticker-error-message" class="text-red-500 text-center p-4 hidden"></div>
                             </div>
                         </div>
-                        <p id="sticker-drag-instruction" class="text-center text-gray-500 text-sm hidden">Tips: Anda bisa menggeser dan mengubah ukuran stiker!</p>
+                        <p id="sticker-drag-instruction" class="text-center text-gray-500 text-sm hidden" data-i18n="sticker.drag-tip">Tips: Anda bisa menggeser dan mengubah ukuran stiker!</p>
 
                         <div id="sticker-tolerance-slider-container" class="w-full pt-2 hidden">
-                            <label for="sticker-tolerance-slider" class="block text-sm font-medium text-center text-gray-600 mb-1">Geser untuk Atur Toleransi Latar</label>
+                            <label for="sticker-tolerance-slider" class="block text-sm font-medium text-center text-gray-600 mb-1" data-i18n="sticker.tolerance-label">Geser untuk Atur Toleransi Latar</label>
                             <input type="range" id="sticker-tolerance-slider" min="1" max="255" value="160" class="w-full">
                         </div>
 
                         <div id="sticker-button-container" class="grid grid-cols-2 gap-4">
-                            <button id="sticker-remove-bg-button" class="w-full text-center bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 hidden shadow-md hover:shadow-lg">
+                            <button id="sticker-remove-bg-button" class="w-full text-center bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 hidden shadow-md hover:shadow-lg" data-i18n="sticker.remove-bg-btn">
                                 Hapus Latar
                             </button>
-                            <button id="sticker-download-button" class="w-full text-center bg-lime-500 hover:bg-lime-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 hidden shadow-md hover:shadow-lg">
+                            <button id="sticker-download-button" class="w-full text-center bg-lime-500 hover:bg-lime-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 hidden shadow-md hover:shadow-lg" data-i18n="sticker.download-btn">
                                 Unduh Hasil
                             </button>
                         </div>
@@ -22554,7 +22554,7 @@
 
                 <!-- Panel Kontrol (Kiri) -->
                 <div class="w-full lg:w-1/3 xl:w-1/4 p-6 control-panel overflow-y-auto">
-                    <h1 class="text-2xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                    <h1 class="text-2xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500" data-i18n="hair.title">
                         Generator Perubah Rambut
                     </h1>
 
@@ -22563,7 +22563,7 @@
                         <div>
                             <label class="w-full cursor-pointer bg-gray-800 hover:bg-gray-700 border border-gray-700 text-white font-semibold py-3 px-4 rounded-lg flex items-center justify-center transition-colors">
                                 <i class="fas fa-upload mr-2"></i>
-                                <span id="hair-upload-text">Unggah Foto</span>
+                                <span id="hair-upload-text" data-i18n="hair.upload-text">Unggah Foto</span>
                                 <input
                                     type="file"
                                     id="hair-image-input"
@@ -22575,24 +22575,26 @@
                             <div id="hair-preview-container" class="mt-3 hidden lg:hidden">
                                 <img id="hair-image-preview" src="" alt="Preview" class="w-full rounded-lg shadow-lg max-h-48 object-cover">
                                 <button id="hair-remove-preview" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg transition-colors">
-                                    <i class="fas fa-times mr-1"></i> Hapus Foto
+                                    <i class="fas fa-times mr-1"></i> <span data-i18n="unboxing.remove-photo">Hapus Foto</span>
                                 </button>
                             </div>
                         </div>
 
                         <!-- 2. Pilih Gender -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-2">Pilih Gender</label>
+                            <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="hair.gender-label">Pilih Gender</label>
                             <div class="flex w-full bg-gray-800 rounded-lg p-1">
                                 <button
                                     id="hair-gender-wanita"
                                     class="gender-btn active w-1/2 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700"
+                                    data-i18n="hair.gender-female"
                                 >
                                     Wanita
                                 </button>
                                 <button
                                     id="hair-gender-pria"
                                     class="gender-btn w-1/2 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700"
+                                    data-i18n="hair.gender-male"
                                 >
                                     Pria
                                 </button>
@@ -22601,7 +22603,7 @@
 
                         <!-- 3. Pilihan Gaya -->
                         <div class="w-full">
-                            <label class="block text-sm font-medium text-gray-300 mb-1">Pilih Gaya Rambut</label>
+                            <label class="block text-sm font-medium text-gray-300 mb-1" data-i18n="hair.style-label">Pilih Gaya Rambut</label>
                             <select
                                 id="hair-style-select"
                                 class="w-full bg-gray-800 border border-gray-700 text-white rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
@@ -22611,7 +22613,7 @@
 
                         <!-- 4. Pilihan Warna -->
                         <div class="w-full">
-                            <label class="block text-sm font-medium text-gray-300 mb-1">Pilih Warna Rambut</label>
+                            <label class="block text-sm font-medium text-gray-300 mb-1" data-i18n="hair.color-label">Pilih Warna Rambut</label>
                             <select
                                 id="hair-color-select"
                                 class="w-full bg-gray-800 border border-gray-700 text-white rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
@@ -22621,7 +22623,7 @@
 
                         <!-- 5. Pilih Rasio Gambar -->
                         <div class="w-full">
-                            <label class="block text-sm font-medium text-gray-300 mb-2">Rasio Gambar</label>
+                            <label class="block text-sm font-medium text-gray-300 mb-2" data-i18n="hair.ratio-label">Rasio Gambar</label>
                             <div id="hair-ratio-options" class="grid grid-cols-2 gap-2">
                                 <button type="button" data-value="1:1" class="hair-ratio-btn bg-gray-800 hover:bg-gray-700 text-gray-300 px-3 py-2 rounded-lg border border-gray-700 transition-all text-sm">
                                     <i class="fas fa-square mr-1"></i>1:1
@@ -22644,7 +22646,7 @@
                             class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
                         >
                             <i class="fas fa-magic mr-2"></i>
-                            ubah Rambutnya!
+                            <span data-i18n="hair.gen-btn">ubah Rambutnya!</span>
                         </button>
 
                         <!-- 6. Pesan Error -->
@@ -22662,8 +22664,8 @@
                         <div class="w-24 h-24 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mb-6 shadow-lg">
                             <i class="fas fa-cut text-white text-4xl"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-300 mb-3">Hasil Hair Generator Anda</h3>
-                        <p class="text-gray-500 max-w-md">Upload foto dan pilih gaya rambut. Akan generate 4 variasi hasil yang bisa di-preview dan download!</p>
+                        <h3 class="text-2xl font-bold text-gray-300 mb-3" data-i18n="hair.placeholder-title">Hasil Hair Generator Anda</h3>
+                        <p class="text-gray-500 max-w-md" data-i18n="hair.placeholder-desc">Upload foto dan pilih gaya rambut. Akan generate 4 variasi hasil yang bisa di-preview dan download!</p>
                         <div class="mt-6 flex items-center gap-4">
                             <div class="flex items-center gap-2">
                                 <i class="fas fa-check-circle text-blue-500"></i>
@@ -22679,13 +22681,13 @@
                     <!-- Results Container -->
                     <div id="hair-results-container" class="hidden">
                         <div class="flex items-center justify-between mb-6 bg-gradient-to-r from-blue-900/30 to-purple-900/30 p-4 rounded-xl border-2 border-blue-700">
-                            <h3 class="text-xl font-bold text-gray-200">
+                            <h3 class="text-xl font-bold text-gray-200" data-i18n="hair.results-title">
                                 <i class="fas fa-sparkles mr-2 text-blue-400"></i>
                                 Hasil Hair Generator
                             </h3>
                             <button id="hair-download-all-btn" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-2 rounded-full font-semibold shadow-lg transition transform hover:scale-105 flex items-center gap-2">
                                 <i class="fas fa-download"></i>
-                                Download Semua
+                                <span data-i18n="family.download-all">Download Semua</span>
                             </button>
                         </div>
                         <div id="hair-results-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
@@ -70390,6 +70392,48 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'halu.step5-title':'5. Photo Style',
             'halu.step5-placeholder':'Example: Polaroid photo style...',
             'halu.gen-btn':'Create 6 Fantasy Photos',
+            // sticker
+            'sticker.desc':'Create custom stickers from your photo and stick them on top of the original!',
+            'sticker.step1-title':'1. Upload Photo',
+            'sticker.upload-placeholder':'Select an image to start...',
+            'sticker.upload-btn':'Choose Image',
+            'sticker.style-label':'Add specific style (optional):',
+            'sticker.style-placeholder':'Example: pixel art style, watercolor, comic',
+            'sticker.gen-btn':'Create Sticker!',
+            'sticker.step2-title':'2. Sticker Result',
+            'sticker.output-placeholder':'Sticker result will appear here...',
+            'sticker.drag-tip':'Tips: You can drag and resize the sticker!',
+            'sticker.tolerance-label':'Drag to Set Background Tolerance',
+            'sticker.remove-bg-btn':'Remove Background',
+            'sticker.download-btn':'Download Result',
+            // hair
+            'hair.title':'Hair Generator',
+            'hair.upload-text':'Upload Photo',
+            'hair.gender-label':'Choose Gender',
+            'hair.gender-female':'Female',
+            'hair.gender-male':'Male',
+            'hair.style-label':'Choose Hairstyle',
+            'hair.color-label':'Choose Hair Color',
+            'hair.ratio-label':'Image Ratio',
+            'hair.gen-btn':'Change the Hair!',
+            'hair.placeholder-title':'Your Hair Generator Results',
+            'hair.placeholder-desc':'Upload photo and choose a hairstyle. Will generate 4 variation results that can be previewed and downloaded!',
+            'hair.results-title':'Hair Generator Results',
+            // expression
+            'expression.desc':'Change facial expressions in photos with advanced AI. From smiling to serious, all expressions can be created naturally!',
+            'expression.step1-title':'Upload Face Photo',
+            'expression.upload-p':'😊 Click or drag close-up face photo',
+            'expression.step2-title':'Choose Target Expression',
+            'expression.custom-label':'✨ Your Custom Expression:',
+            'expression.custom-placeholder':'Example: shy smile, mysterious face, captivating expression...',
+            'expression.custom-tip':'💡 Describe the expression you want in detail',
+            'expression.step3-title':'Expression Intensity',
+            'expression.step4-title':'Number of Variations',
+            'expression.gen-btn':'Change Expression',
+            'expression.gen-note':'⚡ Generation process takes 15-30 seconds per variation',
+            'expression.placeholder-title':'Expression Changer Results',
+            'expression.placeholder-desc':'Photos with new expressions will appear here',
+            'expression.results-header':'😊 Expression Changer Results 🎭',
             },
             id: {
                 nav: { 'apikey-settings':'API Key','beranda':'Beranda','buat-model':'Membuat Model','mockup-studio':'Mockup Studio','pov-tangan':'POV Tangan','touring':'Foto Touring','mirror-selfie':'POV Mirror Selfie','walking-pad':'Walking Pad','affiliate':'Foto Produk Affiliate','affiliate-islami':'Affiliate Agama','virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion','food-selfie':'Food Selfie','product-review':'Product Review','skincare-review':'Skincare Review','food-review':'Food Review','product-ads':'Iklan Produk','professional-headshot':'Professional Headshot','unboxing-scene':'Unboxing Scene','before-after':'Before/After','product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card','size-guide':'Size Guide','video-frames':'Video Frames','vehicle-modifier':'Vehicle Modifier','deskripsi-produk':'Deskripsi Produk SEO','ide-konten-tiktok':'Ide Konten TikTok','script-story-iklan':'Script Story Iklan','rencana-bisnis':'Rencana Bisnis & SWOT','hr-assistant':'HR Assistant','konten-marketing':'Konten Marketing','riset-pasar':'Riset Pasar & Ide','financial-forecast':'Simulasi Anggaran','family':'Foto Keluarga','new-born':'New Born Studio','maternity':'Foto Maternity','profesi-anak':'Foto Profesi Anak','wedding':'Wedding','wedding-design':'Desain Pernikahan','umrah-haji':'Foto Umrah/Haji','passport-photo':'Pas Foto Warna','graduation-photo':'Foto Wisuda','photo-booth':'Photo Booth','birthday-photo':'Foto Ulang Tahun','kartu-lebaran':'Kartu Lebaran','desain-rumah':'Desain Rumah','desain-kamar':'Desain Kamar','sketsa-gambar':'Sketsa Gambar','bikin-carousel':'Bikin Carousel','miniature':'Miniature Me','karikatur':'Karikatur Generator','photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor','tattoo-editor':'Tattoo Editor','halu':'Halu Idol','sticker':'Sticker Tempel','hair-generator':'Hair Generator','expression-changer':'Expression Changer','face-swap':'Face Swap','bg-remover':'Ubah Background','photo-extender':'Perluas Foto','story-board':'Story Board','twibon':'Twibon Frame','story-update':'Story Update','image-analyzer':'Image to Prompt','packaging-design':'Packaging Design','photo-angle':'Photo Angle','style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'Foto Sampul IG & Tiktok','photo-restoration':'Restorasi Foto','object-remover':'Hapus Object','logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit Generator','content-calendar':'Content Calendar Planner','ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI','caption-generator':'AI Caption Generator','product-comparison':'Product Comparison','mascot-generator':'Mascot Generator','poster-generator':'Poster Generator','banner-generator':'Banner Generator','sketch-catalog':'Sketsa ke Katalog','fotogenic':'Fotogenic','timelapse-renovasi':'Timelapse Renovasi','veo':'Affiliate Go Pro','opal':'Opal Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer' },
@@ -71259,6 +71303,48 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'halu.step5-title':'5. Gaya Foto',
             'halu.step5-placeholder':'Contoh: Gaya foto polaroid...',
             'halu.gen-btn':'Buat 6 Foto Halu',
+            // sticker
+            'sticker.desc':'Buat stiker kustom dari fotomu dan tempelkan di atas foto aslinya!',
+            'sticker.step1-title':'1. Unggah Foto',
+            'sticker.upload-placeholder':'Pilih gambar untuk memulai...',
+            'sticker.upload-btn':'Pilih Gambar',
+            'sticker.style-label':'Tambahkan gaya spesifik (opsional):',
+            'sticker.style-placeholder':'Contoh: gaya pixel art, cat air, komik',
+            'sticker.gen-btn':'Buat Stiker!',
+            'sticker.step2-title':'2. Hasil Stiker',
+            'sticker.output-placeholder':'Hasil stiker akan muncul di sini...',
+            'sticker.drag-tip':'Tips: Anda bisa menggeser dan mengubah ukuran stiker!',
+            'sticker.tolerance-label':'Geser untuk Atur Toleransi Latar',
+            'sticker.remove-bg-btn':'Hapus Latar',
+            'sticker.download-btn':'Unduh Hasil',
+            // hair
+            'hair.title':'Generator Perubah Rambut',
+            'hair.upload-text':'Unggah Foto',
+            'hair.gender-label':'Pilih Gender',
+            'hair.gender-female':'Wanita',
+            'hair.gender-male':'Pria',
+            'hair.style-label':'Pilih Gaya Rambut',
+            'hair.color-label':'Pilih Warna Rambut',
+            'hair.ratio-label':'Rasio Gambar',
+            'hair.gen-btn':'ubah Rambutnya!',
+            'hair.placeholder-title':'Hasil Hair Generator Anda',
+            'hair.placeholder-desc':'Upload foto dan pilih gaya rambut. Akan generate 4 variasi hasil yang bisa di-preview dan download!',
+            'hair.results-title':'Hasil Hair Generator',
+            // expression
+            'expression.desc':'Ubah ekspresi wajah dalam foto dengan AI canggih. Dari senyum hingga serius, semua ekspresi bisa diciptakan dengan natural!',
+            'expression.step1-title':'Unggah Foto Wajah',
+            'expression.upload-p':'😊 Klik atau seret foto close-up wajah',
+            'expression.step2-title':'Pilih Ekspresi Target',
+            'expression.custom-label':'✨ Ekspresi Kustom Anda:',
+            'expression.custom-placeholder':'Contoh: senyum malu-malu, wajah misterius, ekspresi memikat...',
+            'expression.custom-tip':'💡 Deskripsikan ekspresi yang Anda inginkan dengan detail',
+            'expression.step3-title':'Intensitas Ekspresi',
+            'expression.step4-title':'Jumlah Variasi',
+            'expression.gen-btn':'Ubah Ekspresi',
+            'expression.gen-note':'⚡ Proses generasi memerlukan waktu 15-30 detik per variasi',
+            'expression.placeholder-title':'Hasil Expression Changer',
+            'expression.placeholder-desc':'Foto dengan ekspresi baru akan muncul di sini',
+            'expression.results-header':'😊 Hasil Expression Changer 🎭',
             }
         };
 
