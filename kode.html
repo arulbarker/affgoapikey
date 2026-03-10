@@ -10682,7 +10682,7 @@
             <div class="container mx-auto px-4 py-8">
                 <header class="text-center mb-8">
                     <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">AI Beauty Editor</h1>
-                    <p class="text-lg text-gray-600 mt-2">Percantik wajah & tubuh dengan AI profesional 💄✨</p>
+                    <p class="text-lg text-gray-600 mt-2" data-i18n="beauty.desc">Percantik wajah & tubuh dengan AI profesional 💄✨</p>
                 </header>
 
                 <main class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -10692,13 +10692,13 @@
                         <div class="mb-6">
                             <div class="flex items-center gap-3 mb-3">
                                 <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-rose-500 text-white font-bold text-sm shadow-lg">1</div>
-                                <label class="text-xl font-semibold text-gray-800">Unggah Foto</label>
+                                <label class="text-xl font-semibold text-gray-800" data-i18n="beauty.step1-title">Unggah Foto</label>
                             </div>
                             <label for="beauty-image-input" class="upload-box-beauty block relative border-3 border-dashed border-gray-300 rounded-xl p-8 text-center cursor-pointer bg-gradient-to-br from-pink-50 to-rose-50 hover:shadow-xl transition-all">
                                 <input type="file" id="beauty-image-input" class="hidden" accept="image/png, image/jpeg, image/webp, image/heic, .heic">
                                 <div id="beauty-upload-prompt">
                                     <i class="fas fa-user-circle text-5xl text-pink-400 mb-3"></i>
-                                    <p class="text-gray-700 font-semibold">Klik atau seret foto di sini</p>
+                                    <p class="text-gray-700 font-semibold" data-i18n="beauty.upload-drag">Klik atau seret foto di sini</p>
                                     <p class="text-sm text-gray-500 mt-1">PNG, JPG, WEBP, HEIC</p>
                                 </div>
                                 <img id="beauty-image-preview" src="" alt="Preview" class="hidden w-full h-auto rounded-lg">
@@ -10707,7 +10707,7 @@
                             <div id="beauty-preview-container" class="mt-3 hidden lg:hidden">
                                 <img id="beauty-mobile-preview" src="" alt="Preview" class="w-full rounded-lg shadow-lg max-h-48 object-cover">
                                 <button id="beauty-remove-preview" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg transition-colors">
-                                    <i class="fas fa-times mr-1"></i> Hapus Foto
+                                    <i class="fas fa-times mr-1"></i> <span data-i18n="unboxing.remove-photo">Hapus Foto</span>
                                 </button>
                             </div>
                         </div>
@@ -10716,7 +10716,7 @@
                         <div class="mb-6">
                             <div class="flex items-center gap-3 mb-3">
                                 <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-rose-500 text-white font-bold text-sm shadow-lg">2</div>
-                                <label class="text-xl font-semibold text-gray-800">Pilih Fitur Beauty</label>
+                                <label class="text-xl font-semibold text-gray-800" data-i18n="beauty.step2-title">Pilih Fitur Beauty</label>
                             </div>
                             <div id="beauty-feature-options" class="grid grid-cols-2 sm:grid-cols-2 gap-3">
                                 <button type="button" data-feature="smooth-skin" class="beauty-option-btn">
@@ -10776,8 +10776,8 @@
                                 <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-rose-500 text-white font-bold text-sm shadow-lg">3</div>
                                 <label class="text-xl font-semibold text-gray-800">Custom Request (Optional)</label>
                             </div>
-                            <textarea id="beauty-custom-request" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:outline-none resize-none" rows="3" placeholder="Ketik keinginan custom Anda di sini, contoh: 'buat mata lebih tajam dan bibir lebih merah', 'kulit lebih glowing dan pipi lebih chubby', dll."></textarea>
-                            <p class="text-xs text-gray-500 mt-1">
+                            <textarea id="beauty-custom-request" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-pink-500 focus:outline-none resize-none" rows="3" data-i18n-placeholder="beauty.custom-placeholder" placeholder="Ketik keinginan custom Anda di sini, contoh: 'buat mata lebih tajam dan bibir lebih merah', 'kulit lebih glowing dan pipi lebih chubby', dll."></textarea>
+                            <p class="text-xs text-gray-500 mt-1" data-i18n="beauty.custom-note">
                                 <i class="fas fa-info-circle mr-1"></i>
                                 Opsional - Anda bisa menambahkan request custom selain fitur yang dipilih di atas
                             </p>
@@ -10836,17 +10836,17 @@
                         <div class="mb-6">
                             <div class="flex items-center gap-3 mb-3">
                                 <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-rose-500 text-white font-bold text-sm shadow-lg">6</div>
-                                <label class="text-xl font-semibold text-gray-800">Jumlah Variasi</label>
+                                <label class="text-xl font-semibold text-gray-800" data-i18n="beauty.step6-title">Jumlah Variasi</label>
                             </div>
                             <div id="beauty-count-options" class="grid grid-cols-3 gap-3">
                                 <button type="button" data-count="4" class="beauty-option-btn selected">
-                                    <span>4 Gambar</span>
+                                    <span data-i18n="maternity.count-4">4 Gambar</span>
                                 </button>
                                 <button type="button" data-count="6" class="beauty-option-btn">
-                                    <span>6 Gambar</span>
+                                    <span data-i18n="maternity.count-6">6 Gambar</span>
                                 </button>
                                 <button type="button" data-count="8" class="beauty-option-btn">
-                                    <span>8 Gambar</span>
+                                    <span data-i18n="maternity.count-8">8 Gambar</span>
                                 </button>
                             </div>
                         </div>
@@ -10859,7 +10859,7 @@
                             </div>
                             <button id="beauty-generate-btn" class="w-full bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 text-white py-4 px-6 rounded-xl text-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100" disabled>
                                 <i class="fas fa-wand-magic-sparkles mr-2"></i>
-                                <span>Apply Beauty Effect</span>
+                                <span data-i18n="beauty.gen-btn">Apply Beauty Effect</span>
                             </button>
                         </div>
                     </div>
@@ -10869,18 +10869,18 @@
                         <div class="flex items-center justify-between mb-6">
                             <h2 class="text-2xl font-bold text-gray-800">
                                 <i class="fas fa-images text-pink-500 mr-2"></i>
-                                Hasil Beauty
+                                <span data-i18n="beauty.results-title">Hasil Beauty</span>
                             </h2>
                             <button id="beauty-download-all-btn" class="hidden bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300">
                                 <i class="fas fa-download mr-2"></i>
-                                <span>Download Semua</span>
+                                <span data-i18n="family.download-all">Download Semua</span>
                             </button>
                         </div>
 
                         <div id="beauty-placeholder" class="flex flex-col items-center justify-center min-h-[500px] text-center">
                             <i class="fas fa-wand-magic-sparkles text-8xl text-pink-300 mb-4"></i>
-                            <p class="text-xl text-gray-600">Hasil beauty akan muncul di sini</p>
-                            <p class="text-sm text-gray-500 mt-2">Unggah foto dan pilih fitur beauty untuk memulai</p>
+                            <p class="text-xl text-gray-600" data-i18n="beauty.placeholder">Hasil beauty akan muncul di sini</p>
+                            <p class="text-sm text-gray-500 mt-2" data-i18n="beauty.placeholder-sub">Unggah foto dan pilih fitur beauty untuk memulai</p>
                         </div>
 
                         <div id="beauty-results-grid" class="hidden grid grid-cols-2 gap-4 max-h-[70vh] md:max-h-96 overflow-y-auto" style="-webkit-overflow-scrolling: touch;"></div>
@@ -10896,12 +10896,12 @@
                 <div class="card p-6 w-full lg:w-1/3 lg:max-w-sm flex-shrink-0 self-start">
                     <div class="flex flex-col gap-6">
                         <div>
-                            <h2 class="text-xl font-semibold mb-3 text-gray-800">1. Unggah Fotomu</h2>
+                            <h2 class="text-xl font-semibold mb-3 text-gray-800" data-i18n="halu.step1-title">1. Unggah Fotomu</h2>
                             <div id="halu-image-upload-area">
                                 <label for="halu-image-input" class="file-input-label rounded-lg text-center text-gray-500 cursor-pointer flex flex-col items-center justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mb-3 text-pink-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-                                    <span class="font-semibold text-gray-700">Pilih Fotomu</span>
-                                    <span class="text-xs text-gray-400 mt-1">Klik atau seret gambar</span>
+                                    <span class="font-semibold text-gray-700" data-i18n="halu.photo-select">Pilih Fotomu</span>
+                                    <span class="text-xs text-gray-400 mt-1" data-i18n="halu.upload-drag">Klik atau seret gambar</span>
                                 </label>
                                 <input type="file" id="halu-image-input" class="hidden" accept="image/png, image/jpeg, image/webp">
                             </div>
@@ -10912,14 +10912,14 @@
                         </div>
                         
                         <div>
-                            <h2 class="text-xl font-semibold mb-3 text-gray-800">2. Unggah Foto Idolamu</h2>
+                            <h2 class="text-xl font-semibold mb-3 text-gray-800" data-i18n="halu.step2-title">2. Unggah Foto Idolamu</h2>
                             <div id="halu-idol-image-upload-area">
                                 <label for="halu-idol-image-input" class="file-input-label rounded-lg text-center text-gray-500 cursor-pointer flex flex-col items-center justify-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mb-3 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                     </svg>
-                                    <span class="font-semibold text-gray-700">Pilih Foto Idolamu</span>
-                                     <span class="text-xs text-gray-400 mt-1">Klik atau seret gambar</span>
+                                    <span class="font-semibold text-gray-700" data-i18n="halu.idol-select">Pilih Foto Idolamu</span>
+                                     <span class="text-xs text-gray-400 mt-1" data-i18n="halu.upload-drag">Klik atau seret gambar</span>
                                 </label>
                                 <input type="file" id="halu-idol-image-input" class="hidden" accept="image/png, image/jpeg, image/webp">
                             </div>
@@ -10930,7 +10930,7 @@
                         </div>
 
                         <div>
-                            <h2 class="text-xl font-semibold mb-3 text-gray-800">3. Pilih Rasio Aspek</h2>
+                            <h2 class="text-xl font-semibold mb-3 text-gray-800" data-i18n="halu.step3-title">3. Pilih Rasio Aspek</h2>
                             <div id="halu-ratio-selection" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
                                 <button type="button" data-ratio="1:1" class="ratio-btn-halu">
                                     <i class="fas fa-square mr-2"></i>1:1
@@ -10948,17 +10948,17 @@
                         </div>
 
                         <div>
-                            <h2 class="text-xl font-semibold mb-3 text-gray-800">4. Deskripsi Momen <span class="text-sm text-gray-400">(Opsional)</span></h2>
-                            <textarea id="halu-moment-desc-input" rows="3" class="w-full p-3 bg-pink-50 border-pink-200 text-gray-800 rounded-lg" placeholder="Contoh: Kencan pertama..."></textarea>
+                            <h2 class="text-xl font-semibold mb-3 text-gray-800"><span data-i18n="halu.step4-title">4. Deskripsi Momen</span> <span class="text-sm text-gray-400" data-i18n="family.optional-label">(Opsional)</span></h2>
+                            <textarea id="halu-moment-desc-input" rows="3" class="w-full p-3 bg-pink-50 border-pink-200 text-gray-800 rounded-lg" data-i18n-placeholder="halu.step4-placeholder" placeholder="Contoh: Kencan pertama..."></textarea>
                         </div>
                         
                         <div>
-                            <h2 class="text-xl font-semibold mb-3 text-gray-800">5. Gaya Foto <span class="text-sm text-gray-400">(Opsional)</span></h2>
-                            <textarea id="halu-photo-style-input" rows="3" class="w-full p-3 bg-pink-50 border-pink-200 text-gray-800 rounded-lg" placeholder="Contoh: Gaya foto polaroid..."></textarea>
+                            <h2 class="text-xl font-semibold mb-3 text-gray-800"><span data-i18n="halu.step5-title">5. Gaya Foto</span> <span class="text-sm text-gray-400" data-i18n="family.optional-label">(Opsional)</span></h2>
+                            <textarea id="halu-photo-style-input" rows="3" class="w-full p-3 bg-pink-50 border-pink-200 text-gray-800 rounded-lg" data-i18n-placeholder="halu.step5-placeholder" placeholder="Contoh: Gaya foto polaroid..."></textarea>
                         </div>
 
                         <button id="halu-generate-btn" class="w-full btn-primary font-bold py-3 px-4 rounded-lg flex items-center justify-center text-lg" disabled>
-                            <span>Buat 6 Foto Halu</span>
+                            <span data-i18n="halu.gen-btn">Buat 6 Foto Halu</span>
                         </button>
                     </div>
                 </div>
@@ -11805,7 +11805,7 @@
                     <h1 class="text-4xl md:text-5xl font-bold mb-3" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                         <i class="fas fa-rectangle-ad mr-3"></i>Banner Generator PRO
                     </h1>
-                    <p class="text-lg text-gray-600">
+                    <p class="text-lg text-gray-600" data-i18n="tattoo.desc">
                         Buat banner profesional untuk website, media sosial, dan iklan digital dengan AI
                     </p>
                 </header>
@@ -18799,13 +18799,13 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-violet-600 text-white font-bold text-sm shadow-lg">1</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Upload Body Photo</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="tattoo.step1-title">Upload Body Photo</h3>
                                     </div>
 
                                     <div class="upload-box-tattoo cursor-pointer border-2 border-dashed border-gray-300 rounded-xl p-8 text-center">
                                         <input type="file" id="tattoo-image-upload" class="hidden" accept="image/png, image/jpeg, image/webp, image/heic, .heic">
                                         <i class="fas fa-cloud-upload-alt text-5xl mb-3 text-purple-400"></i>
-                                        <p class="text-gray-700 font-semibold mb-1">Click to upload body photo</p>
+                                        <p class="text-gray-700 font-semibold mb-1" data-i18n="tattoo.upload-p">Click to upload body photo</p>
                                         <p class="text-sm text-gray-500">PNG, JPG, WEBP, HEIC (max 10MB)</p>
                                         <p class="text-xs text-gray-400 mt-2">💡 Clear view of body part for best results</p>
                                     </div>
@@ -18823,10 +18823,10 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-violet-600 text-white font-bold text-sm shadow-lg">2</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Describe Your Tattoo</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="tattoo.step2-title">Describe Your Tattoo</h3>
                                     </div>
 
-                                    <textarea id="tattoo-description" rows="4" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none text-sm resize-none" placeholder="Describe the tattoo you want... (e.g., Dragon with wings, rose flower, tribal pattern, geometric mandala, Japanese koi fish, etc.)"></textarea>
+                                    <textarea id="tattoo-description" rows="4" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:outline-none text-sm resize-none" data-i18n-placeholder="tattoo.desc-placeholder" placeholder="Describe the tattoo you want... (e.g., Dragon with wings, rose flower, tribal pattern, geometric mandala, Japanese koi fish, etc.)"></textarea>
                                     <p class="text-xs text-gray-500 mt-2">✨ Be specific for better results</p>
                                 </div>
 
@@ -18980,7 +18980,7 @@
                                 <!-- Generate Button -->
                                 <button id="tattoo-generate-btn" disabled class="w-full bg-gradient-to-r from-purple-600 to-violet-600 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
                                     <i class="fas fa-magic mr-2"></i>
-                                    Generate <span id="tattoo-count-text">6</span> Tattoo Designs
+                                    <span data-i18n="kids.gen-prefix">Generate</span> <span id="tattoo-count-text">6</span> <span data-i18n="tattoo.gen-suffix">Tattoo Designs</span>
                                 </button>
                             </div>
                         </div>
@@ -18993,8 +18993,8 @@
                             <div class="mb-6">
                                 <i class="fas fa-dragon text-6xl text-purple-300"></i>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-3">Ready to Visualize Your Tattoo</h3>
-                            <p class="text-gray-600 mb-6 max-w-md mx-auto">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3" data-i18n="tattoo.placeholder-title">Ready to Visualize Your Tattoo</h3>
+                            <p class="text-gray-600 mb-6 max-w-md mx-auto" data-i18n="tattoo.placeholder-desc">
                                 Upload your photo, describe the tattoo you want, choose style and placement, then generate realistic visualizations!
                             </p>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-md mx-auto">
@@ -70357,6 +70357,39 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'photoeditor.placeholder':'Preview will appear here',
             'photoeditor.placeholder-sub':'Upload a photo to start editing',
             'photoeditor.canvas-tip':'Preview is scaled for display; download will use the original size',
+            // beauty
+            'beauty.desc':'Beautify your face & body with professional AI 💄✨',
+            'beauty.step1-title':'Upload Photo',
+            'beauty.upload-drag':'Click or drag photo here',
+            'beauty.step2-title':'Choose Beauty Features',
+            'beauty.custom-placeholder':"Type your custom beauty request, e.g. 'sharper eyes and redder lips', 'glowing skin and chubbier cheeks'",
+            'beauty.custom-note':'Optional - You can add custom requests in addition to selected features above',
+            'beauty.step6-title':'Number of Variations',
+            'beauty.gen-btn':'Apply Beauty Effect',
+            'beauty.results-title':'Beauty Results',
+            'beauty.placeholder':'Beauty results will appear here',
+            'beauty.placeholder-sub':'Upload a photo and choose beauty features to start',
+            // tattoo
+            'tattoo.desc':'Visualize tattoos on your body with AI! Upload your photo and see realistic tattoo designs on various body placements.',
+            'tattoo.step1-title':'Upload Body Photo',
+            'tattoo.upload-p':'Click to upload body photo',
+            'tattoo.step2-title':'Describe Your Tattoo',
+            'tattoo.desc-placeholder':'Describe the tattoo you want... (e.g., Dragon with wings, rose flower, tribal pattern, geometric mandala, Japanese koi fish, etc.)',
+            'tattoo.gen-suffix':'Tattoo Designs',
+            'tattoo.placeholder-title':'Ready to Visualize Your Tattoo',
+            'tattoo.placeholder-desc':'Upload your photo, describe the tattoo you want, choose style and placement, then generate realistic visualizations!',
+            // halu
+            'halu.step1-title':'1. Upload Your Photo',
+            'halu.photo-select':'Choose Your Photo',
+            'halu.upload-drag':'Click or drag image',
+            'halu.step2-title':'2. Upload Your Idol\'s Photo',
+            'halu.idol-select':'Choose Your Idol\'s Photo',
+            'halu.step3-title':'3. Choose Aspect Ratio',
+            'halu.step4-title':'4. Moment Description',
+            'halu.step4-placeholder':'Example: First date...',
+            'halu.step5-title':'5. Photo Style',
+            'halu.step5-placeholder':'Example: Polaroid photo style...',
+            'halu.gen-btn':'Create 6 Fantasy Photos',
             },
             id: {
                 nav: { 'apikey-settings':'API Key','beranda':'Beranda','buat-model':'Membuat Model','mockup-studio':'Mockup Studio','pov-tangan':'POV Tangan','touring':'Foto Touring','mirror-selfie':'POV Mirror Selfie','walking-pad':'Walking Pad','affiliate':'Foto Produk Affiliate','affiliate-islami':'Affiliate Agama','virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion','food-selfie':'Food Selfie','product-review':'Product Review','skincare-review':'Skincare Review','food-review':'Food Review','product-ads':'Iklan Produk','professional-headshot':'Professional Headshot','unboxing-scene':'Unboxing Scene','before-after':'Before/After','product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card','size-guide':'Size Guide','video-frames':'Video Frames','vehicle-modifier':'Vehicle Modifier','deskripsi-produk':'Deskripsi Produk SEO','ide-konten-tiktok':'Ide Konten TikTok','script-story-iklan':'Script Story Iklan','rencana-bisnis':'Rencana Bisnis & SWOT','hr-assistant':'HR Assistant','konten-marketing':'Konten Marketing','riset-pasar':'Riset Pasar & Ide','financial-forecast':'Simulasi Anggaran','family':'Foto Keluarga','new-born':'New Born Studio','maternity':'Foto Maternity','profesi-anak':'Foto Profesi Anak','wedding':'Wedding','wedding-design':'Desain Pernikahan','umrah-haji':'Foto Umrah/Haji','passport-photo':'Pas Foto Warna','graduation-photo':'Foto Wisuda','photo-booth':'Photo Booth','birthday-photo':'Foto Ulang Tahun','kartu-lebaran':'Kartu Lebaran','desain-rumah':'Desain Rumah','desain-kamar':'Desain Kamar','sketsa-gambar':'Sketsa Gambar','bikin-carousel':'Bikin Carousel','miniature':'Miniature Me','karikatur':'Karikatur Generator','photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor','tattoo-editor':'Tattoo Editor','halu':'Halu Idol','sticker':'Sticker Tempel','hair-generator':'Hair Generator','expression-changer':'Expression Changer','face-swap':'Face Swap','bg-remover':'Ubah Background','photo-extender':'Perluas Foto','story-board':'Story Board','twibon':'Twibon Frame','story-update':'Story Update','image-analyzer':'Image to Prompt','packaging-design':'Packaging Design','photo-angle':'Photo Angle','style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'Foto Sampul IG & Tiktok','photo-restoration':'Restorasi Foto','object-remover':'Hapus Object','logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit Generator','content-calendar':'Content Calendar Planner','ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI','caption-generator':'AI Caption Generator','product-comparison':'Product Comparison','mascot-generator':'Mascot Generator','poster-generator':'Poster Generator','banner-generator':'Banner Generator','sketch-catalog':'Sketsa ke Katalog','fotogenic':'Fotogenic','timelapse-renovasi':'Timelapse Renovasi','veo':'Affiliate Go Pro','opal':'Opal Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer' },
@@ -71193,6 +71226,39 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'photoeditor.placeholder':'Preview akan muncul di sini',
             'photoeditor.placeholder-sub':'Unggah foto untuk mulai editing',
             'photoeditor.canvas-tip':'Preview di-scale untuk tampilan, download akan menggunakan ukuran original',
+            // beauty
+            'beauty.desc':'Percantik wajah & tubuh dengan AI profesional 💄✨',
+            'beauty.step1-title':'Unggah Foto',
+            'beauty.upload-drag':'Klik atau seret foto di sini',
+            'beauty.step2-title':'Pilih Fitur Beauty',
+            'beauty.custom-placeholder':"Ketik keinginan custom Anda di sini, contoh: 'buat mata lebih tajam dan bibir lebih merah', 'kulit lebih glowing dan pipi lebih chubby', dll.",
+            'beauty.custom-note':'Opsional - Anda bisa menambahkan request custom selain fitur yang dipilih di atas',
+            'beauty.step6-title':'Jumlah Variasi',
+            'beauty.gen-btn':'Terapkan Efek Beauty',
+            'beauty.results-title':'Hasil Beauty',
+            'beauty.placeholder':'Hasil beauty akan muncul di sini',
+            'beauty.placeholder-sub':'Unggah foto dan pilih fitur beauty untuk memulai',
+            // tattoo
+            'tattoo.desc':'Visualisasikan tato di tubuhmu dengan AI! Unggah foto dan lihat desain tato realistis di berbagai bagian tubuh.',
+            'tattoo.step1-title':'Unggah Foto Tubuh',
+            'tattoo.upload-p':'Klik untuk unggah foto tubuh',
+            'tattoo.step2-title':'Deskripsikan Tato Anda',
+            'tattoo.desc-placeholder':'Deskripsikan tato yang Anda inginkan... (contoh: Naga dengan sayap, bunga mawar, pola tribal, mandala geometris, ikan koi Jepang, dll.)',
+            'tattoo.gen-suffix':'Desain Tato',
+            'tattoo.placeholder-title':'Siap Visualisasikan Tato Anda',
+            'tattoo.placeholder-desc':'Unggah foto, deskripsikan tato yang Anda inginkan, pilih style dan penempatan, lalu generate visualisasi realistis!',
+            // halu
+            'halu.step1-title':'1. Unggah Fotomu',
+            'halu.photo-select':'Pilih Fotomu',
+            'halu.upload-drag':'Klik atau seret gambar',
+            'halu.step2-title':'2. Unggah Foto Idolamu',
+            'halu.idol-select':'Pilih Foto Idolamu',
+            'halu.step3-title':'3. Pilih Rasio Aspek',
+            'halu.step4-title':'4. Deskripsi Momen',
+            'halu.step4-placeholder':'Contoh: Kencan pertama...',
+            'halu.step5-title':'5. Gaya Foto',
+            'halu.step5-placeholder':'Contoh: Gaya foto polaroid...',
+            'halu.gen-btn':'Buat 6 Foto Halu',
             }
         };
 
