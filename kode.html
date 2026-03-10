@@ -14678,11 +14678,11 @@
                             <i class="fas fa-clock-rotate-left text-4xl text-white"></i>
                         </div>
                     </div>
-                    <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-600 via-orange-600 to-amber-600 bg-clip-text text-transparent mb-3">
+                    <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-600 via-orange-600 to-amber-600 bg-clip-text text-transparent mb-3" data-i18n="photo-restoration.title">
                         Generator Restorasi Foto Pro
                     </h1>
                     <p class="text-gray-600 text-lg max-w-3xl mx-auto">
-                        Perbaiki dan restore foto lama, rusak, atau blur menjadi jernih dan berkualitas tinggi dengan AI!
+                        <span data-i18n="photo-restoration.desc">Perbaiki dan restore foto lama, rusak, atau blur menjadi jernih dan berkualitas tinggi dengan AI!</span>
                     </p>
                 </div>
 
@@ -14692,7 +14692,7 @@
                     <div class="lg:col-span-1 space-y-6">
                         <!-- Photo Upload -->
                         <div class="bg-white rounded-2xl shadow-xl p-6 border-2 border-amber-100">
-                            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+                            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2" data-i18n="photo-restoration.upload-title">
                                 <i class="fas fa-upload text-amber-600"></i>
                                 Upload Foto
                             </h3>
@@ -14700,7 +14700,7 @@
                                 <input type="file" id="pr-photo-input" accept="image/*" class="hidden">
                                 <div id="pr-photo-placeholder">
                                     <i class="fas fa-image text-5xl text-gray-400 group-hover:text-amber-500 transition-all mb-3"></i>
-                                    <p class="text-gray-600 font-semibold">Upload foto yang ingin direstorasi</p>
+                                    <p class="text-gray-600 font-semibold" data-i18n="photo-restoration.upload-p">Upload foto yang ingin direstorasi</p>
                                     <p class="text-xs text-gray-500 mt-2">PNG, JPG, HEIC</p>
                                 </div>
                                 <img id="pr-photo-preview" class="hidden w-full h-48 object-cover rounded-lg">
@@ -14721,7 +14721,7 @@
                                 <option value="deblur">Deblur & Sharpen (Hilangkan Blur)</option>
                                 <option value="denoise">Denoise (Hilangkan Noise)</option>
                             </select>
-                            <p class="text-xs text-gray-500 mt-2">💡 Pilih jenis restorasi sesuai kondisi foto</p>
+                            <p class="text-xs text-gray-500 mt-2" data-i18n="photo-restoration.mode-note">💡 Pilih jenis restorasi sesuai kondisi foto</p>
                         </div>
 
                         <!-- Restoration Intensity -->
@@ -14744,7 +14744,7 @@
                                     <span>Strong</span>
                                 </button>
                             </div>
-                            <p class="text-xs text-gray-500 mt-3">🎚️ Intensitas restorasi yang akan diterapkan</p>
+                            <p class="text-xs text-gray-500 mt-3" data-i18n="photo-restoration.intensity-note">🎚️ Intensitas restorasi yang akan diterapkan</p>
                         </div>
 
                         <!-- Aspect Ratio -->
@@ -14758,7 +14758,7 @@
                                 <button class="pr-ratio-btn" data-ratio="1:1">1:1</button>
                                 <button class="pr-ratio-btn" data-ratio="4:3">4:3</button>
                             </div>
-                            <p class="text-xs text-gray-500 mt-2">📐 Tetap original atau crop ke ratio tertentu</p>
+                            <p class="text-xs text-gray-500 mt-2" data-i18n="photo-restoration.ratio-note">📐 Tetap original atau crop ke ratio tertentu</p>
                         </div>
 
                         <!-- Generate Button -->
@@ -14777,7 +14777,7 @@
                             </div>
                             <h3 class="text-2xl font-bold text-gray-800 mb-3">Ready to Restore Your Photos</h3>
                             <p class="text-gray-600 mb-6 max-w-md mx-auto">
-                                Upload foto lama atau rusak, pilih mode restorasi, dan biarkan AI memperbaikinya menjadi seperti baru!
+                                <span data-i18n="photo-restoration.placeholder-p">Upload foto lama atau rusak, pilih mode restorasi, dan biarkan AI memperbaikinya menjadi seperti baru!</span>
                             </p>
                             <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-2xl mx-auto">
                                 <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-4 rounded-xl border border-amber-200">
@@ -14870,7 +14870,7 @@
                                 </div>
                                 <h4 class="font-bold text-gray-800">Photo Quality</h4>
                             </div>
-                            <p class="text-sm text-gray-600">Upload foto dengan resolusi setinggi mungkin untuk hasil restorasi yang lebih baik</p>
+                            <p class="text-sm text-gray-600" data-i18n="photo-restoration.tip-quality">Upload foto dengan resolusi setinggi mungkin untuk hasil restorasi yang lebih baik</p>
                         </div>
                         <div class="bg-white p-4 rounded-xl shadow-md">
                             <div class="flex items-center gap-3 mb-3">
@@ -14879,7 +14879,7 @@
                                 </div>
                                 <h4 class="font-bold text-gray-800">Right Mode</h4>
                             </div>
-                            <p class="text-sm text-gray-600">Pilih restoration mode yang sesuai dengan kondisi foto untuk hasil optimal</p>
+                            <p class="text-sm text-gray-600" data-i18n="photo-restoration.tip-mode">Pilih restoration mode yang sesuai dengan kondisi foto untuk hasil optimal</p>
                         </div>
                         <div class="bg-white p-4 rounded-xl shadow-md">
                             <div class="flex items-center gap-3 mb-3">
@@ -14888,7 +14888,7 @@
                                 </div>
                                 <h4 class="font-bold text-gray-800">Compare Results</h4>
                             </div>
-                            <p class="text-sm text-gray-600">Bandingkan kedua hasil untuk memilih yang paling sesuai dengan kebutuhan Anda</p>
+                            <p class="text-sm text-gray-600" data-i18n="photo-restoration.tip-compare">Bandingkan kedua hasil untuk memilih yang paling sesuai dengan kebutuhan Anda</p>
                         </div>
                     </div>
                 </div>
@@ -14912,7 +14912,7 @@
                         </div>
                     </div>
                     <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                        Buat logo profesional untuk brand Anda dengan AI. Dapatkan 6 variasi desain unik dalam berbagai style dan mockup preview.
+                        <span data-i18n="logo.desc">Buat logo profesional untuk brand Anda dengan AI. Dapatkan 6 variasi desain unik dalam berbagai style dan mockup preview.</span>
                     </p>
                 </header>
 
@@ -14926,26 +14926,26 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #7C3AED, #EC4899);">1</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Informasi Brand</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="logo.step1-title">Informasi Brand</h3>
                                     </div>
 
                                     <div class="space-y-4">
                                         <div>
-                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Nama Brand/Perusahaan *</label>
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="logo.brand-label">Nama Brand/Perusahaan *</label>
                                             <input type="text" id="logo-brand-name" class="w-full p-3 text-base rounded-xl border-2 border-gray-300 focus:border-purple-500 transition" placeholder="Contoh: TechNova, Cafe Delight">
-                                            <p class="text-xs text-gray-500 mt-1">💡 Nama yang akan muncul di logo</p>
+                                            <p class="text-xs text-gray-500 mt-1" data-i18n="logo.brand-note">💡 Nama yang akan muncul di logo</p>
                                         </div>
 
                                         <div>
-                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Tagline (Opsional)</label>
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="logo.tagline-label">Tagline (Opsional)</label>
                                             <input type="text" id="logo-tagline" class="w-full p-3 text-base rounded-xl border-2 border-gray-300 focus:border-purple-500 transition" placeholder="Contoh: Innovation for Tomorrow">
-                                            <p class="text-xs text-gray-500 mt-1">✨ Slogan pendek untuk brand Anda</p>
+                                            <p class="text-xs text-gray-500 mt-1" data-i18n="logo.tagline-note">✨ Slogan pendek untuk brand Anda</p>
                                         </div>
 
                                         <div>
-                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Deskripsi Bisnis *</label>
-                                            <textarea id="logo-business-desc" rows="3" class="w-full p-3 text-sm rounded-xl border-2 border-gray-300 focus:border-purple-500 transition resize-none" placeholder="Jelaskan apa yang dilakukan bisnis Anda, nilai-nilai, dan target audience..."></textarea>
-                                            <p class="text-xs text-gray-500 mt-1">📝 Bantu AI memahami brand Anda</p>
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="logo.desc-bisnis-label">Deskripsi Bisnis *</label>
+                                            <textarea id="logo-business-desc" rows="3" class="w-full p-3 text-sm rounded-xl border-2 border-gray-300 focus:border-purple-500 transition resize-none" data-i18n-placeholder="logo.desc-bisnis-placeholder" placeholder="Jelaskan apa yang dilakukan bisnis Anda, nilai-nilai, dan target audience..."></textarea>
+                                            <p class="text-xs text-gray-500 mt-1" data-i18n="logo.desc-bisnis-note">📝 Bantu AI memahami brand Anda</p>
                                         </div>
                                     </div>
                                 </div>
@@ -14954,7 +14954,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #7C3AED, #EC4899);">2</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Industri</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="logo.step2-title">Industri</h3>
                                     </div>
 
                                     <div id="logo-industry-options" class="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -14992,7 +14992,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #7C3AED, #EC4899);">3</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Tipe Logo</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="logo.step3-title">Tipe Logo</h3>
                                     </div>
 
                                     <div id="logo-type-options" class="grid grid-cols-2 gap-3">
@@ -15003,7 +15003,7 @@
                                             <i class="fas fa-star"></i> Symbol
                                         </button>
                                         <button type="button" data-value="combination" class="option-btn-logo">
-                                            <i class="fas fa-layer-group"></i> Kombinasi
+                                            <i class="fas fa-layer-group"></i> <span data-i18n="logo.type-combination">Kombinasi</span>
                                         </button>
                                         <button type="button" data-value="emblem" class="option-btn-logo">
                                             <i class="fas fa-shield-alt"></i> Emblem
@@ -15041,14 +15041,14 @@
                                             <i class="fas fa-check hidden mr-1"></i> Vintage
                                         </button>
                                     </div>
-                                    <p class="text-xs text-gray-600 mt-2">✨ Pilih 1-3 style yang menggambarkan brand Anda</p>
+                                    <p class="text-xs text-gray-600 mt-2" data-i18n="logo.style-tip">✨ Pilih 1-3 style yang menggambarkan brand Anda</p>
                                 </div>
 
                                 <!-- Step 5: Color Scheme -->
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #7C3AED, #EC4899);">5</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Skema Warna</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="logo.step5-title">Skema Warna</h3>
                                     </div>
 
                                     <div id="logo-color-scheme-options" class="grid grid-cols-3 gap-3 mb-4">
@@ -15065,7 +15065,7 @@
 
                                     <!-- Color Palette Selection -->
                                     <div>
-                                        <label class="block text-sm font-semibold text-gray-700 mb-3">Pilih Palet Warna (Opsional)</label>
+                                        <label class="block text-sm font-semibold text-gray-700 mb-3" data-i18n="logo.color-palette-label">Pilih Palet Warna (Opsional)</label>
                                         <div id="logo-color-palette-options" class="flex flex-wrap gap-3">
                                             <div class="logo-color-chip" data-colors="#3B82F6,#1E40AF" style="background: linear-gradient(135deg, #3B82F6, #1E40AF);" title="Blue Professional"></div>
                                             <div class="logo-color-chip" data-colors="#EF4444,#DC2626" style="background: linear-gradient(135deg, #EF4444, #DC2626);" title="Red Energy"></div>
@@ -15076,7 +15076,7 @@
                                             <div class="logo-color-chip" data-colors="#1F2937,#374151" style="background: linear-gradient(135deg, #1F2937, #374151);" title="Dark Elegant"></div>
                                             <div class="logo-color-chip" data-colors="#000000,#FFFFFF" style="background: linear-gradient(135deg, #000000, #FFFFFF);" title="Black & White"></div>
                                         </div>
-                                        <p class="text-xs text-gray-500 mt-2">🎨 Kosongkan untuk AI pilih otomatis berdasarkan brand</p>
+                                        <p class="text-xs text-gray-500 mt-2" data-i18n="logo.color-note">🎨 Kosongkan untuk AI pilih otomatis berdasarkan brand</p>
                                     </div>
                                 </div>
 
@@ -15084,14 +15084,14 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-4">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm shadow-lg" style="background: linear-gradient(135deg, #7C3AED, #EC4899);">6</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Referensi (Opsional)</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="logo.step6-title">Referensi (Opsional)</h3>
                                     </div>
 
                                     <label for="logo-ref-input" id="logo-ref-upload-box" class="upload-box-logo-ref w-full h-40 rounded-xl flex items-center justify-center cursor-pointer relative overflow-hidden border-2 border-dashed border-gray-300">
                                         <div id="logo-ref-placeholder" class="text-center p-4">
                                             <i class="fas fa-image text-4xl text-gray-400 mb-2"></i>
-                                            <p class="text-sm text-gray-600 font-semibold">Upload referensi logo/inspirasi</p>
-                                            <p class="text-xs text-gray-500 mt-1">Logo yang Anda suka untuk referensi style</p>
+                                            <p class="text-sm text-gray-600 font-semibold" data-i18n="logo.ref-upload-p">Upload referensi logo/inspirasi</p>
+                                            <p class="text-xs text-gray-500 mt-1" data-i18n="logo.ref-upload-note">Logo yang Anda suka untuk referensi style</p>
                                         </div>
                                         <img id="logo-ref-preview" class="hidden absolute top-0 left-0 w-full h-full object-contain" alt="Referensi Logo">
                                         <button type="button" id="logo-ref-remove-btn" class="hidden absolute top-2 right-2 bg-red-600 text-white rounded-full p-1 hover:bg-red-700 z-10">
@@ -15118,9 +15118,9 @@
                                 <div class="w-24 h-24 rounded-full flex items-center justify-center mb-6 shadow-lg" style="background: linear-gradient(135deg, #F3E8FF 0%, #FCE7F3 100%);">
                                     <i class="fas fa-palette text-5xl" style="color: #7C3AED;"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold text-gray-800 mb-2">Logo Profesional Anda</h3>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2" data-i18n="logo.placeholder-title">Logo Profesional Anda</h3>
                                 <p class="text-gray-600 max-w-md">
-                                    AI akan generate 6 variasi logo unik berdasarkan preferensi Anda. Setiap logo dapat di-preview dalam berbagai mockup!
+                                    <span data-i18n="logo.placeholder-desc">AI akan generate 6 variasi logo unik berdasarkan preferensi Anda. Setiap logo dapat di-preview dalam berbagai mockup!</span>
                                 </p>
                                 <div class="mt-6 grid grid-cols-3 gap-4 text-sm">
                                     <div class="p-3 bg-purple-50 rounded-lg">
@@ -15147,7 +15147,7 @@
                                     </h3>
                                     <button id="logo-download-all-btn" class="hidden logo-action-btn text-sm">
                                         <i class="fas fa-download mr-2"></i>
-                                        <span>Download Semua</span>
+                                        <span data-i18n="logo.download-all">Download Semua</span>
                                     </button>
                                 </div>
                                 <div id="logo-results-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
@@ -24154,10 +24154,10 @@
                 <div class="space-y-6">
                     <!-- Header -->
                     <div class="card p-6">
-                        <h1 class="text-3xl font-bold bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent mb-2">
+                        <h1 class="text-3xl font-bold bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent mb-2" data-i18n="object-remover.title">
                             <i class="fas fa-eraser mr-2"></i>Hapus Object
                         </h1>
-                        <p class="text-gray-600">Hilangkan objek yang tidak diinginkan dari foto Anda secara otomatis atau manual dengan brush tool profesional</p>
+                        <p class="text-gray-600" data-i18n="object-remover.desc">Hilangkan objek yang tidak diinginkan dari foto Anda secara otomatis atau manual dengan brush tool profesional</p>
                     </div>
 
                     <!-- Main Form -->
@@ -24167,7 +24167,7 @@
                             <div>
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-red-500 to-red-600 text-white font-bold text-sm shadow-lg">1</div>
-                                    <h3 class="text-lg font-bold text-gray-800">Upload Foto</h3>
+                                    <h3 class="text-lg font-bold text-gray-800" data-i18n="object-remover.step1-title">Upload Foto</h3>
                                 </div>
                                 <div class="upload-box-remover" id="remover-upload-box">
                                     <input type="file" id="remover-upload-input" class="hidden" accept="image/*,.heic">
@@ -24178,7 +24178,7 @@
                                             </div>
                                         </div>
                                         <div>
-                                            <p class="text-lg font-semibold text-gray-700 mb-1">Klik atau Drag & Drop Foto</p>
+                                            <p class="text-lg font-semibold text-gray-700 mb-1" data-i18n="object-remover.upload-drag">Klik atau Drag & Drop Foto</p>
                                             <p class="text-sm text-gray-500">Mendukung JPG, PNG, HEIC (Max 10MB)</p>
                                         </div>
                                     </div>
@@ -24195,28 +24195,28 @@
                             <div id="remover-mode-section" class="hidden">
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-red-500 to-red-600 text-white font-bold text-sm shadow-lg">2</div>
-                                    <h3 class="text-lg font-bold text-gray-800">Pilih Mode Penghapusan</h3>
+                                    <h3 class="text-lg font-bold text-gray-800" data-i18n="object-remover.step2-title">Pilih Mode Penghapusan</h3>
                                 </div>
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                     <button class="remover-mode-btn active" data-mode="auto">
                                         <div class="relative z-10">
                                             <i class="fas fa-magic text-2xl mb-2"></i>
-                                            <p class="font-bold text-lg">Otomatis (AI)</p>
-                                            <p class="text-sm mt-1 opacity-80">AI deteksi & hapus objek mengganggu</p>
+                                            <p class="font-bold text-lg" data-i18n="object-remover.mode-auto-title">Otomatis (AI)</p>
+                                            <p class="text-sm mt-1 opacity-80" data-i18n="object-remover.mode-auto-desc">AI deteksi & hapus objek mengganggu</p>
                                         </div>
                                     </button>
                                     <button class="remover-mode-btn" data-mode="manual">
                                         <div class="relative z-10">
                                             <i class="fas fa-paint-brush text-2xl mb-2"></i>
                                             <p class="font-bold text-lg">Manual (Brush)</p>
-                                            <p class="text-sm mt-1 opacity-80">Pilih area dengan kuas</p>
+                                            <p class="text-sm mt-1 opacity-80" data-i18n="object-remover.mode-manual-desc">Pilih area dengan kuas</p>
                                         </div>
                                     </button>
                                     <button class="remover-mode-btn" data-mode="watermark">
                                         <div class="relative z-10">
                                             <i class="fas fa-ban text-2xl mb-2"></i>
-                                            <p class="font-bold text-lg">Hapus Watermark</p>
-                                            <p class="text-sm mt-1 opacity-80">Hapus teks, logo & watermark</p>
+                                            <p class="font-bold text-lg" data-i18n="object-remover.mode-watermark-title">Hapus Watermark</p>
+                                            <p class="text-sm mt-1 opacity-80" data-i18n="object-remover.mode-watermark-desc">Hapus teks, logo & watermark</p>
                                         </div>
                                     </button>
                                 </div>
@@ -24226,7 +24226,7 @@
                             <div id="remover-manual-tools" class="hidden">
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-red-500 to-red-600 text-white font-bold text-sm shadow-lg">3</div>
-                                    <h3 class="text-lg font-bold text-gray-800">Tandai Area yang Akan Dihapus</h3>
+                                    <h3 class="text-lg font-bold text-gray-800" data-i18n="object-remover.step3-manual-title">Tandai Area yang Akan Dihapus</h3>
                                 </div>
 
                                 <!-- Canvas Container -->
@@ -24263,7 +24263,7 @@
                                     <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
                                         <p class="text-sm text-blue-800">
                                             <i class="fas fa-info-circle mr-2"></i>
-                                            <strong>Tips:</strong> Sapukan kuas pada area yang ingin dihapus. Area yang ditandai akan berwarna merah transparan.
+                                            <strong>Tips:</strong> <span data-i18n="object-remover.brush-tip">Sapukan kuas pada area yang ingin dihapus. Area yang ditandai akan berwarna merah transparan.</span>
                                         </p>
                                     </div>
                                 </div>
@@ -24273,7 +24273,7 @@
                             <div id="remover-auto-options" class="hidden">
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-red-500 to-red-600 text-white font-bold text-sm shadow-lg">3</div>
-                                    <h3 class="text-lg font-bold text-gray-800">Opsi Penghapusan Otomatis</h3>
+                                    <h3 class="text-lg font-bold text-gray-800" data-i18n="object-remover.step3-auto-title">Opsi Penghapusan Otomatis</h3>
                                 </div>
                                 <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-6 border-2 border-red-200">
                                     <div class="flex items-start gap-4">
@@ -24300,7 +24300,7 @@
                             <div id="remover-watermark-options" class="hidden">
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-red-500 to-red-600 text-white font-bold text-sm shadow-lg">3</div>
-                                    <h3 class="text-lg font-bold text-gray-800">Opsi Penghapusan Watermark</h3>
+                                    <h3 class="text-lg font-bold text-gray-800" data-i18n="object-remover.step3-watermark-title">Opsi Penghapusan Watermark</h3>
                                 </div>
                                 <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-6 border-2 border-red-200">
                                     <div class="flex items-start gap-4">
@@ -24334,16 +24334,16 @@
                             <div id="remover-variation-section" class="hidden">
                                 <div class="flex items-center gap-3 mb-4">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-red-500 to-red-600 text-white font-bold text-sm shadow-lg">4</div>
-                                    <h3 class="text-lg font-bold text-gray-800">Jumlah Variasi Hasil</h3>
+                                    <h3 class="text-lg font-bold text-gray-800" data-i18n="object-remover.step4-title">Jumlah Variasi Hasil</h3>
                                 </div>
                                 <div class="grid grid-cols-3 gap-4">
-                                    <button class="remover-variation-btn active" data-count="2">
+                                    <button class="remover-variation-btn active" data-count="2" data-i18n="object-remover.variation-2">
                                         <i class="fas fa-images mr-2"></i>2 Variasi
                                     </button>
-                                    <button class="remover-variation-btn" data-count="3">
+                                    <button class="remover-variation-btn" data-count="3" data-i18n="object-remover.variation-3">
                                         <i class="fas fa-images mr-2"></i>3 Variasi
                                     </button>
-                                    <button class="remover-variation-btn" data-count="4">
+                                    <button class="remover-variation-btn" data-count="4" data-i18n="object-remover.variation-4">
                                         <i class="fas fa-images mr-2"></i>4 Variasi
                                     </button>
                                 </div>
@@ -24353,7 +24353,7 @@
                             <div id="remover-generate-section" class="hidden">
                                 <button id="remover-generate-btn" class="w-full py-4 rounded-xl text-white text-lg font-bold shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3" style="background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);">
                                     <i class="fas fa-magic text-xl"></i>
-                                    <span>Hapus Object Sekarang</span>
+                                    <span data-i18n="object-remover.gen-btn">Hapus Object Sekarang</span>
                                 </button>
                             </div>
                         </div>
@@ -24362,11 +24362,11 @@
                     <!-- Results Section -->
                     <div id="remover-results-section" class="card p-6 hidden">
                         <div class="flex justify-between items-center mb-6">
-                            <h2 class="text-2xl font-bold text-gray-800">
+                            <h2 class="text-2xl font-bold text-gray-800" data-i18n="object-remover.results-title">
                                 <i class="fas fa-images mr-2 text-red-600"></i>Hasil Penghapusan
                             </h2>
                             <button id="remover-download-all-btn" class="hidden px-4 py-2 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg font-semibold shadow-md hover:shadow-lg transition-all">
-                                <i class="fas fa-download mr-2"></i>Download Semua
+                                <i class="fas fa-download mr-2"></i><span data-i18n="object-remover.download-all">Download Semua</span>
                             </button>
                         </div>
 
@@ -70606,6 +70606,60 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'cover-photo.desc':'Create professional cover photos for Instagram & TikTok (9:16 vertical) - Supports faceless & with face!',
             'cover-photo.brand-tip':'💡 Your name or brand',
             'cover-photo.tagline-tip':'💼 Profession or short description',
+            'photo-restoration.title':'Pro Photo Restoration Generator',
+            'photo-restoration.desc':'Repair and restore old, damaged, or blurry photos to clear and high-quality with AI!',
+            'photo-restoration.upload-title':'Upload Photo',
+            'photo-restoration.upload-p':'Upload photo to restore',
+            'photo-restoration.mode-note':'Choose restoration type based on photo condition',
+            'photo-restoration.intensity-note':'Restoration intensity to apply',
+            'photo-restoration.ratio-note':'Keep original or crop to specific ratio',
+            'photo-restoration.placeholder-p':'Upload old or damaged photos, choose restoration mode, and let AI restore it to like-new condition!',
+            'photo-restoration.tip-quality':'Upload photos with the highest resolution possible for better restoration results',
+            'photo-restoration.tip-mode':'Choose the restoration mode that matches the photo condition for optimal results',
+            'photo-restoration.tip-compare':'Compare both results to choose the one that best suits your needs',
+            'object-remover.title':'Object Remover',
+            'object-remover.desc':'Automatically or manually remove unwanted objects from your photos with a professional brush tool',
+            'object-remover.step1-title':'Upload Photo',
+            'object-remover.upload-drag':'Click or Drag & Drop Photo',
+            'object-remover.step2-title':'Choose Removal Mode',
+            'object-remover.mode-auto-title':'Automatic (AI)',
+            'object-remover.mode-auto-desc':'AI detects & removes disturbing objects',
+            'object-remover.mode-manual-desc':'Select area with brush',
+            'object-remover.mode-watermark-title':'Remove Watermark',
+            'object-remover.mode-watermark-desc':'Remove text, logo & watermark',
+            'object-remover.step3-manual-title':'Mark Area to Remove',
+            'object-remover.brush-tip':'Brush over the area to remove. Marked areas will appear red transparent.',
+            'object-remover.step3-auto-title':'Auto Removal Options',
+            'object-remover.step3-watermark-title':'Watermark Removal Options',
+            'object-remover.step4-title':'Number of Result Variations',
+            'object-remover.variation-2':'2 Variations',
+            'object-remover.variation-3':'3 Variations',
+            'object-remover.variation-4':'4 Variations',
+            'object-remover.gen-btn':'Remove Object Now',
+            'object-remover.results-title':'Removal Results',
+            'object-remover.download-all':'Download All',
+            'logo.desc':'Create professional logos for your brand with AI. Get 6 unique design variations in various styles with mockup preview.',
+            'logo.step1-title':'Brand Information',
+            'logo.brand-label':'Brand/Company Name *',
+            'logo.brand-note':'Name that will appear in the logo',
+            'logo.tagline-label':'Tagline (Optional)',
+            'logo.tagline-note':'Short slogan for your brand',
+            'logo.desc-bisnis-label':'Business Description *',
+            'logo.desc-bisnis-placeholder':'Describe what your business does, values, and target audience...',
+            'logo.desc-bisnis-note':'Help AI understand your brand',
+            'logo.step2-title':'Industry',
+            'logo.step3-title':'Logo Type',
+            'logo.type-combination':'Combination',
+            'logo.style-tip':'✨ Choose 1-3 styles that represent your brand',
+            'logo.step5-title':'Color Scheme',
+            'logo.color-palette-label':'Choose Color Palette (Optional)',
+            'logo.color-note':'Leave empty for AI to auto-select based on your brand',
+            'logo.step6-title':'Reference (Optional)',
+            'logo.ref-upload-p':'Upload logo reference/inspiration',
+            'logo.ref-upload-note':'A logo you like for style reference',
+            'logo.placeholder-title':'Your Professional Logo',
+            'logo.placeholder-desc':'AI will generate 6 unique logo variations based on your preferences. Each logo can be previewed in various mockups!',
+            'logo.download-all':'Download All',
             },
             id: {
                 nav: { 'apikey-settings':'API Key','beranda':'Beranda','buat-model':'Membuat Model','mockup-studio':'Mockup Studio','pov-tangan':'POV Tangan','touring':'Foto Touring','mirror-selfie':'POV Mirror Selfie','walking-pad':'Walking Pad','affiliate':'Foto Produk Affiliate','affiliate-islami':'Affiliate Agama','virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion','food-selfie':'Food Selfie','product-review':'Product Review','skincare-review':'Skincare Review','food-review':'Food Review','product-ads':'Iklan Produk','professional-headshot':'Professional Headshot','unboxing-scene':'Unboxing Scene','before-after':'Before/After','product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card','size-guide':'Size Guide','video-frames':'Video Frames','vehicle-modifier':'Vehicle Modifier','deskripsi-produk':'Deskripsi Produk SEO','ide-konten-tiktok':'Ide Konten TikTok','script-story-iklan':'Script Story Iklan','rencana-bisnis':'Rencana Bisnis & SWOT','hr-assistant':'HR Assistant','konten-marketing':'Konten Marketing','riset-pasar':'Riset Pasar & Ide','financial-forecast':'Simulasi Anggaran','family':'Foto Keluarga','new-born':'New Born Studio','maternity':'Foto Maternity','profesi-anak':'Foto Profesi Anak','wedding':'Wedding','wedding-design':'Desain Pernikahan','umrah-haji':'Foto Umrah/Haji','passport-photo':'Pas Foto Warna','graduation-photo':'Foto Wisuda','photo-booth':'Photo Booth','birthday-photo':'Foto Ulang Tahun','kartu-lebaran':'Kartu Lebaran','desain-rumah':'Desain Rumah','desain-kamar':'Desain Kamar','sketsa-gambar':'Sketsa Gambar','bikin-carousel':'Bikin Carousel','miniature':'Miniature Me','karikatur':'Karikatur Generator','photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor','tattoo-editor':'Tattoo Editor','halu':'Halu Idol','sticker':'Sticker Tempel','hair-generator':'Hair Generator','expression-changer':'Expression Changer','face-swap':'Face Swap','bg-remover':'Ubah Background','photo-extender':'Perluas Foto','story-board':'Story Board','twibon':'Twibon Frame','story-update':'Story Update','image-analyzer':'Image to Prompt','packaging-design':'Packaging Design','photo-angle':'Photo Angle','style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'Foto Sampul IG & Tiktok','photo-restoration':'Restorasi Foto','object-remover':'Hapus Object','logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit Generator','content-calendar':'Content Calendar Planner','ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI','caption-generator':'AI Caption Generator','product-comparison':'Product Comparison','mascot-generator':'Mascot Generator','poster-generator':'Poster Generator','banner-generator':'Banner Generator','sketch-catalog':'Sketsa ke Katalog','fotogenic':'Fotogenic','timelapse-renovasi':'Timelapse Renovasi','veo':'Affiliate Go Pro','opal':'Opal Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer' },
@@ -71687,6 +71741,60 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'cover-photo.desc':'Buat foto sampul profesional untuk Instagram & TikTok (9:16 vertical) - Support faceless & with face!',
             'cover-photo.brand-tip':'💡 Nama atau brand Anda',
             'cover-photo.tagline-tip':'💼 Profesi atau deskripsi singkat',
+            'photo-restoration.title':'Generator Restorasi Foto Pro',
+            'photo-restoration.desc':'Perbaiki dan restore foto lama, rusak, atau blur menjadi jernih dan berkualitas tinggi dengan AI!',
+            'photo-restoration.upload-title':'Upload Foto',
+            'photo-restoration.upload-p':'Upload foto yang ingin direstorasi',
+            'photo-restoration.mode-note':'Pilih jenis restorasi sesuai kondisi foto',
+            'photo-restoration.intensity-note':'Intensitas restorasi yang akan diterapkan',
+            'photo-restoration.ratio-note':'Tetap original atau crop ke ratio tertentu',
+            'photo-restoration.placeholder-p':'Upload foto lama atau rusak, pilih mode restorasi, dan biarkan AI memperbaikinya menjadi seperti baru!',
+            'photo-restoration.tip-quality':'Upload foto dengan resolusi setinggi mungkin untuk hasil restorasi yang lebih baik',
+            'photo-restoration.tip-mode':'Pilih restoration mode yang sesuai dengan kondisi foto untuk hasil optimal',
+            'photo-restoration.tip-compare':'Bandingkan kedua hasil untuk memilih yang paling sesuai dengan kebutuhan Anda',
+            'object-remover.title':'Hapus Object',
+            'object-remover.desc':'Hilangkan objek yang tidak diinginkan dari foto Anda secara otomatis atau manual dengan brush tool profesional',
+            'object-remover.step1-title':'Upload Foto',
+            'object-remover.upload-drag':'Klik atau Drag & Drop Foto',
+            'object-remover.step2-title':'Pilih Mode Penghapusan',
+            'object-remover.mode-auto-title':'Otomatis (AI)',
+            'object-remover.mode-auto-desc':'AI deteksi & hapus objek mengganggu',
+            'object-remover.mode-manual-desc':'Pilih area dengan kuas',
+            'object-remover.mode-watermark-title':'Hapus Watermark',
+            'object-remover.mode-watermark-desc':'Hapus teks, logo & watermark',
+            'object-remover.step3-manual-title':'Tandai Area yang Akan Dihapus',
+            'object-remover.brush-tip':'Sapukan kuas pada area yang ingin dihapus. Area yang ditandai akan berwarna merah transparan.',
+            'object-remover.step3-auto-title':'Opsi Penghapusan Otomatis',
+            'object-remover.step3-watermark-title':'Opsi Penghapusan Watermark',
+            'object-remover.step4-title':'Jumlah Variasi Hasil',
+            'object-remover.variation-2':'2 Variasi',
+            'object-remover.variation-3':'3 Variasi',
+            'object-remover.variation-4':'4 Variasi',
+            'object-remover.gen-btn':'Hapus Object Sekarang',
+            'object-remover.results-title':'Hasil Penghapusan',
+            'object-remover.download-all':'Download Semua',
+            'logo.desc':'Buat logo profesional untuk brand Anda dengan AI. Dapatkan 6 variasi desain unik dalam berbagai style dan mockup preview.',
+            'logo.step1-title':'Informasi Brand',
+            'logo.brand-label':'Nama Brand/Perusahaan *',
+            'logo.brand-note':'Nama yang akan muncul di logo',
+            'logo.tagline-label':'Tagline (Opsional)',
+            'logo.tagline-note':'Slogan pendek untuk brand Anda',
+            'logo.desc-bisnis-label':'Deskripsi Bisnis *',
+            'logo.desc-bisnis-placeholder':'Jelaskan apa yang dilakukan bisnis Anda, nilai-nilai, dan target audience...',
+            'logo.desc-bisnis-note':'Bantu AI memahami brand Anda',
+            'logo.step2-title':'Industri',
+            'logo.step3-title':'Tipe Logo',
+            'logo.type-combination':'Kombinasi',
+            'logo.style-tip':'✨ Pilih 1-3 style yang menggambarkan brand Anda',
+            'logo.step5-title':'Skema Warna',
+            'logo.color-palette-label':'Pilih Palet Warna (Opsional)',
+            'logo.color-note':'Kosongkan untuk AI pilih otomatis berdasarkan brand',
+            'logo.step6-title':'Referensi (Opsional)',
+            'logo.ref-upload-p':'Upload referensi logo/inspirasi',
+            'logo.ref-upload-note':'Logo yang Anda suka untuk referensi style',
+            'logo.placeholder-title':'Logo Profesional Anda',
+            'logo.placeholder-desc':'AI akan generate 6 variasi logo unik berdasarkan preferensi Anda. Setiap logo dapat di-preview dalam berbagai mockup!',
+            'logo.download-all':'Download Semua',
             }
         };
 
