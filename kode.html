@@ -13636,23 +13636,23 @@
         <div id="content-story-update" class="main-content-panel hidden">
             <div class="w-full max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-6 md:p-8">
                 <div class="text-center mb-8">
-                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900">Story Update Generator</h1>
-                    <p class="text-gray-500 mt-2">Buat foto story harian yang realistis sesuai gaya hidupmu.</p>
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900" data-i18n="story-update.title">Story Update Generator</h1>
+                    <p class="text-gray-500 mt-2" data-i18n="story-update.desc">Buat foto story harian yang realistis sesuai gaya hidupmu.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- Kolom Kontrol -->
                     <div class="flex flex-col space-y-5">
                         <form id="story-update-form">
                             <div>
-                                <label for="story-update-photo-upload" id="story-update-upload-label" class="font-semibold mb-2 block text-gray-700 cursor-pointer w-full p-3 text-center bg-indigo-100 text-indigo-700 rounded-lg border-2 border-dashed border-indigo-300 hover:bg-indigo-200 transition">
+                                <label for="story-update-photo-upload" id="story-update-upload-label" class="font-semibold mb-2 block text-gray-700 cursor-pointer w-full p-3 text-center bg-indigo-100 text-indigo-700 rounded-lg border-2 border-dashed border-indigo-300 hover:bg-indigo-200 transition" data-i18n="story-update.upload-label">
                                     Upload Fotomu
                                 </label>
                                 <input type="file" id="story-update-photo-upload" class="hidden" accept="image/png, image/jpeg">
                                 <img id="story-update-photo-preview" src="#" alt="Pratinjau Foto" class="hidden w-full h-[150px] object-cover rounded-lg mt-4"/>
-                                <p class="text-xs text-gray-500 mt-2">Upload foto selfie dengan wajah terlihat jelas untuk hasil terbaik.</p>
+                                <p class="text-xs text-gray-500 mt-2" data-i18n="story-update.upload-note">Upload foto selfie dengan wajah terlihat jelas untuk hasil terbaik.</p>
                             </div>
                             <div>
-                                <label for="story-update-economic-status" class="font-semibold mb-2 block text-gray-700">Pilih Kelas Ekonomi:</label>
+                                <label for="story-update-economic-status" class="font-semibold mb-2 block text-gray-700" data-i18n="story-update.economic-label">Pilih Kelas Ekonomi:</label>
                                 <select id="story-update-economic-status" class="w-full p-3 border border-gray-300 rounded-lg bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition custom-select">
                                     <option value="gaji_bawah_umk">Gaji di Bawah UMK</option>
                                     <option value="gaji_sesuai_umk">Gaji Sesuai UMK</option>
@@ -13662,7 +13662,7 @@
                                 </select>
                             </div>
                             <div>
-                                <label for="story-update-theme" class="font-semibold mb-2 block text-gray-700">Pilih Tema Story:</label>
+                                <label for="story-update-theme" class="font-semibold mb-2 block text-gray-700" data-i18n="story-update.theme-label">Pilih Tema Story:</label>
                                 <select id="story-update-theme" class="w-full p-3 border border-gray-300 rounded-lg bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition custom-select">
                                     <option value="makan">Makan</option>
                                     <option value="jalan-jalan">Jalan-jalan</option>
@@ -13673,25 +13673,25 @@
                                 </select>
                             </div>
                             <div>
-                                <label for="story-update-specific-activity" class="font-semibold mb-2 block text-gray-700">Kegiatan Spesifik (Opsional):</label>
-                                <input type="text" id="story-update-specific-activity" class="w-full p-3 border border-gray-300 rounded-lg bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition" placeholder="Contoh: Makan sate di Gasibu, Bandung">
-                                <p class="text-xs text-gray-500 mt-2">Jika diisi, ini akan digunakan sebagai tema utama story.</p>
+                                <label for="story-update-specific-activity" class="font-semibold mb-2 block text-gray-700" data-i18n="story-update.activity-label">Kegiatan Spesifik (Opsional):</label>
+                                <input type="text" id="story-update-specific-activity" class="w-full p-3 border border-gray-300 rounded-lg bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition" data-i18n-placeholder="story-update.activity-placeholder" placeholder="Contoh: Makan sate di Gasibu, Bandung">
+                                <p class="text-xs text-gray-500 mt-2" data-i18n="story-update.activity-note">Jika diisi, ini akan digunakan sebagai tema utama story.</p>
                             </div>
                             <div>
-                                <label class="font-semibold mb-2 block text-gray-700">Gaya Foto:</label>
+                                <label class="font-semibold mb-2 block text-gray-700" data-i18n="story-update.photo-style-label">Gaya Foto:</label>
                                 <div class="flex gap-4">
                                     <label class="flex-1">
                                         <input type="radio" name="photo-style" value="sendiri" class="sr-only peer" checked>
-                                        <div class="w-full p-3 text-center text-gray-600 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer peer-checked:bg-indigo-600 peer-checked:text-white peer-checked:border-indigo-600 transition">Sendiri</div>
+                                        <div class="w-full p-3 text-center text-gray-600 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer peer-checked:bg-indigo-600 peer-checked:text-white peer-checked:border-indigo-600 transition" data-i18n="story-update.style-sendiri">Sendiri</div>
                                     </label>
                                     <label class="flex-1">
                                         <input type="radio" name="photo-style" value="bareng_temen" class="sr-only peer">
-                                        <div class="w-full p-3 text-center text-gray-600 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer peer-checked:bg-indigo-600 peer-checked:text-white peer-checked:border-indigo-600 transition">Bareng Temen</div>
+                                        <div class="w-full p-3 text-center text-gray-600 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer peer-checked:bg-indigo-600 peer-checked:text-white peer-checked:border-indigo-600 transition" data-i18n="story-update.style-bareng">Bareng Temen</div>
                                     </label>
                                 </div>
                             </div>
                             <div>
-                                <label class="font-semibold mb-2 block text-gray-700">Pilih Rasio Gambar:</label>
+                                <label class="font-semibold mb-2 block text-gray-700" data-i18n="story-update.ratio-label">Pilih Rasio Gambar:</label>
                                 <div id="story-ratio-options" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
                                     <button type="button" data-value="1:1" class="story-ratio-btn bg-gray-50 hover:bg-gray-100 text-gray-700 px-3 py-2.5 rounded-lg border-2 border-gray-300 transition-all text-sm font-medium">
                                         <i class="fas fa-square mr-1"></i>1:1
@@ -13707,7 +13707,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <button type="submit" id="story-update-generate-btn" class="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 transition-all duration-300 ease-in-out shadow-md disabled:bg-gray-400 disabled:cursor-not-allowed">
+                            <button type="submit" id="story-update-generate-btn" class="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 transition-all duration-300 ease-in-out shadow-md disabled:bg-gray-400 disabled:cursor-not-allowed" data-i18n="story-update.gen-btn">
                                 Generate 10 Stories
                             </button>
                         </form>
@@ -13719,12 +13719,12 @@
                             <div class="w-20 h-20 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center mb-4 shadow-lg">
                                 <i class="fas fa-images text-white text-3xl"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Hasil Story Update Anda</h3>
-                            <p class="text-gray-500 text-sm max-w-sm">10 foto story akan muncul di sini. Setiap foto bisa di-preview dan download!</p>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="story-update.placeholder-title">Hasil Story Update Anda</h3>
+                            <p class="text-gray-500 text-sm max-w-sm" data-i18n="story-update.placeholder-desc">10 foto story akan muncul di sini. Setiap foto bisa di-preview dan download!</p>
                             <div class="mt-4 flex items-center gap-3 text-xs text-gray-400">
                                 <div class="flex items-center gap-1">
                                     <i class="fas fa-check text-indigo-500"></i>
-                                    <span>10 Variasi</span>
+                                    <span data-i18n="story-update.placeholder-10var">10 Variasi</span>
                                 </div>
                                 <div class="flex items-center gap-1">
                                     <i class="fas fa-bolt text-purple-500"></i>
@@ -13746,7 +13746,7 @@
                                     <i class="fas fa-sparkles mr-2 text-indigo-600"></i>
                                     10 Story Updates
                                 </h3>
-                                <button id="story-download-all-btn" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-5 py-2 rounded-full font-semibold shadow-lg transition transform hover:scale-105 flex items-center gap-2 text-sm">
+                                <button id="story-download-all-btn" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-5 py-2 rounded-full font-semibold shadow-lg transition transform hover:scale-105 flex items-center gap-2 text-sm" data-i18n="story-update.download-all">
                                     <i class="fas fa-download"></i>
                                     Download Semua
                                 </button>
@@ -19103,7 +19103,7 @@
                     <h1 class="text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent">
                         <i class="fas fa-film mr-3 text-purple-600"></i>Story Board Generator
                     </h1>
-                    <p class="text-lg text-gray-600">
+                    <p class="text-lg text-gray-600" data-i18n="storyboard.desc">
                         Buat storyboard visual profesional untuk video, film, presentasi, campaign, dan berbagai konten kreatif!
                     </p>
                 </header>
@@ -19117,10 +19117,11 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-3">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-violet-600 text-white font-bold text-sm shadow-lg">1</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Topik Story</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="storyboard.step1-title">Topik Story</h3>
                                     </div>
                                     <textarea
                                         id="storyboard-topic"
+                                        data-i18n-placeholder="storyboard.topic-placeholder"
                                         placeholder="Contoh: Tutorial membuat kopi latte, Campaign launching produk baru, Behind the scenes proses produksi, dll."
                                         class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none text-sm resize-none"
                                         rows="3"
@@ -19131,7 +19132,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-3">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-violet-600 text-white font-bold text-sm shadow-lg">2</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Tipe Story</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="storyboard.step2-title">Tipe Story</h3>
                                     </div>
                                     <div class="grid grid-cols-2 gap-2">
                                         <button data-value="social-media" class="option-btn-storyboard selected text-sm">
@@ -19165,7 +19166,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-3">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-violet-600 text-white font-bold text-sm shadow-lg">3</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Jumlah Frame</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="storyboard.step3-title">Jumlah Frame</h3>
                                     </div>
                                     <div class="grid grid-cols-3 gap-2">
                                         <button data-value="5" class="option-btn-storyboard selected">
@@ -19184,7 +19185,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-3">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-violet-600 text-white font-bold text-sm shadow-lg">4</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Style Visual</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="storyboard.step4-title">Style Visual</h3>
                                     </div>
                                     <div class="grid grid-cols-2 gap-2">
                                         <button data-value="sketch" class="option-btn-storyboard selected text-sm">
@@ -19212,11 +19213,11 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-3">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-violet-600 text-white font-bold text-sm shadow-lg">5</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Bahasa Deskripsi</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="storyboard.step5-title">Bahasa Deskripsi</h3>
                                     </div>
                                     <div class="grid grid-cols-2 gap-2">
                                         <button data-value="indonesian" class="option-btn-storyboard selected text-sm">
-                                            <i class="fas fa-flag mr-2"></i>Bahasa Indonesia
+                                            <i class="fas fa-flag mr-2"></i><span data-i18n="storyboard.lang-id">Bahasa Indonesia</span>
                                         </button>
                                         <button data-value="english" class="option-btn-storyboard text-sm">
                                             <i class="fas fa-language mr-2"></i>English
@@ -19228,7 +19229,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-3">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-violet-600 text-white font-bold text-sm shadow-lg">6</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Ukuran Frame</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="storyboard.step6-title">Ukuran Frame</h3>
                                     </div>
                                     <div class="grid grid-cols-3 gap-2">
                                         <button data-value="16:9" class="option-btn-storyboard selected flex-col py-3 text-sm">
@@ -19239,7 +19240,7 @@
                                         <button data-value="9:16" class="option-btn-storyboard flex-col py-3 text-sm">
                                             <i class="fas fa-mobile-alt text-lg mb-1"></i>
                                             <span class="font-semibold">9:16</span>
-                                            <span class="text-xs opacity-70">Vertikal</span>
+                                            <span class="text-xs opacity-70" data-i18n="storyboard.frame-vertical">Vertikal</span>
                                         </button>
                                         <button data-value="1:1" class="option-btn-storyboard flex-col py-3 text-sm">
                                             <i class="fas fa-square text-lg mb-1"></i>
@@ -19255,10 +19256,10 @@
                                     class="w-full bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white text-lg font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2"
                                 >
                                     <i class="fas fa-film"></i>
-                                    <span>Generate Story Board</span>
+                                    <span data-i18n="storyboard.gen-btn">Generate Story Board</span>
                                 </button>
 
-                                <p class="text-xs text-gray-500 text-center">
+                                <p class="text-xs text-gray-500 text-center" data-i18n="storyboard.gen-note">
                                     <i class="fas fa-info-circle mr-1"></i>
                                     Storyboard akan dibuat dengan AI untuk memvisualisasikan setiap scene
                                 </p>
@@ -19271,13 +19272,13 @@
                         <div class="card p-6">
                             <div class="flex flex-col gap-4">
                                 <div class="flex items-center justify-between">
-                                    <h3 class="text-xl font-bold text-gray-800 flex items-center gap-2">
+                                    <h3 class="text-xl font-bold text-gray-800 flex items-center gap-2" data-i18n="storyboard.results-title">
                                         <i class="fas fa-images text-purple-600"></i>
                                         Storyboard Frames
                                     </h3>
                                     <button id="storyboard-download-all-btn" class="hidden bg-gradient-to-r from-purple-500 to-violet-600 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all shadow-md hover:shadow-lg flex items-center gap-2">
                                         <i class="fas fa-download"></i>
-                                        <span>Download Semua</span>
+                                        <span data-i18n="storyboard.download-all">Download Semua</span>
                                     </button>
                                 </div>
                                 <div id="storyboard-results-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[70vh] md:max-h-96 overflow-y-auto" style="-webkit-overflow-scrolling: touch;"></div>
@@ -19296,7 +19297,7 @@
                                         <i class="fas fa-edit"></i>
                                         Edit & Regenerate Frame
                                     </h3>
-                                    <p class="text-sm text-purple-100 mt-1">Ubah deskripsi scene untuk hasil yang lebih sesuai</p>
+                                    <p class="text-sm text-purple-100 mt-1" data-i18n="storyboard.modal-subtitle">Ubah deskripsi scene untuk hasil yang lebih sesuai</p>
                                 </div>
                                 <button id="storyboard-modal-close" class="text-white hover:bg-white/20 w-8 h-8 rounded-full transition-colors flex items-center justify-center">
                                     <i class="fas fa-times"></i>
@@ -19311,14 +19312,14 @@
                                     <div id="storyboard-modal-frame-number" class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-violet-600 text-white font-bold text-lg flex items-center justify-center shadow-lg">1</div>
                                     <div>
                                         <h4 class="font-bold text-gray-800">Frame <span id="storyboard-modal-frame-text">1</span></h4>
-                                        <p class="text-xs text-gray-600">Deskripsi scene akan digunakan untuk generate gambar</p>
+                                        <p class="text-xs text-gray-600" data-i18n="storyboard.modal-frame-note">Deskripsi scene akan digunakan untuk generate gambar</p>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Current Image Preview (if exists) -->
                             <div id="storyboard-modal-preview-container" class="hidden">
-                                <label class="text-sm font-semibold text-gray-700 mb-2 block">Gambar Saat Ini:</label>
+                                <label class="text-sm font-semibold text-gray-700 mb-2 block" data-i18n="storyboard.modal-current-img">Gambar Saat Ini:</label>
                                 <div class="relative rounded-xl overflow-hidden border-2 border-gray-200">
                                     <img id="storyboard-modal-preview-img" src="" alt="Current frame" class="w-full h-auto">
                                 </div>
@@ -19326,7 +19327,7 @@
 
                             <!-- Prompt Editor -->
                             <div>
-                                <label class="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
+                                <label class="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2" data-i18n="storyboard.modal-desc-label">
                                     <i class="fas fa-pen text-purple-600"></i>
                                     Deskripsi Scene:
                                 </label>
@@ -19334,9 +19335,9 @@
                                     id="storyboard-modal-prompt"
                                     rows="6"
                                     class="w-full border-2 border-gray-300 rounded-xl px-4 py-3 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all resize-none"
-                                    placeholder="Tulis deskripsi visual scene (camera angle, subject, action, background, mood)..."
+                                    data-i18n-placeholder="storyboard.modal-prompt-placeholder" placeholder="Tulis deskripsi visual scene (camera angle, subject, action, background, mood)..."
                                 ></textarea>
-                                <p class="text-xs text-gray-500 mt-2">
+                                <p class="text-xs text-gray-500 mt-2" data-i18n="storyboard.modal-tips">
                                     <i class="fas fa-info-circle mr-1"></i>
                                     Tips: Sertakan detail visual seperti camera angle, ekspresi, pencahayaan, dan suasana
                                 </p>
@@ -19344,7 +19345,7 @@
 
                             <!-- Action Buttons -->
                             <div class="flex gap-3 pt-4">
-                                <button id="storyboard-modal-cancel" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-3 px-6 rounded-xl transition-all">
+                                <button id="storyboard-modal-cancel" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-3 px-6 rounded-xl transition-all" data-i18n="storyboard.modal-cancel">
                                     <i class="fas fa-times mr-2"></i>Batal
                                 </button>
                                 <button id="storyboard-modal-regenerate" class="flex-1 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] active:scale-[0.98]">
@@ -19364,7 +19365,7 @@
                     <h1 class="text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">
                         <i class="fas fa-image mr-3 text-rose-600"></i>Twibon Frame Generator
                     </h1>
-                    <p class="text-lg text-gray-600">
+                    <p class="text-lg text-gray-600" data-i18n="twibon.desc">
                         Tambahkan frame/border profesional pada foto untuk kampanye, event, hari spesial, dan berbagai keperluan!
                     </p>
                 </header>
@@ -19384,14 +19385,14 @@
                                         <input type="file" id="twibon-input" accept="image/png, image/jpeg, image/webp, image/heic, .heic" class="hidden">
                                         <div id="twibon-placeholder">
                                             <i class="fas fa-cloud-upload-alt text-5xl text-rose-400 mb-3"></i>
-                                            <p class="text-gray-700 font-semibold mb-1">Klik untuk upload foto</p>
+                                            <p class="text-gray-700 font-semibold mb-1" data-i18n="twibon.upload-text">Klik untuk upload foto</p>
                                             <p class="text-sm text-gray-500">PNG, JPG, WEBP, HEIC (Max 10MB)</p>
                                         </div>
                                         <img id="twibon-preview" src="" alt="Preview" class="hidden max-w-full h-48 object-contain mx-auto rounded-lg">
                                     </div>
                                     <button id="twibon-remove-btn" class="hidden mt-3 w-full bg-red-500 hover:bg-red-600 text-white text-sm py-2 px-3 rounded-lg transition-colors flex items-center justify-center gap-2">
                                         <i class="fas fa-times"></i>
-                                        <span>Hapus Foto</span>
+                                        <span data-i18n="unboxing.remove-photo">Hapus Foto</span>
                                     </button>
                                 </div>
 
@@ -19399,29 +19400,29 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-3">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-rose-500 to-pink-600 text-white font-bold text-sm shadow-lg">2</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Kategori Frame</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="twibon.step2-title">Kategori Frame</h3>
                                     </div>
                                     <div class="grid grid-cols-2 gap-2">
                                         <button data-value="independence" class="option-btn-twibon selected text-sm">
-                                            <i class="fas fa-flag mr-2"></i>Kemerdekaan
+                                            <i class="fas fa-flag mr-2"></i><span data-i18n="twibon.cat-independence">Kemerdekaan</span>
                                         </button>
                                         <button data-value="holiday" class="option-btn-twibon text-sm">
-                                            <i class="fas fa-calendar-day mr-2"></i>Hari Raya
+                                            <i class="fas fa-calendar-day mr-2"></i><span data-i18n="twibon.cat-holiday">Hari Raya</span>
                                         </button>
                                         <button data-value="birthday" class="option-btn-twibon text-sm">
-                                            <i class="fas fa-birthday-cake mr-2"></i>Ulang Tahun
+                                            <i class="fas fa-birthday-cake mr-2"></i><span data-i18n="twibon.cat-birthday">Ulang Tahun</span>
                                         </button>
                                         <button data-value="wedding" class="option-btn-twibon text-sm">
-                                            <i class="fas fa-heart mr-2"></i>Pernikahan
+                                            <i class="fas fa-heart mr-2"></i><span data-i18n="twibon.cat-wedding">Pernikahan</span>
                                         </button>
                                         <button data-value="graduation" class="option-btn-twibon text-sm">
-                                            <i class="fas fa-graduation-cap mr-2"></i>Wisuda
+                                            <i class="fas fa-graduation-cap mr-2"></i><span data-i18n="twibon.cat-graduation">Wisuda</span>
                                         </button>
                                         <button data-value="campaign" class="option-btn-twibon text-sm">
-                                            <i class="fas fa-bullhorn mr-2"></i>Kampanye
+                                            <i class="fas fa-bullhorn mr-2"></i><span data-i18n="twibon.cat-campaign">Kampanye</span>
                                         </button>
                                         <button data-value="corporate" class="option-btn-twibon text-sm">
-                                            <i class="fas fa-building mr-2"></i>Perusahaan
+                                            <i class="fas fa-building mr-2"></i><span data-i18n="twibon.cat-corporate">Perusahaan</span>
                                         </button>
                                         <button data-value="custom" class="option-btn-twibon text-sm">
                                             <i class="fas fa-pencil mr-2"></i>Custom
@@ -19433,15 +19434,16 @@
                                 <div id="twibon-ai-section">
                                     <div class="flex items-center gap-3 mb-3">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-rose-500 to-pink-600 text-white font-bold text-sm shadow-lg">3</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Deskripsi Frame</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="twibon.step3-title">Deskripsi Frame</h3>
                                     </div>
                                     <textarea
                                         id="twibon-description"
+                                        data-i18n-placeholder="twibon.desc-placeholder"
                                         placeholder="Contoh: Frame untuk HUT RI ke-79 dengan bendera merah putih, warna patriotik, dan teks 'Dirgahayu Indonesia'"
                                         class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-rose-500 focus:outline-none text-sm resize-none"
                                         rows="3"
                                     ></textarea>
-                                    <p class="text-xs text-gray-500 mt-2">
+                                    <p class="text-xs text-gray-500 mt-2" data-i18n="twibon.ai-note">
                                         <i class="fas fa-info-circle mr-1"></i>
                                         AI akan generate frame sesuai deskripsi Anda
                                     </p>
@@ -19451,13 +19453,13 @@
                                 <div id="twibon-custom-section" class="hidden">
                                     <div class="flex items-center gap-3 mb-3">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-rose-500 to-pink-600 text-white font-bold text-sm shadow-lg">3</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Upload Frame Custom</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="twibon.step3-custom-title">Upload Frame Custom</h3>
                                     </div>
                                     <div id="twibon-frame-upload-box" class="upload-box-twibon cursor-pointer border-2 border-dashed border-rose-300 bg-gradient-to-br from-rose-50 to-pink-50 rounded-xl p-6 text-center hover:border-rose-400 transition-all">
                                         <input type="file" id="twibon-frame-input" accept="image/png" class="hidden">
                                         <div id="twibon-frame-placeholder">
                                             <i class="fas fa-image text-4xl text-rose-400 mb-2"></i>
-                                            <p class="text-gray-700 font-semibold mb-1 text-sm">Upload Frame PNG (Transparan)</p>
+                                            <p class="text-gray-700 font-semibold mb-1 text-sm" data-i18n="twibon.frame-upload-text">Upload Frame PNG (Transparan)</p>
                                             <p class="text-xs text-gray-500">PNG dengan background transparan</p>
                                         </div>
                                         <img id="twibon-frame-preview" src="" alt="Frame Preview" class="hidden max-w-full h-32 object-contain mx-auto rounded-lg">
@@ -19468,7 +19470,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-3">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-rose-500 to-pink-600 text-white font-bold text-sm shadow-lg">4</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Style Frame</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="twibon.step4-title">Style Frame</h3>
                                     </div>
                                     <div class="grid grid-cols-2 gap-2">
                                         <button data-value="elegant" class="option-btn-twibon selected text-sm">
@@ -19490,7 +19492,7 @@
                                 <div>
                                     <div class="flex items-center gap-3 mb-3">
                                         <div class="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-rose-500 to-pink-600 text-white font-bold text-sm shadow-lg">5</div>
-                                        <h3 class="text-lg font-bold text-gray-800">Ukuran Frame</h3>
+                                        <h3 class="text-lg font-bold text-gray-800" data-i18n="twibon.step5-title">Ukuran Frame</h3>
                                     </div>
                                     <div class="grid grid-cols-2 gap-2">
                                         <button data-value="1:1" class="option-btn-twibon selected text-sm">
@@ -19562,10 +19564,10 @@
                                     class="w-full bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-700 hover:to-pink-700 text-white text-lg font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                                 >
                                     <i class="fas fa-magic"></i>
-                                    <span>Generate Twibon</span>
+                                    <span data-i18n="twibon.gen-btn">Generate Twibon</span>
                                 </button>
 
-                                <p class="text-xs text-gray-500 text-center">
+                                <p class="text-xs text-gray-500 text-center" data-i18n="twibon.gen-note">
                                     <i class="fas fa-info-circle mr-1"></i>
                                     Upload foto dan pilih kategori untuk mulai
                                 </p>
@@ -19603,7 +19605,7 @@
                                     <div class="mt-4 flex gap-3">
                                         <button id="twibon-download-btn" class="flex-1 bg-gradient-to-r from-rose-500 to-pink-600 text-white text-sm font-semibold px-6 py-3 rounded-lg hover:from-rose-600 hover:to-pink-700 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2">
                                             <i class="fas fa-download"></i>
-                                            <span>Download Twibon</span>
+                                            <span data-i18n="twibon.download-btn">Download Twibon</span>
                                         </button>
                                         <button id="twibon-reset-btn" class="bg-gray-500 hover:bg-gray-600 text-white text-sm font-semibold px-6 py-3 rounded-lg transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2">
                                             <i class="fas fa-redo"></i>
@@ -19617,11 +19619,11 @@
                                     <div class="w-32 h-32 bg-gradient-to-br from-rose-100 to-pink-100 rounded-full flex items-center justify-center mb-6">
                                         <i class="fas fa-image text-5xl text-rose-400"></i>
                                     </div>
-                                    <h4 class="text-xl font-bold text-gray-800 mb-2">Belum Ada Preview</h4>
-                                    <p class="text-gray-600 mb-4">Upload foto dan generate twibon untuk melihat preview</p>
+                                    <h4 class="text-xl font-bold text-gray-800 mb-2" data-i18n="twibon.empty-title">Belum Ada Preview</h4>
+                                    <p class="text-gray-600 mb-4" data-i18n="twibon.empty-desc">Upload foto dan generate twibon untuk melihat preview</p>
                                     <div class="flex items-center gap-2 text-sm text-gray-500">
                                         <i class="fas fa-lightbulb text-rose-500"></i>
-                                        <span>Pilih kategori dan buat frame yang sesuai kebutuhan Anda</span>
+                                        <span data-i18n="twibon.empty-tip">Pilih kategori dan buat frame yang sesuai kebutuhan Anda</span>
                                     </div>
                                 </div>
                             </div>
@@ -70479,6 +70481,68 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'extender.placeholder-desc':'Extended photos will appear here',
             'extender.results-title':'✨ Photo Extension Results ✨',
             'extender.download-all':'Download All',
+            'storyboard.desc':'Create professional visual storyboards for videos, films, presentations, campaigns, and various creative content!',
+            'storyboard.step1-title':'Story Topic',
+            'storyboard.topic-placeholder':'Example: Tutorial making latte coffee, Campaign for new product launch, Behind the scenes production process, etc.',
+            'storyboard.step2-title':'Story Type',
+            'storyboard.step3-title':'Number of Frames',
+            'storyboard.step4-title':'Visual Style',
+            'storyboard.step5-title':'Description Language',
+            'storyboard.lang-id':'Indonesian',
+            'storyboard.step6-title':'Frame Size',
+            'storyboard.frame-vertical':'Vertical',
+            'storyboard.gen-btn':'Generate Story Board',
+            'storyboard.gen-note':'Storyboard will be created with AI to visualize each scene',
+            'storyboard.results-title':'Storyboard Frames',
+            'storyboard.download-all':'Download All',
+            'storyboard.modal-subtitle':'Change scene description for better results',
+            'storyboard.modal-frame-note':'Scene description will be used to generate the image',
+            'storyboard.modal-current-img':'Current Image:',
+            'storyboard.modal-desc-label':'Scene Description:',
+            'storyboard.modal-prompt-placeholder':'Write visual scene description (camera angle, subject, action, background, mood)...',
+            'storyboard.modal-tips':'Tips: Include visual details like camera angle, expression, lighting, and atmosphere',
+            'storyboard.modal-cancel':'Cancel',
+            'twibon.desc':'Add professional frames/borders to photos for campaigns, events, special days, and various needs!',
+            'twibon.upload-text':'Click to upload photo',
+            'twibon.step2-title':'Frame Category',
+            'twibon.cat-independence':'Independence',
+            'twibon.cat-holiday':'Islamic Holiday',
+            'twibon.cat-birthday':'Birthday',
+            'twibon.cat-wedding':'Wedding',
+            'twibon.cat-graduation':'Graduation',
+            'twibon.cat-campaign':'Campaign',
+            'twibon.cat-corporate':'Corporate',
+            'twibon.step3-title':'Frame Description',
+            'twibon.desc-placeholder':'Example: Frame for Independence Day with red-white flag, patriotic colors',
+            'twibon.ai-note':'AI will generate a frame according to your description',
+            'twibon.step3-custom-title':'Upload Custom Frame',
+            'twibon.frame-upload-text':'Upload Frame PNG (Transparent)',
+            'twibon.step4-title':'Frame Style',
+            'twibon.step5-title':'Frame Size',
+            'twibon.gen-btn':'Generate Twibon',
+            'twibon.gen-note':'Upload photo and choose category to start',
+            'twibon.empty-title':'No Preview Yet',
+            'twibon.empty-desc':'Upload photo and generate twibon to see preview',
+            'twibon.empty-tip':'Choose a category and create a frame that suits your needs',
+            'twibon.download-btn':'Download Twibon',
+            'story-update.title':'Story Update Generator',
+            'story-update.desc':'Create realistic daily story photos that match your lifestyle.',
+            'story-update.upload-label':'Upload Your Photo',
+            'story-update.upload-note':'Upload a selfie with your face clearly visible for best results.',
+            'story-update.economic-label':'Choose Economic Class:',
+            'story-update.theme-label':'Choose Story Theme:',
+            'story-update.activity-label':'Specific Activity (Optional):',
+            'story-update.activity-placeholder':'Example: Eating satay in Gasibu, Bandung',
+            'story-update.activity-note':'If filled, this will be used as the main theme of the story.',
+            'story-update.photo-style-label':'Photo Style:',
+            'story-update.style-sendiri':'Solo',
+            'story-update.style-bareng':'With Friends',
+            'story-update.ratio-label':'Choose Image Ratio:',
+            'story-update.gen-btn':'Generate 10 Stories',
+            'story-update.placeholder-title':'Your Story Update Results',
+            'story-update.placeholder-desc':'10 story photos will appear here. Each photo can be previewed and downloaded!',
+            'story-update.placeholder-10var':'10 Variations',
+            'story-update.download-all':'Download All',
             },
             id: {
                 nav: { 'apikey-settings':'API Key','beranda':'Beranda','buat-model':'Membuat Model','mockup-studio':'Mockup Studio','pov-tangan':'POV Tangan','touring':'Foto Touring','mirror-selfie':'POV Mirror Selfie','walking-pad':'Walking Pad','affiliate':'Foto Produk Affiliate','affiliate-islami':'Affiliate Agama','virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion','food-selfie':'Food Selfie','product-review':'Product Review','skincare-review':'Skincare Review','food-review':'Food Review','product-ads':'Iklan Produk','professional-headshot':'Professional Headshot','unboxing-scene':'Unboxing Scene','before-after':'Before/After','product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card','size-guide':'Size Guide','video-frames':'Video Frames','vehicle-modifier':'Vehicle Modifier','deskripsi-produk':'Deskripsi Produk SEO','ide-konten-tiktok':'Ide Konten TikTok','script-story-iklan':'Script Story Iklan','rencana-bisnis':'Rencana Bisnis & SWOT','hr-assistant':'HR Assistant','konten-marketing':'Konten Marketing','riset-pasar':'Riset Pasar & Ide','financial-forecast':'Simulasi Anggaran','family':'Foto Keluarga','new-born':'New Born Studio','maternity':'Foto Maternity','profesi-anak':'Foto Profesi Anak','wedding':'Wedding','wedding-design':'Desain Pernikahan','umrah-haji':'Foto Umrah/Haji','passport-photo':'Pas Foto Warna','graduation-photo':'Foto Wisuda','photo-booth':'Photo Booth','birthday-photo':'Foto Ulang Tahun','kartu-lebaran':'Kartu Lebaran','desain-rumah':'Desain Rumah','desain-kamar':'Desain Kamar','sketsa-gambar':'Sketsa Gambar','bikin-carousel':'Bikin Carousel','miniature':'Miniature Me','karikatur':'Karikatur Generator','photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor','tattoo-editor':'Tattoo Editor','halu':'Halu Idol','sticker':'Sticker Tempel','hair-generator':'Hair Generator','expression-changer':'Expression Changer','face-swap':'Face Swap','bg-remover':'Ubah Background','photo-extender':'Perluas Foto','story-board':'Story Board','twibon':'Twibon Frame','story-update':'Story Update','image-analyzer':'Image to Prompt','packaging-design':'Packaging Design','photo-angle':'Photo Angle','style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'Foto Sampul IG & Tiktok','photo-restoration':'Restorasi Foto','object-remover':'Hapus Object','logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit Generator','content-calendar':'Content Calendar Planner','ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI','caption-generator':'AI Caption Generator','product-comparison':'Product Comparison','mascot-generator':'Mascot Generator','poster-generator':'Poster Generator','banner-generator':'Banner Generator','sketch-catalog':'Sketsa ke Katalog','fotogenic':'Fotogenic','timelapse-renovasi':'Timelapse Renovasi','veo':'Affiliate Go Pro','opal':'Opal Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer' },
@@ -71435,6 +71499,68 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'extender.placeholder-desc':'Foto yang sudah diperluas akan muncul di sini',
             'extender.results-title':'✨ Hasil Perluasan Foto ✨',
             'extender.download-all':'Download Semua',
+            'storyboard.desc':'Buat storyboard visual profesional untuk video, film, presentasi, campaign, dan berbagai konten kreatif!',
+            'storyboard.step1-title':'Topik Story',
+            'storyboard.topic-placeholder':'Contoh: Tutorial membuat kopi latte, Campaign launching produk baru, Behind the scenes proses produksi, dll.',
+            'storyboard.step2-title':'Tipe Story',
+            'storyboard.step3-title':'Jumlah Frame',
+            'storyboard.step4-title':'Style Visual',
+            'storyboard.step5-title':'Bahasa Deskripsi',
+            'storyboard.lang-id':'Bahasa Indonesia',
+            'storyboard.step6-title':'Ukuran Frame',
+            'storyboard.frame-vertical':'Vertikal',
+            'storyboard.gen-btn':'Generate Story Board',
+            'storyboard.gen-note':'Storyboard akan dibuat dengan AI untuk memvisualisasikan setiap scene',
+            'storyboard.results-title':'Storyboard Frames',
+            'storyboard.download-all':'Download Semua',
+            'storyboard.modal-subtitle':'Ubah deskripsi scene untuk hasil yang lebih sesuai',
+            'storyboard.modal-frame-note':'Deskripsi scene akan digunakan untuk generate gambar',
+            'storyboard.modal-current-img':'Gambar Saat Ini:',
+            'storyboard.modal-desc-label':'Deskripsi Scene:',
+            'storyboard.modal-prompt-placeholder':'Tulis deskripsi visual scene (camera angle, subject, action, background, mood)...',
+            'storyboard.modal-tips':'Tips: Sertakan detail visual seperti camera angle, ekspresi, pencahayaan, dan suasana',
+            'storyboard.modal-cancel':'Batal',
+            'twibon.desc':'Tambahkan frame/border profesional pada foto untuk kampanye, event, hari spesial, dan berbagai keperluan!',
+            'twibon.upload-text':'Klik untuk upload foto',
+            'twibon.step2-title':'Kategori Frame',
+            'twibon.cat-independence':'Kemerdekaan',
+            'twibon.cat-holiday':'Hari Raya',
+            'twibon.cat-birthday':'Ulang Tahun',
+            'twibon.cat-wedding':'Pernikahan',
+            'twibon.cat-graduation':'Wisuda',
+            'twibon.cat-campaign':'Kampanye',
+            'twibon.cat-corporate':'Perusahaan',
+            'twibon.step3-title':'Deskripsi Frame',
+            'twibon.desc-placeholder':'Contoh: Frame untuk HUT RI dengan bendera merah putih, warna patriotik',
+            'twibon.ai-note':'AI akan generate frame sesuai deskripsi Anda',
+            'twibon.step3-custom-title':'Upload Frame Custom',
+            'twibon.frame-upload-text':'Upload Frame PNG (Transparan)',
+            'twibon.step4-title':'Style Frame',
+            'twibon.step5-title':'Ukuran Frame',
+            'twibon.gen-btn':'Generate Twibon',
+            'twibon.gen-note':'Upload foto dan pilih kategori untuk mulai',
+            'twibon.empty-title':'Belum Ada Preview',
+            'twibon.empty-desc':'Upload foto dan generate twibon untuk melihat preview',
+            'twibon.empty-tip':'Pilih kategori dan buat frame yang sesuai kebutuhan Anda',
+            'twibon.download-btn':'Download Twibon',
+            'story-update.title':'Story Update Generator',
+            'story-update.desc':'Buat foto story harian yang realistis sesuai gaya hidupmu.',
+            'story-update.upload-label':'Upload Fotomu',
+            'story-update.upload-note':'Upload foto selfie dengan wajah terlihat jelas untuk hasil terbaik.',
+            'story-update.economic-label':'Pilih Kelas Ekonomi:',
+            'story-update.theme-label':'Pilih Tema Story:',
+            'story-update.activity-label':'Kegiatan Spesifik (Opsional):',
+            'story-update.activity-placeholder':'Contoh: Makan sate di Gasibu, Bandung',
+            'story-update.activity-note':'Jika diisi, ini akan digunakan sebagai tema utama story.',
+            'story-update.photo-style-label':'Gaya Foto:',
+            'story-update.style-sendiri':'Sendiri',
+            'story-update.style-bareng':'Bareng Temen',
+            'story-update.ratio-label':'Pilih Rasio Gambar:',
+            'story-update.gen-btn':'Generate 10 Stories',
+            'story-update.placeholder-title':'Hasil Story Update Anda',
+            'story-update.placeholder-desc':'10 foto story akan muncul di sini. Setiap foto bisa di-preview dan download!',
+            'story-update.placeholder-10var':'10 Variasi',
+            'story-update.download-all':'Download Semua',
             }
         };
 
