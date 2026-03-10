@@ -13774,7 +13774,7 @@
                     <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent mb-3">
                         Photo Angle Generator Pro
                     </h1>
-                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto" data-i18n="photo-angle.desc">
                         Transform foto Anda ke berbagai angle profesional dalam sekali klik - Front, Side, Top, 45°, dan lebih!
                     </p>
                 </div>
@@ -13785,7 +13785,7 @@
                     <div class="lg:col-span-1 space-y-6">
                         <!-- Upload Section -->
                         <div class="bg-white rounded-2xl shadow-xl p-6 border-2 border-cyan-100">
-                            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+                            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2" data-i18n="photo-angle.upload-title">
                                 <i class="fas fa-upload text-cyan-600"></i>
                                 Upload Foto
                             </h3>
@@ -13859,7 +13859,7 @@
                         <div id="pa-placeholder" class="bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-50 rounded-2xl p-12 text-center border-2 border-dashed border-cyan-300">
                             <i class="fas fa-cube text-6xl text-cyan-400 mb-4"></i>
                             <h3 class="text-xl font-bold text-gray-700 mb-2">Ready to Transform</h3>
-                            <p class="text-gray-500">Upload foto dan pilih preset angle untuk memulai</p>
+                            <p class="text-gray-500" data-i18n="photo-angle.placeholder-desc">Upload foto dan pilih preset angle untuk memulai</p>
                         </div>
 
                         <!-- Loading -->
@@ -20542,7 +20542,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <!-- Left Column: Input & Settings -->
                     <aside class="bg-white rounded-2xl shadow-xl p-6 border-2 border-transparent hover:border-cyan-200 transition-all duration-300">
-                        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2" style="color: #0e7490;">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2" style="color: #0e7490;" data-i18n="image-analyzer.h2">
                             <i class="fas fa-cog"></i>
                             Pengaturan Analisis
                         </h2>
@@ -20553,12 +20553,12 @@
                                 <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
                                     1
                                 </div>
-                                <h3 class="text-lg font-bold text-gray-800">Upload Gambar</h3>
+                                <h3 class="text-lg font-bold text-gray-800" data-i18n="image-analyzer.step1-title">Upload Gambar</h3>
                             </div>
                             <label for="analyzer-image-upload" class="upload-box-analyzer block cursor-pointer text-center py-6 px-4 border-2 border-dashed rounded-xl transition-all duration-300 hover:scale-[1.02]" style="border-color: #06b6d4; background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);">
                                 <div class="flex flex-col items-center gap-2">
                                     <i class="fas fa-cloud-upload-alt text-4xl" style="color: #06b6d4;"></i>
-                                    <span class="font-semibold" style="color: #0e7490;">Klik untuk upload gambar</span>
+                                    <span class="font-semibold" style="color: #0e7490;" data-i18n="image-analyzer.upload-span">Klik untuk upload gambar</span>
                                     <span class="text-xs text-gray-500">PNG, JPG, WEBP, HEIC (max 10MB)</span>
                                 </div>
                                 <input type="file" id="analyzer-image-upload" class="hidden" accept="image/png, image/jpeg, image/webp, image/heic, .heic">
@@ -20566,7 +20566,7 @@
                             <div id="analyzer-image-preview-container" class="mt-3 hidden">
                                 <img id="analyzer-image-preview" src="" alt="Preview" class="w-full rounded-lg shadow-lg max-h-64 object-cover border-2" style="border-color: #06b6d4;">
                                 <button id="analyzer-remove-image" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg transition-all">
-                                    <i class="fas fa-times mr-1"></i> Hapus Gambar
+                                    <i class="fas fa-times mr-1"></i> <span data-i18n="image-analyzer.remove-btn">Hapus Gambar</span>
                                 </button>
                             </div>
                         </div>
@@ -20577,7 +20577,7 @@
                                 <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
                                     2
                                 </div>
-                                <h3 class="text-lg font-bold text-gray-800">Level Detail Analisis</h3>
+                                <h3 class="text-lg font-bold text-gray-800" data-i18n="image-analyzer.step2-title">Level Detail Analisis</h3>
                             </div>
                             <div id="analyzer-detail-level" class="grid grid-cols-3 gap-3">
                                 <button type="button" data-value="basic" class="option-btn-analyzer">
@@ -20601,7 +20601,7 @@
                                 <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
                                     3
                                 </div>
-                                <h3 class="text-lg font-bold text-gray-800">Format Prompt</h3>
+                                <h3 class="text-lg font-bold text-gray-800" data-i18n="image-analyzer.step3-title">Format Prompt</h3>
                             </div>
                             <div id="analyzer-prompt-format" class="grid grid-cols-2 gap-3">
                                 <button type="button" data-value="general" class="option-btn-analyzer selected">
@@ -20637,12 +20637,12 @@
                                 <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
                                     4
                                 </div>
-                                <h3 class="text-lg font-bold text-gray-800">Bahasa Output</h3>
+                                <h3 class="text-lg font-bold text-gray-800" data-i18n="image-analyzer.step4-title">Bahasa Output</h3>
                             </div>
                             <div id="analyzer-language" class="grid grid-cols-2 gap-3">
                                 <button type="button" data-value="id" class="option-btn-analyzer selected">
                                     <i class="fas fa-flag"></i>
-                                    <span class="text-sm">Bahasa Indonesia</span>
+                                    <span class="text-sm" data-i18n="image-analyzer.lang-id">Bahasa Indonesia</span>
                                 </button>
                                 <button type="button" data-value="en" class="option-btn-analyzer">
                                     <i class="fas fa-globe"></i>
@@ -20657,7 +20657,7 @@
                                 <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
                                     5
                                 </div>
-                                <h3 class="text-lg font-bold text-gray-800">Format Output</h3>
+                                <h3 class="text-lg font-bold text-gray-800" data-i18n="image-analyzer.step5-title">Format Output</h3>
                             </div>
                             <div id="analyzer-output-format" class="grid grid-cols-2 gap-3">
                                 <button type="button" data-value="text" class="option-btn-analyzer selected">
@@ -20671,14 +20671,14 @@
                             </div>
                             <p class="text-xs text-gray-500 mt-2">
                                 <i class="fas fa-info-circle mr-1"></i>
-                                JSON format cocok untuk developer/API integration
+                                <span data-i18n="image-analyzer.json-tip">JSON format cocok untuk developer/API integration</span>
                             </p>
                         </div>
 
                         <!-- Analyze Button -->
                         <button id="analyzer-analyze-btn" disabled class="w-full bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100">
                             <i class="fas fa-brain mr-2"></i>
-                            Analisis Gambar
+                            <span data-i18n="image-analyzer.analyze-btn">Analisis Gambar</span>
                         </button>
                     </aside>
 
@@ -20729,7 +20729,7 @@
                                 </div>
                                 <div class="mt-4 flex items-center gap-2 text-sm text-gray-500">
                                     <i class="fas fa-info-circle" style="color: #06b6d4;"></i>
-                                    <span>Gunakan prompt ini untuk membuat gambar serupa dengan AI image generator</span>
+                                    <span data-i18n="image-analyzer.result-footer">Gunakan prompt ini untuk membuat gambar serupa dengan AI image generator</span>
                                 </div>
                             </div>
                         </div>
@@ -20737,22 +20737,22 @@
                         <!-- Empty State -->
                         <div id="analyzer-empty-state" class="bg-white rounded-2xl shadow-lg p-12 text-center border-2 border-dashed" style="border-color: #06b6d4;">
                             <i class="fas fa-brain text-6xl mb-4" style="color: #06b6d4;"></i>
-                            <h3 class="text-2xl font-bold mb-3" style="color: #0e7490;">Siap Menganalisis Gambar</h3>
+                            <h3 class="text-2xl font-bold mb-3" style="color: #0e7490;" data-i18n="image-analyzer.empty-title">Siap Menganalisis Gambar</h3>
                             <p class="text-gray-600 mb-6 max-w-md mx-auto">
-                                Upload gambar, pilih level detail dan format prompt, lalu klik Analisis untuk mendapatkan prompt AI profesional!
+                                <span data-i18n="image-analyzer.empty-desc">Upload gambar, pilih level detail dan format prompt, lalu klik Analisis untuk mendapatkan prompt AI profesional!</span>
                             </p>
                             <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle" style="color: #06b6d4;"></i>
-                                    <span>Detail Analisis</span>
+                                    <span data-i18n="image-analyzer.feat-detail">Detail Analisis</span>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle" style="color: #06b6d4;"></i>
-                                    <span>6 Format Prompt</span>
+                                    <span data-i18n="image-analyzer.feat-format">6 Format Prompt</span>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle" style="color: #06b6d4;"></i>
-                                    <span>2 Bahasa</span>
+                                    <span data-i18n="image-analyzer.feat-lang">2 Bahasa</span>
                                 </div>
                             </div>
                         </div>
@@ -20776,7 +20776,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <!-- Left Column: Input & Settings -->
                     <aside class="bg-white rounded-2xl shadow-xl p-6 border-2 border-transparent hover:border-amber-200 transition-all duration-300">
-                        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2" style="color: #78350f;">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2" style="color: #78350f;" data-i18n="packaging.h2">
                             <i class="fas fa-sliders-h"></i>
                             Pengaturan Desain
                         </h2>
@@ -20792,7 +20792,7 @@
                             <label for="packaging-product-upload" class="upload-box-packaging block cursor-pointer text-center py-6 px-4 border-2 border-dashed rounded-xl transition-all duration-300 hover:scale-[1.02]" style="border-color: #92400e; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);">
                                 <div class="flex flex-col items-center gap-2">
                                     <i class="fas fa-cloud-upload-alt text-4xl" style="color: #92400e;"></i>
-                                    <span class="font-semibold" style="color: #78350f;">Klik untuk upload</span>
+                                    <span class="font-semibold" style="color: #78350f;" data-i18n="packaging.upload-span">Klik untuk upload</span>
                                     <span class="text-xs text-gray-500">PNG, JPG, WEBP, HEIC</span>
                                 </div>
                                 <input type="file" id="packaging-product-upload" class="hidden" accept="image/png, image/jpeg, image/webp, image/heic, .heic">
@@ -20800,7 +20800,7 @@
                             <div id="packaging-product-preview-container" class="mt-3 hidden">
                                 <img id="packaging-product-preview" src="" alt="Preview" class="w-full rounded-lg shadow-lg max-h-64 object-cover border-2" style="border-color: #92400e;">
                                 <button id="packaging-remove-product" class="mt-2 w-full bg-red-600 hover:bg-red-700 text-white text-sm py-2 px-3 rounded-lg transition-all">
-                                    <i class="fas fa-times mr-1"></i> Hapus Foto
+                                    <i class="fas fa-times mr-1"></i> <span data-i18n="unboxing.remove-photo">Hapus Foto</span>
                                 </button>
                             </div>
                         </div>
@@ -20811,16 +20811,16 @@
                                 <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #92400e 0%, #78350f 100%);">
                                     2
                                 </div>
-                                <h3 class="text-lg font-bold text-gray-800">Jenis Kemasan</h3>
+                                <h3 class="text-lg font-bold text-gray-800" data-i18n="packaging.step2-title">Jenis Kemasan</h3>
                             </div>
                             <div id="packaging-type-options" class="grid grid-cols-2 gap-3">
                                 <button type="button" data-value="box" class="option-btn-packaging selected">
                                     <i class="fas fa-box"></i>
-                                    <span class="text-sm">Box/Kardus</span>
+                                    <span class="text-sm" data-i18n="packaging.type-box">Box/Kardus</span>
                                 </button>
                                 <button type="button" data-value="pouch" class="option-btn-packaging">
                                     <i class="fas fa-shopping-bag"></i>
-                                    <span class="text-sm">Pouch/Plastik</span>
+                                    <span class="text-sm" data-i18n="packaging.type-pouch">Pouch/Plastik</span>
                                 </button>
                                 <button type="button" data-value="bottle" class="option-btn-packaging">
                                     <i class="fas fa-wine-bottle"></i>
@@ -20828,7 +20828,7 @@
                                 </button>
                                 <button type="button" data-value="can" class="option-btn-packaging">
                                     <i class="fas fa-prescription-bottle"></i>
-                                    <span class="text-sm">Can/Kaleng</span>
+                                    <span class="text-sm" data-i18n="packaging.type-can">Can/Kaleng</span>
                                 </button>
                                 <button type="button" data-value="paperbag" class="option-btn-packaging">
                                     <i class="fas fa-bag-shopping"></i>
@@ -20847,7 +20847,7 @@
                                 <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #92400e 0%, #78350f 100%);">
                                     3
                                 </div>
-                                <h3 class="text-lg font-bold text-gray-800">Style Desain</h3>
+                                <h3 class="text-lg font-bold text-gray-800" data-i18n="packaging.step3-title">Style Desain</h3>
                             </div>
                             <div id="packaging-style-options" class="grid grid-cols-2 gap-3">
                                 <button type="button" data-value="minimalist" class="option-btn-packaging selected">
@@ -20885,7 +20885,7 @@
                                 </div>
                                 <h3 class="text-lg font-bold text-gray-800">Brand Name <span class="text-xs text-gray-500">(Optional)</span></h3>
                             </div>
-                            <input type="text" id="packaging-brand-name" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-amber-500 focus:outline-none transition-all" placeholder="Masukkan nama brand Anda">
+                            <input type="text" id="packaging-brand-name" class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-amber-500 focus:outline-none transition-all" data-i18n-placeholder="packaging.brand-placeholder" placeholder="Masukkan nama brand Anda">
                         </div>
 
                         <!-- Step 5: Brand Color (Optional) -->
@@ -20898,7 +20898,7 @@
                             </div>
                             <div class="flex items-center gap-3">
                                 <input type="color" id="packaging-brand-color" class="w-20 h-12 rounded-lg border-2 border-gray-300 cursor-pointer" value="#92400e">
-                                <span class="text-sm text-gray-600">Pilih warna utama brand</span>
+                                <span class="text-sm text-gray-600" data-i18n="packaging.color-label">Pilih warna utama brand</span>
                             </div>
                         </div>
 
@@ -20908,17 +20908,17 @@
                                 <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white shadow-md" style="background: linear-gradient(135deg, #92400e 0%, #78350f 100%);">
                                     6
                                 </div>
-                                <h3 class="text-lg font-bold text-gray-800">Jumlah Variasi</h3>
+                                <h3 class="text-lg font-bold text-gray-800" data-i18n="packaging.step6-title">Jumlah Variasi</h3>
                             </div>
                             <div id="packaging-count-options" class="grid grid-cols-3 gap-3">
                                 <button type="button" data-count="4" class="option-btn-packaging">
-                                    <span>4 Desain</span>
+                                    <span data-i18n="packaging.count-4">4 Desain</span>
                                 </button>
                                 <button type="button" data-count="6" class="option-btn-packaging selected">
-                                    <span>6 Desain</span>
+                                    <span data-i18n="packaging.count-6">6 Desain</span>
                                 </button>
                                 <button type="button" data-count="8" class="option-btn-packaging">
-                                    <span>8 Desain</span>
+                                    <span data-i18n="packaging.count-8">8 Desain</span>
                                 </button>
                             </div>
                         </div>
@@ -20926,7 +20926,7 @@
                         <!-- Generate Button -->
                         <button id="packaging-generate-btn" disabled class="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100">
                             <i class="fas fa-magic mr-2"></i>
-                            Generate <span id="packaging-count-text">6</span> Desain Packaging
+                            Generate <span id="packaging-count-text">6</span> <span data-i18n="packaging.design-suffix">Desain Packaging</span>
                         </button>
                     </aside>
 
@@ -20971,11 +20971,11 @@
                         <div id="packaging-results-header" class="hidden flex items-center justify-between mb-4 bg-gradient-to-r from-amber-50 to-yellow-50 p-4 rounded-xl border-2" style="border-color: #92400e;">
                             <h3 class="text-2xl font-bold" style="color: #78350f;">
                                 <i class="fas fa-check-circle mr-2" style="color: #92400e;"></i>
-                                <span id="packaging-results-count">6</span> Desain Packaging
+                                <span id="packaging-results-count">6</span> <span data-i18n="packaging.design-suffix">Desain Packaging</span>
                             </h3>
                             <button id="packaging-download-all-btn" class="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white px-6 py-2 rounded-full font-semibold shadow-lg transition transform hover:scale-105 flex items-center gap-2">
                                 <i class="fas fa-download"></i>
-                                <span class="hidden sm:inline">Download Semua</span>
+                                <span class="hidden sm:inline" data-i18n="packaging.download-all">Download Semua</span>
                             </button>
                         </div>
 
@@ -20987,18 +20987,18 @@
                         <!-- Empty State -->
                         <div id="packaging-empty-state" class="bg-white rounded-2xl shadow-lg p-12 text-center border-2 border-dashed" style="border-color: #92400e;">
                             <i class="fas fa-box text-6xl mb-4" style="color: #92400e;"></i>
-                            <h3 class="text-2xl font-bold mb-3" style="color: #78350f;">Siap Membuat Desain Packaging</h3>
+                            <h3 class="text-2xl font-bold mb-3" style="color: #78350f;" data-i18n="packaging.empty-title">Siap Membuat Desain Packaging</h3>
                             <p class="text-gray-600 mb-6 max-w-md mx-auto">
-                                Upload foto produk, pilih jenis kemasan dan style desain, lalu klik generate untuk membuat packaging design profesional!
+                                <span data-i18n="packaging.empty-desc">Upload foto produk, pilih jenis kemasan dan style desain, lalu klik generate untuk membuat packaging design profesional!</span>
                             </p>
                             <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle" style="color: #92400e;"></i>
-                                    <span>6 Jenis Kemasan</span>
+                                    <span data-i18n="packaging.feat-types">6 Jenis Kemasan</span>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle" style="color: #92400e;"></i>
-                                    <span>6 Style Desain</span>
+                                    <span data-i18n="packaging.feat-styles">6 Style Desain</span>
                                 </div>
                                 <div class="flex items-center gap-2">
                                     <i class="fas fa-check-circle" style="color: #92400e;"></i>
@@ -70543,6 +70543,45 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'story-update.placeholder-desc':'10 story photos will appear here. Each photo can be previewed and downloaded!',
             'story-update.placeholder-10var':'10 Variations',
             'story-update.download-all':'Download All',
+            'image-analyzer.h2':'Analysis Settings',
+            'image-analyzer.step1-title':'Upload Image',
+            'image-analyzer.upload-span':'Click to upload image',
+            'image-analyzer.remove-btn':'Remove Image',
+            'image-analyzer.step2-title':'Analysis Detail Level',
+            'image-analyzer.step3-title':'Prompt Format',
+            'image-analyzer.step4-title':'Output Language',
+            'image-analyzer.lang-id':'Indonesian',
+            'image-analyzer.step5-title':'Output Format',
+            'image-analyzer.json-tip':'JSON format is suitable for developer/API integration',
+            'image-analyzer.analyze-btn':'Analyze Image',
+            'image-analyzer.result-footer':'Use this prompt to create similar images with AI image generator',
+            'image-analyzer.empty-title':'Ready to Analyze Image',
+            'image-analyzer.empty-desc':'Upload image, choose detail level and prompt format, then click Analyze to get a professional AI prompt!',
+            'image-analyzer.feat-detail':'Detail Analysis',
+            'image-analyzer.feat-format':'6 Prompt Formats',
+            'image-analyzer.feat-lang':'2 Languages',
+            'packaging.h2':'Design Settings',
+            'packaging.upload-span':'Click to upload',
+            'packaging.step2-title':'Packaging Type',
+            'packaging.type-box':'Box/Cardboard',
+            'packaging.type-pouch':'Pouch/Plastic',
+            'packaging.type-can':'Can/Tin',
+            'packaging.step3-title':'Design Style',
+            'packaging.brand-placeholder':'Enter your brand name',
+            'packaging.color-label':'Choose brand primary color',
+            'packaging.step6-title':'Number of Variations',
+            'packaging.count-4':'4 Designs',
+            'packaging.count-6':'6 Designs',
+            'packaging.count-8':'8 Designs',
+            'packaging.design-suffix':'Packaging Designs',
+            'packaging.download-all':'Download All',
+            'packaging.empty-title':'Ready to Create Packaging Design',
+            'packaging.empty-desc':'Upload product photo, choose packaging type and design style, then click generate to create professional packaging design!',
+            'packaging.feat-types':'6 Packaging Types',
+            'packaging.feat-styles':'6 Design Styles',
+            'photo-angle.desc':'Transform your photos to various professional angles in one click - Front, Side, Top, 45°, and more!',
+            'photo-angle.upload-title':'Upload Photo',
+            'photo-angle.placeholder-desc':'Upload photo and choose angle preset to start',
             },
             id: {
                 nav: { 'apikey-settings':'API Key','beranda':'Beranda','buat-model':'Membuat Model','mockup-studio':'Mockup Studio','pov-tangan':'POV Tangan','touring':'Foto Touring','mirror-selfie':'POV Mirror Selfie','walking-pad':'Walking Pad','affiliate':'Foto Produk Affiliate','affiliate-islami':'Affiliate Agama','virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion','food-selfie':'Food Selfie','product-review':'Product Review','skincare-review':'Skincare Review','food-review':'Food Review','product-ads':'Iklan Produk','professional-headshot':'Professional Headshot','unboxing-scene':'Unboxing Scene','before-after':'Before/After','product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card','size-guide':'Size Guide','video-frames':'Video Frames','vehicle-modifier':'Vehicle Modifier','deskripsi-produk':'Deskripsi Produk SEO','ide-konten-tiktok':'Ide Konten TikTok','script-story-iklan':'Script Story Iklan','rencana-bisnis':'Rencana Bisnis & SWOT','hr-assistant':'HR Assistant','konten-marketing':'Konten Marketing','riset-pasar':'Riset Pasar & Ide','financial-forecast':'Simulasi Anggaran','family':'Foto Keluarga','new-born':'New Born Studio','maternity':'Foto Maternity','profesi-anak':'Foto Profesi Anak','wedding':'Wedding','wedding-design':'Desain Pernikahan','umrah-haji':'Foto Umrah/Haji','passport-photo':'Pas Foto Warna','graduation-photo':'Foto Wisuda','photo-booth':'Photo Booth','birthday-photo':'Foto Ulang Tahun','kartu-lebaran':'Kartu Lebaran','desain-rumah':'Desain Rumah','desain-kamar':'Desain Kamar','sketsa-gambar':'Sketsa Gambar','bikin-carousel':'Bikin Carousel','miniature':'Miniature Me','karikatur':'Karikatur Generator','photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor','tattoo-editor':'Tattoo Editor','halu':'Halu Idol','sticker':'Sticker Tempel','hair-generator':'Hair Generator','expression-changer':'Expression Changer','face-swap':'Face Swap','bg-remover':'Ubah Background','photo-extender':'Perluas Foto','story-board':'Story Board','twibon':'Twibon Frame','story-update':'Story Update','image-analyzer':'Image to Prompt','packaging-design':'Packaging Design','photo-angle':'Photo Angle','style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'Foto Sampul IG & Tiktok','photo-restoration':'Restorasi Foto','object-remover':'Hapus Object','logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit Generator','content-calendar':'Content Calendar Planner','ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI','caption-generator':'AI Caption Generator','product-comparison':'Product Comparison','mascot-generator':'Mascot Generator','poster-generator':'Poster Generator','banner-generator':'Banner Generator','sketch-catalog':'Sketsa ke Katalog','fotogenic':'Fotogenic','timelapse-renovasi':'Timelapse Renovasi','veo':'Affiliate Go Pro','opal':'Opal Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer' },
@@ -71561,6 +71600,45 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'story-update.placeholder-desc':'10 foto story akan muncul di sini. Setiap foto bisa di-preview dan download!',
             'story-update.placeholder-10var':'10 Variasi',
             'story-update.download-all':'Download Semua',
+            'image-analyzer.h2':'Pengaturan Analisis',
+            'image-analyzer.step1-title':'Upload Gambar',
+            'image-analyzer.upload-span':'Klik untuk upload gambar',
+            'image-analyzer.remove-btn':'Hapus Gambar',
+            'image-analyzer.step2-title':'Level Detail Analisis',
+            'image-analyzer.step3-title':'Format Prompt',
+            'image-analyzer.step4-title':'Bahasa Output',
+            'image-analyzer.lang-id':'Bahasa Indonesia',
+            'image-analyzer.step5-title':'Format Output',
+            'image-analyzer.json-tip':'JSON format cocok untuk developer/API integration',
+            'image-analyzer.analyze-btn':'Analisis Gambar',
+            'image-analyzer.result-footer':'Gunakan prompt ini untuk membuat gambar serupa dengan AI image generator',
+            'image-analyzer.empty-title':'Siap Menganalisis Gambar',
+            'image-analyzer.empty-desc':'Upload gambar, pilih level detail dan format prompt, lalu klik Analisis untuk mendapatkan prompt AI profesional!',
+            'image-analyzer.feat-detail':'Detail Analisis',
+            'image-analyzer.feat-format':'6 Format Prompt',
+            'image-analyzer.feat-lang':'2 Bahasa',
+            'packaging.h2':'Pengaturan Desain',
+            'packaging.upload-span':'Klik untuk upload',
+            'packaging.step2-title':'Jenis Kemasan',
+            'packaging.type-box':'Box/Kardus',
+            'packaging.type-pouch':'Pouch/Plastik',
+            'packaging.type-can':'Can/Kaleng',
+            'packaging.step3-title':'Style Desain',
+            'packaging.brand-placeholder':'Masukkan nama brand Anda',
+            'packaging.color-label':'Pilih warna utama brand',
+            'packaging.step6-title':'Jumlah Variasi',
+            'packaging.count-4':'4 Desain',
+            'packaging.count-6':'6 Desain',
+            'packaging.count-8':'8 Desain',
+            'packaging.design-suffix':'Desain Packaging',
+            'packaging.download-all':'Download Semua',
+            'packaging.empty-title':'Siap Membuat Desain Packaging',
+            'packaging.empty-desc':'Upload foto produk, pilih jenis kemasan dan style desain, lalu klik generate untuk membuat packaging design profesional!',
+            'packaging.feat-types':'6 Jenis Kemasan',
+            'packaging.feat-styles':'6 Style Desain',
+            'photo-angle.desc':'Transform foto Anda ke berbagai angle profesional dalam sekali klik - Front, Side, Top, 45°, dan lebih!',
+            'photo-angle.upload-title':'Upload Foto',
+            'photo-angle.placeholder-desc':'Upload foto dan pilih preset angle untuk memulai',
             }
         };
 
