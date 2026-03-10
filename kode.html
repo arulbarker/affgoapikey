@@ -13922,7 +13922,7 @@
                     <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent mb-3">
                         Photo Style Matcher Pro
                     </h1>
-                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto" data-i18n="style-matcher.desc">
                         Transform foto Anda dengan gaya visual dari foto referensi (artis, influencer, atau gaya apapun) - AI akan mencocokkan lighting, color grading, mood, dan aesthetics!
                     </p>
                 </div>
@@ -13933,7 +13933,7 @@
                     <div class="lg:col-span-1 space-y-6">
                         <!-- Your Photo Upload -->
                         <div class="bg-white rounded-2xl shadow-xl p-6 border-2 border-pink-100">
-                            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+                            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2" data-i18n="style-matcher.your-photo-title">
                                 <i class="fas fa-user-circle text-pink-600"></i>
                                 Foto Anda
                             </h3>
@@ -13941,7 +13941,7 @@
                                 <input type="file" id="sm-your-photo" accept="image/*" class="hidden">
                                 <div id="sm-your-placeholder">
                                     <i class="fas fa-user text-5xl text-gray-400 group-hover:text-pink-500 transition-all mb-3"></i>
-                                    <p class="text-gray-600 font-semibold">Upload foto Anda</p>
+                                    <p class="text-gray-600 font-semibold" data-i18n="style-matcher.your-upload-p">Upload foto Anda</p>
                                     <p class="text-xs text-gray-500 mt-2">PNG, JPG, HEIC</p>
                                 </div>
                                 <img id="sm-your-preview" class="hidden w-full h-48 object-cover rounded-lg">
@@ -13950,7 +13950,7 @@
 
                         <!-- Reference Photo Upload -->
                         <div class="bg-white rounded-2xl shadow-xl p-6 border-2 border-purple-100">
-                            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+                            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2" data-i18n="style-matcher.ref-photo-title">
                                 <i class="fas fa-star text-purple-600"></i>
                                 Foto Referensi (Gaya)
                             </h3>
@@ -13958,8 +13958,8 @@
                                 <input type="file" id="sm-ref-photo" accept="image/*" class="hidden">
                                 <div id="sm-ref-placeholder">
                                     <i class="fas fa-image text-5xl text-gray-400 group-hover:text-purple-500 transition-all mb-3"></i>
-                                    <p class="text-gray-600 font-semibold">Upload foto gaya</p>
-                                    <p class="text-xs text-gray-500 mt-2">Artis, influencer, dll</p>
+                                    <p class="text-gray-600 font-semibold" data-i18n="style-matcher.ref-upload-p">Upload foto gaya</p>
+                                    <p class="text-xs text-gray-500 mt-2" data-i18n="style-matcher.ref-upload-note">Artis, influencer, dll</p>
                                 </div>
                                 <img id="sm-ref-preview" class="hidden w-full h-48 object-cover rounded-lg">
                             </div>
@@ -13976,7 +13976,7 @@
                                     <input type="radio" name="sm-strength" value="subtle" class="mr-3 w-4 h-4 text-pink-600">
                                     <div class="flex-1">
                                         <div class="font-semibold text-gray-800">Subtle (30%)</div>
-                                        <div class="text-xs text-gray-500">Gaya halus, natural</div>
+                                        <div class="text-xs text-gray-500" data-i18n="style-matcher.subtle-desc">Gaya halus, natural</div>
                                     </div>
                                 </label>
                                 <label class="flex items-center p-3 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-lg cursor-pointer hover:shadow-md transition-all">
@@ -13990,7 +13990,7 @@
                                     <input type="radio" name="sm-strength" value="strong" class="mr-3 w-4 h-4 text-indigo-600">
                                     <div class="flex-1">
                                         <div class="font-semibold text-gray-800">Strong (90%)</div>
-                                        <div class="text-xs text-gray-500">Gaya kuat, dramatic</div>
+                                        <div class="text-xs text-gray-500" data-i18n="style-matcher.strong-desc">Gaya kuat, dramatic</div>
                                     </div>
                                 </label>
                             </div>
@@ -14023,7 +14023,7 @@
                         <div id="sm-placeholder" class="bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50 rounded-2xl p-12 text-center border-2 border-dashed border-pink-300">
                             <i class="fas fa-wand-sparkles text-6xl text-pink-400 mb-4"></i>
                             <h3 class="text-xl font-bold text-gray-700 mb-2">Ready to Match Style</h3>
-                            <p class="text-gray-500 mb-4">Upload foto Anda dan foto referensi untuk memulai</p>
+                            <p class="text-gray-500 mb-4" data-i18n="style-matcher.placeholder-desc">Upload foto Anda dan foto referensi untuk memulai</p>
                             <div class="flex items-center justify-center gap-8 mt-6">
                                 <div class="text-center">
                                     <div class="w-20 h-20 bg-pink-200 rounded-full flex items-center justify-center mb-2 mx-auto">
@@ -14070,7 +14070,7 @@
                                     <i class="fas fa-check-circle text-green-500"></i>
                                     6 Styled Variations Generated!
                                 </h3>
-                                <p class="text-sm text-gray-600 mt-1">Pilih yang paling sesuai atau download semua</p>
+                                <p class="text-sm text-gray-600 mt-1" data-i18n="style-matcher.results-subtext">Pilih yang paling sesuai atau download semua</p>
                             </div>
                             <div class="flex gap-3">
                                 <button id="sm-compare-btn" class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform hover:scale-105 transition-all flex items-center gap-2">
@@ -14179,7 +14179,7 @@
                         Thumbnail Generator Pro
                     </h1>
                     <p class="text-gray-600 text-lg max-w-3xl mx-auto">
-                        Generate eye-catching thumbnails untuk YouTube, Instagram, atau platform apapun - Gunakan foto referensi atau buat dari teks custom!
+                        <span data-i18n="thumbnail.desc">Generate eye-catching thumbnails untuk YouTube, Instagram, atau platform apapun - Gunakan foto referensi atau buat dari teks custom!</span>
                     </p>
                 </div>
 
@@ -14226,8 +14226,8 @@
                                     <i class="fas fa-magic text-orange-600"></i>
                                     Custom Instructions <span class="text-sm font-normal text-gray-500">(Optional)</span>
                                 </h3>
-                                <textarea id="tg-ref-custom-instructions" rows="3" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all resize-none" placeholder="Contoh: Tambahkan efek glow, gunakan warna biru dan merah, fokus pada produk di tengah, background blur, dsb."></textarea>
-                                <p class="text-xs text-gray-500 mt-2">💡 Deskripsikan perubahan atau penekanan yang Anda inginkan dari reference</p>
+                                <textarea id="tg-ref-custom-instructions" rows="3" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all resize-none" data-i18n-placeholder="thumbnail.ref-instructions-placeholder" placeholder="Contoh: Tambahkan efek glow, gunakan warna biru dan merah, fokus pada produk di tengah, background blur, dsb."></textarea>
+                                <p class="text-xs text-gray-500 mt-2" data-i18n="thumbnail.ref-instructions-note">💡 Deskripsikan perubahan atau penekanan yang Anda inginkan dari reference</p>
                             </div>
                         </div>
 
@@ -14239,7 +14239,7 @@
                                     Thumbnail Title
                                 </h3>
                                 <input type="text" id="tg-title-input" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all" placeholder="e.g., HOW TO MAKE $10,000 ONLINE">
-                                <p class="text-xs text-gray-500 mt-2">💡 Gunakan ALL CAPS untuk impact maksimal</p>
+                                <p class="text-xs text-gray-500 mt-2" data-i18n="thumbnail.title-note">💡 Gunakan ALL CAPS untuk impact maksimal</p>
                             </div>
 
                             <div class="bg-white rounded-2xl shadow-xl p-6 border-2 border-orange-100">
@@ -14283,7 +14283,7 @@
                                 <option value="energetic">⚡ Energetic/Dynamic</option>
                                 <option value="calm">😌 Calm/Peaceful</option>
                             </select>
-                            <p class="text-xs text-gray-500 mt-2">Atur mood/vibe keseluruhan thumbnail</p>
+                            <p class="text-xs text-gray-500 mt-2" data-i18n="thumbnail.expression-note">Atur mood/vibe keseluruhan thumbnail</p>
                         </div>
 
                         <!-- Number of Variations -->
@@ -14333,7 +14333,7 @@
                         <div id="tg-placeholder" class="bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50 rounded-2xl p-12 text-center border-2 border-dashed border-orange-300">
                             <i class="fas fa-rectangle-ad text-6xl text-orange-400 mb-4"></i>
                             <h3 class="text-xl font-bold text-gray-700 mb-2">Ready to Generate Thumbnails</h3>
-                            <p class="text-gray-500 mb-6">Pilih mode dan isi informasi untuk memulai</p>
+                            <p class="text-gray-500 mb-6" data-i18n="thumbnail.placeholder-desc">Pilih mode dan isi informasi untuk memulai</p>
                             <div class="grid grid-cols-2 gap-4 max-w-md mx-auto">
                                 <div class="bg-white rounded-lg p-4 shadow-md">
                                     <i class="fas fa-image text-3xl text-red-500 mb-2"></i>
@@ -14370,7 +14370,7 @@
                                     <i class="fas fa-check-circle text-green-500"></i>
                                     <span id="tg-results-count">6</span> Thumbnails Generated!
                                 </h3>
-                                <p class="text-sm text-gray-600 mt-1">Click-worthy thumbnails siap digunakan</p>
+                                <p class="text-sm text-gray-600 mt-1" data-i18n="thumbnail.results-subtext">Click-worthy thumbnails siap digunakan</p>
                             </div>
                             <button id="tg-download-all-btn" class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform hover:scale-105 transition-all flex items-center gap-2">
                                 <i class="fas fa-download"></i>
@@ -14405,7 +14405,7 @@
                             </div>
                             <h4 class="font-bold text-gray-800">Bold Text</h4>
                         </div>
-                        <p class="text-sm text-gray-600">Gunakan text besar, bold, dan kontras tinggi untuk readability maksimal</p>
+                        <p class="text-sm text-gray-600" data-i18n="thumbnail.tip-bold">Gunakan text besar, bold, dan kontras tinggi untuk readability maksimal</p>
                     </div>
                     <div class="bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl p-6 border-2 border-orange-200">
                         <div class="flex items-center gap-3 mb-3">
@@ -14414,7 +14414,7 @@
                             </div>
                             <h4 class="font-bold text-gray-800">Eye-Catching</h4>
                         </div>
-                        <p class="text-sm text-gray-600">Warna kontras, ekspresif facial, dan composition yang menarik perhatian</p>
+                        <p class="text-sm text-gray-600" data-i18n="thumbnail.tip-eye">Warna kontras, ekspresif facial, dan composition yang menarik perhatian</p>
                     </div>
                     <div class="bg-gradient-to-br from-yellow-100 to-yellow-50 rounded-xl p-6 border-2 border-yellow-200">
                         <div class="flex items-center gap-3 mb-3">
@@ -14423,7 +14423,7 @@
                             </div>
                             <h4 class="font-bold text-gray-800">Mobile-Friendly</h4>
                         </div>
-                        <p class="text-sm text-gray-600">Pastikan text terbaca jelas di layar kecil, hindari terlalu banyak detail</p>
+                        <p class="text-sm text-gray-600" data-i18n="thumbnail.tip-mobile">Pastikan text terbaca jelas di layar kecil, hindari terlalu banyak detail</p>
                     </div>
                 </div>
             </div>
@@ -14439,11 +14439,11 @@
                             <i class="fas fa-image-portrait text-4xl text-white"></i>
                         </div>
                     </div>
-                    <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 bg-clip-text text-transparent mb-3">
+                    <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 bg-clip-text text-transparent mb-3" data-i18n="cover-photo.title">
                         Foto Sampul IG & TikTok Pro
                     </h1>
                     <p class="text-gray-600 text-lg max-w-3xl mx-auto">
-                        Buat foto sampul profesional untuk Instagram & TikTok (9:16 vertical) - Support faceless & with face!
+                        <span data-i18n="cover-photo.desc">Buat foto sampul profesional untuk Instagram & TikTok (9:16 vertical) - Support faceless & with face!</span>
                     </p>
                 </div>
 
@@ -14493,7 +14493,7 @@
                                 Brand Name
                             </h3>
                             <input type="text" id="cpg-brand-name" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all" placeholder="e.g., JOHN DOE">
-                            <p class="text-xs text-gray-500 mt-2">💡 Nama atau brand Anda</p>
+                            <p class="text-xs text-gray-500 mt-2" data-i18n="cover-photo.brand-tip">💡 Nama atau brand Anda</p>
                         </div>
 
                         <div class="bg-white rounded-2xl shadow-xl p-6 border-2 border-indigo-100">
@@ -14502,7 +14502,7 @@
                                 Tagline (Optional)
                             </h3>
                             <input type="text" id="cpg-tagline" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all" placeholder="e.g., Digital Marketing Expert">
-                            <p class="text-xs text-gray-500 mt-2">💼 Profesi atau deskripsi singkat</p>
+                            <p class="text-xs text-gray-500 mt-2" data-i18n="cover-photo.tagline-tip">💼 Profesi atau deskripsi singkat</p>
                         </div>
 
                         <!-- Text Style Selector -->
@@ -70582,6 +70582,30 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'photo-angle.desc':'Transform your photos to various professional angles in one click - Front, Side, Top, 45°, and more!',
             'photo-angle.upload-title':'Upload Photo',
             'photo-angle.placeholder-desc':'Upload photo and choose angle preset to start',
+            'style-matcher.desc':'Transform your photo with the visual style from a reference photo (artist, influencer, or any style) - AI will match lighting, color grading, mood, and aesthetics!',
+            'style-matcher.your-photo-title':'Your Photo',
+            'style-matcher.your-upload-p':'Upload your photo',
+            'style-matcher.ref-photo-title':'Reference Photo (Style)',
+            'style-matcher.ref-upload-p':'Upload style photo',
+            'style-matcher.ref-upload-note':'Artist, influencer, etc.',
+            'style-matcher.subtle-desc':'Subtle style, natural',
+            'style-matcher.strong-desc':'Strong style, dramatic',
+            'style-matcher.placeholder-desc':'Upload your photo and reference photo to start',
+            'style-matcher.results-subtext':'Choose the best one or download all',
+            'thumbnail.desc':'Generate eye-catching thumbnails for YouTube, Instagram, or any platform - Use a reference photo or create from custom text!',
+            'thumbnail.ref-instructions-placeholder':'Example: Add glow effect, use blue and red colors, focus on product in center, background blur, etc.',
+            'thumbnail.ref-instructions-note':'💡 Describe the changes or emphasis you want from the reference',
+            'thumbnail.title-note':'💡 Use ALL CAPS for maximum impact',
+            'thumbnail.expression-note':'Set the overall mood/vibe of the thumbnail',
+            'thumbnail.placeholder-desc':'Choose mode and fill in information to start',
+            'thumbnail.results-subtext':'Click-worthy thumbnails ready to use',
+            'thumbnail.tip-bold':'Use large, bold, high-contrast text for maximum readability',
+            'thumbnail.tip-eye':'High contrast colors, expressive faces, and eye-catching composition',
+            'thumbnail.tip-mobile':'Ensure text is clearly readable on small screens, avoid too many details',
+            'cover-photo.title':'IG & TikTok Cover Pro',
+            'cover-photo.desc':'Create professional cover photos for Instagram & TikTok (9:16 vertical) - Supports faceless & with face!',
+            'cover-photo.brand-tip':'💡 Your name or brand',
+            'cover-photo.tagline-tip':'💼 Profession or short description',
             },
             id: {
                 nav: { 'apikey-settings':'API Key','beranda':'Beranda','buat-model':'Membuat Model','mockup-studio':'Mockup Studio','pov-tangan':'POV Tangan','touring':'Foto Touring','mirror-selfie':'POV Mirror Selfie','walking-pad':'Walking Pad','affiliate':'Foto Produk Affiliate','affiliate-islami':'Affiliate Agama','virtual-tryon':'Virtual Try-On','pose-fashion':'Pose Fashion','food-selfie':'Food Selfie','product-review':'Product Review','skincare-review':'Skincare Review','food-review':'Food Review','product-ads':'Iklan Produk','professional-headshot':'Professional Headshot','unboxing-scene':'Unboxing Scene','before-after':'Before/After','product-mockup':'Product Mockup','testimonial-generator':'Testimonial Card','size-guide':'Size Guide','video-frames':'Video Frames','vehicle-modifier':'Vehicle Modifier','deskripsi-produk':'Deskripsi Produk SEO','ide-konten-tiktok':'Ide Konten TikTok','script-story-iklan':'Script Story Iklan','rencana-bisnis':'Rencana Bisnis & SWOT','hr-assistant':'HR Assistant','konten-marketing':'Konten Marketing','riset-pasar':'Riset Pasar & Ide','financial-forecast':'Simulasi Anggaran','family':'Foto Keluarga','new-born':'New Born Studio','maternity':'Foto Maternity','profesi-anak':'Foto Profesi Anak','wedding':'Wedding','wedding-design':'Desain Pernikahan','umrah-haji':'Foto Umrah/Haji','passport-photo':'Pas Foto Warna','graduation-photo':'Foto Wisuda','photo-booth':'Photo Booth','birthday-photo':'Foto Ulang Tahun','kartu-lebaran':'Kartu Lebaran','desain-rumah':'Desain Rumah','desain-kamar':'Desain Kamar','sketsa-gambar':'Sketsa Gambar','bikin-carousel':'Bikin Carousel','miniature':'Miniature Me','karikatur':'Karikatur Generator','photo-editor':'Photo Editor Pro','ai-beauty':'AI Beauty Editor','tattoo-editor':'Tattoo Editor','halu':'Halu Idol','sticker':'Sticker Tempel','hair-generator':'Hair Generator','expression-changer':'Expression Changer','face-swap':'Face Swap','bg-remover':'Ubah Background','photo-extender':'Perluas Foto','story-board':'Story Board','twibon':'Twibon Frame','story-update':'Story Update','image-analyzer':'Image to Prompt','packaging-design':'Packaging Design','photo-angle':'Photo Angle','style-matcher':'Style Matcher','thumbnail-generator':'Thumbnail Pro','cover-photo-generator':'Foto Sampul IG & Tiktok','photo-restoration':'Restorasi Foto','object-remover':'Hapus Object','logo-generator':'Logo Generator','brand-kit-generator':'AI Brand Kit Generator','content-calendar':'Content Calendar Planner','ab-testing':'A/B Testing AI','roi-calculator':'ROI Calculator AI','caption-generator':'AI Caption Generator','product-comparison':'Product Comparison','mascot-generator':'Mascot Generator','poster-generator':'Poster Generator','banner-generator':'Banner Generator','sketch-catalog':'Sketsa ke Katalog','fotogenic':'Fotogenic','timelapse-renovasi':'Timelapse Renovasi','veo':'Affiliate Go Pro','opal':'Opal Image to Video','voice-over':'Voice Over','video-analyzer':'Video Analyzer' },
@@ -71639,6 +71663,30 @@ VARIASI ${index}: ${variationNotes[index] || 'Variasi standar dengan slight diff
             'photo-angle.desc':'Transform foto Anda ke berbagai angle profesional dalam sekali klik - Front, Side, Top, 45°, dan lebih!',
             'photo-angle.upload-title':'Upload Foto',
             'photo-angle.placeholder-desc':'Upload foto dan pilih preset angle untuk memulai',
+            'style-matcher.desc':'Transform foto Anda dengan gaya visual dari foto referensi (artis, influencer, atau gaya apapun) - AI akan mencocokkan lighting, color grading, mood, dan aesthetics!',
+            'style-matcher.your-photo-title':'Foto Anda',
+            'style-matcher.your-upload-p':'Upload foto Anda',
+            'style-matcher.ref-photo-title':'Foto Referensi (Gaya)',
+            'style-matcher.ref-upload-p':'Upload foto gaya',
+            'style-matcher.ref-upload-note':'Artis, influencer, dll',
+            'style-matcher.subtle-desc':'Gaya halus, natural',
+            'style-matcher.strong-desc':'Gaya kuat, dramatic',
+            'style-matcher.placeholder-desc':'Upload foto Anda dan foto referensi untuk memulai',
+            'style-matcher.results-subtext':'Pilih yang paling sesuai atau download semua',
+            'thumbnail.desc':'Generate eye-catching thumbnails untuk YouTube, Instagram, atau platform apapun - Gunakan foto referensi atau buat dari teks custom!',
+            'thumbnail.ref-instructions-placeholder':'Contoh: Tambahkan efek glow, gunakan warna biru dan merah, fokus pada produk di tengah, background blur, dsb.',
+            'thumbnail.ref-instructions-note':'💡 Deskripsikan perubahan atau penekanan yang Anda inginkan dari reference',
+            'thumbnail.title-note':'💡 Gunakan ALL CAPS untuk impact maksimal',
+            'thumbnail.expression-note':'Atur mood/vibe keseluruhan thumbnail',
+            'thumbnail.placeholder-desc':'Pilih mode dan isi informasi untuk memulai',
+            'thumbnail.results-subtext':'Click-worthy thumbnails siap digunakan',
+            'thumbnail.tip-bold':'Gunakan text besar, bold, dan kontras tinggi untuk readability maksimal',
+            'thumbnail.tip-eye':'Warna kontras, ekspresif facial, dan composition yang menarik perhatian',
+            'thumbnail.tip-mobile':'Pastikan text terbaca jelas di layar kecil, hindari terlalu banyak detail',
+            'cover-photo.title':'Foto Sampul IG & TikTok Pro',
+            'cover-photo.desc':'Buat foto sampul profesional untuk Instagram & TikTok (9:16 vertical) - Support faceless & with face!',
+            'cover-photo.brand-tip':'💡 Nama atau brand Anda',
+            'cover-photo.tagline-tip':'💼 Profesi atau deskripsi singkat',
             }
         };
 
