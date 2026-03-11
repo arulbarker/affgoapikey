@@ -118,7 +118,7 @@ Both update `window.GEMINI_USER_API_KEY` immediately — no page reload required
 |-------|-----------|-----|
 | `gemini-2.5-flash-image-preview` | Canvas only | Image generation/editing |
 | `gemini-2.5-flash-image` | Vercel/external keys | Image generation/editing (auto-swapped by interceptor) |
-| `gemini-2.5-flash-preview` | Both | Text generation, multimodal analysis |
+| `gemini-2.0-flash` | Both | Text generation, multimodal analysis |
 | `gemini-2.5-flash-preview-tts` | Both | Text-to-speech |
 
 > **DO NOT** globally change `gemini-2.5-flash-image-preview` to `gemini-2.5-flash-image` in the source — the interceptor handles the swap automatically only when needed.
@@ -399,6 +399,8 @@ Each feature uses a unique gradient. Examples:
 
 **API 403 / model not found (Canvas)**: Use `gemini-2.5-flash-image-preview` — do not change.
 
+**Text model not found (`gemini-2.5-flash-preview` or dated variants like `-05-20`)**: Use `gemini-2.0-flash` — the versioned preview models are removed from v1beta. Do not use `gemini-2.5-flash-preview` or `gemini-2.5-flash-preview-05-20` for text generation.
+
 **API model not found (Vercel/external key)**: `gemini-2.5-flash-image-preview` is Canvas-only. The fetch interceptor should auto-swap to `gemini-2.5-flash-image`. Verify `window.GEMINI_USER_API_KEY` is set and interceptor is active.
 
 **User key not working after Save**: Key is saved immediately to `window.GEMINI_USER_API_KEY` — no reload needed. If still failing, check interceptor catches empty `?key=` param correctly.
@@ -423,11 +425,11 @@ Each feature uses a unique gradient. Examples:
 
 ## Key Features by Category
 
-**Product Photography (6)**: Mockup Studio, POV Tangan, Foto Produk, Photo Angle Pro, Foto Touring, Walking Pad Lifestyle
+**UGC Content Aff GO**: Mockup Studio, POV Tangan, Mirror Selfie, Walking Pad, Foto Produk Affiliate, Affiliate Tema Agama, Virtual Try-On, Pose Fashion, Food Selfie, Product Review, Iklan Produk, Professional Headshot, + more
 
-**UGC Content (8)**: Foto Produk Affiliate, Affiliate Tema Agama (50 themes / 5 religions), Virtual Try-On, Pose Fashion, Food Selfie, Product Review, Iklan Produk, Professional Headshot
+**Family & Lifestyle**: Foto Touring, Family Photo, Wedding (50 themes + custom), New Born, Profesi Anak, Foto Tema Ibadah, Pas Foto, Photo Booth, Desain Rumah, Sketsa, Carousel, Birthday Photo, Kartu Ucapan Lebaran
 
-**Family & Lifestyle (12)**: Family Photo, Wedding (50 themes + custom), New Born, Profesi Anak, Foto Tema Ibadah, Pas Foto, Photo Booth, Desain Rumah, Sketsa, Carousel, Birthday Photo, Kartu Ucapan Lebaran
+> Note: Photo Studio category was removed. Mockup Studio, POV Tangan, Mirror Selfie, Walking Pad moved to UGC Content Aff GO. Foto Touring moved to Family & Lifestyle.
 
 **Creative Tools PRO (20)**: Miniature Me, Halu Idol, Sticker, Hair Generator, Expression Changer, Story Update, Photo Angle, Style Matcher, Thumbnail Pro, Cover Photo, Photo Restoration, Logo Generator, Mascot Generator, Face Swap, Background Remover, Photo Extender, Story Board, Twibon, Fotogenic (56 effects), Timelapse Renovasi
 
@@ -463,10 +465,16 @@ Each feature uses a unique gradient. Examples:
 - Canvas auto-injects API key into `const apiKey = ""`
 - No user key setup needed
 
+### Git Workflow
+- **Always create a feature branch** before making changes: `git checkout -b branch-name`
+- **Never merge to `main` without explicit user instruction**
+- `git push` on a feature branch pushes preview only (does not deploy to Vercel production)
+- Merge to `main` only when user says "oke merge": `git checkout main && git merge branch-name && git push`
+
 ### Vercel (Standalone)
 - Vercel monitors repo **`arulbarker/affgoapikey`** (branch `main`)
 - `origin` → `arulbarker/affgoapikey`, local branch is `main`
-- **To deploy to Vercel:** `git push` (from `main` branch)
+- **To deploy to Vercel:** merge feature branch to `main` then `git push`
 - `vercel.json` serves `kode.html` as static for all routes
 - Users enter their own Google AI Studio API key via the settings UI
 - Image model auto-swapped from `gemini-2.5-flash-image-preview` → `gemini-2.5-flash-image`
