@@ -464,11 +464,9 @@ Each feature uses a unique gradient. Examples:
 - No user key setup needed
 
 ### Vercel (Standalone)
-- Vercel monitors repo **`arulbarker/affgoapikey`** (branch `main`) — NOT `affiliatego`
-- Two git remotes exist:
-  - `origin` → `arulbarker/affiliatego` (feature branches, PRs)
-  - `deploy` → `arulbarker/affgoapikey` (Vercel production)
-- **To deploy to Vercel:** `git push deploy master:main`
+- Vercel monitors repo **`arulbarker/affgoapikey`** (branch `main`)
+- `origin` → `arulbarker/affgoapikey`, local branch is `main`
+- **To deploy to Vercel:** `git push` (from `main` branch)
 - `vercel.json` serves `kode.html` as static for all routes
 - Users enter their own Google AI Studio API key via the settings UI
 - Image model auto-swapped from `gemini-2.5-flash-image-preview` → `gemini-2.5-flash-image`
