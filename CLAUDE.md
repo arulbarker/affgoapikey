@@ -204,9 +204,28 @@ Preserves child elements (icons, spans). Updates **text nodes only**:
 - `window.setAppLanguage(lang)` — exposed globally
 - Persisted in `localStorage['app_language']`, default `'en'`
 
-### Translation progress (as of v21)
-Panels with full `data-i18n` coverage: API Key, Home (Beranda), Membuat Model, Mockup Studio, POV Tangan, Foto Touring, POV Mirror Selfie, Walking Pad.
-All other panels: nav labels and h1 headers only.
+### Translation progress (as of March 2026)
+**All 91 content panels have full `data-i18n` coverage.** (3 are iframe-only and skipped: `content-face-swap`, `content-remove-bg`, `content-veo`.)
+
+To verify coverage at any time:
+```bash
+node check_i18n.js
+# Expected: DONE: 91 / TODO: 0 / TOTAL: 91
+```
+
+### i18n patch script pattern
+Bulk `data-i18n` attribute insertions are done via numbered Node.js patch scripts (`i18n_patch30b.js` → `i18n_patch35.js`). Each script:
+1. Reads `kode.html` with `fs.readFileSync`
+2. Uses `rep(search, replacement, label)` for exact string replacement
+3. Writes back with `fs.writeFileSync`
+4. Reports `OK` / `MISS` per operation — any MISS must be fixed manually with the Edit tool
+
+Key anchoring rules for patch scripts:
+- **CRLF endings on Windows**: multi-line searches use `\r\n` not `\n`
+- **Emoji in search strings**: use Unicode surrogate pairs (e.g. `\uD83D\uDCCA` for 📊, `\u23F1\uFE0F` for ⏱️)
+- **Ambiguous h3 text**: anchor by following `<div id="unique-id"` on next line
+- **Unique element ids**: insert `data-i18n` by matching `id="element-id" class=` in opening tag
+- **Dict insertion anchor**: each patch inserts after the last key added by the previous patch
 
 ---
 
@@ -436,5 +455,5 @@ Each feature uses a unique gradient. Examples:
 ---
 
 ## File Statistics (v21 — March 2026)
-- `kode.html`: ~69,600+ lines, ~3.8 MB
-- `kode-min.html`: ~2.12 MB (43.6% compression)
+- `kode.html`: ~72,200+ lines, ~4.08 MB (grown from i18n patches)
+- `kode-min.html`: ~2.12 MB (43.6% compression, regenerate after edits)
