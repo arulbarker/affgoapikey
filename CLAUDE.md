@@ -198,7 +198,7 @@ Preserves child elements (icons, spans). Updates **text nodes only**:
 4. Panel h1: already covered by `T.en.headers['tab-id']` — no HTML change needed
 
 ### Toggle UI
-- **Desktop**: `.lang-toggle-btn[data-lang="en|id"]` in sidebar header
+- **Desktop**: `.lang-toggle-btn[data-lang="en|id"]` in sidebar header — full-width row below the V21 badge (separated from badge, width:100%, larger font/padding)
 - **Mobile**: `.mobile-lang-btn[data-lang="en|id"]` in mobile header
 - Active state: `.lang-active` CSS class
 - `window.setAppLanguage(lang)` — exposed globally
@@ -352,6 +352,29 @@ const cameraAnchor = `slight left diagonal view, medium distance, eye-level [ses
 
 ---
 
+## Global UI Theme — Green
+
+The app uses a **green theme** (applied March 2026). Use these exact values for any new global UI elements. Do NOT use sky/blue colors.
+
+| Role | Hex | Tailwind |
+|------|-----|----------|
+| Primary | `#16a34a` | `green-600` |
+| Primary dark | `#15803d` | `green-700` |
+| Light background | `#dcfce7` | `green-100` |
+| Light border | `#bbf7d0` | `green-200` |
+| Accent / gradient end | `#059669` | `emerald-600` |
+| rgba primary | `rgba(22, 163, 74, α)` | — |
+| Brand gradient | `from-green-500 to-emerald-600` | Tailwind |
+
+- Active tab: border `#16a34a`, background `#dcfce7`
+- Sidebar scrollbar thumb: `#16a34a`
+- Lang toggle active: `linear-gradient(135deg, #16a34a, #059669)`
+- Toggle sidebar btn hover: `#16a34a`
+
+**Per-feature panel colors are independent** (each feature has its own unique palette) and must NOT use the global green. See examples below.
+
+---
+
 ## CSS Class Naming Convention
 
 - `.upload-box-{feature}` — upload area with hover effect
@@ -455,5 +478,5 @@ Each feature uses a unique gradient. Examples:
 ---
 
 ## File Statistics (v21 — March 2026)
-- `kode.html`: ~72,200+ lines, ~4.08 MB (grown from i18n patches)
-- `kode-min.html`: ~2.12 MB (43.6% compression, regenerate after edits)
+- `kode.html`: ~72,500+ lines, ~4.1 MB (grown from i18n + brand/theme patches)
+- `kode-min.html`: ~2.12 MB (regenerate after edits before Canvas deploy)
