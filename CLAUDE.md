@@ -257,8 +257,7 @@ async function generateSingleXxx(index, ..., retryCount) {
 }
 await Promise.allSettled(Array.from({ length: count }, (_, i) => generateSingleXxx(i + 1, ..., 0)));
 ```
-> Applied to: Membuat Model, Foto Touring, Walking Pad, POV Mirror Selfie.
-> Mockup Studio & POV Tangan: use `generateImageWithRetry(payload, retries=6, delay=35000)` (batch-based).
+> Applied to: Membuat Model, Foto Touring, Walking Pad, POV Mirror Selfie, **Mockup Studio**, **POV Tangan**.
 
 ### 2. Parallel Generation — INDEXED ASSIGNMENT (never `.push()`)
 ```javascript
@@ -465,7 +464,11 @@ Each feature uses a unique gradient. Examples:
 - No user key setup needed
 
 ### Vercel (Standalone)
-- Push `kode.html` + `vercel.json` to GitHub → auto-deploys
+- Vercel monitors repo **`arulbarker/affgoapikey`** (branch `main`) — NOT `affiliatego`
+- Two git remotes exist:
+  - `origin` → `arulbarker/affiliatego` (feature branches, PRs)
+  - `deploy` → `arulbarker/affgoapikey` (Vercel production)
+- **To deploy to Vercel:** `git push deploy master:main`
 - `vercel.json` serves `kode.html` as static for all routes
 - Users enter their own Google AI Studio API key via the settings UI
 - Image model auto-swapped from `gemini-2.5-flash-image-preview` → `gemini-2.5-flash-image`
