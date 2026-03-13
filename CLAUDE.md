@@ -77,20 +77,30 @@ A **fetch interceptor** is installed at module load time (before DOMContentLoade
 ```javascript
 // Runs at script evaluation time — before any IIFE
 window.GEMINI_USER_API_KEY = localStorage.getItem('gemini_user_api_key') || '';
+window.GEMINI_SELECTED_TEXT_MODEL = localStorage.getItem('gemini_selected_text_model') || 'gemini-2.0-flash';
 
 (function() {
     const _origFetch = window.fetch.bind(window);
     window.fetch = function(url, options) {
         if (typeof url === 'string' && url.includes('generativelanguage.googleapis.com')) {
-            const u = new URL(url);
-            const existingKey = u.searchParams.get('key');
-            // Only fires when Canvas did NOT inject a key (empty ?key= param)
-            if ((!existingKey || existingKey === '') && window.GEMINI_USER_API_KEY) {
-                u.searchParams.set('key', window.GEMINI_USER_API_KEY);
-                // Swap Canvas-only model to GA version for external keys
-                u.pathname = u.pathname.replace('gemini-2.5-flash-image-preview', 'gemini-2.5-flash-image');
+            try {
+                const u = new URL(url);
+                const existingKey = u.searchParams.get('key');
+                const isCanvasKey = !!(existingKey && existingKey !== '');
+                // Inject user key when Canvas did NOT inject a key
+                if (!isCanvasKey && window.GEMINI_USER_API_KEY) {
+                    u.searchParams.set('key', window.GEMINI_USER_API_KEY);
+                }
+                // Image model: for external keys swap preview to GA version
+                if (u.pathname.includes('gemini-2.5-flash-image-preview') && !isCanvasKey) {
+                    u.pathname = u.pathname.replace('gemini-2.5-flash-image-preview', 'gemini-2.5-flash-image');
+                }
+                // Text model: swap gemini-2.0-flash to user-selected text model if changed
+                if (u.pathname.includes('gemini-2.0-flash') && window.GEMINI_SELECTED_TEXT_MODEL !== 'gemini-2.0-flash') {
+                    u.pathname = u.pathname.replace('gemini-2.0-flash', window.GEMINI_SELECTED_TEXT_MODEL);
+                }
                 url = u.toString();
-            }
+            } catch(e) {}
         }
         return _origFetch(url, options);
     };
@@ -101,6 +111,7 @@ window.GEMINI_USER_API_KEY = localStorage.getItem('gemini_user_api_key') || '';
 
 ### localStorage keys
 - `gemini_user_api_key` — raw API key string
+- `gemini_selected_text_model` — text model choice (`gemini-2.0-flash` default or `gemini-3.1-pro-preview`)
 
 ### UI entry points
 Both desktop and mobile use **the same shared content panel** `#content-apikey-settings`:
@@ -118,10 +129,13 @@ Both update `window.GEMINI_USER_API_KEY` immediately — no page reload required
 |-------|-----------|-----|
 | `gemini-2.5-flash-image-preview` | Canvas only | Image generation/editing |
 | `gemini-2.5-flash-image` | Vercel/external keys | Image generation/editing (auto-swapped by interceptor) |
-| `gemini-2.0-flash` | Both | Text generation, multimodal analysis |
+| `gemini-2.0-flash` | Both | Text generation, multimodal analysis (default) |
+| `gemini-3.1-pro-preview` | Both | Text generation (optional, user-selectable via API Key tab) |
 | `gemini-2.5-flash-preview-tts` | Both | Text-to-speech |
 
 > **DO NOT** globally change `gemini-2.5-flash-image-preview` to `gemini-2.5-flash-image` in the source — the interceptor handles the swap automatically only when needed.
+
+> **`gemini-3.1-pro-preview` is text/multimodal-input only** — it cannot generate images. Only `gemini-2.5-flash-image-preview` supports image output.
 
 ### Fetch API Pattern (used throughout)
 ```javascript
@@ -421,6 +435,10 @@ Each feature uses a unique gradient. Examples:
 
 **Bulk HTML edits**: For adding many `data-i18n` attributes across a panel, use a Node.js script with `fs.readFileSync`/`writeFileSync` and string `.replace()`. Watch for CRLF line endings on Windows — use regex `/\r?\n/` when matching across lines.
 
+**Card shows raw JS string as error text**: catch block used `'...' + expr + '...'` inside a backtick template literal — this renders the expression as literal text. Always use `${expr}` inside template literals, never string concatenation.
+
+**API error hidden in catch block**: fetch response not checked with `response.ok` — add `if (!response.ok) throw new Error(result?.error?.message || 'HTTP ' + response.status)` after `response.json()` to surface actual API error.
+
 ---
 
 ## Key Features by Category
@@ -467,7 +485,8 @@ Each feature uses a unique gradient. Examples:
 
 ### Git Workflow
 - **Always create a feature branch** before making changes: `git checkout -b branch-name`
-- **Never merge to `main` without explicit user instruction**
+- **Commit + push immediately after each confident change** — so user can check on Vercel preview
+- **Never merge to `main` without explicit user instruction** ("oke merge")
 - `git push` on a feature branch pushes preview only (does not deploy to Vercel production)
 - Merge to `main` only when user says "oke merge": `git checkout main && git merge branch-name && git push`
 
